@@ -5,14 +5,14 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/gskis.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>GSkis</title>
 		<style>
 			@font-face {
-				font-family: 'DS-Digital';
-				src: url('/fonts/DS-DIGI.TTF') format('truetype');
+				font-family: 'VCR';
+				src: url('/fonts/VCR.ttf') format('truetype');
 				font-display: swap;
 			}
 			html, body {
@@ -20,6 +20,10 @@
 				margin: 0;
 				padding: 0;
 				box-sizing: border-box;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
 			}
 			body {
 				min-height: 100vh;
@@ -38,25 +42,26 @@
 				overflow: hidden;
 			}
 			.terminal-line {
-				font-family: 'DS-Digital', monospace;
+				font-family: 'VCR', monospace;
 				color: #39ff14;
 				font-size: clamp(1.1rem, 2vw, 2.2rem);
-				opacity: 0.18;
+				opacity: 0.7;
 				white-space: nowrap;
 				will-change: transform;
 				text-shadow: 0 0 8px #39ff14, 0 0 2px #39ff14;
 				position: absolute;
-				left: -60vw;
-				animation: slide 18s linear infinite;
+				right: -100vw;
+				left: unset;
+				animation: slide-left 30s linear infinite;
 			}
 			.terminal-line:nth-child(2) { top: 20vh; animation-delay: 2s; }
 			.terminal-line:nth-child(3) { top: 35vh; animation-delay: 4s; }
 			.terminal-line:nth-child(4) { top: 50vh; animation-delay: 6s; }
 			.terminal-line:nth-child(5) { top: 65vh; animation-delay: 8s; }
 			.terminal-line:nth-child(6) { top: 80vh; animation-delay: 10s; }
-			@keyframes slide {
+			@keyframes slide-left {
 				0% { transform: translateX(0); }
-				100% { transform: translateX(120vw); }
+				100% { transform: translateX(-300vw); }
 			}
 			.overlay {
 				position: fixed;
@@ -77,7 +82,7 @@
 				text-align: center;
 			}
 			.brand {
-				font-family: 'DS-Digital', monospace;
+				font-family: 'VCR', monospace;
 				color: #39ff14;
 				font-size: clamp(2.2rem, 6vw, 4.5rem);
 				letter-spacing: 0.08em;
@@ -87,7 +92,7 @@
 			.contact-btn {
 				background: #39ff14;
 				color: #0a0f0a;
-				font-family: 'DS-Digital', monospace;
+				font-family: 'VCR', monospace;
 				font-size: clamp(1.1rem, 2vw, 2rem);
 				border: none;
 				border-radius: 0.4em;
@@ -96,6 +101,7 @@
 				box-shadow: 0 0 8px #39ff14, 0 0 2px #39ff14;
 				transition: background 0.2s, color 0.2s, transform 0.1s;
 				margin-top: 2rem;
+				text-decoration: none;
 			}
 			.contact-btn:hover, .contact-btn:focus {
 				background: #0a0f0a;
@@ -103,26 +109,43 @@
 				outline: 2px solid #39ff14;
 				transform: scale(1.04);
 			}
+			.footer {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				text-align: center;
+				padding: 1rem;
+				font-family: 'VCR', monospace;
+				color: #39ff14;
+				font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+				z-index: 3;
+				text-shadow: 0 0 4px #39ff14;
+			}
 			@media (max-width: 600px) {
 				.brand { font-size: 2rem; }
 				.contact-btn { font-size: 1rem; padding: 0.7em 1.5em; }
 				.terminal-line { font-size: 1rem; }
+				.footer { font-size: 0.7rem; }
 			}
 		</style>
 	</head>
 	<body>
 		<div class="terminal-bg">
-			<div class="terminal-line" style="top: 10vh;">$ npm install gskis-app --save</div>
-			<div class="terminal-line">> Connecting to GSkis mainframe...</div>
-			<div class="terminal-line">[OK] App development pipeline initialized</div>
-			<div class="terminal-line">$ run innovation --team GSkis</div>
-			<div class="terminal-line">> Deploying next-gen solutions...</div>
-			<div class="terminal-line">[SUCCESS] Welcome to GSkis</div>
+			<div class="terminal-line" style="top: 10vh;">We started as a small group, trying to solve problems close to home.</div>
+			<div class="terminal-line">Each challenge lit the spark for something new.</div>
+			<div class="terminal-line">We build for ourselves first, and in doing so, for others too.</div>
+			<div class="terminal-line">We're our own toughest critics—and our most honest users.</div>
+			<div class="terminal-line">But every decision is made with others in mind.</div>
+			<div class="terminal-line">What began as personal need became something bigger. This is GSkis.</div>
 		</div>
 		<div class="overlay"></div>
 		<main class="content">
 			<div class="brand">GSkis</div>
 			<a href="mailto:hello@gskis.com" class="contact-btn">Contact Us</a>
 		</main>
+		<footer class="footer">
+			GSkis LLC 2025 • Boston MA
+		</footer>
 	</body>
 </html>
