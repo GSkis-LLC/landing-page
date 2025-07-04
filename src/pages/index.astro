@@ -8,9 +8,121 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>GSkis</title>
+		<style>
+			@font-face {
+				font-family: 'WTerm';
+				src: url('/fonts/WTerm.woff') format('woff');
+				font-display: swap;
+			}
+			html, body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				min-height: 100vh;
+				min-width: 100vw;
+				overflow: hidden;
+				position: relative;
+				background: #0a0f0a;
+				font-family: system-ui, sans-serif;
+			}
+			.terminal-bg {
+				position: fixed;
+				top: 0; left: 0; right: 0; bottom: 0;
+				width: 100vw; height: 100vh;
+				z-index: 1;
+				pointer-events: none;
+				overflow: hidden;
+			}
+			.terminal-line {
+				font-family: 'WTerm', monospace;
+				color: #39ff14;
+				font-size: clamp(1.1rem, 2vw, 2.2rem);
+				opacity: 0.18;
+				white-space: nowrap;
+				will-change: transform;
+				text-shadow: 0 0 8px #39ff14, 0 0 2px #39ff14;
+				position: absolute;
+				left: -60vw;
+				animation: slide 18s linear infinite;
+			}
+			.terminal-line:nth-child(2) { top: 20vh; animation-delay: 2s; }
+			.terminal-line:nth-child(3) { top: 35vh; animation-delay: 4s; }
+			.terminal-line:nth-child(4) { top: 50vh; animation-delay: 6s; }
+			.terminal-line:nth-child(5) { top: 65vh; animation-delay: 8s; }
+			.terminal-line:nth-child(6) { top: 80vh; animation-delay: 10s; }
+			@keyframes slide {
+				0% { transform: translateX(0); }
+				100% { transform: translateX(120vw); }
+			}
+			.overlay {
+				position: fixed;
+				top: 0; left: 0; right: 0; bottom: 0;
+				width: 100vw; height: 100vh;
+				background: rgba(10, 15, 10, 0.82);
+				z-index: 2;
+				pointer-events: none;
+			}
+			.content {
+				position: relative;
+				z-index: 3;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-height: 100vh;
+				text-align: center;
+			}
+			.brand {
+				font-family: 'WTerm', monospace;
+				color: #39ff14;
+				font-size: clamp(2.2rem, 6vw, 4.5rem);
+				letter-spacing: 0.08em;
+				margin-bottom: 2rem;
+				text-shadow: 0 0 12px #39ff14, 0 0 2px #39ff14;
+			}
+			.contact-btn {
+				background: #39ff14;
+				color: #0a0f0a;
+				font-family: 'WTerm', monospace;
+				font-size: clamp(1.1rem, 2vw, 2rem);
+				border: none;
+				border-radius: 0.4em;
+				padding: 0.8em 2.2em;
+				cursor: pointer;
+				box-shadow: 0 0 8px #39ff14, 0 0 2px #39ff14;
+				transition: background 0.2s, color 0.2s, transform 0.1s;
+				margin-top: 2rem;
+			}
+			.contact-btn:hover, .contact-btn:focus {
+				background: #0a0f0a;
+				color: #39ff14;
+				outline: 2px solid #39ff14;
+				transform: scale(1.04);
+			}
+			@media (max-width: 600px) {
+				.brand { font-size: 2rem; }
+				.contact-btn { font-size: 1rem; padding: 0.7em 1.5em; }
+				.terminal-line { font-size: 1rem; }
+			}
+		</style>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<div class="terminal-bg">
+			<div class="terminal-line" style="top: 10vh;">$ npm install gskis-app --save</div>
+			<div class="terminal-line">> Connecting to GSkis mainframe...</div>
+			<div class="terminal-line">[OK] App development pipeline initialized</div>
+			<div class="terminal-line">$ run innovation --team GSkis</div>
+			<div class="terminal-line">> Deploying next-gen solutions...</div>
+			<div class="terminal-line">[SUCCESS] Welcome to GSkis</div>
+		</div>
+		<div class="overlay"></div>
+		<main class="content">
+			<div class="brand">GSkis</div>
+			<a href="mailto:hello@gskis.com" class="contact-btn">Contact Us</a>
+		</main>
 	</body>
 </html>
