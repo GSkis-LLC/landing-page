@@ -44,7 +44,7 @@
 			.terminal-line {
 				font-family: 'VCR', monospace;
 				color: #39ff14;
-				font-size: clamp(1.1rem, 2vw, 2.2rem);
+				font-size: clamp(1.2rem, 4vw, 2.8rem);
 				opacity: 0.7;
 				white-space: nowrap;
 				will-change: transform;
@@ -55,10 +55,10 @@
 				animation: slide-left 30s linear infinite;
 			}
 			.terminal-line:nth-child(2) { top: 20vh; animation-delay: 2s; }
-			.terminal-line:nth-child(3) { top: 35vh; animation-delay: 4s; }
-			.terminal-line:nth-child(4) { top: 50vh; animation-delay: 6s; }
-			.terminal-line:nth-child(5) { top: 65vh; animation-delay: 8s; }
-			.terminal-line:nth-child(6) { top: 80vh; animation-delay: 10s; }
+			.terminal-line:nth-child(3) { top: 30vh; animation-delay: 4s; }
+			.terminal-line:nth-child(4) { top: 45vh; animation-delay: 6s; }
+			.terminal-line:nth-child(5) { top: 60vh; animation-delay: 8s; }
+			.terminal-line:nth-child(6) { top: 75vh; animation-delay: 10s; }
 			@keyframes slide-left {
 				0% { transform: translateX(0); }
 				100% { transform: translateX(-300vw); }
@@ -84,24 +84,28 @@
 			.brand {
 				font-family: 'VCR', monospace;
 				color: #39ff14;
-				font-size: clamp(2.2rem, 6vw, 4.5rem);
+				font-size: clamp(2.5rem, 10vw, 5.5rem);
 				letter-spacing: 0.08em;
-				margin-bottom: 2rem;
+				margin-bottom: 1.5rem;
 				text-shadow: 0 0 12px #39ff14, 0 0 2px #39ff14;
+				text-align: center;
+				padding: 0 1rem;
 			}
 			.contact-btn {
 				background: #39ff14;
 				color: #0a0f0a;
 				font-family: 'VCR', monospace;
-				font-size: clamp(1.1rem, 2vw, 2rem);
+				font-size: clamp(1.2rem, 4vw, 2.5rem);
 				border: none;
 				border-radius: 0.4em;
 				padding: 0.8em 2.2em;
 				cursor: pointer;
 				box-shadow: 0 0 8px #39ff14, 0 0 2px #39ff14;
 				transition: background 0.2s, color 0.2s, transform 0.1s;
-				margin-top: 2rem;
+				margin-top: 1.5rem;
 				text-decoration: none;
+				min-width: 200px;
+				text-align: center;
 			}
 			.contact-btn:hover, .contact-btn:focus {
 				background: #0a0f0a;
@@ -115,18 +119,54 @@
 				left: 0;
 				right: 0;
 				text-align: center;
-				padding: 1rem;
+				padding: 0.8rem;
 				font-family: 'VCR', monospace;
 				color: #39ff14;
-				font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+				font-size: clamp(0.9rem, 3vw, 1.5rem);
 				z-index: 3;
 				text-shadow: 0 0 4px #39ff14;
 			}
-			@media (max-width: 600px) {
-				.brand { font-size: 2rem; }
-				.contact-btn { font-size: 1rem; padding: 0.7em 1.5em; }
-				.terminal-line { font-size: 1rem; }
-				.footer { font-size: 0.7rem; }
+			@media (max-width: 768px) {
+				.brand { 
+					font-size: 3.5rem; 
+					margin-bottom: 1rem;
+					padding: 0 0.5rem;
+				}
+				.contact-btn { 
+					font-size: 1.4rem; 
+					padding: 0.7em 1.5em; 
+					min-width: 180px;
+					margin-top: 1rem;
+				}
+				.terminal-line { 
+					font-size: 1.1rem; 
+					opacity: 0.6;
+					max-width: 85vw;
+				}
+				.footer { 
+					font-size: 0.9rem; 
+					padding: 0.6rem;
+				}
+				.content {
+					padding: 0 1rem;
+				}
+			}
+			@media (max-width: 480px) {
+				.brand { 
+					font-size: 2.8rem; 
+				}
+				.contact-btn { 
+					font-size: 1.2rem; 
+					padding: 0.6em 1.2em;
+					min-width: 160px;
+				}
+				.terminal-line { 
+					font-size: 1rem;
+					opacity: 0.5;
+				}
+				.footer { 
+					font-size: 0.8rem; 
+				}
 			}
 		</style>
 	</head>
