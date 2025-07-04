@@ -29,6 +29,10 @@ const groupNotes = data?.Meeting?.group_notes || '';
 const latitude = data?.Meeting?.latitude;
 const longitude = data?.Meeting?.longitude;
 
+// User data
+const userCreatedAt = data?.User?.createdAt || '';
+const userSoberDate = data?.User?.soberDate || '';
+
 const title = `${userName} went to ${meetingName}`;
 const description = `Verified meeting attendance to ${meetingLocation || meetingAddress} on ${attendanceDate}.`;
 
@@ -44,6 +48,57 @@ function formatTime(t: any) {
 function dayOfWeek(num: any) {
   const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   return days[num] || '';
+}
+
+function formatAttendanceDate(dateString: string) {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+  if (isNaN(date.getTime())) return dateString; // Return original if invalid date
+  
+  const options: Intl.DateTimeFormatOptions = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  };
+  
+  return date.toLocaleDateString('en-US', options);
+}
+
+function calculateSoberTime(dateString: string) {
+  if (!dateString) return null;
+  const date = new Date(dateString);
+  if (isNaN(date.getTime())) return null;
+  
+  const today = new Date();
+  const diffTime = Math.abs(today.getTime() - date.getTime());
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  
+  const years = Math.floor(diffDays / 365);
+  const months = Math.floor((diffDays % 365) / 30);
+  const days = diffDays % 30;
+  
+  if (years > 0) {
+    if (months > 0) {
+      const yearText = years === 1 ? 'year' : 'years';
+      const monthText = months === 1 ? 'month' : 'months';
+      return `${years} ${yearText} ${months} ${monthText}`;
+    } else {
+      const yearText = years === 1 ? 'year' : 'years';
+      return `${years} ${yearText}`;
+    }
+  } else if (months > 0) {
+    if (days > 0) {
+      const monthText = months === 1 ? 'month' : 'months';
+      const dayText = days === 1 ? 'day' : 'days';
+      return `${months} ${monthText} ${days} ${dayText}`;
+    } else {
+      const monthText = months === 1 ? 'month' : 'months';
+      return `${months} ${monthText}`;
+    }
+  } else {
+    const dayText = days === 1 ? 'day' : 'days';
+    return `${days} ${dayText}`;
+  }
 }
 
 // Map meeting type to CSS class
@@ -253,6 +308,101 @@ const typeToClass: Record<string, string> = {
         font-size: 1rem;
         margin-bottom: 0.5rem;
       }
+      .user-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      .user-stat-tile {
+        background: #fff;
+        border-radius: 12px;
+        padding: 1.2rem 1rem;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        border: 1px solid #f0f0f0;
+      }
+      .user-stat-tile.member-since {
+        background: #f0f9ff;
+        border-color: #e0f2fe;
+      }
+      .user-stat-tile.member-since .user-stat-label {
+        color: #0369a1;
+      }
+      .user-stat-tile.member-since .user-stat-value {
+        color: #0c4a6e;
+      }
+      .user-stat-tile.sober-since {
+        background: #f0fdf4;
+        border-color: #dcfce7;
+      }
+      .user-stat-tile.sober-since .user-stat-label {
+        color: #16a34a;
+      }
+      .user-stat-tile.sober-since .user-stat-value {
+        color: #15803d;
+      }
+      .user-stat-tile.days-sober {
+        background: #fef3c7;
+        border-color: #fde68a;
+        position: relative;
+        overflow: hidden;
+      }
+      .user-stat-tile.days-sober .user-stat-label {
+        color: #d97706;
+      }
+      .user-stat-tile.days-sober .user-stat-value {
+        color: #b45309;
+      }
+      
+      .user-stat-tile.days-sober::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 12px;
+        padding: 2px;
+        background: linear-gradient(45deg, #ff6b35, #f7931e, #ffd23f, #ff6b35);
+        background-size: 400% 400%;
+        animation: flameBorder 3s ease-in-out infinite;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+      }
+      
+      @keyframes flameBorder {
+        0% {
+          background-position: 0% 50%;
+        }
+        25% {
+          background-position: 100% 50%;
+        }
+        50% {
+          background-position: 100% 100%;
+        }
+        75% {
+          background-position: 0% 100%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .user-stat-label {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #6b7280;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      .user-stat-value {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #2a3a4d;
+        line-height: 1.3;
+      }
       .map-container {
         height: 200px;
       }
@@ -271,10 +421,119 @@ const typeToClass: Record<string, string> = {
         .meeting-types {
           gap: 0.3rem;
         }
+        .user-stats-grid {
+          grid-template-columns: 1fr;
+          gap: 0.8rem;
+        }
+        .user-stat-tile {
+          padding: 1rem 0.8rem;
+        }
       }
     </style>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+      .app-dialog-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+      }
+      .app-dialog-overlay.show {
+        opacity: 1;
+        visibility: visible;
+      }
+      .app-dialog {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        max-width: 400px;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        transform: scale(0.9);
+        transition: transform 0.3s;
+      }
+      .app-dialog.show {
+        transform: scale(1);
+      }
+      .app-dialog h2 {
+        margin: 0 0 1rem 0;
+        font-size: 1.5rem;
+        color: #2a3a4d;
+      }
+      .app-dialog p {
+        margin: 0 0 1.5rem 0;
+        color: #6b7280;
+        line-height: 1.5;
+      }
+      .app-dialog-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .app-dialog-btn {
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      .app-dialog-btn-primary {
+        background: #22c55e;
+        color: white;
+      }
+      .app-dialog-btn-primary:hover {
+        background: #16a34a;
+      }
+      .app-dialog-btn-secondary {
+        background: #2563eb;
+        color: white;
+      }
+      .app-dialog-btn-secondary:hover {
+        background: #1d4ed8;
+      }
+      .app-dialog-btn-dismiss {
+        background: #f3f4f6;
+        color: #6b7280;
+      }
+      .app-dialog-btn-dismiss:hover {
+        background: #e5e7eb;
+      }
+      .custom-flex {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .app-store-text {
+        margin-top: 0.2rem;
+      }
+      .margin-bottom-1 {
+        margin-bottom: 1rem;
+      }
+      @media (max-width: 480px) {
+        .app-dialog {
+          padding: 1.5rem;
+          margin: 1rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -291,7 +550,7 @@ const typeToClass: Record<string, string> = {
           </div>
         </div>
       </div>
-      <div class="header-subtitle">{userName} attended this meeting on {attendanceDate}</div>
+      <div class="header-subtitle">{userName} attended this meeting on {formatAttendanceDate(attendanceDate)}</div>
       {error ? (
         <div class="section-card" style="color: red;">Error: {error}</div>
       ) : data ? (
@@ -301,6 +560,28 @@ const typeToClass: Record<string, string> = {
               <span class={`type-badge ${typeToClass[type] || ''}`}>{type}</span>
             ))}
           </div>
+          {(userCreatedAt || userSoberDate) && (
+            <div class="user-stats-grid">
+                {userSoberDate && calculateSoberTime(userSoberDate) && (
+                 <div class="user-stat-tile days-sober">
+                   <span class="user-stat-label">Sober Time</span>
+                   <div class="user-stat-value">{calculateSoberTime(userSoberDate)} 🔥</div>
+                 </div>
+               )}
+              {userCreatedAt && (
+                <div class="user-stat-tile member-since">
+                  <span class="user-stat-label">Joined MyMeetings</span>
+                  <div class="user-stat-value">{formatAttendanceDate(userCreatedAt)}</div>
+                </div>
+              )}
+              {userSoberDate && (
+                <div class="user-stat-tile sober-since">
+                  <span class="user-stat-label">Sober Since</span>
+                  <div class="user-stat-value">{formatAttendanceDate(userSoberDate)}</div>
+                </div>
+              )}
+            </div>
+          )}
           <div class="section-card">
             <div class="section-title">General Information</div>
             {meetingLocation || meetingAddress ? (
@@ -313,6 +594,12 @@ const typeToClass: Record<string, string> = {
               <span class="info-label">Every {dayOfWeek(data.Meeting?.day)} at {formatTime(meetingTime)} to {formatTime(meetingEndTime)}</span>
             </div>
             <div class="button-row">
+                <a class="btn" href="https://apps.apple.com/app/mymeeting" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+                  Join {userName}
+                </a>
               {latitude && longitude ? (
                 <a class="btn" href={`http://maps.apple.com/?daddr=${latitude},${longitude}`} target="_blank" rel="noopener noreferrer">
                   <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 10.5a8.38 8.38 0 01-1.9 5.4c-1.5 2-3.6 3.1-6.1 3.1s-4.6-1.1-6.1-3.1A8.38 8.38 0 013 10.5C3 6.4 6.4 3 10.5 3S18 6.4 18 10.5z"></path><circle cx="10.5" cy="10.5" r="2.5"></circle></svg>
@@ -347,6 +634,96 @@ const typeToClass: Record<string, string> = {
         <div class="section-card">Loading...</div>
       )}
     </div>
+    
+    <!-- App Dialog -->
+    <div id="appDialog" class="app-dialog-overlay">
+      <div class="app-dialog">
+        <h2>Open in MyMeeting App</h2>
+        <p>Get the best experience by viewing this meeting attendance in the MyMeeting app.</p>
+        <div class="app-dialog-buttons">
+          <a href="mymeeting://meeting/{hash}" class="app-dialog-btn app-dialog-btn-primary">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            Open in App
+          </a>
+          <a href="https://apps.apple.com/app/mymeeting" target="_blank" rel="noopener noreferrer" class="app-dialog-btn app-dialog-btn-secondary">
+            <div class="custom-flex">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+                <span class="app-store-text">Download from App Store</span>
+            </div>
+          </a>
+          <button id="dismissDialog" class="app-dialog-btn app-dialog-btn-dismiss">
+            Continue on Website
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // App Dialog Logic
+      document.addEventListener('DOMContentLoaded', function() {
+        const dialog = document.getElementById('appDialog');
+        const dismissBtn = document.getElementById('dismissDialog');
+        
+        if (!dialog || !dismissBtn) return;
+        
+        // Show dialog every time the page loads
+        setTimeout(() => {
+          const dialogContent = dialog.querySelector('.app-dialog');
+          if (dialogContent) {
+            dialog.classList.add('show');
+            dialogContent.classList.add('show');
+          }
+        }, 1000);
+        
+        // Dismiss dialog
+        dismissBtn.addEventListener('click', function() {
+          const dialogContent = dialog.querySelector('.app-dialog');
+          if (dialogContent) {
+            dialog.classList.remove('show');
+            dialogContent.classList.remove('show');
+          }
+        });
+        
+        // Close dialog when clicking overlay
+        dialog.addEventListener('click', function(e) {
+          if (e.target === dialog) {
+            const dialogContent = dialog.querySelector('.app-dialog');
+            if (dialogContent) {
+              dialog.classList.remove('show');
+              dialogContent.classList.remove('show');
+            }
+          }
+        });
+        
+        // Handle app link clicks
+        const appLink = dialog.querySelector('a[href^="mymeeting://"]') as HTMLAnchorElement;
+        if (appLink) {
+          appLink.addEventListener('click', function(e) {
+            // Try to open the app
+            const appUrl = this.href;
+            const fallbackUrl = 'https://apps.apple.com/app/mymeeting';
+            
+            // Set a timeout to redirect to App Store if app doesn't open
+            const timeout = setTimeout(() => {
+              window.location.href = fallbackUrl;
+            }, 2000);
+            
+            // Try to open the app
+            window.location.href = appUrl;
+            
+            // Clear timeout if user stays on page (app opened)
+            window.addEventListener('focus', function() {
+              clearTimeout(timeout);
+            }, { once: true });
+          });
+        }
+      });
+    </script>
+    
           {latitude && longitude && (
         <script>
           document.addEventListener('DOMContentLoaded', function() {
@@ -355,7 +732,6 @@ const typeToClass: Record<string, string> = {
             const lng = parseFloat(mapElement?.dataset.lng || '0');
             const meetingName = mapElement?.dataset.name || 'Meeting';
             const meetingLocation = mapElement?.dataset.location || 'Location';
-            console.log('within event listener', {lat, lng});
             const map = L.map('map').setView([lat, lng], 15);
             L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
               attribution: '© OpenStreetMap contributors, © CartoDB'
