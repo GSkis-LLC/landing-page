@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="renderer" content="webkit" /><title>您访问的页面不存在-字体天下</title><style>
+                body { background: #f2f2f2; text-align: center; font-family: "Arial", "Helvetica Neue", "微软雅黑", "Microsoft YaHei", "Hiragino Sans GB", "sans-serif"; }
+                body, h1, p { margin: 0; padding: 0; }
+                h1 { padding-top: 50px; font-size: 200px; color: #777; font-weight: normal; line-height: 220px; }
+                h2 { font-size: 20px; color: #777; line-height: 36px; font-weight: normal; }
+                p { font-size: 14px; color: #777; line-height: 32px; }
+            </style></head><body><h1>404</h1><h2>您访问的页面不存在</h2><p id="tip"><span id="sec">5</span>秒后跳转至首页</p><script>
+                var seconds = 5;
+                var timer = function() {
+                    seconds = seconds - 1;
+                    if (seconds <= 0) {
+                        document.getElementById('tip').innerHTML = '正在跳转至首页';
+                        window.location.href = '/';
+                    } else {
+                        document.getElementById('sec').innerHTML = seconds;
+                        window.setTimeout(timer, 1000);
+                    }
+                };
+                window.setTimeout(timer, 1000);
+            </script></body></html>
