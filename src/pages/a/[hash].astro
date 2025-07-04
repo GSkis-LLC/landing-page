@@ -1,0 +1,370 @@
+---
+export const prerender = false;
+const { hash } = Astro.params;
+
+let data = null;
+let error = null;
+
+try {
+  const res = await fetch(`https://bottoms-down-api-b19b718cae3b.herokuapp.com/api/meeting-attendances/hash/${hash}`);
+  if (!res.ok) throw new Error('Not found');
+  data = await res.json();
+} catch (e) {
+  error = typeof e === 'object' && e && 'message' in e ? (e.message as string) : String(e);
+}
+
+const userName = data?.User?.username || 'Someone';
+const meetingName = data?.Meeting?.name || 'a meeting';
+const meetingLocation = data?.Meeting?.location || '';
+const meetingAddress = data?.Meeting?.formatted_address || '';
+const attendanceDate = data?.attendanceDate || '';
+const locationNotes = data?.Meeting?.location_notes || '';
+const meetingDay = data?.Meeting?.day || '';
+const meetingTime = data?.Meeting?.time || '';
+const meetingEndTime = data?.Meeting?.end_time || '';
+const meetingTypes = data?.Meeting?.types || '';
+const meetingUrl = data?.Meeting?.url || '';
+const notes = data?.Meeting?.notes || '';
+const groupNotes = data?.Meeting?.group_notes || '';
+const latitude = data?.Meeting?.latitude;
+const longitude = data?.Meeting?.longitude;
+
+const title = `${userName} went to ${meetingName}`;
+const description = `Verified meeting attendance to ${meetingLocation || meetingAddress} on ${attendanceDate}.`;
+
+function formatTime(t: any) {
+  if (!t) return '';
+  const [h, m] = t.split(":");
+  const hour = parseInt(h, 10);
+  const ampm = hour >= 12 ? 'PM' : 'AM';
+  const hour12 = hour % 12 === 0 ? 12 : hour % 12;
+  return `${hour12}:${m} ${ampm}`;
+}
+
+function dayOfWeek(num: any) {
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  return days[num] || '';
+}
+
+// Map meeting type to CSS class
+const typeToClass: Record<string, string> = {
+  'Beginner': 'type-badge-beginner',
+  'Big Book': 'type-badge-bigbook',
+  'Closed': 'type-badge-closed',
+  'Discussion': 'type-badge-discussion',
+  'English': 'type-badge-english',
+  'Grapevine': 'type-badge-grapevine',
+  'Literature': 'type-badge-literature',
+  'Men': 'type-badge-men',
+  'Open': 'type-badge-open',
+  'Step': 'type-badge-step',
+  'Speaker': 'type-badge-speaker',
+  'Step/Tradition': 'type-badge-steptradition',
+  'Tradition': 'type-badge-tradition',
+  'Women': 'type-badge-women',
+  'Wheelchair Access': 'type-badge-wheelchair',
+  'Young People': 'type-badge-youngpeople',
+};
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`https://gskis.com/a/${hash}`} />
+    <meta property="og:image" content="https://gskis.com/og-meeting-attendance.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://gskis.com/og-meeting-attendance.png" />
+    <style>
+      @font-face {
+        font-family: 'Atkinson Hyperlegible';
+        src: url('/fonts/AtkinsonHyperlegible-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      html, body {
+        font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f5f6fa;
+        color: #222;
+      }
+      .container {
+        max-width: 600px;
+        margin: 2.5rem auto 0 auto;
+        padding: 0 1.2rem 2rem 1.2rem;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: .5rem;
+        position: relative;
+      }
+      .header-title {
+        font-size: 2rem;
+        font-weight: 700;
+        flex: 1;
+        line-height: 1.2;
+      }
+      .header-subtitle {
+        font-size: 1.1rem;
+        color: #6b7280;
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+      }
+      .verified-badge {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+      }
+      .verified-circle {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #22c55e;
+        box-shadow: 0 0 12px 2px #39ff14, 0 0 2px #39ff14;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 1.3rem;
+        cursor: pointer;
+        transition: box-shadow 0.2s;
+      }
+      .verified-circle:hover + .verified-tooltip,
+      .verified-badge:focus-within .verified-tooltip {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .verified-tooltip {
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 120%;
+        background: #22c55e;
+        color: #fff;
+        padding: 0.6em 1em;
+        border-radius: 8px;
+        font-size: 0.98rem;
+        white-space: pre-line;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+        z-index: 10;
+        transition: opacity 0.18s;
+        min-width: 220px;
+      }
+      .verified-badge:hover .verified-tooltip,
+      .verified-badge:focus-within .verified-tooltip {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .meeting-types {
+        margin: 0.5rem 0 1.5rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .type-badge {
+        color: #2a3a4d;
+        font-size: 0.95rem;
+        padding: 0.25em 0.8em;
+        border-radius: 8px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        background: #e0e7ef;
+      }
+      .type-badge-beginner { background: rgba(34,197,94,0.3); color: #22c55e; } /* green */
+      .type-badge-bigbook { background: rgba(20,184,166,0.3); color: #14b8a6; } /* teal */
+      .type-badge-closed { background: rgba(239,68,68,0.3); color: #ef4444; } /* red */
+      .type-badge-discussion { background: rgba(251,146,60,0.3); color: #fb923c; } /* orange */
+      .type-badge-english, .type-badge-grapevine, .type-badge-literature, .type-badge-step, .type-badge-steptradition, .type-badge-tradition, .type-badge-wheelchair { background: rgba(209,213,219,0.3); color: #222; } /* systemGray3 */
+      .type-badge-men { background: rgba(37,99,235,0.3); color: #2563eb; } /* blue */
+      .type-badge-open { background: rgba(6,182,212,0.3); color: #06b6d4; } /* cyan */
+      .type-badge-speaker { background: rgba(153,246,228,0.3); color: #14b8a6; } /* mint, use teal for text for contrast */
+      .type-badge-women { background: rgba(236,72,153,0.3); color: #ec4899; } /* pink */
+      .type-badge-youngpeople { background: rgba(253,224,71,0.3); color: #fde047; } /* yellow */
+      .section-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        padding: 1.3rem 1.2rem 1.1rem 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+      .section-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.7rem;
+        color: #2a3a4d;
+      }
+      .info-row {
+        margin-bottom: 0.5rem;
+        font-size: 1.02rem;
+      }
+      .info-label {
+        font-weight: 500;
+        color: #4a5a6a;
+      }
+      .button-row {
+        display: flex;
+        gap: 0.8rem;
+        margin-top: 1.1rem;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4em;
+        background: #f0f6ff;
+        color: #2563eb;
+        border: 1px solid #2563eb;
+        border-radius: 8px;
+        padding: 0.45em 1.1em;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background 0.15s, color 0.15s;
+      }
+      .btn:hover {
+        background: #2563eb;
+        color: #fff;
+      }
+      .notes-section {
+        margin-top: 1.2rem;
+      }
+      .notes-label {
+        font-weight: 600;
+        color: #2a3a4d;
+        margin-bottom: 0.4rem;
+        display: block;
+      }
+      .notes-content {
+        color: #444;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .map-container {
+        height: 200px;
+      }
+      @media (max-width: 700px) {
+        .container {
+          max-width: 100vw;
+          padding: 10px;
+        }
+        .header-title {
+          font-size: 1.3rem;
+        }
+        .section-card {
+          padding: 1rem 0.7rem 0.9rem 0.7rem;
+          margin-bottom: 1rem;
+        }
+        .meeting-types {
+          gap: 0.3rem;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header-title">{meetingName}</div>
+        <div class="verified-badge" tabindex="0">
+          <div class="verified-circle">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 10.5L9 14L15 7" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="verified-tooltip">
+            {userName} was verified to be at this meeting by the MyMeeting app
+          </div>
+        </div>
+      </div>
+      <div class="header-subtitle">{userName} attended this meeting on {attendanceDate}</div>
+      {error ? (
+        <div class="section-card" style="color: red;">Error: {error}</div>
+      ) : data ? (
+        <>
+          <div class="meeting-types">
+            {meetingTypes.split(',').map((type: any) => type.trim()).filter(Boolean).map((type: any) => (
+              <span class={`type-badge ${typeToClass[type] || ''}`}>{type}</span>
+            ))}
+          </div>
+          <div class="section-card">
+            <div class="section-title">General Information</div>
+            {meetingLocation || meetingAddress ? (
+              <div class="info-row"><span class="info-label">Address:</span> {meetingLocation}{meetingLocation && meetingAddress ? ' · ' : ''}{meetingAddress}</div>
+            ) : null}
+            {locationNotes ? (
+              <div class="info-row"><span class="info-label">Location Notes:</span> {locationNotes}</div>
+            ) : null}
+            <div class="info-row">
+              <span class="info-label">Every {dayOfWeek(data.Meeting?.day)} at {formatTime(meetingTime)} to {formatTime(meetingEndTime)}</span>
+            </div>
+            <div class="button-row">
+              {latitude && longitude ? (
+                <a class="btn" href={`http://maps.apple.com/?daddr=${latitude},${longitude}`} target="_blank" rel="noopener noreferrer">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 10.5a8.38 8.38 0 01-1.9 5.4c-1.5 2-3.6 3.1-6.1 3.1s-4.6-1.1-6.1-3.1A8.38 8.38 0 013 10.5C3 6.4 6.4 3 10.5 3S18 6.4 18 10.5z"></path><circle cx="10.5" cy="10.5" r="2.5"></circle></svg>
+                  Directions
+                </a>
+              ) : null}
+              {meetingUrl ? (
+                <a class="btn" href={meetingUrl} target="_blank" rel="noopener noreferrer">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 010 20"></path></svg>
+                  More Info
+                </a>
+              ) : null}
+            </div>
+          </div>
+          {(notes || groupNotes) && (
+            <div class="section-card notes-section">
+              <span class="notes-label">Notes</span>
+              {notes && <div class="notes-content">{notes}</div>}
+              {groupNotes && <div class="notes-content">Group Notes: {groupNotes}</div>}
+            </div>
+          )}
+          {latitude && longitude && (
+            <div class="section-card">
+              <div class="section-title">Location</div>
+              <div class="map-container">
+                <div id="map" data-lat={latitude} data-lng={longitude} data-name={meetingName} data-location={meetingLocation || meetingAddress} style="width: 100%; height: 200px;"></div>
+              </div>
+            </div>
+          )}
+        </>
+      ) : (
+        <div class="section-card">Loading...</div>
+      )}
+    </div>
+          {latitude && longitude && (
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const mapElement = document.getElementById('map');
+            const lat = parseFloat(mapElement?.dataset.lat || '0');
+            const lng = parseFloat(mapElement?.dataset.lng || '0');
+            const meetingName = mapElement?.dataset.name || 'Meeting';
+            const meetingLocation = mapElement?.dataset.location || 'Location';
+            console.log('within event listener', {lat, lng});
+            const map = L.map('map').setView([lat, lng], 15);
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+              attribution: '© OpenStreetMap contributors, © CartoDB'
+            }).addTo(map);
+            L.marker([lat, lng])
+              .bindPopup(`<strong>${meetingName}</strong><br>${meetingLocation}`)
+              .addTo(map);
+          });
+        </script>
+      )}
+  </body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TODO_ADD_APP_ID.com.gskis.mymeetings",
+        "paths": [ "/a/*" ]
+      }
+    ]
+  }
+} 
