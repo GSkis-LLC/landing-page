@@ -25,6 +25,7 @@ const meetingEndTime = data?.Meeting?.end_time || '';
 const meetingTypes = data?.Meeting?.types || '';
 const meetingUrl = data?.Meeting?.url || '';
 const notes = data?.Meeting?.notes || '';
+const personalNotes = data?.notes || '';
 const groupNotes = data?.Meeting?.group_notes || '';
 const latitude = data?.Meeting?.latitude;
 const longitude = data?.Meeting?.longitude;
@@ -619,6 +620,12 @@ const typeToClass: Record<string, string> = {
               ) : null}
             </div>
           </div>
+          {personalNotes && (
+            <div class="section-card">
+              <div class="section-title">{userName}'s Notes</div>
+              <div class="notes-content">{personalNotes}</div>
+            </div>
+          )}
           {(notes || groupNotes) && (
             <div class="section-card notes-section">
               <span class="notes-label">Notes</span>
