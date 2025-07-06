@@ -6,7 +6,7 @@ let data = null;
 let error = null;
 
 try {
-  const res = await fetch(`http://api.gskis.com/api/meeting-attendances/hash/${hash}`);
+  const res = await fetch(`https://api.gskis.com/api/meeting-attendances/hash/${hash}`);
   if (!res.ok) throw new Error('Not found');
   data = await res.json();
 } catch (e) {
