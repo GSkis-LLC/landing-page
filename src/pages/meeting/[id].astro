@@ -1,40 +1,34 @@
 ---
 export const prerender = false;
-const { hash } = Astro.params;
+const { id } = Astro.params;
 
 let data = null;
 let error = null;
 
 try {
-  const res = await fetch(`https://my-meetings-api-a469c050e4a0.herokuapp.com/api/meeting-attendances/hash/${hash}`);
+  const res = await fetch(`https://my-meetings-api-a469c050e4a0.herokuapp.com/api/meetings/${id}`);
   if (!res.ok) throw new Error('Not found');
   data = await res.json();
 } catch (e) {
   error = typeof e === 'object' && e && 'message' in e ? (e.message as string) : String(e);
 }
 
-const userName = data?.User?.username || 'Someone';
-const meetingName = data?.Meeting?.name || 'a meeting';
-const meetingLocation = data?.Meeting?.location || '';
-const meetingAddress = data?.Meeting?.formatted_address || '';
-const attendanceDate = data?.attendanceDate || '';
-const locationNotes = data?.Meeting?.location_notes || '';
-const meetingDay = data?.Meeting?.day || '';
-const meetingTime = data?.Meeting?.time || '';
-const meetingEndTime = data?.Meeting?.end_time || '';
-const meetingTypes = data?.Meeting?.types || '';
-const meetingUrl = data?.Meeting?.url || '';
-const notes = data?.Meeting?.notes || '';
-const groupNotes = data?.Meeting?.group_notes || '';
-const latitude = data?.Meeting?.latitude;
-const longitude = data?.Meeting?.longitude;
+const meetingName = data?.name || 'Meeting';
+const meetingLocation = data?.location || '';
+const meetingAddress = data?.formatted_address || '';
+const locationNotes = data?.location_notes || '';
+const meetingDay = data?.day || '';
+const meetingTime = data?.time || '';
+const meetingEndTime = data?.end_time || '';
+const meetingTypes = data?.types || '';
+const meetingUrl = data?.url || '';
+const notes = data?.notes || '';
+const groupNotes = data?.group_notes || '';
+const latitude = data?.latitude;
+const longitude = data?.longitude;
 
-// User data
-const userCreatedAt = data?.User?.createdAt || '';
-const userSoberDate = data?.User?.soberDate || '';
-
-const title = `${userName} went to ${meetingName}`;
-const description = `Verified meeting attendance to ${meetingLocation || meetingAddress} on ${attendanceDate}.`;
+const title = meetingName;
+const description = `Meeting details for ${meetingLocation || meetingAddress}.`;
 
 function formatTime(t: any) {
   if (!t) return '';
@@ -48,57 +42,6 @@ function formatTime(t: any) {
 function dayOfWeek(num: any) {
   const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   return days[num] || '';
-}
-
-function formatAttendanceDate(dateString: string) {
-  if (!dateString) return '';
-  const date = new Date(dateString);
-  if (isNaN(date.getTime())) return dateString; // Return original if invalid date
-  
-  const options: Intl.DateTimeFormatOptions = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  };
-  
-  return date.toLocaleDateString('en-US', options);
-}
-
-function calculateSoberTime(dateString: string) {
-  if (!dateString) return null;
-  const date = new Date(dateString);
-  if (isNaN(date.getTime())) return null;
-  
-  const today = new Date();
-  const diffTime = Math.abs(today.getTime() - date.getTime());
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  
-  const years = Math.floor(diffDays / 365);
-  const months = Math.floor((diffDays % 365) / 30);
-  const days = diffDays % 30;
-  
-  if (years > 0) {
-    if (months > 0) {
-      const yearText = years === 1 ? 'year' : 'years';
-      const monthText = months === 1 ? 'month' : 'months';
-      return `${years} ${yearText} ${months} ${monthText}`;
-    } else {
-      const yearText = years === 1 ? 'year' : 'years';
-      return `${years} ${yearText}`;
-    }
-  } else if (months > 0) {
-    if (days > 0) {
-      const monthText = months === 1 ? 'month' : 'months';
-      const dayText = days === 1 ? 'day' : 'days';
-      return `${months} ${monthText} ${days} ${dayText}`;
-    } else {
-      const monthText = months === 1 ? 'month' : 'months';
-      return `${months} ${monthText}`;
-    }
-  } else {
-    const dayText = days === 1 ? 'day' : 'days';
-    return `${days} ${dayText}`;
-  }
 }
 
 // Map meeting type to CSS class
@@ -131,7 +74,7 @@ const typeToClass: Record<string, string> = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={`https://gskis.com/a/${hash}`} />
+    <meta property="og:url" content={`https://gskis.com/meeting/${id}`} />
     <meta property="og:image" content="https://gskis.com/og-meeting-attendance.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -177,53 +120,6 @@ const typeToClass: Record<string, string> = {
         color: #6b7280;
         margin-bottom: 1.5rem;
         font-weight: 400;
-      }
-      .verified-badge {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        position: relative;
-      }
-      .verified-circle {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background: #22c55e;
-        box-shadow: 0 0 12px 2px #39ff14, 0 0 2px #39ff14;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        font-size: 1.3rem;
-        cursor: pointer;
-        transition: box-shadow 0.2s;
-      }
-      .verified-circle:hover + .verified-tooltip,
-      .verified-badge:focus-within .verified-tooltip {
-        opacity: 1;
-        pointer-events: auto;
-      }
-      .verified-tooltip {
-        opacity: 0;
-        pointer-events: none;
-        position: absolute;
-        right: 0;
-        top: 120%;
-        background: #22c55e;
-        color: #fff;
-        padding: 0.6em 1em;
-        border-radius: 8px;
-        font-size: 0.98rem;
-        white-space: pre-line;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.13);
-        z-index: 10;
-        transition: opacity 0.18s;
-        min-width: 220px;
-      }
-      .verified-badge:hover .verified-tooltip,
-      .verified-badge:focus-within .verified-tooltip {
-        opacity: 1;
-        pointer-events: auto;
       }
       .meeting-types {
         margin: 0.5rem 0 1.5rem 0;
@@ -309,101 +205,6 @@ const typeToClass: Record<string, string> = {
         font-size: 1rem;
         margin-bottom: 0.5rem;
       }
-      .user-stats-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-        margin-bottom: 1.5rem;
-      }
-      .user-stat-tile {
-        background: #fff;
-        border-radius: 12px;
-        padding: 1.2rem 1rem;
-        text-align: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-        border: 1px solid #f0f0f0;
-      }
-      .user-stat-tile.member-since {
-        background: #f0f9ff;
-        border-color: #e0f2fe;
-      }
-      .user-stat-tile.member-since .user-stat-label {
-        color: #0369a1;
-      }
-      .user-stat-tile.member-since .user-stat-value {
-        color: #0c4a6e;
-      }
-      .user-stat-tile.sober-since {
-        background: #f0fdf4;
-        border-color: #dcfce7;
-      }
-      .user-stat-tile.sober-since .user-stat-label {
-        color: #16a34a;
-      }
-      .user-stat-tile.sober-since .user-stat-value {
-        color: #15803d;
-      }
-      .user-stat-tile.days-sober {
-        background: #fef3c7;
-        border-color: #fde68a;
-        position: relative;
-        overflow: hidden;
-      }
-      .user-stat-tile.days-sober .user-stat-label {
-        color: #d97706;
-      }
-      .user-stat-tile.days-sober .user-stat-value {
-        color: #b45309;
-      }
-      
-      .user-stat-tile.days-sober::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 12px;
-        padding: 2px;
-        background: linear-gradient(45deg, #ff6b35, #f7931e, #ffd23f, #ff6b35);
-        background-size: 400% 400%;
-        animation: flameBorder 3s ease-in-out infinite;
-        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        mask-composite: exclude;
-        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-      }
-      
-      @keyframes flameBorder {
-        0% {
-          background-position: 0% 50%;
-        }
-        25% {
-          background-position: 100% 50%;
-        }
-        50% {
-          background-position: 100% 100%;
-        }
-        75% {
-          background-position: 0% 100%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-      .user-stat-label {
-        font-size: 0.9rem;
-        font-weight: 500;
-        color: #6b7280;
-        margin-bottom: 0.5rem;
-        display: block;
-      }
-      .user-stat-value {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: #2a3a4d;
-        line-height: 1.3;
-      }
       .map-container {
         height: 200px;
       }
@@ -425,13 +226,6 @@ const typeToClass: Record<string, string> = {
         }
         .meeting-types {
           gap: 0.3rem;
-        }
-        .user-stats-grid {
-          grid-template-columns: 1fr;
-          gap: 0.8rem;
-        }
-        .user-stat-tile {
-          padding: 1rem 0.8rem;
         }
       }
     </style>
@@ -544,18 +338,7 @@ const typeToClass: Record<string, string> = {
     <div class="container">
       <div class="header">
         <div class="header-title">{meetingName}</div>
-        <div class="verified-badge" tabindex="0">
-          <div class="verified-circle">
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 10.5L9 14L15 7" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="verified-tooltip">
-            {userName} was verified to be at this meeting by the MyMeeting app
-          </div>
-        </div>
       </div>
-      <div class="header-subtitle">{userName} attended this meeting on {formatAttendanceDate(attendanceDate)}</div>
       {error ? (
         <div class="section-card" style="color: red;">Error: {error}</div>
       ) : data ? (
@@ -565,28 +348,6 @@ const typeToClass: Record<string, string> = {
               <span class={`type-badge ${typeToClass[type] || ''}`}>{type}</span>
             ))}
           </div>
-          {(userCreatedAt || userSoberDate) && (
-            <div class="user-stats-grid">
-                {userSoberDate && calculateSoberTime(userSoberDate) && (
-                 <div class="user-stat-tile days-sober">
-                   <span class="user-stat-label">Sober Time</span>
-                   <div class="user-stat-value">{calculateSoberTime(userSoberDate)} 🔥</div>
-                 </div>
-               )}
-              {userCreatedAt && (
-                <div class="user-stat-tile member-since">
-                  <span class="user-stat-label">Joined MyMeetings</span>
-                  <div class="user-stat-value">{formatAttendanceDate(userCreatedAt)}</div>
-                </div>
-              )}
-              {userSoberDate && (
-                <div class="user-stat-tile sober-since">
-                  <span class="user-stat-label">Sober Since</span>
-                  <div class="user-stat-value">{formatAttendanceDate(userSoberDate)}</div>
-                </div>
-              )}
-            </div>
-          )}
           <div class="section-card">
             <div class="section-title">General Information</div>
             {meetingLocation || meetingAddress ? (
@@ -596,14 +357,14 @@ const typeToClass: Record<string, string> = {
               <div class="info-row"><span class="info-label">Location Notes:</span> {locationNotes}</div>
             ) : null}
             <div class="info-row">
-              <span class="info-label">Every {dayOfWeek(data.Meeting?.day)} at {formatTime(meetingTime)} to {formatTime(meetingEndTime)}</span>
+              <span class="info-label">Every {dayOfWeek(data?.day)} at {formatTime(meetingTime)} to {formatTime(meetingEndTime)}</span>
             </div>
             <div class="button-row">
                 <a class="btn" href="https://apps.apple.com/app/mymeeting" target="_blank" rel="noopener noreferrer">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                 </svg>
-                  Join {userName}
+                  Download MyMeeting
                 </a>
               {latitude && longitude ? (
                 <a class="btn" href={`http://maps.apple.com/?daddr=${latitude},${longitude}`} target="_blank" rel="noopener noreferrer">
@@ -644,9 +405,9 @@ const typeToClass: Record<string, string> = {
     <div id="appDialog" class="app-dialog-overlay">
       <div class="app-dialog">
         <h2>Open in MyMeeting App</h2>
-        <p>Get the best experience by viewing this meeting attendance in the MyMeeting app.</p>
+        <p>Get the best experience by viewing this meeting in the MyMeeting app.</p>
         <div class="app-dialog-buttons">
-          <a href=`mymeetings://attendance/${hash}` class="app-dialog-btn app-dialog-btn-primary">
+          <a href={`mymeetings://meeting/${id}`} class="app-dialog-btn app-dialog-btn-primary">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
             </svg>
@@ -732,20 +493,30 @@ const typeToClass: Record<string, string> = {
           {latitude && longitude && (
         <script>
           document.addEventListener('DOMContentLoaded', function() {
-            const mapElement = document.getElementById('map');
-            const lat = parseFloat(mapElement?.dataset.lat || '0');
-            const lng = parseFloat(mapElement?.dataset.lng || '0');
-            const meetingName = mapElement?.dataset.name || 'Meeting';
-            const meetingLocation = mapElement?.dataset.location || 'Location';
-            const map = L.map('map').setView([lat, lng], 15);
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-              attribution: '© OpenStreetMap contributors, © CartoDB'
-            }).addTo(map);
-            L.marker([lat, lng])
-              .bindPopup(`<strong>${meetingName}</strong><br>${meetingLocation}`)
-              .addTo(map);
+            // Wait for Leaflet to be available
+            function initMap() {
+              if (typeof L === 'undefined') {
+                setTimeout(initMap, 100);
+                return;
+              }
+              
+              const mapElement = document.getElementById('map');
+              const lat = parseFloat(mapElement?.dataset.lat || '0');
+              const lng = parseFloat(mapElement?.dataset.lng || '0');
+              const meetingName = mapElement?.dataset.name || 'Meeting';
+              const meetingLocation = mapElement?.dataset.location || 'Location';
+              const map = L.map('map').setView([lat, lng], 15);
+              L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '© OpenStreetMap contributors, © CartoDB'
+              }).addTo(map);
+              L.marker([lat, lng])
+                .bindPopup(`<strong>${meetingName}</strong><br>${meetingLocation}`)
+                .addTo(map);
+            }
+            
+            initMap();
           });
         </script>
       )}
   </body>
-</html>
+</html> 
