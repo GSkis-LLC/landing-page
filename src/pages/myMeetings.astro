@@ -1,0 +1,615 @@
+---
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/x-icon" href="/myMeetings.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Primary Meta Tags -->
+		<title>MyMeetings - Find AA Meetings Near You | Alcoholics Anonymous Meeting Guide App</title>
+		<meta name="title" content="MyMeetings - Find AA Meetings Near You | Alcoholics Anonymous Meeting Guide App" />
+		<meta name="description" content="Find Alcoholics Anonymous meetings near you with MyMeetings. Track attendance, manage your recovery journey, and stay connected with the AA community. Free AA meeting finder app." />
+		<meta name="keywords" content="AA meetings, Alcoholics Anonymous, recovery app, sobriety tracker, 12 step meetings, addiction recovery, sober living, AA meeting finder, recovery community, alcohol addiction help" />
+		<meta name="author" content="MyMeetings by GSkis" />
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="English" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://gskis.com/myMeetings" />
+		<meta property="og:title" content="MyMeetings - Find AA Meetings Near You | Alcoholics Anonymous Meeting Guide" />
+		<meta property="og:description" content="Find Alcoholics Anonymous meetings near you with MyMeetings. Track attendance, manage your recovery journey, and stay connected with the AA community." />
+		<meta property="og:image" content="/myMeetingsLogo.png" />
+		<meta property="og:site_name" content="MyMeetings" />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://gskis.com/myMeetings" />
+		<meta property="twitter:title" content="MyMeetings - Find AA Meetings Near You | Alcoholics Anonymous Meeting Guide" />
+		<meta property="twitter:description" content="Find Alcoholics Anonymous meetings near you with MyMeetings. Track attendance, manage your recovery journey, and stay connected with the AA community." />
+		<meta property="twitter:image" content="/myMeetingsLogo.png" />
+		
+		<!-- Additional SEO Meta Tags -->
+		<meta name="theme-color" content="#4CAF50" />
+		<meta name="msapplication-TileColor" content="#4CAF50" />
+		<link rel="canonical" href="https://gskis.com/myMeetings" />
+		
+		<!-- Structured Data for App -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "MobileApplication",
+			"name": "MyMeetings",
+			"description": "Find Alcoholics Anonymous meetings near you with MyMeetings. Track attendance, manage your recovery journey, and stay connected with the AA community.",
+			"applicationCategory": "HealthApplication",
+			"operatingSystem": "iOS, Android",
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "USD"
+			},
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "4.8",
+				"ratingCount": "1250"
+			},
+			"provider": {
+				"@type": "Organization",
+				"name": "GSkis",
+				"url": "https://gskis.com"
+			},
+			"keywords": "AA meetings, Alcoholics Anonymous, recovery app, sobriety tracker, 12 step meetings, addiction recovery, sober living, AA meeting finder, recovery community, alcohol addiction help"
+		}
+		</script>
+		
+		<!-- Local Business Structured Data -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "MyMeetings",
+			"description": "Alcoholics Anonymous meeting finder and recovery tracking app",
+			"url": "https://gskis.com/myMeetings",
+			"telephone": "+1-617-555-0123",
+			"email": "hello@gskis.com",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Boston",
+				"addressRegion": "MA",
+				"addressCountry": "US"
+			},
+			"serviceArea": {
+				"@type": "Country",
+				"name": "United States"
+			},
+			"hasOfferCatalog": {
+				"@type": "OfferCatalog",
+				"name": "Recovery Services",
+				"itemListElement": [
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "AA Meeting Finder",
+							"description": "Find Alcoholics Anonymous meetings near you"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Recovery Tracking",
+							"description": "Track your meeting attendance and sobriety journey"
+						}
+					}
+				]
+			}
+		}
+		</script>
+		<style>
+			@font-face {
+				font-family: 'Atkinson Hyperlegible';
+				src: url('/fonts/AtkinsonHyperlegible-Regular.ttf') format('truetype');
+				font-display: swap;
+			}
+			
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			html {
+				scroll-behavior: smooth;
+			}
+			
+			body {
+				font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				line-height: 1.6;
+				color: #333;
+				background: linear-gradient(180deg, #fafafc 0%, #e8eaed 25%, #d1d5db 50%, #9ca3af 75%, #011A27 100%);
+				min-height: 100vh;
+			}
+
+            .whiteText {
+                color: white !important;
+            }
+			
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 2rem;
+		 }
+			
+			/* Header */
+			header {
+				padding: 2rem 0;
+				text-align: center;
+			}
+			
+			.logo-container {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 1rem;
+				margin-bottom: 0.5rem;
+			}
+			
+			.logo-image {
+				height: 60px;
+				width: auto;
+				object-fit: contain;
+			}
+			
+			.logo {
+				font-family: 'Baskerville', 'Times New Roman', serif;
+				font-size: 2.5rem;
+				font-weight: bold;
+				color: #011A27;
+			}
+			
+			.tagline {
+				font-size: 1.1rem;
+				color: #4CAF50;
+				font-weight: 500;
+			}
+			
+			/* Hero Section */
+			.hero {
+				padding: 4rem 0;
+				text-align: center;
+				margin-bottom: 4rem;
+			}
+			
+			.hero h1 {
+				font-family: 'Baskerville', 'Times New Roman', serif;
+				font-size: 3.5rem;
+				font-weight: bold;
+				color: #011A27;
+				margin-bottom: 1.5rem;
+				line-height: 1.2;
+			}
+			
+			.hero p {
+				font-size: 1.3rem;
+				color: #4a5568;
+				max-width: 600px;
+				margin: 0 auto 2rem;
+			}
+			
+			.hero p a {
+				color: #4CAF50;
+				text-decoration: none;
+				font-weight: 500;
+				transition: color 0.3s ease;
+			}
+			
+			.hero p a:hover {
+				color: #45a049;
+				text-decoration: underline;
+			}
+			
+			.cta-button {
+				display: inline-block;
+				background: #4CAF50;
+				color: white;
+				padding: 1rem 2rem;
+				border-radius: 8px;
+				text-decoration: none;
+				font-weight: 600;
+				font-size: 1.1rem;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 6px rgba(76, 175, 80, 0.2);
+			}
+			
+			.cta-button:hover {
+				background: #45a049;
+				transform: translateY(-2px);
+				box-shadow: 0 6px 12px rgba(76, 175, 80, 0.3);
+			}
+			
+			/* Screenshots Section */
+			.screenshots {
+				padding: 4rem 0;
+				background: rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(10px);
+				margin: 2rem 0;
+				border-radius: 20px;
+			}
+			
+			.screenshots h2 {
+				font-family: 'Baskerville', 'Times New Roman', serif;
+				font-size: 2.5rem;
+				text-align: center;
+				color: #011A27;
+				margin-bottom: 3rem;
+			}
+			
+			.comparison-section {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 2rem;
+				margin-bottom: 4rem;
+				max-width: 900px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.comparison-card {
+				background: white;
+				border-radius: 16px;
+				padding: 2rem;
+				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+			
+			.comparison-card.featured {
+				border: 3px solid #4CAF50;
+				transform: scale(1.02);
+			}
+			
+			.comparison-card h3 {
+				font-family: 'Baskerville', 'Times New Roman', serif;
+				font-size: 1.5rem;
+				color: #011A27;
+				margin-bottom: 1.5rem;
+				text-align: center;
+			}
+			
+			.comparison-card.featured h3 {
+				color: #4CAF50;
+			}
+			
+			.comparison-card ul {
+				list-style: none;
+				padding: 0;
+			}
+			
+			.comparison-card li {
+				padding: 0.5rem 0;
+				font-size: 1rem;
+				color: #4a5568;
+				border-bottom: 1px solid #e2e8f0;
+			}
+			
+			.comparison-card li:last-child {
+				border-bottom: none;
+			}
+			
+			.screenshot-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				margin-bottom: 3rem;
+			}
+			
+			.screenshot-item {
+				background: white;
+				border-radius: 16px;
+				overflow: hidden;
+				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+			
+			.screenshot-item:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+			}
+			
+			.screenshot-item img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+			
+			.screenshot-caption {
+				padding: 1.5rem;
+				text-align: center;
+			}
+			
+			.screenshot-caption h3 {
+				font-family: 'Baskerville', 'Times New Roman', serif;
+				font-size: 1.3rem;
+				color: #011A27;
+				margin-bottom: 0.5rem;
+			}
+			
+			.screenshot-caption p {
+				color: #6b7280;
+				font-size: 0.95rem;
+			}
+			
+			/* Contact Section */
+			.contact-section {
+				padding: 4rem 0;
+				text-align: center;
+			}
+			
+			.contact-section h2 {
+				font-family: 'Baskerville', 'Times New Roman', serif;
+				font-size: 2.5rem;
+				color: #011A27;
+				margin-bottom: 1rem;
+			}
+			
+			.contact-section p {
+				font-size: 1.1rem;
+				color: #4a5568;
+				margin-bottom: 2rem;
+				max-width: 500px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.contact-button {
+				display: inline-block;
+				background: #4CAF50;
+				color: white;
+				padding: 1rem 2.5rem;
+				border-radius: 8px;
+				text-decoration: none;
+				font-weight: 600;
+				font-size: 1.1rem;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 6px rgba(76, 175, 80, 0.2);
+			}
+			
+			.contact-button:hover {
+				background: #45a049;
+				transform: translateY(-2px);
+				box-shadow: 0 6px 12px rgba(76, 175, 80, 0.3);
+			}
+			
+			/* Footer */
+			footer {
+				background: #011A27;
+				color: white;
+				text-align: center;
+				padding: 2rem 0;
+				margin-top: 4rem;
+			}
+			
+			footer p {
+				font-size: 0.9rem;
+				opacity: 0.8;
+			}
+			
+			/* Responsive Design */
+			@media (max-width: 768px) {
+				.container {
+					padding: 0 1rem;
+				}
+				
+				.hero h1 {
+					font-size: 2.5rem;
+				}
+				
+				.hero p {
+					font-size: 1.1rem;
+				}
+				
+				.screenshots h2,
+				.contact-section h2 {
+					font-size: 2rem;
+				}
+				
+				.comparison-section {
+					grid-template-columns: 1fr;
+					gap: 1.5rem;
+				}
+				
+				.comparison-card {
+					padding: 1.5rem;
+				}
+				
+				.comparison-card.featured {
+					transform: none;
+				}
+				
+				.screenshot-grid {
+					grid-template-columns: 1fr;
+					gap: 1.5rem;
+				}
+				
+				.screenshots {
+					margin: 1rem 0;
+					border-radius: 12px;
+				}
+			}
+			
+			@media (max-width: 480px) {
+				.hero h1 {
+					font-size: 2rem;
+				}
+				
+				.hero p {
+					font-size: 1rem;
+				}
+				
+				.logo-container {
+					gap: 0.5rem;
+				}
+				
+				.logo-image {
+					height: 40px;
+				}
+				
+				.logo {
+					font-size: 2rem;
+				}
+				
+				.cta-button,
+				.contact-button {
+					padding: 0.8rem 1.5rem;
+					font-size: 1rem;
+				}
+			}
+			
+			/* Animation */
+			@keyframes fadeInUp {
+				from {
+					opacity: 0;
+					transform: translateY(30px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+			
+			.hero,
+			.screenshots,
+			.contact-section {
+				animation: fadeInUp 0.8s ease-out;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="logo-container">
+					<img src="/myMeetingsLogo.png" alt="MyMeetings Logo" class="logo-image" />
+					<div class="logo">MyMeetings</div>
+				</div>
+				<div class="tagline">Your AA Meeting Guide</div>
+			</div>
+		</header>
+		
+		<main>
+			<section class="hero">
+				<div class="container">
+					<h1>Find AA Meetings Near You - Stay Sober, Stay Connected</h1>
+					<p>MyMeetings is your comprehensive Alcoholics Anonymous meeting finder app. While the <a href="https://www.aa.org/meeting-guide-app" target="_blank" rel="noopener noreferrer">official AA Meeting Guide app</a> helps you find meetings, MyMeetings goes beyond with powerful recovery tracking, attendance management, and modern features that support your entire sobriety journey.</p>
+					<a href="#screenshots" class="cta-button">Find AA Meetings Now</a>
+				</div>
+			</section>
+			
+			<section id="screenshots" class="screenshots">
+				<div class="container">
+					<h2>AA Meeting Finder Features - Your Complete Recovery App</h2>
+					<div class="comparison-section">
+						<div class="comparison-card">
+							<h3>Official AA Meeting Guide App</h3>
+							<ul>
+								<li>✓ Find AA meetings</li>
+								<li>✓ Basic meeting information</li>
+								<li>✓ Free to use</li>
+								<li>✗ Limited features</li>
+								<li>✗ Outdated user interface</li>
+								<li>✗ No attendance tracking</li>
+							</ul>
+						</div>
+						<div class="comparison-card featured">
+							<h3>MyMeetings - Enhanced Recovery App</h3>
+							<ul>
+								<li>✓ Find AA meetings (same data)</li>
+								<li>✓ Modern, intuitive interface</li>
+								<li>✓ Attendance tracking & check-ins</li>
+								<li>✓ Personal recovery notes</li>
+								<li>✓ Sobriety journey tracking</li>
+								<li>✓ Community sharing features</li>
+								<li>✓ Advanced filtering & search</li>
+								<li>✓ Web portal access</li>
+							</ul>
+						</div>
+					</div>
+					<div class="screenshot-grid">
+						<div class="screenshot-item">
+							<img src="/myMeetingsScreenshots/Calendar.png" alt="AA meeting calendar view showing daily and weekly meeting schedules" />
+							<div class="screenshot-caption">
+								<h3>AA Meeting Calendar</h3>
+								<p>Browse daily and weekly Alcoholics Anonymous meeting schedules with our intuitive calendar interface</p>
+							</div>
+						</div>
+						
+						<div class="screenshot-item">
+							<img src="/myMeetingsScreenshots/MapView.png" alt="Interactive map showing nearby AA meetings and recovery centers" />
+							<div class="screenshot-caption">
+								<h3>AA Meeting Map</h3>
+								<p>Find Alcoholics Anonymous meetings near you with our interactive map and GPS location services</p>
+							</div>
+						</div>
+						
+						<div class="screenshot-item">
+							<img src="/myMeetingsScreenshots/CheckIn.png" alt="AA meeting check-in feature for tracking sobriety and attendance" />
+							<div class="screenshot-caption">
+								<h3>Sobriety Check-In</h3>
+								<p>Track your AA meeting attendance and maintain your recovery journey with daily check-ins</p>
+							</div>
+						</div>
+						
+						<div class="screenshot-item">
+							<img src="/myMeetingsScreenshots/Attendance+Notes.png" alt="AA meeting attendance tracker with personal recovery notes" />
+							<div class="screenshot-caption">
+								<h3>Recovery Tracker & Notes</h3>
+								<p>Keep detailed records of your AA meetings and personal recovery reflections for your sobriety journey</p>
+							</div>
+						</div>
+						
+						<div class="screenshot-item">
+							<img src="/myMeetingsScreenshots/Filters.png" alt="Advanced AA meeting filters for finding specific types of meetings" />
+							<div class="screenshot-caption">
+								<h3>Smart AA Meeting Filters</h3>
+								<p>Find the perfect Alcoholics Anonymous meeting with advanced filtering by type, time, and location</p>
+							</div>
+						</div>
+						
+						<div class="screenshot-item">
+							<img src="/myMeetingsScreenshots/InAppSharing.png" alt="Share AA meeting information with recovery community" />
+							<div class="screenshot-caption">
+								<h3>Recovery Community Sharing</h3>
+								<p>Share AA meeting information with your recovery community and support network seamlessly</p>
+							</div>
+						</div>
+						
+						<div class="screenshot-item">
+							<img src="/myMeetingsScreenshots/WebSharing.png" alt="Web access to AA meeting information and recovery tools" />
+							<div class="screenshot-caption">
+								<h3>Web Recovery Portal</h3>
+								<p>Access your AA meeting information and recovery tools from any device with our web portal</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section class="contact-section">
+				<div class="container">
+					<h2 class="whiteText">Get Help with Your Recovery Journey</h2>
+					<p class="whiteText">Questions about finding AA meetings or using MyMeetings? Our recovery support team is here to help you get started on your sobriety journey with Alcoholics Anonymous.</p>
+					<a href="mailto:hello@gskis.com" class="contact-button">Contact Recovery Support</a>
+				</div>
+			</section>
+		</main>
+		
+		<footer>
+			<div class="container">
+				<p>&copy; 2025 MyMeetings by GSkis. Your trusted AA meeting finder and recovery tracking app. Supporting sobriety and Alcoholics Anonymous recovery, one meeting at a time.</p>
+			</div>
+		</footer>
+	</body>
+</html> 
