@@ -180,7 +180,7 @@
 			
 			/* Hero Section */
 			.hero {
-				padding: 4rem 0;
+				padding: 1rem 0;
 				text-align: center;
 				margin-bottom: 4rem;
 			}
@@ -234,7 +234,7 @@
 			
 			/* Screenshots Section */
 			.screenshots {
-				padding: 4rem 0;
+				padding: 2rem 0;
 				background: rgba(255, 255, 255, 0.1);
 				backdrop-filter: blur(10px);
 				margin: 2rem 0;
@@ -345,7 +345,7 @@
 			
 			/* Contact Section */
 			.contact-section {
-				padding: 4rem 0;
+				padding: 1rem 0;
 				text-align: center;
 			}
 			
@@ -396,6 +396,24 @@
 			footer p {
 				font-size: 0.9rem;
 				opacity: 0.8;
+			}
+
+			.footer-links {
+				margin-top: 1rem;
+			}
+
+			.footer-links a {
+				color: white;
+				text-decoration: none;
+				margin: 0 0.5rem;
+				font-size: 0.9rem;
+				opacity: 0.8;
+				transition: opacity 0.2s ease-in-out;
+			}
+
+			.footer-links a:hover {
+				opacity: 1;
+				text-decoration: underline;
 			}
 			
 			/* Responsive Design */
@@ -530,6 +548,7 @@
 								<li>✓ Modern, intuitive interface</li>
 								<li>✓ Attendance tracking & check-ins</li>
 								<li>✓ Personal recovery notes</li>
+								<li>✓ Opt-in AI coaching and reflections</li>
 								<li>✓ Sobriety journey tracking</li>
 								<li>✓ Community sharing features</li>
 								<li>✓ Advanced filtering & search</li>
@@ -601,7 +620,9 @@
 				<div class="container">
 					<h2 class="whiteText">Need More Help with Your Recovery Journey?</h2>
 					<p class="whiteText">Visit Substance Abuse and Mental Health Administration website for additional support with addiction and substance abuse.<p>
-					<a href="https://www.samhsa.gov/" target="_blank" class="contact-button">Visit SAMHSA Site</a>
+					<div>
+						<a href="https://www.samhsa.gov/" target="_blank" class="contact-button">Visit SAMHSA Site</a>
+					</div>
 				</div>
 			</section>
 		</main>
@@ -609,7 +630,11 @@
 		<footer>
 			<div class="container">
 				<p>&copy; 2025 MyMeetings by GSkis. Your trusted AA meeting finder and recovery tracking app. Supporting sobriety and recovery, one meeting at a time.</p>
+				<div class="footer-links">
+					<a href="/myMeetings/privacyPolicy">Privacy Policy</a> |
+					<a href="/myMeetings/termsOfService">Terms of Service</a>
+				</div>
 			</div>
 		</footer>
 	</body>
-</html> 
+</html>
