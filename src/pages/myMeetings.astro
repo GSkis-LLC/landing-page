@@ -38,6 +38,20 @@
 		<meta name="msapplication-TileColor" content="#4CAF50" />
 		<link rel="canonical" href="https://gskis.com/myMeetings" />
 		
+		<!-- Mixpanel Analytics (Production Only) -->
+		<script>
+			if (window.location.hostname === 'gskis.com') {
+				(function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+				for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+				mixpanel.init('e4e1730e6b5ed64f603144153755ce2e', {debug: false, track_pageview: true, persistence: 'localStorage'});
+				mixpanel.track('Page View', {
+					page: 'myMeetings_landing',
+					url: window.location.href,
+					referrer: document.referrer
+				});
+			}
+		</script>
+		
 		<!-- Structured Data for App -->
 		<script type="application/ld+json">
 		{
@@ -166,7 +180,7 @@
 			}
 			
 			.logo {
-				font-family: 'Baskerville', 'Times New Roman', serif;
+				font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 				font-size: 2.5rem;
 				font-weight: bold;
 				color: #011A27;
@@ -186,12 +200,48 @@
 			}
 			
 			.hero h1 {
-				font-family: 'Baskerville', 'Times New Roman', serif;
+				font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 				font-size: 3.5rem;
 				font-weight: bold;
 				color: #011A27;
 				margin-bottom: 1.5rem;
 				line-height: 1.2;
+			}
+			
+			.highlight-word {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+				background-size: 200% 200%;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+				position: relative;
+				display: inline-block;
+				animation: gradientShift 3s ease-in-out infinite;
+			}
+			
+			.highlight-word::before {
+				content: '';
+				position: absolute;
+				top: -2px;
+				left: -4px;
+				right: -4px;
+				bottom: -2px;
+				background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+				border-radius: 8px;
+				opacity: 0.1;
+				z-index: -1;
+				filter: blur(8px);
+				animation: pulse 2s ease-in-out infinite alternate;
+			}
+			
+			@keyframes gradientShift {
+				0%, 100% { background-position: 0% 50%; }
+				50% { background-position: 100% 50%; }
+			}
+			
+			@keyframes pulse {
+				0% { opacity: 0.1; transform: scale(1); }
+				100% { opacity: 0.2; transform: scale(1.05); }
 			}
 			
 			.hero p {
@@ -214,22 +264,45 @@
 			}
 			
 			.cta-button {
-				display: inline-block;
-				background: #4CAF50;
+				display: inline-flex;
+				align-items: center;
+				gap: 1.2rem;
+				background: #000;
 				color: white;
-				padding: 1rem 2rem;
-				border-radius: 8px;
+				padding: 1.5rem 2.5rem;
+				border-radius: 12px;
 				text-decoration: none;
-				font-weight: 600;
-				font-size: 1.1rem;
+				font-weight: 500;
+				font-size: 1.2rem;
 				transition: all 0.3s ease;
-				box-shadow: 0 4px 6px rgba(76, 175, 80, 0.2);
+				box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+				border: 1px solid #333;
+				transform: scale(1.1);
+				margin: 1rem 0;
 			}
 			
 			.cta-button:hover {
-				background: #45a049;
-				transform: translateY(-2px);
-				box-shadow: 0 6px 12px rgba(76, 175, 80, 0.3);
+				background: #333;
+				transform: scale(1.15) translateY(-2px);
+				box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+			}
+			
+			.app-store-text {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				line-height: 1.2;
+			}
+			
+			.app-store-text .small {
+				font-size: 0.9rem;
+				opacity: 0.8;
+				font-weight: 400;
+			}
+			
+			.app-store-text .large {
+				font-size: 1.3rem;
+				font-weight: 600;
 			}
 			
 			/* Screenshots Section */
@@ -242,11 +315,11 @@
 			}
 			
 			.screenshots h2 {
-				font-family: 'Baskerville', 'Times New Roman', serif;
+				font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 				font-size: 2.5rem;
 				text-align: center;
 				color: #011A27;
-				margin-bottom: 3rem;
+				margin-bottom: 1rem;
 			}
 			
 			.comparison-section {
@@ -273,11 +346,21 @@
 			}
 			
 			.comparison-card h3 {
-				font-family: 'Baskerville', 'Times New Roman', serif;
+				font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 				font-size: 1.5rem;
 				color: #011A27;
 				margin-bottom: 1.5rem;
 				text-align: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 1rem;
+			}
+			
+			.comparison-card h3 img {
+				height: 40px;
+				width: auto;
+				object-fit: contain;
 			}
 			
 			.comparison-card.featured h3 {
@@ -332,7 +415,7 @@
 			}
 			
 			.screenshot-caption h3 {
-				font-family: 'Baskerville', 'Times New Roman', serif;
+				font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 				font-size: 1.3rem;
 				color: #011A27;
 				margin-bottom: 0.5rem;
@@ -350,7 +433,7 @@
 			}
 			
 			.contact-section h2 {
-				font-family: 'Baskerville', 'Times New Roman', serif;
+				font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 				font-size: 2.5rem;
 				color: #011A27;
 				margin-bottom: 1rem;
@@ -513,25 +596,35 @@
 					<img src="/myMeetingsLogo.png" alt="MyMeetings Logo" class="logo-image" />
 					<div class="logo">MyMeetings</div>
 				</div>
-				<div class="tagline">A quiet room, a folding chair and a story that could've been ours.<br/>We've been there</div>
 			</div>
 		</header>
 		
 		<main>
 			<section class="hero">
 				<div class="container">
-					<h1>A Modern Solution To An Old Problem</h1>
-					<p>MyMeetings is your comprehensive Alcoholics Anonymous meeting finder app. While the <a href="https://www.aa.org/meeting-guide-app" target="_blank" rel="noopener noreferrer">official AA Meeting Guide app</a> helps you find meetings, MyMeetings goes beyond with powerful recovery tracking, attendance management, and modern features that support your entire sobriety journey.</p>
-					<a href="https://apps.apple.com/us/app/mymeetings-aa-companion/id6748364894" target="_blank" class="cta-button">Get MyMeetings</a>
+					<h1>We couldn't do this <span class="highlight-word">alone</span>. So we built the best app to do it <span class="highlight-word">together</span></h1>
+					<p>You don't have to drink anymore. MyMeetings is your personal recovery companion. While the <a href="https://www.aa.org/meeting-guide-app" target="_blank" rel="noopener noreferrer">official AA Meeting Guide app</a> helps you find meetings, MyMeetings goes beyond with powerful recovery tracking, attendance management, and modern features that support your entire sobriety journey.</p>
+					<a href="https://apps.apple.com/us/app/mymeetings-aa-companion/id6748364894" target="_blank" class="cta-button">
+						<svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+							<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+						</svg>
+						<div class="app-store-text">
+							<span class="small">Download on the</span>
+							<span class="large">App Store</span>
+						</div>
+					</a>
 				</div>
 			</section>
 			
 			<section id="screenshots" class="screenshots">
 				<div class="container">
-					<h2>Feature Comparison - Your Complete Recovery App</h2>
+					<h2>Feature Comparison</h2>
 					<div class="comparison-section">
 						<div class="comparison-card">
-							<h3>Official AA Meeting Guide App</h3>
+							<h3>
+								<img src="/meetingGuide.png" alt="MeetingGuide Logo" />
+								MeetingGuide
+							</h3>
 							<ul>
 								<li>✓ Find AA meetings</li>
 								<li>✓ Basic meeting information</li>
@@ -542,7 +635,10 @@
 							</ul>
 						</div>
 						<div class="comparison-card featured">
-							<h3>MyMeetings - Enhanced Recovery App</h3>
+							<h3>
+								<img src="/MyMeetingsAppLogoTransperant.png" alt="MyMeetings Logo" />
+								MyMeetings
+							</h3>
 							<ul>
 								<li>✓ Find AA meetings (same data)</li>
 								<li>✓ Modern, intuitive interface</li>
@@ -636,5 +732,58 @@
 				</div>
 			</div>
 		</footer>
+		
+		<!-- Analytics Tracking Script -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				// Track App Store download button clicks
+				const downloadButton = document.querySelector('.cta-button');
+				if (downloadButton) {
+					downloadButton.addEventListener('click', function() {
+						// Track download button click
+						if (window.location.hostname === 'gskis.com' && typeof mixpanel !== 'undefined') {
+							mixpanel.track('Download Button Click', {
+								page: 'myMeetings_landing',
+								button_location: 'hero_section',
+								button_text: 'Download on the App Store',
+								url: window.location.href
+							});
+						}
+						
+						// Also track with console for debugging in development
+						console.log('MyMeetings: Download button clicked');
+					});
+				}
+				
+				// Track SAMHSA button clicks
+				const samhsaButton = document.querySelector('.contact-button');
+				if (samhsaButton) {
+					samhsaButton.addEventListener('click', function() {
+						if (window.location.hostname === 'gskis.com' && typeof mixpanel !== 'undefined') {
+							mixpanel.track('SAMHSA Link Click', {
+								page: 'myMeetings_landing',
+								button_location: 'contact_section',
+								url: window.location.href
+							});
+						}
+					});
+				}
+				
+				// Track footer link clicks
+				const footerLinks = document.querySelectorAll('.footer-links a');
+				footerLinks.forEach(function(link) {
+					link.addEventListener('click', function() {
+						if (window.location.hostname === 'gskis.com' && typeof mixpanel !== 'undefined') {
+							mixpanel.track('Footer Link Click', {
+								page: 'myMeetings_landing',
+								link_text: this.textContent.trim(),
+								link_href: this.getAttribute('href'),
+								url: window.location.href
+							});
+						}
+					});
+				});
+			});
+		</script>
 	</body>
 </html>
