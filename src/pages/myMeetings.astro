@@ -44,11 +44,29 @@
 				(function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
 				for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
 				mixpanel.init('e4e1730e6b5ed64f603144153755ce2e', {debug: false, track_pageview: true, persistence: 'localStorage'});
-				mixpanel.track('Page View', {
+				
+				// Parse query parameters
+				const urlParams = new URLSearchParams(window.location.search);
+				const source = urlParams.get('source');
+				
+				// Track page view with source parameter
+				const pageViewData = {
 					page: 'myMeetings_landing',
 					url: window.location.href,
 					referrer: document.referrer
-				});
+				};
+				
+				// Add source to tracking data if present
+				if (source) {
+					pageViewData.source = source;
+				}
+				
+				mixpanel.track('Page View', pageViewData);
+				
+				// Store source for later use in other events
+				if (source) {
+					window.myMeetingsSource = source;
+				}
 			}
 		</script>
 		
@@ -742,12 +760,19 @@
 					downloadButton.addEventListener('click', function() {
 						// Track download button click
 						if (window.location.hostname === 'gskis.com' && typeof mixpanel !== 'undefined') {
-							mixpanel.track('Download Button Click', {
+							const downloadData = {
 								page: 'myMeetings_landing',
 								button_location: 'hero_section',
 								button_text: 'Download on the App Store',
 								url: window.location.href
-							});
+							};
+							
+							// Add source if available
+							if (window.myMeetingsSource) {
+								downloadData.source = window.myMeetingsSource;
+							}
+							
+							mixpanel.track('Download Button Click', downloadData);
 						}
 						
 						// Also track with console for debugging in development
@@ -760,11 +785,18 @@
 				if (samhsaButton) {
 					samhsaButton.addEventListener('click', function() {
 						if (window.location.hostname === 'gskis.com' && typeof mixpanel !== 'undefined') {
-							mixpanel.track('SAMHSA Link Click', {
+							const samhsaData = {
 								page: 'myMeetings_landing',
 								button_location: 'contact_section',
 								url: window.location.href
-							});
+							};
+							
+							// Add source if available
+							if (window.myMeetingsSource) {
+								samhsaData.source = window.myMeetingsSource;
+							}
+							
+							mixpanel.track('SAMHSA Link Click', samhsaData);
 						}
 					});
 				}
@@ -774,12 +806,19 @@
 				footerLinks.forEach(function(link) {
 					link.addEventListener('click', function() {
 						if (window.location.hostname === 'gskis.com' && typeof mixpanel !== 'undefined') {
-							mixpanel.track('Footer Link Click', {
+							const footerData = {
 								page: 'myMeetings_landing',
 								link_text: this.textContent.trim(),
 								link_href: this.getAttribute('href'),
 								url: window.location.href
-							});
+							};
+							
+							// Add source if available
+							if (window.myMeetingsSource) {
+								footerData.source = window.myMeetingsSource;
+							}
+							
+							mixpanel.track('Footer Link Click', footerData);
 						}
 					});
 				});
