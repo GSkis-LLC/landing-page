@@ -17,12 +17,6 @@ export default defineConfig({
         ignore_dnt: true,
       },
       autoTrack: true,
-      globalProperties: {
-        source: ({ url }) => {
-          const params = new URLSearchParams(url.search);
-          return params.get('source') || 'unknown';
-        }
-      }
     }),
   ],
 });
