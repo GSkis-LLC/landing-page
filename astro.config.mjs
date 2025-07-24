@@ -12,10 +12,17 @@ export default defineConfig({
       token: "e4e1730e6b5ed64f603144153755ce2e",
       config: {
         // Optional configuration options
-        debug: true, // Enable debug mode for development
-        track_pageview: true, // Automatically track page views
+        track_pageview: true,
+        // @ts-ignore
+        ignore_dnt: true,
       },
-      autoTrack: true, // Automatically track page views and events
+      autoTrack: true,
+      globalProperties: {
+        source: ({ url }) => {
+          const params = new URLSearchParams(url.search);
+          return params.get('source') || 'unknown';
+        }
+      }
     }),
   ],
 });
