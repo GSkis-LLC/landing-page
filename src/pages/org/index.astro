@@ -1,0 +1,795 @@
+---
+// Organization management main page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Organization Management</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		@font-face {
+			font-family: 'SF Pro Display';
+			src: url('/fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
+			font-weight: normal;
+			font-style: normal;
+		}
+
+		body {
+			font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+		}
+
+		.container {
+			background: white;
+			border-radius: 20px;
+			box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+			overflow: hidden;
+			width: 100%;
+			max-width: 1200px;
+			min-height: 600px;
+		}
+
+		/* Authentication Screen Styles */
+		.auth-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 60px 40px;
+			text-align: center;
+		}
+
+		.auth-header {
+			margin-bottom: 40px;
+		}
+
+		.auth-header h1 {
+			color: #333;
+			font-size: 2.5rem;
+			margin-bottom: 10px;
+			font-weight: 700;
+		}
+
+		.auth-header p {
+			color: #666;
+			font-size: 1.1rem;
+		}
+
+		.auth-tabs {
+			display: flex;
+			margin-bottom: 30px;
+			background: #f8f9fa;
+			border-radius: 50px;
+			padding: 4px;
+		}
+
+		.auth-tab {
+			flex: 1;
+			padding: 12px 24px;
+			border: none;
+			background: transparent;
+			border-radius: 50px;
+			cursor: pointer;
+			font-weight: 600;
+			transition: all 0.3s ease;
+		}
+
+		.auth-tab.active {
+			background: white;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+			color: #667eea;
+		}
+
+		.auth-form {
+			width: 100%;
+			max-width: 400px;
+		}
+
+		.form-group {
+			margin-bottom: 20px;
+			text-align: left;
+		}
+
+		.form-group label {
+			display: block;
+			margin-bottom: 8px;
+			color: #333;
+			font-weight: 600;
+		}
+
+		.form-group input {
+			width: 100%;
+			padding: 14px 18px;
+			border: 2px solid #e9ecef;
+			border-radius: 12px;
+			font-size: 16px;
+			transition: border-color 0.3s ease;
+		}
+
+		.form-group input:focus {
+			outline: none;
+			border-color: #667eea;
+		}
+
+		.auth-button {
+			width: 100%;
+			padding: 16px;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: white;
+			border: none;
+			border-radius: 12px;
+			font-size: 16px;
+			font-weight: 600;
+			cursor: pointer;
+			transition: transform 0.2s ease;
+		}
+
+		.auth-button:hover {
+			transform: translateY(-2px);
+		}
+
+		.auth-button:disabled {
+			opacity: 0.6;
+			cursor: not-allowed;
+			transform: none;
+		}
+
+		/* Organizations Screen Styles */
+		.orgs-container {
+			padding: 40px;
+		}
+
+		.orgs-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 40px;
+			padding-bottom: 20px;
+			border-bottom: 2px solid #f8f9fa;
+		}
+
+		.orgs-header h1 {
+			color: #333;
+			font-size: 2.2rem;
+			font-weight: 700;
+		}
+
+		.user-info {
+			display: flex;
+			align-items: center;
+			gap: 15px;
+		}
+
+		.user-avatar {
+			width: 50px;
+			height: 50px;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			font-weight: 700;
+			font-size: 1.2rem;
+		}
+
+		.logout-btn {
+			padding: 10px 20px;
+			background: #dc3545;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+			font-weight: 600;
+			transition: background-color 0.3s ease;
+		}
+
+		.logout-btn:hover {
+			background: #c82333;
+		}
+
+		.orgs-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+			gap: 25px;
+		}
+
+		.org-card {
+			background: white;
+			border-radius: 16px;
+			box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+			overflow: hidden;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			border: 1px solid #f0f0f0;
+		}
+
+		.org-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+		}
+
+		.org-header {
+			padding: 25px;
+			background: linear-gradient(135deg, var(--primary-color, #667eea) 0%, var(--secondary-color, #764ba2) 100%);
+			color: white;
+			text-align: center;
+		}
+
+		.org-logo {
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			margin: 0 auto 15px;
+			border: 4px solid rgba(255, 255, 255, 0.3);
+			object-fit: cover;
+		}
+
+		.org-logo-placeholder {
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			margin: 0 auto 15px;
+			border: 4px solid rgba(255, 255, 255, 0.3);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: rgba(255, 255, 255, 0.2);
+			font-size: 2rem;
+			font-weight: 700;
+		}
+
+		.org-name {
+			font-size: 1.4rem;
+			font-weight: 700;
+			margin-bottom: 8px;
+		}
+
+		.org-code {
+			font-size: 0.9rem;
+			opacity: 0.9;
+			background: rgba(255, 255, 255, 0.2);
+			padding: 4px 12px;
+			border-radius: 20px;
+			display: inline-block;
+		}
+
+		.org-body {
+			padding: 25px;
+		}
+
+		.org-stats {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 20px;
+		}
+
+		.stat {
+			text-align: center;
+		}
+
+		.stat-value {
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: #333;
+			display: block;
+		}
+
+		.stat-label {
+			font-size: 0.8rem;
+			color: #666;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+		}
+
+		.org-role {
+			display: inline-block;
+			padding: 6px 12px;
+			border-radius: 20px;
+			font-size: 0.8rem;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+		}
+
+		.role-admin {
+			background: #ffeaa7;
+			color: #d63031;
+		}
+
+		.role-member {
+			background: #74b9ff;
+			color: white;
+		}
+
+		.role-viewer {
+			background: #ddd;
+			color: #666;
+		}
+
+		.org-actions {
+			margin-top: 20px;
+			display: flex;
+			gap: 10px;
+		}
+
+		.org-btn {
+			flex: 1;
+			padding: 10px 16px;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+			font-weight: 600;
+			transition: all 0.3s ease;
+		}
+
+		.btn-primary {
+			background: #667eea;
+			color: white;
+		}
+
+		.btn-primary:hover {
+			background: #5a6fd8;
+		}
+
+		.btn-secondary {
+			background: #f8f9fa;
+			color: #333;
+			border: 1px solid #e9ecef;
+		}
+
+		.btn-secondary:hover {
+			background: #e9ecef;
+		}
+
+		.loading {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 400px;
+			font-size: 1.2rem;
+			color: #666;
+		}
+
+		.error {
+			background: #ffe6e6;
+			color: #d63031;
+			padding: 16px;
+			border-radius: 12px;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+
+		.empty-state {
+			text-align: center;
+			padding: 60px 20px;
+			color: #666;
+		}
+
+		.empty-state h3 {
+			font-size: 1.5rem;
+			margin-bottom: 10px;
+			color: #333;
+		}
+
+		.empty-state p {
+			font-size: 1.1rem;
+			margin-bottom: 30px;
+		}
+
+		.create-org-btn {
+			padding: 14px 28px;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: white;
+			border: none;
+			border-radius: 12px;
+			font-size: 16px;
+			font-weight: 600;
+			cursor: pointer;
+			transition: transform 0.2s ease;
+		}
+
+		.create-org-btn:hover {
+			transform: translateY(-2px);
+		}
+
+		.hidden {
+			display: none;
+		}
+
+		@media (max-width: 768px) {
+			.container {
+				margin: 10px;
+				border-radius: 16px;
+			}
+
+			.auth-container {
+				padding: 40px 20px;
+			}
+
+			.orgs-container {
+				padding: 20px;
+			}
+
+			.orgs-header {
+				flex-direction: column;
+				gap: 20px;
+				align-items: flex-start;
+			}
+
+			.orgs-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.org-actions {
+				flex-direction: column;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- Authentication Screen -->
+		<div id="authScreen" class="auth-container">
+			<div class="auth-header">
+				<h1>Organization Management</h1>
+				<p>Sign in to manage your organizations</p>
+			</div>
+
+			<div class="auth-tabs">
+				<button class="auth-tab active" data-tab="login">Sign In</button>
+				<button class="auth-tab" data-tab="register">Register</button>
+			</div>
+
+			<div id="errorMessage" class="error hidden"></div>
+
+			<!-- Login Form -->
+			<form id="loginForm" class="auth-form">
+				<div class="form-group">
+					<label for="loginUsername">Username</label>
+					<input type="text" id="loginUsername" required minlength="3">
+				</div>
+				<div class="form-group">
+					<label for="loginPassword">Password</label>
+					<input type="password" id="loginPassword" required minlength="6">
+				</div>
+				<button type="submit" class="auth-button">Sign In</button>
+			</form>
+
+			<!-- Register Form -->
+			<form id="registerForm" class="auth-form hidden">
+				<div class="form-group">
+					<label for="registerUsername">Username</label>
+					<input type="text" id="registerUsername" required minlength="3" pattern="[a-zA-Z0-9]+">
+				</div>
+				<div class="form-group">
+					<label for="registerPassword">Password</label>
+					<input type="password" id="registerPassword" required minlength="6">
+				</div>
+				<div class="form-group">
+					<label for="confirmPassword">Confirm Password</label>
+					<input type="password" id="confirmPassword" required minlength="6">
+				</div>
+				<button type="submit" class="auth-button">Register</button>
+			</form>
+		</div>
+
+		<!-- Organizations Screen -->
+		<div id="orgsScreen" class="orgs-container hidden">
+			<div class="orgs-header">
+				<h1>My Organizations</h1>
+			</div>
+
+			<div id="loadingState" class="loading">
+				Loading your organizations...
+			</div>
+
+			<div id="orgsContent" class="hidden">
+				<div id="orgsGrid" class="orgs-grid"></div>
+				
+				<div id="emptyState" class="empty-state hidden">
+					<h3>No Organizations Yet</h3>
+					<p>You're not a member of any organizations yet. Create one to get started!</p>
+					<button class="create-org-btn" onclick="createOrganization()">Create Organization</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		let currentUser = null;
+		let authToken = null;
+
+		// Check authentication on page load
+		document.addEventListener('DOMContentLoaded', function() {
+			authToken = localStorage.getItem('authToken');
+			const userData = localStorage.getItem('userData');
+
+			if (authToken && userData) {
+				try {
+					currentUser = JSON.parse(userData);
+					showOrganizationsScreen();
+				} catch (error) {
+					console.error('Invalid user data in localStorage:', error);
+					logout();
+				}
+			} else {
+				showAuthScreen();
+			}
+		});
+
+		// Authentication tab switching
+		document.querySelectorAll('.auth-tab').forEach(tab => {
+			tab.addEventListener('click', function() {
+				const tabType = this.dataset.tab;
+				switchAuthTab(tabType);
+			});
+		});
+
+		function switchAuthTab(tabType) {
+			// Update tab buttons
+			document.querySelectorAll('.auth-tab').forEach(tab => {
+				tab.classList.remove('active');
+			});
+			document.querySelector(`[data-tab="${tabType}"]`).classList.add('active');
+
+			// Update forms
+			if (tabType === 'login') {
+				document.getElementById('loginForm').classList.remove('hidden');
+				document.getElementById('registerForm').classList.add('hidden');
+			} else {
+				document.getElementById('loginForm').classList.add('hidden');
+				document.getElementById('registerForm').classList.remove('hidden');
+			}
+
+			hideError();
+		}
+
+		// Login form submission
+		document.getElementById('loginForm').addEventListener('submit', async function(e) {
+			e.preventDefault();
+			
+			const username = document.getElementById('loginUsername').value;
+			const password = document.getElementById('loginPassword').value;
+			
+			await handleLogin(username, password);
+		});
+
+		// Register form submission
+		document.getElementById('registerForm').addEventListener('submit', async function(e) {
+			e.preventDefault();
+			
+			const username = document.getElementById('registerUsername').value;
+			const password = document.getElementById('registerPassword').value;
+			const confirmPassword = document.getElementById('confirmPassword').value;
+			
+			if (password !== confirmPassword) {
+				showError('Passwords do not match');
+				return;
+			}
+			
+			await handleRegister(username, password);
+		});
+
+		async function handleLogin(username, password) {
+			try {
+				hideError();
+				setAuthButtonLoading(true);
+
+				const response = await fetch('/api/auth/login', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ username, password })
+				});
+
+				const data = await response.json();
+
+				if (!response.ok) {
+					throw new Error(data.error || 'Login failed');
+				}
+
+				// Store authentication data
+				authToken = data.token;
+				currentUser = data.user;
+				localStorage.setItem('authToken', data.token);
+				localStorage.setItem('userData', JSON.stringify(data.user));
+
+				showOrganizationsScreen();
+			} catch (error) {
+				showError(error.message);
+			} finally {
+				setAuthButtonLoading(false);
+			}
+		}
+
+		async function handleRegister(username, password) {
+			try {
+				hideError();
+				setAuthButtonLoading(true);
+
+				const response = await fetch('/api/auth/register', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ username, password })
+				});
+
+				const data = await response.json();
+
+				if (!response.ok) {
+					throw new Error(data.error || 'Registration failed');
+				}
+
+				// Store authentication data
+				authToken = data.token;
+				currentUser = data.user;
+				localStorage.setItem('authToken', data.token);
+				localStorage.setItem('userData', JSON.stringify(data.user));
+
+				showOrganizationsScreen();
+			} catch (error) {
+				showError(error.message);
+			} finally {
+				setAuthButtonLoading(false);
+			}
+		}
+
+		function showAuthScreen() {
+			document.getElementById('authScreen').classList.remove('hidden');
+			document.getElementById('orgsScreen').classList.add('hidden');
+		}
+
+		function showOrganizationsScreen() {
+			document.getElementById('authScreen').classList.add('hidden');
+			document.getElementById('orgsScreen').classList.remove('hidden');
+			
+			// Set user info
+			document.getElementById('userName').textContent = currentUser.name || currentUser.username;
+			document.getElementById('userAvatar').textContent = (currentUser.name || currentUser.username).charAt(0).toUpperCase();
+			
+			loadUserOrganizations();
+		}
+
+		async function loadUserOrganizations() {
+			try {
+				document.getElementById('loadingState').classList.remove('hidden');
+				document.getElementById('orgsContent').classList.add('hidden');
+
+				const response = await fetch(`/api/users/${currentUser.id}/organizations`, {
+					headers: {
+						'Authorization': `Bearer ${authToken}`,
+						'Content-Type': 'application/json'
+					}
+				});
+
+				if (!response.ok) {
+					if (response.status === 401) {
+						logout();
+						return;
+					}
+					throw new Error('Failed to load organizations');
+				}
+
+				const organizations = await response.json();
+				displayOrganizations(organizations);
+
+			} catch (error) {
+				console.error('Error loading organizations:', error);
+				showError('Failed to load organizations');
+			} finally {
+				document.getElementById('loadingState').classList.add('hidden');
+				document.getElementById('orgsContent').classList.remove('hidden');
+			}
+		}
+
+		function displayOrganizations(organizations) {
+			const orgsGrid = document.getElementById('orgsGrid');
+			const emptyState = document.getElementById('emptyState');
+
+			if (organizations.length === 0) {
+				orgsGrid.innerHTML = '';
+				emptyState.classList.remove('hidden');
+				return;
+			}
+
+			emptyState.classList.add('hidden');
+			
+			orgsGrid.innerHTML = organizations.map(org => {
+				const membership = org.OrganizationMemberships[0];
+				const role = membership.role;
+				const joinDate = new Date(membership.joinedAt).toLocaleDateString();
+
+				return `
+					<div class="org-card" style="--primary-color: ${org.primaryColor || '#667eea'}; --secondary-color: ${org.secondaryColor || '#764ba2'}">
+						<div class="org-header">
+							${org.logoUrl ? 
+								`<img src="${org.logoUrl}" alt="${org.name}" class="org-logo">` :
+								`<div class="org-logo-placeholder">${org.name.charAt(0).toUpperCase()}</div>`
+							}
+							<div class="org-name">${org.name}</div>
+							<div class="org-code">${org.orgCode}</div>
+						</div>
+						<div class="org-body">
+							<div class="org-stats">
+								<div class="stat">
+									<span class="stat-value">1</span>
+									<span class="stat-label">Members</span>
+								</div>
+								<div class="stat">
+									<span class="stat-value">${joinDate}</span>
+									<span class="stat-label">Joined</span>
+								</div>
+							</div>
+							<div style="margin-bottom: 15px;">
+								<span class="org-role role-${role}">${role}</span>
+							</div>
+							<div class="org-actions">
+								<button class="org-btn btn-primary" onclick="viewOrganization(${org.id})">
+									View Details
+								</button>
+								${role === 'admin' ? 
+									`<button class="org-btn btn-secondary" onclick="manageOrganization(${org.id})">
+										Manage
+									</button>` : ''
+								}
+							</div>
+						</div>
+					</div>
+				`;
+			}).join('');
+		}
+
+		function viewOrganization(orgId) {
+			// Navigate to organization details
+			window.location.href = `/org/${orgId}`;
+		}
+
+		function manageOrganization(orgId) {
+			// Navigate to organization management
+			window.location.href = `/org/${orgId}/manage`;
+		}
+
+		function createOrganization() {
+			// Navigate to organization creation
+			window.location.href = '/org/create';
+		}
+
+		function logout() {
+			authToken = null;
+			currentUser = null;
+			localStorage.removeItem('authToken');
+			localStorage.removeItem('userData');
+			showAuthScreen();
+		}
+
+		function showError(message) {
+			const errorDiv = document.getElementById('errorMessage');
+			errorDiv.textContent = message;
+			errorDiv.classList.remove('hidden');
+		}
+
+		function hideError() {
+			document.getElementById('errorMessage').classList.add('hidden');
+		}
+
+		function setAuthButtonLoading(loading) {
+			const buttons = document.querySelectorAll('.auth-button');
+			buttons.forEach(button => {
+				button.disabled = loading;
+				button.textContent = loading ? 'Please wait...' : (button.form.id === 'loginForm' ? 'Sign In' : 'Register');
+			});
+		}
+	</script>
+</body>
+</html>
