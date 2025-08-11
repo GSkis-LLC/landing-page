@@ -368,16 +368,14 @@
 			}
 			
 			.screenshot-item {
-				background: white;
+				/* max-width: 200px; */
 				border-radius: 16px;
 				overflow: hidden;
-				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 				transition: transform 0.3s ease, box-shadow 0.3s ease;
 			}
 			
 			.screenshot-item:hover {
 				transform: translateY(-5px);
-				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 			}
 			
 			.screenshot-item img {
@@ -385,23 +383,7 @@
 				height: auto;
 				display: block;
 			}
-			
-			.screenshot-caption {
-				padding: 1.5rem;
-				text-align: center;
-			}
-			
-			.screenshot-caption h3 {
-				font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-				font-size: 1.3rem;
-				color: #2A2A2A;
-				margin-bottom: 0.5rem;
-			}
-			
-			.screenshot-caption p {
-				color: #6b7280;
-				font-size: 0.95rem;
-			}
+
 			
 			/* Contact Section */
 			.contact-section {
@@ -596,6 +578,17 @@
 			
 			<section id="screenshots" class="screenshots">
 				<div class="container">
+					<div class="screenshot-grid">
+						<div class="screenshot-item">
+							<img src="/myMeetingsScreenshots/screenshot.png" alt="AA meeting calendar view showing daily and weekly meeting schedules" />
+						</div>
+						<div class="screenshot-item">
+							<img src="/myMeetingsScreenshots/screenshot2.png" alt="AA meeting calendar view showing daily and weekly meeting schedules" />
+						</div>
+						<div class="screenshot-item">
+							<img src="/myMeetingsScreenshots/screenshot3.png" alt="AA meeting calendar view showing daily and weekly meeting schedules" />
+						</div>
+					</div>
 					<h2>Feature Comparison</h2>
 					<div class="comparison-section">
 						<div class="comparison-card">
@@ -628,63 +621,6 @@
 								<li>✓ Advanced filtering & search</li>
 								<li>✓ Web portal access</li>
 							</ul>
-						</div>
-					</div>
-					<div class="screenshot-grid">
-						<div class="screenshot-item">
-							<img src="/myMeetingsScreenshots/Calendar.png" alt="AA meeting calendar view showing daily and weekly meeting schedules" />
-							<div class="screenshot-caption">
-								<h3>AA Meeting Calendar</h3>
-								<p>Browse daily and weekly Alcoholics Anonymous meeting schedules with our intuitive calendar interface</p>
-							</div>
-						</div>
-						
-						<div class="screenshot-item">
-							<img src="/myMeetingsScreenshots/MapView.png" alt="Interactive map showing nearby AA meetings and recovery centers" />
-							<div class="screenshot-caption">
-								<h3>AA Meeting Map</h3>
-								<p>Find Alcoholics Anonymous meetings near you with our interactive map and GPS location services</p>
-							</div>
-						</div>
-						
-						<div class="screenshot-item">
-							<img src="/myMeetingsScreenshots/CheckIn.png" alt="AA meeting check-in feature for tracking sobriety and attendance" />
-							<div class="screenshot-caption">
-								<h3>Sobriety Check-In</h3>
-								<p>Track your AA meeting attendance and maintain your recovery journey with daily check-ins</p>
-							</div>
-						</div>
-						
-						<div class="screenshot-item">
-							<img src="/myMeetingsScreenshots/Attendance+Notes.png" alt="AA meeting attendance tracker with personal recovery notes" />
-							<div class="screenshot-caption">
-								<h3>Recovery Tracker & Notes</h3>
-								<p>Keep detailed records of your AA meetings and personal recovery reflections for your sobriety journey</p>
-							</div>
-						</div>
-						
-						<div class="screenshot-item">
-							<img src="/myMeetingsScreenshots/Filters.png" alt="Advanced AA meeting filters for finding specific types of meetings" />
-							<div class="screenshot-caption">
-								<h3>Smart AA Meeting Filters</h3>
-								<p>Find the perfect Alcoholics Anonymous meeting with advanced filtering by type, time, and location</p>
-							</div>
-						</div>
-						
-						<div class="screenshot-item">
-							<img src="/myMeetingsScreenshots/InAppSharing.png" alt="Share AA meeting information with recovery community" />
-							<div class="screenshot-caption">
-								<h3>Recovery Community Sharing</h3>
-								<p>Share AA meeting information with your recovery community and support network seamlessly</p>
-							</div>
-						</div>
-						
-						<div class="screenshot-item">
-							<img src="/myMeetingsScreenshots/WebSharing.png" alt="Web access to AA meeting information and recovery tools" />
-							<div class="screenshot-caption">
-								<h3>Web Recovery Portal</h3>
-								<p>Access your AA meeting information and recovery tools from any device with our web portal</p>
-							</div>
 						</div>
 					</div>
 				</div>
