@@ -96,6 +96,14 @@ const typeToClass: Record<string, string> = {
         font-style: normal;
         font-display: swap;
       }
+
+      @font-face {
+        font-family: 'SF Pro Display';
+        src: url('/fonts/SFPRODISPLAYBOLD.OTF') format('opentype');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+      }
       html, body {
         font-family: 'SF Pro Display', Arial, sans-serif;
         margin: 0;
@@ -117,9 +125,10 @@ const typeToClass: Record<string, string> = {
       }
       .header-title {
         font-size: 2rem;
-        font-weight: 700;
+        font-weight: bold;
         flex: 1;
         line-height: 1.2;
+        margin-top: 5px;
       }
       .header-subtitle {
         font-size: 1.1rem;
