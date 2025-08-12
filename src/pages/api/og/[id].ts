@@ -157,12 +157,12 @@ function formatTime(t: string | undefined) {
   if (Number.isNaN(hour)) return t;
   const ampm = hour >= 12 ? 'PM' : 'AM';
   const hour12 = hour % 12 === 0 ? 12 : hour % 12;
-  return `${hour12}:${m} ${ampm}`;
+  return `${hour12}:${m}${ampm}`;
 }
 
 function dayOfWeek(num: number | undefined) {
   if (num == null) return '';
-  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
   return days[num] || '';
 }
 
@@ -218,10 +218,10 @@ function makePlainSvg({ title, subtitle, types, address, id }: SvgData) {
     'Young People': { bg: 'rgba(253,224,71,0.3)', fg: '#fde047' },
   };
   const titleFontSize = 64;
-  const subtitleFontSize = 34;
+  const subtitleFontSize = 44; // Increased by 30% from 34
   // Use full horizontal space: startX (80) + right margin 80
-  const startX = 80;
-  const contentMaxWidth = WIDTH - startX - 80; // 1200 - 160 = 1040
+  const startX = 60;
+  const contentMaxWidth = WIDTH - startX - 60; // 1200 - 160 = 1040
 
   // Character width approximation reused for wrapping
   function charWidth(ch: string, fontSize: number) {
@@ -248,13 +248,13 @@ function makePlainSvg({ title, subtitle, types, address, id }: SvgData) {
   }
   const titleLines = wrapPrecise(title, titleFontSize, contentMaxWidth);
   const subtitleLines = subtitle ? wrapPrecise(subtitle, subtitleFontSize, contentMaxWidth) : [];
-  const addressFontSize = 30;
+  const addressFontSize = 39; // Increased by 30% from 30
   const addressLines = address ? wrapPrecise(address, addressFontSize, contentMaxWidth) : [];
 
-  const badgeFontSize = 28;
-  const badgePaddingX = 18;
-  const badgePaddingY = 12;
-  const badgeGap = 14;
+  const badgeFontSize = 36; // Increased by 30% from 28
+  const badgePaddingX = 23; // Adjusted proportionally
+  const badgePaddingY = 16; // Adjusted proportionally
+  const badgeGap = 18; // Adjusted proportionally
   let y = 120;
   const lineGap = 10;
   let svgText = '';
@@ -278,14 +278,14 @@ function makePlainSvg({ title, subtitle, types, address, id }: SvgData) {
   }
   function approxWidth(text: string, fontSize: number) { return lineWidth(text, fontSize); }
   if (types.length) {
-    const badgeTopMargin = 30; // explicit space above badges (CSS margin ignored in plain SVG path)
+    const badgeTopMargin = 39; // Adjusted proportionally
     y += badgeTopMargin;
     let currentX = startX;
     const maxRowWidth = WIDTH - startX - 80;
     for (const t of types) {
       const w = approxWidth(t, badgeFontSize);
       // Dynamic trailing adjust so longer labels still retain right padding.
-      const trailingAdjust = Math.min(28, 8 + Math.round((t.length * badgeFontSize * 0.15) / 4));
+      const trailingAdjust = Math.min(36, 8 + Math.round((t.length * badgeFontSize * 0.15) / 4));
       const boxW = Math.round(w + badgePaddingX * 2 + trailingAdjust);
       if (currentX + boxW > startX + maxRowWidth) {
         currentX = startX;
@@ -304,7 +304,7 @@ function makePlainSvg({ title, subtitle, types, address, id }: SvgData) {
   } else {
     y += 36;
   }
-  const footerY = HEIGHT - 80;
+  const footerY = HEIGHT - 30;
   // Generate QR for meeting URL (use actual id)
   const meetingUrl = id ? `https://gskis.com/meeting/${encodeURIComponent(id)}` : 'https://gskis.com/meeting';
   const qr = QRCode(0, 'L');
@@ -323,7 +323,7 @@ function makePlainSvg({ title, subtitle, types, address, id }: SvgData) {
       }
     }
   }
-  const qrX = WIDTH - 80 - qrRenderSize; // right padding 80
+  const qrX = WIDTH - 60 - qrRenderSize; // right padding 80
   const qrY = footerY - qrRenderSize; // position above footer text
   // Transparent background (removed white rect)
   svgText += `<g aria-label="QR code" role="img" transform="translate(${qrX},${qrY})">${qrSvgParts}</g>`;
