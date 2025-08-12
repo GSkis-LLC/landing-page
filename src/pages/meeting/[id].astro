@@ -17,7 +17,6 @@ const meetingName = data?.name || 'Meeting';
 const meetingLocation = data?.location || '';
 const meetingAddress = data?.formatted_address || '';
 const locationNotes = data?.location_notes || '';
-const meetingDay = data?.day || '';
 const meetingTime = data?.time || '';
 const meetingEndTime = data?.end_time || '';
 const meetingTypes = data?.types || '';
@@ -76,13 +75,17 @@ const typeToClass: Record<string, string> = {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={`https://gskis.com/meeting/${id}`} />
-    <meta property="og:image" content="https://gskis.com/myMeetingsLogo.png" />
+    <!-- Updated dynamic OG image -->
+    <meta property="og:image" content={`https://gskis.com/api/og/${id}`} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content={title} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://gskis.com/myMeetingsLogo.png" />
+    <meta name="twitter:image" content={`https://gskis.com/api/og/${id}`} />
+    <meta name="twitter:image:alt" content={title} />
 
     
     <style>
@@ -540,4 +543,4 @@ const typeToClass: Record<string, string> = {
         </script>
       )}
   </body>
-</html> 
+</html>
