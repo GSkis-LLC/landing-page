@@ -10,9 +10,13 @@
   },
   "dependencies": {
     "@astrojs/netlify": "^6.4.1",
+    "@resvg/resvg-js": "^2.6.1",
     "astro": "^5.11.0",
     "astrojs-mixpanel": "^1.0.3",
-    "@resvg/resvg-js": "^2.6.1",
+    "leaflet": "^1.9.4",
     "qrcode-generator": "^1.4.4"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.21"
   }
 }
