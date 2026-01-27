@@ -1,0 +1,44 @@
+---
+const { items = null } = Astro.props;
+---
+
+<section class="section-card" aria-labelledby="features-heading">
+  <h2 id="features-heading" class="section-title">Why Choose MyMeetings?</h2>
+  <div class="feature-grid">
+    {items ? (
+      items.map(item => (
+        <div class="feature-item">
+          <div class="feature-icon">{item.icon ? item.icon : (<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>)}</div>
+          <h3 class="feature-title">{item.title}</h3>
+          <p class="feature-desc">{item.desc}</p>
+        </div>
+      ))
+    ) : (
+      <>
+        <div class="feature-item">
+          <div class="feature-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h18M3 12h18M3 19h18" /></svg></div>
+          <h3 class="feature-title">Largest Database of AA Meetings</h3>
+          <p class="feature-desc">Access the most comprehensive, frequently-updated collection of AA meetings across cities and neighborhoods.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
+          <h3 class="feature-title">Easy to Use — Modern Interface</h3>
+          <p class="feature-desc">A clean, responsive UI makes finding meetings fast and intuitive on any device.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13h8V3H3v10zm10 8h8V11h-8v10z"/></svg></div>
+          <h3 class="feature-title">Tracking & Advanced Analytics</h3>
+          <p class="feature-desc">Built-in tracking and analytics help organizers and users see attendance trends and meeting health.</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2a10 10 0 100 20 10 10 0 000-20zM8 12l2 2 4-4"/></svg></div>
+          <h3 class="feature-title">AI Recovery Insights</h3>
+          <p class="feature-desc">AI-powered recommendations and insights to support users' recovery journeys and meeting selection.</p>
+        </div>
+      </>
+    )}
+  </div>
+</section>

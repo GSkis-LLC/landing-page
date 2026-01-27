@@ -1,0 +1,23 @@
+---
+const { city, stateFull, areaDescription, neighborhoods } = Astro.props;
+---
+
+<section class="section-card seo-content" aria-labelledby="about-heading">
+  <h2 id="about-heading" class="section-title">About AA Meetings near {city}</h2>
+  <div class="seo-text">
+    <p>Alcoholics Anonymous (AA) meetings in {city} provide a supportive community for individuals seeking recovery from alcohol addiction. Whether you're new to recovery or have been sober for years, {city}'s AA community welcomes you with open arms.</p>
+    
+    <h3>Types of AA Meetings Available</h3>
+    <p><strong>Open Meetings:</strong> Anyone interested in learning about AA can attend, including family members, friends, and those curious about the program.</p>
+    <p><strong>Closed Meetings:</strong> Reserved for individuals who have a desire to stop drinking. These meetings offer a more intimate setting for sharing.</p>
+    <p><strong>Speaker Meetings:</strong> One or more members share their experience, strength, and hope with the group.</p>
+    <p><strong>Discussion Meetings:</strong> Members discuss a topic related to recovery, with everyone having an opportunity to share.</p>
+    <p><strong>Big Book/Step Study:</strong> Focused study of AA literature including the Big Book and the 12 Steps.</p>
+    
+    <h3>Finding the Right Meeting</h3>
+    <p>Use the filters above to find meetings that fit your schedule and preferences. Meetings are available throughout {areaDescription} including {neighborhoods}.</p>
+    
+    <h3>Need Help Getting Started?</h3>
+    <p>Download the <strong>MyMeetings app</strong> for the best experience finding and tracking AA meetings. Save your favorite meetings, get reminders, and access meeting information offline.</p>
+  </div>
+</section>

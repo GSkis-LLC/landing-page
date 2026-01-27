@@ -1,0 +1,49 @@
+---
+const { initialCount = 0 } = Astro.props;
+---
+
+<section class="section-card" aria-labelledby="filter-heading">
+  <h2 id="filter-heading" class="section-title">Filter AA Meetings</h2>
+  <div class="filters">
+    <div class="filter-group">
+      <label class="filter-label" for="filter-day">Day of Week</label>
+      <select id="filter-day" class="filter-select">
+        <option value="">All Days</option>
+        <option value="0">Sunday</option>
+        <option value="1">Monday</option>
+        <option value="2">Tuesday</option>
+        <option value="3">Wednesday</option>
+        <option value="4">Thursday</option>
+        <option value="5">Friday</option>
+        <option value="6">Saturday</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label class="filter-label" for="filter-time">Time of Day</label>
+      <select id="filter-time" class="filter-select">
+        <option value="">All Times</option>
+        <option value="morning">Morning (6am - 12pm)</option>
+        <option value="afternoon">Afternoon (12pm - 5pm)</option>
+        <option value="evening">Evening (5pm - 9pm)</option>
+        <option value="night">Night (9pm - 6am)</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label class="filter-label" for="filter-type">Meeting Type</label>
+      <select id="filter-type" class="filter-select">
+        <option value="">All Types</option>
+        <option value="Open">Open</option>
+        <option value="Closed">Closed</option>
+        <option value="Speaker">Speaker</option>
+        <option value="Discussion">Discussion</option>
+        <option value="Big Book">Big Book</option>
+        <option value="Step">Step</option>
+        <option value="Beginner">Beginner</option>
+        <option value="Men">Men</option>
+        <option value="Women">Women</option>
+        <option value="Young People">Young People</option>
+      </select>
+    </div>
+    <span id="results-count" class="results-count" aria-live="polite">{initialCount} meetings found</span>
+  </div>
+</section>

@@ -1,0 +1,319 @@
+---
+// ============================================================================
+// LOCATION CONFIGURATION - Change these values to create a page for a new city
+// ============================================================================
+const LOCATION = {
+  // City/location name (used in titles, headings, etc.)
+  city: 'Cape Coral',
+  // State abbreviation
+  stateAbbr: 'FL',
+  // Full state name
+  stateFull: 'Florida',
+  // Region (for geo meta tags, e.g., 'US-MA', 'US-NY', 'US-CA')
+  geoRegion: 'US-FL',
+  // URL slug (lowercase, no spaces)
+  slug: 'cape-coral',
+  // Latitude for map center and API query
+  lat: 26.5629,
+  // Longitude for map center and API query
+  lng: -81.9495,
+  // Area description (e.g., 'Greater Boston area', 'New York City area')
+  areaDescription: 'Cape Coral–Fort Myers area',
+  // Neighborhoods/areas for SEO content (comma-separated list)
+  neighborhoods: 'Downtown Cape Coral, Southwest Cape, Cape Harbour, Burnt Store, West Cape, Del Prado',
+};
+// ============================================================================
+// DERIVED CONSTANTS (auto-generated from LOCATION config)
+// ============================================================================
+const title = `AA Meetings near ${LOCATION.city}, ${LOCATION.stateAbbr} - Find Alcoholics Anonymous Near You | MyMeetings`;
+const description = `Find AA Meetings near ${LOCATION.city}, ${LOCATION.stateFull}. Browse 100+ Alcoholics Anonymous meetings with times, locations, and directions. Open meetings, closed meetings, speaker meetings, and more. Updated daily.`;
+const canonical = `https://gskis.com/meetings/${LOCATION.slug}`;
+const appStoreUrl = 'https://apps.apple.com/app/id6748364894';
+const locationLat = LOCATION.lat;
+const locationLng = LOCATION.lng;
+
+// SEO-related constants
+const siteName = 'MyMeetings';
+const ogImage = `https://gskis.com/myMeetingsAppLogo.webp`;
+const keywords = `AA meetings ${LOCATION.city}, Alcoholics Anonymous ${LOCATION.city}, AA near me, ${LOCATION.city} AA meetings, recovery meetings ${LOCATION.city}, 12 step meetings ${LOCATION.city}, AA meeting times ${LOCATION.city}, open AA meetings ${LOCATION.city}, closed AA meetings ${LOCATION.city}`;
+
+let meetings = [];
+try {
+  const res = await fetch(`https://api.meetingguide.org/app/v2/request?latitude=${locationLat}&longitude=${locationLng}`);
+  if (res.ok) {
+    const json = await res.json();
+    meetings = json?.meetings ?? json ?? [];
+  } else {
+    console.error('Meetings fetch failed', res.status);
+  }
+} catch (e) {
+  console.error(e);
+}
+
+function formatTime(t: any) {
+  if (!t) return '';
+  const [h, m] = String(t).split(':');
+  const hour = parseInt(h || '0', 10);
+  const ampm = hour >= 12 ? 'PM' : 'AM';
+  const hour12 = hour % 12 === 0 ? 12 : hour % 12;
+  return `${hour12}:${m || '00'} ${ampm}`;
+}
+
+function dayOfWeek(num: any) {
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  return days[Number(num) || 0];
+}
+
+// Map meeting type to CSS class (matching [id].astro)
+const typeToClass: Record<string, string> = {
+  'Beginner': 'type-badge-beginner',
+  'Big Book': 'type-badge-bigbook',
+  'Closed': 'type-badge-closed',
+  'Discussion': 'type-badge-discussion',
+  'English': 'type-badge-english',
+  'Grapevine': 'type-badge-grapevine',
+  'Literature': 'type-badge-literature',
+  'Men': 'type-badge-men',
+  'Open': 'type-badge-open',
+  'Step': 'type-badge-step',
+  'Speaker': 'type-badge-speaker',
+  'Step/Tradition': 'type-badge-steptradition',
+  'Tradition': 'type-badge-tradition',
+  'Women': 'type-badge-women',
+  'Wheelchair Access': 'type-badge-wheelchair',
+  'Young People': 'type-badge-youngpeople',
+};
+
+const normalizedMeetings = (meetings || []).map((m: any) => ({
+  ...m,
+  latitude: m.latitude ? Number(m.latitude) : m.lat ? Number(m.lat) : null,
+  longitude: m.longitude ? Number(m.longitude) : m.lng ? Number(m.lng) : null,
+  display_time: m.time ? formatTime(m.time) : '',
+  display_day: m.day != null ? dayOfWeek(m.day) : '',
+  display_address: m.formatted_address || m.location || m.address || '',
+  types_array: m.types ? String(m.types).split(',').map(t => t.trim()).filter(Boolean) : []
+}));
+const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u003c');
+
+// Component imports (modularized)
+import MeetingHeader from '../../components/meetings/MeetingHeader.astro';
+import AppPromo from '../../components/meetings/AppPromo.astro';
+import MeetingList from '../../components/meetings/MeetingList.astro';
+import SEOContent from '../../components/meetings/SEOContent.astro';
+import FeatureGrid from '../../components/meetings/FeatureGrid.astro';
+import FinalCTA from '../../components/meetings/FinalCTA.astro';
+import StickyCTA from '../../components/meetings/StickyCTA.astro';
+import Filters from '../../components/meetings/Filters.astro';
+import '../../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="/myMeetings.ico" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- iOS Smart App Banner -->
+    <meta name="apple-itunes-app" content={`app-id=6748364894, app-argument=mymeetings://meetings/${LOCATION.slug}`} />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="MyMeetings" />
+    <meta name="geo.region" content={LOCATION.geoRegion} />
+    <meta name="geo.placename" content={LOCATION.city} />
+    <meta name="geo.position" content={`${LOCATION.lat};${LOCATION.lng}`} />
+    <meta name="ICBM" content={`${LOCATION.lat}, ${LOCATION.lng}`} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`AA Meetings near ${LOCATION.city} - Find Alcoholics Anonymous meetings near you`} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={`AA Meetings near ${LOCATION.city} - Find Alcoholics Anonymous meetings near you`} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'WebPage',
+            '@id': canonical,
+            'url': canonical,
+            'name': title,
+            'description': description,
+            'isPartOf': {
+              '@type': 'WebSite',
+              'name': siteName,
+              'url': 'https://gskis.com'
+            },
+            'about': {
+              '@type': 'Thing',
+              'name': 'Alcoholics Anonymous',
+              'sameAs': 'https://www.aa.org'
+            },
+            'mainEntity': {
+              '@type': 'ItemList',
+              'name': `AA Meetings near ${LOCATION.city}`,
+              'description': `List of Alcoholics Anonymous meetings in ${LOCATION.city}, ${LOCATION.stateFull}`,
+              'numberOfItems': normalizedMeetings.length,
+              'itemListElement': normalizedMeetings.slice(0, 10).map((m, i) => ({
+                '@type': 'ListItem',
+                'position': i + 1,
+                'item': {
+                  '@type': 'Event',
+                  'name': m.name,
+                  'description': `${m.types_array?.join(', ') || 'AA'} meeting`,
+                  'location': {
+                    '@type': 'Place',
+                    'name': m.location || m.display_address,
+                    'address': m.display_address
+                  },
+                  'eventSchedule': {
+                    '@type': 'Schedule',
+                    'byDay': m.display_day,
+                    'startTime': m.time
+                  }
+                }
+              }))
+            }
+          },
+          {
+            '@type': 'Place',
+            'name': `${LOCATION.city}, ${LOCATION.stateFull}`,
+            'geo': {
+              '@type': 'GeoCoordinates',
+              'latitude': locationLat,
+              'longitude': locationLng
+            },
+            'address': {
+              '@type': 'PostalAddress',
+              'addressLocality': LOCATION.city,
+              'addressRegion': LOCATION.stateAbbr,
+              'addressCountry': 'US'
+            }
+          },
+          {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://gskis.com/myMeetings'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Meetings',
+                'item': 'https://gskis.com/meetings'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': LOCATION.city,
+                'item': canonical
+              }
+            ]
+          },
+          {
+            '@type': 'FAQPage',
+            'mainEntity': [
+              {
+                '@type': 'Question',
+                'name': `How many AA meetings are in ${LOCATION.city}?`,
+                'acceptedAnswer': {
+                  '@type': 'Answer',
+                  'text': `There are over ${normalizedMeetings.length} AA meetings available in and around the ${LOCATION.city} area, with meetings held every day of the week at various times.`
+                }
+              },
+              {
+                '@type': 'Question',
+                'name': `What types of AA meetings are available in ${LOCATION.city}?`,
+                'acceptedAnswer': {
+                  '@type': 'Answer',
+                  'text': `${LOCATION.city} offers a variety of AA meeting types including Open meetings (anyone can attend), Closed meetings (for those with a desire to stop drinking), Speaker meetings, Discussion meetings, Big Book study, Step meetings, and specialty meetings for men, women, and young people.`
+                }
+              },
+              {
+                '@type': 'Question',
+                'name': `Are there AA Meetings near ${LOCATION.city} every day?`,
+                'acceptedAnswer': {
+                  '@type': 'Answer',
+                  'text': `Yes, AA meetings are held in ${LOCATION.city} every day of the week, including weekends and holidays. Meetings are available in the morning, afternoon, evening, and night.`
+                }
+              }
+            ]
+          }
+        ]
+      })}
+    </script>
+
+    <!-- Styles moved to src/styles/global.css and imported in frontmatter -->
+
+    <!-- Leaflet CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <!-- Header -->
+      <MeetingHeader city={LOCATION.city} stateFull={LOCATION.stateFull} areaDescription={LOCATION.areaDescription} />
+
+      <!-- App Promo Banner -->
+      <AppPromo appStoreUrl={appStoreUrl} />
+
+      <!-- Filters -->
+      <Filters initialCount={normalizedMeetings.length} />
+
+      <!-- Map Section -->
+      <section class="section-card" aria-labelledby="map-heading">
+        <h2 id="map-heading" class="section-title">AA Meeting Locations in {LOCATION.city}</h2>
+        <div id="meeting-map" data-lat={locationLat} data-lng={locationLng} role="application" aria-label={`Interactive map showing AA meeting locations in ${LOCATION.city}`}></div>
+      </section>
+
+      <!-- Meetings Data -->
+      <script id="initial-meetings" type="application/json" set:html={initialMeetingsJSON}></script>
+
+      <!-- Meetings List -->
+      <MeetingList meetings={normalizedMeetings} typeToClass={typeToClass} maxItems={50} />
+
+      <!-- SEO Content Section -->
+      <SEOContent city={LOCATION.city} stateFull={LOCATION.stateFull} areaDescription={LOCATION.areaDescription} neighborhoods={LOCATION.neighborhoods} />
+
+      <!-- Why Choose MyMeetings -->
+      <FeatureGrid />
+
+      <!-- Final CTA -->
+      <FinalCTA appStoreUrl={appStoreUrl} />
+    </main>
+
+    <!-- Sticky Mobile CTA -->
+    <StickyCTA appStoreUrl={appStoreUrl} />
+
+    <!-- Client modules: filters, meeting list, map, analytics -->
+    <script type="module" src="/js/meetings/filters.js" defer></script>
+    <script type="module" src="/js/meetings/meeting-list.js" defer></script>
+    <script type="module" src="/js/meetings/map.js" defer></script>
+    <script type="module" src="/js/meetings/analytics.js" defer></script>
+  </body>
+</html>
+

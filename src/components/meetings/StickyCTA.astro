@@ -1,0 +1,13 @@
+---
+const { appStoreUrl } = Astro.props;
+---
+
+<div class="sticky-cta" id="sticky-cta">
+  <div class="sticky-cta-inner">
+    <div class="sticky-cta-text">
+      <p class="sticky-cta-title">MyMeetings App</p>
+      <p class="sticky-cta-subtitle">Find meetings faster</p>
+    </div>
+    <a href={appStoreUrl} target="_blank" class="sticky-cta-button" rel="noopener noreferrer">Get the App</a>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+---
+const { meetings = [], maxItems = 50, typeToClass = {} } = Astro.props;
+import MeetingCard from './MeetingCard.astro';
+---
+
+<section class="section-card" aria-labelledby="meetings-heading">
+  <h2 id="meetings-heading" class="section-title">Alcoholics Anonymous Meetings</h2>
+  <div id="meeting-list" class="meeting-list">
+    {meetings && meetings.length > 0 ? (
+      meetings.slice(0, maxItems).map(m => (
+        <MeetingCard meeting={m} typeToClass={typeToClass} />
+      ))
+    ) : (
+      <div class="no-results">
+        <div class="no-results-icon">📍</div>
+        <p>No meetings found. Please try adjusting your filters.</p>
+      </div>
+    )}
+  </div>
+</section>
