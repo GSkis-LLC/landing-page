@@ -21,20 +21,60 @@ const { meeting, typeToClass = {} } = Astro.props;
     </div>
   )}
 
-  {meeting.types_array && meeting.types_array.length > 0 && (
+  {(meeting.types_array && meeting.types_array.length > 0) || meeting.conference_url ? (
     <div class="meeting-types">
-      {meeting.types_array.map(type => (
+      {meeting.conference_url && (
+        <span class="type-badge type-badge-online">Online</span>
+      )}
+      {meeting.types_array && meeting.types_array.map(type => (
         <span class={`type-badge ${typeToClass[type] || ''}`}>{type}</span>
       ))}
     </div>
+  ) : null}
+
+  {(meeting.notes || meeting.group_notes || meeting.location_notes) && (
+    <div class="meeting-notes">
+      {meeting.notes && (
+        <div class="note-item">
+          <span class="note-label">Meeting Notes</span>
+          <p class="note-text">{meeting.notes}</p>
+        </div>
+      )}
+      {meeting.group_notes && (
+        <div class="note-item">
+          <span class="note-label">Group Notes</span>
+          <p class="note-text">{meeting.group_notes}</p>
+        </div>
+      )}
+      {meeting.location_notes && (
+        <div class="note-item">
+          <span class="note-label">Location Notes</span>
+          <p class="note-text">{meeting.location_notes}</p>
+        </div>
+      )}
+    </div>
   )}
 
-  {(meeting.latitude && meeting.longitude) && (
+  {(meeting.conference_url || meeting.latitude && meeting.longitude) && (
     <div class="meeting-actions">
-      <a class="btn-small" href={`http://maps.apple.com/?daddr=${meeting.latitude},${meeting.longitude}`} target="_blank" rel="noopener noreferrer">
-        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
-        Directions
-      </a>
+      {meeting.conference_url && (
+        <a class="btn-small" href={meeting.conference_url} target="_blank" rel="noopener noreferrer">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+          Join Video Call
+        </a>
+      )}
+      {(meeting.latitude && meeting.longitude) && (
+        <a class="btn-small" href={`http://maps.apple.com/?daddr=${meeting.latitude},${meeting.longitude}`} target="_blank" rel="noopener noreferrer">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
+          Directions
+        </a>
+      )}
     </div>
+  )}
+
+  {meeting.conference_url_notes && (
+    <p class="conference-note">
+      <small>{meeting.conference_url_notes}</small>
+    </p>
   )}
 </div>

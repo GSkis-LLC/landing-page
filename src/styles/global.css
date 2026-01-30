@@ -111,12 +111,23 @@ html, body {
 .type-badge-speaker { background: rgba(153,246,228,0.3); color: #0d9488 }
 .type-badge-women { background: rgba(236,72,153,0.2); color: #db2777 }
 .type-badge-youngpeople { background: rgba(253,224,71,0.3); color: #ca8a04 }
+.type-badge-online { background: rgba(99,102,241,0.2); color: #4f46e5 }
 
 /* Meeting Actions */
 .meeting-actions { display:flex; gap:0.5rem; margin-top:0.75rem; padding-top:0.75rem; border-top:1px solid #f3f4f6 }
 .btn-small { display:inline-flex; align-items:center; gap:0.3rem; background:#f0f6ff; color:#5A7D9A; border:1px solid #5A7D9A; border-radius:6px; padding:0.35rem 0.7rem; font-size:0.85rem; font-weight:500; cursor:pointer; text-decoration:none; transition:background 0.15s, color 0.15s }
 .btn-small:hover { background:#5A7D9A; color:#fff }
+.btn-small.btn-primary { background:#2A9D8F; color:#fff; border-color:#2A9D8F }
+.btn-small.btn-primary:hover { background:#21867A; border-color:#21867A }
 .btn-small svg { width:14px; height:14px }
+
+/* Meeting Notes */
+.meeting-notes { margin-top:0.75rem; padding:0.75rem; background:#f9fafb; border-radius:8px; border-left:3px solid #2A9D8F }
+.note-item { margin:0 0 0.75rem 0 }
+.note-item:last-child { margin-bottom:0 }
+.note-label { display:block; font-size:0.75rem; font-weight:600; color:#6b7280; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:0.25rem }
+.note-text { margin:0; font-size:0.9rem; color:#4a5a6a; line-height:1.4 }
+.conference-note { margin-top:0.5rem; font-size:0.85rem; color:#6b7280 }
 
 /* No Results */
 .no-results { text-align:center; padding:3rem; color:#6b7280 }
@@ -130,7 +141,9 @@ html, body {
 .seo-text strong { color:#2a3a4d }
 
 /* App Promo Banner */
-.app-promo { background: linear-gradient(135deg, #2A9D8F 0%, #1d7a6f 100%); border-radius:16px; padding:2rem; margin-bottom:1.5rem; color:white; display:flex; align-items:center; gap:2rem }
+.app-promo { background: linear-gradient(135deg, #2A9D8F 0%, #1d7a6f 100%); border-radius:16px; padding:2rem; margin-bottom:1.5rem; color:white; display:flex; flex-direction:column; align-items:flex-start; gap:0.5rem }
+.app-promo-header { display:flex; align-items:start; gap:1rem }
+.app-promo-icon { width:56px; height:56px; border-radius:12px; flex-shrink:0; box-shadow:0 4px 12px rgba(0,0,0,0.2) }
 .app-promo-content { flex:1 }
 .app-promo-title { font-size:1.5rem; font-weight:700; margin:0 0 0.5rem 0 }
 .app-promo-subtitle { font-size:1rem; opacity:0.95; margin:0 0 1rem 0; line-height:1.5 }
@@ -173,7 +186,7 @@ html, body {
 @media (max-width: 768px) {
   .container { padding:1rem; padding-bottom:100px }
   .sticky-cta { display:block }
-  .app-promo { flex-direction:column; text-align:center; padding:1.5rem }
+  .app-promo { padding:1.5rem; align-items:flex-start }
   .app-promo-features { justify-content:center }
   .final-cta { padding:2rem 1.5rem }
   .final-cta-title { font-size:1.4rem }

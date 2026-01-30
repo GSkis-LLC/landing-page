@@ -1,8 +1,35 @@
 ---
-const { city, stateFull, areaDescription } = Astro.props;
+const { city, stateFull, areaDescription, neighborhoods, meetingHighlights } = Astro.props;
 ---
 
 <header class="header">
   <h1 class="header-title">AA Meetings near {city}, {stateFull}</h1>
   <p class="header-subtitle">Find Alcoholics Anonymous meetings near you in the {areaDescription}. Browse open meetings, closed meetings, speaker meetings, and more. Filter by day, time, or meeting type to find the perfect meeting for your recovery journey.</p>
+  {meetingHighlights && (
+    <p class="header-highlights">{meetingHighlights}</p>
+  )}
+  {neighborhoods && (
+    <p class="header-neighborhoods">
+      <strong>Serving:</strong> {neighborhoods} and surrounding areas.
+    </p>
+  )}
 </header>
+
+<style>
+  .header-highlights {
+    font-size: 1rem;
+    color: #2A9D8F;
+    margin-top: 0.75rem;
+    line-height: 1.5;
+    font-style: italic;
+  }
+  .header-neighborhoods {
+    font-size: 0.95rem;
+    color: #6b7280;
+    margin-top: 0.75rem;
+    line-height: 1.5;
+  }
+  .header-neighborhoods strong {
+    color: #2a3a4d;
+  }
+</style>

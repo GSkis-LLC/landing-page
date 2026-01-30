@@ -1,0 +1,119 @@
+---
+interface Intergroup {
+  name: string;
+  url?: string;
+  phone?: string;
+}
+
+interface Props {
+  city: string;
+  stateFull: string;
+  intergroup?: Intergroup;
+}
+
+const { city, stateFull, intergroup } = Astro.props;
+---
+
+<section class="section-card local-resources" aria-labelledby="resources-heading">
+  <h2 id="resources-heading" class="section-title">AA Resources in {city}, {stateFull}</h2>
+  
+  <div class="resources-grid">
+    {intergroup && (
+      <div class="resource-item">
+        <h3>Local Intergroup</h3>
+        <p><strong>{intergroup.name}</strong></p>
+        {intergroup.url && (
+          <a href={intergroup.url} target="_blank" rel="noopener" class="resource-link">
+            Visit Website →
+          </a>
+        )}
+        {intergroup.phone && (
+          <p class="resource-phone">
+            <a href={`tel:${intergroup.phone.replace(/\D/g, '')}`}>{intergroup.phone}</a>
+          </p>
+        )}
+      </div>
+    )}
+    
+    <div class="resource-item">
+      <h3>24/7 AA Hotline</h3>
+      <p>Need help now? Call the AA General Service Office:</p>
+      <p class="resource-phone">
+        <a href="tel:2128703400">(212) 870-3400</a>
+      </p>
+    </div>
+    
+    <div class="resource-item">
+      <h3>Online Resources</h3>
+      <ul class="resource-list">
+        <li><a href="https://www.aa.org" target="_blank" rel="noopener">Alcoholics Anonymous World Services</a></li>
+        <li><a href="https://www.aa.org/the-big-book" target="_blank" rel="noopener">The Big Book (Free Online)</a></li>
+        <li><a href="https://aa-intergroup.org/meetings" target="_blank" rel="noopener">Online AA Meetings (24/7)</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .resource-item {
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 3px solid #2A9D8F;
+  }
+  
+  .resource-item h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    color: #1e293b;
+  }
+  
+  .resource-item p {
+    margin: 0.25rem 0;
+    color: #475569;
+  }
+  
+  .resource-link {
+    color: #2A9D8F;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .resource-link:hover {
+    text-decoration: underline;
+  }
+  
+  .resource-phone {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  .resource-phone a {
+    color: #2A9D8F;
+    text-decoration: none;
+  }
+  
+  .resource-list {
+    margin: 0.5rem 0 0 0;
+    padding-left: 1.25rem;
+  }
+  
+  .resource-list li {
+    margin: 0.25rem 0;
+  }
+  
+  .resource-list a {
+    color: #2A9D8F;
+    text-decoration: none;
+  }
+  
+  .resource-list a:hover {
+    text-decoration: underline;
+  }
+</style>

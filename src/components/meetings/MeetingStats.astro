@@ -1,0 +1,127 @@
+---
+const { meetings = [], city, stateFull } = Astro.props;
+
+// Calculate real statistics from meeting data
+const totalMeetings = meetings.length;
+const meetingsByDay = [0, 0, 0, 0, 0, 0, 0];
+const meetingTypes = new Map<string, number>();
+const locations = new Set<string>();
+let onlineMeetings = 0;
+
+meetings.forEach((m: any) => {
+  // Count by day
+  if (m.day != null) {
+    meetingsByDay[m.day] = (meetingsByDay[m.day] || 0) + 1;
+  }
+  
+  // Count by type
+  if (m.types_array) {
+    m.types_array.forEach((t: string) => {
+      meetingTypes.set(t, (meetingTypes.get(t) || 0) + 1);
+    });
+  }
+  
+  // Count unique locations
+  if (m.location_id) {
+    locations.add(String(m.location_id));
+  }
+  
+  // Count online
+  if (m.conference_url) {
+    onlineMeetings++;
+  }
+});
+
+const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const busiestDayIndex = meetingsByDay.indexOf(Math.max(...meetingsByDay));
+const busiestDay = dayNames[busiestDayIndex];
+
+// Get top 5 meeting types
+const topTypes = [...meetingTypes.entries()]
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 5);
+
+const uniqueLocations = locations.size;
+---
+
+<section class="section-card meeting-stats" aria-labelledby="stats-heading">
+  <h2 id="stats-heading" class="section-title">AA Meeting Statistics for {city}</h2>
+  
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="stat-number">{totalMeetings}</span>
+      <span class="stat-label">Total Meetings</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">{uniqueLocations}</span>
+      <span class="stat-label">Meeting Locations</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">{onlineMeetings}</span>
+      <span class="stat-label">Online Meetings</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">7</span>
+      <span class="stat-label">Days per Week</span>
+    </div>
+  </div>
+
+  <div class="stats-details">
+    <p><strong>Busiest day:</strong> {busiestDay} with {meetingsByDay[busiestDayIndex]} meetings</p>
+    
+    {topTypes.length > 0 && (
+      <p><strong>Most common meeting types:</strong> {topTypes.map(([type, count]) => `${type} (${count})`).join(', ')}</p>
+    )}
+    
+    <p class="stats-note">
+      Meeting data is sourced from the <a href="https://www.aa.org/find-aa" target="_blank" rel="noopener">AA Meeting Guide</a> and updated regularly to ensure accuracy.
+    </p>
+  </div>
+</section>
+
+<style>
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .stat-item {
+    text-align: center;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+  }
+  
+  .stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2A9D8F;
+  }
+  
+  .stat-label {
+    font-size: 0.875rem;
+    color: #64748b;
+  }
+  
+  .stats-details {
+    font-size: 0.95rem;
+    color: #475569;
+  }
+  
+  .stats-details p {
+    margin: 0.5rem 0;
+  }
+  
+  .stats-note {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+  
+  .stats-note a {
+    color: #2A9D8F;
+  }
+</style>

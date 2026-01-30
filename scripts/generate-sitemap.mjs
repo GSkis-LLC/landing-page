@@ -2,11 +2,52 @@ import fs from 'fs/promises';
 import path from 'path';
 import { SitemapStream, streamToPromise } from 'sitemap';
 import { createWriteStream } from 'fs';
+import { pathToFileURL } from 'url';
 
 const SITE_URL = 'https://gskis.com';
 const SRC_PAGES = path.resolve(process.cwd(), 'src/pages');
 const OUT_DIR = path.resolve(process.cwd(), 'public');
 const OUT_FILE = path.join(OUT_DIR, 'sitemap.xml');
+const LOCATIONS_FILE = path.resolve(process.cwd(), 'src/data/locations.ts');
+
+// Helper to convert string to kebab-case slug (mirrors the one in locations.ts)
+function toSlug(str) {
+  return str
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+// Parse locations.ts and extract all location entries
+async function getLocationUrls() {
+  try {
+    const content = await fs.readFile(LOCATIONS_FILE, 'utf8');
+    // Extract the locations object from the TS file
+    const match = content.match(/export const locations[^=]*=\s*(\{[\s\S]*?\n\};)/);
+    if (!match) {
+      console.warn('Could not parse locations from locations.ts');
+      return [];
+    }
+    
+    // Parse the JSON-like object (it's valid JSON in the generated file)
+    const jsonStr = match[1].replace(/;$/, '');
+    const locations = JSON.parse(jsonStr);
+    
+    const urls = [];
+    for (const [stateSlug, cities] of Object.entries(locations)) {
+      for (const [citySlug, config] of Object.entries(cities)) {
+        urls.push({
+          url: `/meetings/${stateSlug}/${citySlug}`,
+          lastmod: new Date().toISOString(),
+        });
+      }
+    }
+    return urls;
+  } catch (e) {
+    console.error('Error reading locations:', e);
+    return [];
+  }
+}
 
 async function walk(dir) {
   const entries = await fs.readdir(dir, { withFileTypes: true });
@@ -60,6 +101,11 @@ async function generate() {
       urls.push({ url: p });
     }
   }
+
+  // Add dynamic location routes from locations.ts
+  const locationUrls = await getLocationUrls();
+  urls.push(...locationUrls);
+  console.log(`Added ${locationUrls.length} location URLs from locations.ts`);
 
   // Ensure we always include root
   if (!urls.find(u => u.url === '/')) urls.unshift({ url: '/', lastmod: new Date().toISOString() });
