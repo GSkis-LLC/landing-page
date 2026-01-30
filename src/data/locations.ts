@@ -2397,8 +2397,7 @@ export const locations: Record<string, Record<string, LocationConfig>> = {
       "meetingHighlights": "Neighborhood-centered meetings with steady attendance and regular speaker nights in the downtown area.",
       "transitInfo": "CityLine buses and regional routes; Chicago Rockford International Airport for regional travel.",
       "population": 148000
-    }
-    ,
+    },
     "aurora": {
       "city": "Aurora",
       "stateAbbr": "IL",
@@ -2486,97 +2485,8 @@ export const locations: Record<string, Record<string, LocationConfig>> = {
       "meetingHighlights": "Largest AA community in the state with a variety of meetings—speaker nights, step studies, and newcomer-friendly options.",
       "transitInfo": "Manchester Transit Authority serves local routes; Manchester-Boston Regional Airport (MHT) nearby for regional flights.",
       "population": 111000
-    }
-    ,
-    "new-jersey": {
-      "newark": {
-        "city": "Newark",
-        "stateAbbr": "NJ",
-        "stateFull": "New Jersey",
-        "geoRegion": "US-NJ",
-        "slug": "newark",
-        "lat": 40.7357,
-        "lng": -74.1724,
-        "areaDescription": "Newark metropolitan area",
-        "neighborhoods": "Downtown, Ironbound, University Heights, Weequahic, North Newark",
-        "intergroup": {
-          "name": "Newark Area Intergroup",
-          "url": "https://www.newarkaa.org"
-        },
-        "meetingHighlights": "Large urban fellowship with numerous downtown and neighborhood meetings, many evening and newcomer-friendly options.",
-        "transitInfo": "NJ Transit, PATH, and local buses provide regional connections; Newark Liberty International Airport (EWR) serves the metro.",
-        "population": 282000
-      },
-      "jersey-city": {
-        "city": "Jersey City",
-        "stateAbbr": "NJ",
-        "stateFull": "New Jersey",
-        "geoRegion": "US-NJ",
-        "slug": "jersey-city",
-        "lat": 40.7178,
-        "lng": -74.0431,
-        "areaDescription": "Jersey City (NYC metro)",
-        "neighborhoods": "Downtown, Journal Square, Newport, The Heights, McGinley Square",
-        "intergroup": {
-          "name": "Hudson County Intergroup"
-        },
-        "meetingHighlights": "Urban, commuter-friendly meetings with many evening and lunchtime options; strong cross-river connections with NYC groups.",
-        "transitInfo": "PATH, NJ Transit, and light rail connect Jersey City to Manhattan and the region; close to Newark Liberty International Airport.",
-        "population": 292000
-      },
-      "paterson": {
-        "city": "Paterson",
-        "stateAbbr": "NJ",
-        "stateFull": "New Jersey",
-        "geoRegion": "US-NJ",
-        "slug": "paterson",
-        "lat": 40.9168,
-        "lng": -74.1718,
-        "areaDescription": "Paterson area",
-        "neighborhoods": "Downtown, Eastside, Northside, Little Lima",
-        "intergroup": {
-          "name": "Passaic County Intergroup"
-        },
-        "meetingHighlights": "Neighborhood-centered meetings with active evening groups and several culturally specific meetings.",
-        "transitInfo": "NJ Transit commuter rail and buses connect Paterson to the region; close to major highways and NYC access.",
-        "population": 145000
-      },
-      "elizabeth": {
-        "city": "Elizabeth",
-        "stateAbbr": "NJ",
-        "stateFull": "New Jersey",
-        "geoRegion": "US-NJ",
-        "slug": "elizabeth",
-        "lat": 40.6639,
-        "lng": -74.2107,
-        "areaDescription": "Elizabeth (Union County)",
-        "neighborhoods": "Downtown, Elmora, Elizabethport, North Elizabeth",
-        "intergroup": {
-          "name": "Elizabeth Area Intergroup"
-        },
-        "meetingHighlights": "Community meetings with regular speaker nights and strong weekday attendance from nearby industrial and residential neighborhoods.",
-        "transitInfo": "NJ Transit trains and buses serve Elizabeth; Newark Liberty International Airport nearby.",
-        "population": 128000
-      },
-      "princeton": {
-        "city": "Princeton",
-        "stateAbbr": "NJ",
-        "stateFull": "New Jersey",
-        "geoRegion": "US-NJ",
-        "slug": "princeton",
-        "lat": 40.3573,
-        "lng": -74.6672,
-        "areaDescription": "Princeton (college town)",
-        "neighborhoods": "Downtown, University campus, Riverside",
-        "intergroup": {
-          "name": "Princeton Area Intergroup"
-        },
-        "meetingHighlights": "College-town meetings with student-friendly schedules and a mix of study and speaker formats; strong newcomer support.",
-        "transitInfo": "NJ Transit and Amtrak connections via nearby stations; proximity to major highways and regional airports.",
-        "population": 31000
-      }
     },
-    "nashua": {
+        "nashua": {
       "city": "Nashua",
       "stateAbbr": "NH",
       "stateFull": "New Hampshire",
@@ -2626,6 +2536,94 @@ export const locations: Record<string, Record<string, LocationConfig>> = {
       "meetingHighlights": "Small-town meetings with strong community ties and student-influenced schedules during the academic year.",
       "transitInfo": "Local bus services and regional routes; driving access via NH-10 and nearby regional airports.",
       "population": 23000
+    }
+  },
+  "new-jersey": {
+    "newark": {
+      "city": "Newark",
+      "stateAbbr": "NJ",
+      "stateFull": "New Jersey",
+      "geoRegion": "US-NJ",
+      "slug": "newark",
+      "lat": 40.7357,
+      "lng": -74.1724,
+      "areaDescription": "Newark metropolitan area",
+      "neighborhoods": "Downtown, Ironbound, University Heights, Weequahic, North Newark",
+      "intergroup": {
+        "name": "Newark Area Intergroup",
+        "url": "https://www.newarkaa.org"
+      },
+      "meetingHighlights": "Large urban fellowship with numerous downtown and neighborhood meetings, many evening and newcomer-friendly options.",
+      "transitInfo": "NJ Transit, PATH, and local buses provide regional connections; Newark Liberty International Airport (EWR) serves the metro.",
+      "population": 282000
+    },
+    "jersey-city": {
+      "city": "Jersey City",
+      "stateAbbr": "NJ",
+      "stateFull": "New Jersey",
+      "geoRegion": "US-NJ",
+      "slug": "jersey-city",
+      "lat": 40.7178,
+      "lng": -74.0431,
+      "areaDescription": "Jersey City (NYC metro)",
+      "neighborhoods": "Downtown, Journal Square, Newport, The Heights, McGinley Square",
+      "intergroup": {
+        "name": "Hudson County Intergroup"
+      },
+      "meetingHighlights": "Urban, commuter-friendly meetings with many evening and lunchtime options; strong cross-river connections with NYC groups.",
+      "transitInfo": "PATH, NJ Transit, and light rail connect Jersey City to Manhattan and the region; close to Newark Liberty International Airport.",
+      "population": 292000
+    },
+    "paterson": {
+      "city": "Paterson",
+      "stateAbbr": "NJ",
+      "stateFull": "New Jersey",
+      "geoRegion": "US-NJ",
+      "slug": "paterson",
+      "lat": 40.9168,
+      "lng": -74.1718,
+      "areaDescription": "Paterson area",
+      "neighborhoods": "Downtown, Eastside, Northside, Little Lima",
+      "intergroup": {
+        "name": "Passaic County Intergroup"
+      },
+      "meetingHighlights": "Neighborhood-centered meetings with active evening groups and several culturally specific meetings.",
+      "transitInfo": "NJ Transit commuter rail and buses connect Paterson to the region; close to major highways and NYC access.",
+      "population": 145000
+    },
+    "elizabeth": {
+      "city": "Elizabeth",
+      "stateAbbr": "NJ",
+      "stateFull": "New Jersey",
+      "geoRegion": "US-NJ",
+      "slug": "elizabeth",
+      "lat": 40.6639,
+      "lng": -74.2107,
+      "areaDescription": "Elizabeth (Union County)",
+      "neighborhoods": "Downtown, Elmora, Elizabethport, North Elizabeth",
+      "intergroup": {
+        "name": "Elizabeth Area Intergroup"
+      },
+      "meetingHighlights": "Community meetings with regular speaker nights and strong weekday attendance from nearby industrial and residential neighborhoods.",
+      "transitInfo": "NJ Transit trains and buses serve Elizabeth; Newark Liberty International Airport nearby.",
+      "population": 128000
+    },
+    "princeton": {
+      "city": "Princeton",
+      "stateAbbr": "NJ",
+      "stateFull": "New Jersey",
+      "geoRegion": "US-NJ",
+      "slug": "princeton",
+      "lat": 40.3573,
+      "lng": -74.6672,
+      "areaDescription": "Princeton (college town)",
+      "neighborhoods": "Downtown, University campus, Riverside",
+      "intergroup": {
+        "name": "Princeton Area Intergroup"
+      },
+      "meetingHighlights": "College-town meetings with student-friendly schedules and a mix of study and speaker formats; strong newcomer support.",
+      "transitInfo": "NJ Transit and Amtrak connections via nearby stations; proximity to major highways and regional airports.",
+      "population": 31000
     }
   },
   "iowa": {
