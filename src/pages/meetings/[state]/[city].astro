@@ -3,6 +3,7 @@ import { getAllLocations, getLocation, toSlug, getCitiesInState } from '../../..
 import type { LocationConfig } from '../../../data/locations';
 
 // Component imports
+import Header from '../../../components/Header.astro';
 import MeetingHeader from '../../../components/meetings/MeetingHeader.astro';
 import AppPromo from '../../../components/meetings/AppPromo.astro';
 import MeetingList from '../../../components/meetings/MeetingList.astro';
@@ -295,6 +296,7 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   </head>
   <body>
+    <Header stateName={LOCATION.stateFull} stateSlug={stateSlug} cityName={LOCATION.city} />
     <main class="container">
       <!-- Header -->
       <MeetingHeader city={LOCATION.city} stateFull={LOCATION.stateFull} areaDescription={LOCATION.areaDescription} neighborhoods={LOCATION.neighborhoods} meetingHighlights={LOCATION.meetingHighlights} />

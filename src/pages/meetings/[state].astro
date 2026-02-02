@@ -1,0 +1,421 @@
+---
+import { getAllStates, getCitiesInState, toSlug } from '../../data/locations';
+import type { LocationConfig } from '../../data/locations';
+import '../../styles/global.css';
+import Header from '../../components/Header.astro';
+import AppPromo from '../../components/meetings/AppPromo.astro';
+import StickyCTA from '../../components/meetings/StickyCTA.astro';
+
+// Enable static prerendering for all states
+export const prerender = true;
+
+// Generate static paths for all states
+export function getStaticPaths() {
+  const states = getAllStates();
+  return states.map((stateSlug) => {
+    const cities = getCitiesInState(stateSlug);
+    // Get full state name from first city
+    const stateFull = cities[0]?.stateFull || stateSlug;
+    const stateAbbr = cities[0]?.stateAbbr || stateSlug.toUpperCase();
+    
+    return {
+      params: { state: stateSlug },
+      props: { stateSlug, stateFull, stateAbbr, cities },
+    };
+  });
+}
+
+// Get props from getStaticPaths
+const { stateSlug, stateFull, stateAbbr, cities } = Astro.props;
+
+// Sort cities alphabetically
+const sortedCities = [...cities].sort((a, b) => a.city.localeCompare(b.city));
+
+// SEO constants
+const title = `AA Meetings in ${stateFull} - Find Alcoholics Anonymous Meetings | MyMeetings`;
+const description = `Find AA Meetings in ${stateFull}. Browse Alcoholics Anonymous meetings across ${sortedCities.length} cities including ${sortedCities.slice(0, 3).map(c => c.city).join(', ')}${sortedCities.length > 3 ? ', and more' : ''}. Updated daily with meeting times, locations, and directions.`;
+const canonical = `https://gskis.com/meetings/${stateSlug}`;
+const siteName = 'MyMeetings';
+const ogImage = `https://gskis.com/myMeetingsAppLogo.webp`;
+const keywords = `AA meetings ${stateFull}, Alcoholics Anonymous ${stateFull}, AA near me ${stateFull}, recovery meetings ${stateFull}, 12 step meetings ${stateFull}`;
+const appStoreUrl = 'https://apps.apple.com/app/id6748364894';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="/myMeetings.ico" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- iOS Smart App Banner -->
+    <meta name="apple-itunes-app" content={`app-id=6748364894, app-argument=mymeetings://meetings/${stateSlug}`} />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="MyMeetings" />
+    <meta name="geo.region" content={`US-${stateAbbr}`} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`AA Meetings in ${stateFull} - Find Alcoholics Anonymous meetings`} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={`AA Meetings in ${stateFull}`} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'WebPage',
+          '@id': canonical,
+          'url': canonical,
+          'name': title,
+          'description': description,
+          'isPartOf': {
+            '@type': 'WebSite',
+            'name': siteName,
+            'url': 'https://gskis.com'
+          },
+          'about': {
+            '@type': 'Thing',
+            'name': 'Alcoholics Anonymous',
+            'sameAs': 'https://www.aa.org'
+          }
+        },
+        {
+          '@type': 'BreadcrumbList',
+          'itemListElement': [
+            {
+              '@type': 'ListItem',
+              'position': 1,
+              'name': 'Home',
+              'item': 'https://gskis.com/myMeetings'
+            },
+            {
+              '@type': 'ListItem',
+              'position': 2,
+              'name': 'Meetings',
+              'item': 'https://gskis.com/meetings'
+            },
+            {
+              '@type': 'ListItem',
+              'position': 3,
+              'name': stateFull,
+              'item': canonical
+            }
+          ]
+        },
+        {
+          '@type': 'ItemList',
+          'name': `AA Meeting Locations in ${stateFull}`,
+          'description': `List of cities in ${stateFull} with AA meetings`,
+          'numberOfItems': sortedCities.length,
+          'itemListElement': sortedCities.map((city, i) => ({
+            '@type': 'ListItem',
+            'position': i + 1,
+            'item': {
+              '@type': 'Place',
+              'name': city.city,
+              'url': `https://gskis.com/meetings/${stateSlug}/${toSlug(city.city)}`,
+              'geo': {
+                '@type': 'GeoCoordinates',
+                'latitude': city.lat,
+                'longitude': city.lng
+              },
+              'address': {
+                '@type': 'PostalAddress',
+                'addressLocality': city.city,
+                'addressRegion': stateAbbr,
+                'addressCountry': 'US'
+              }
+            }
+          }))
+        }
+      ]
+    })} />
+  </head>
+  <body>
+    <Header stateName={stateFull} stateSlug={stateSlug} />
+    <main class="container">
+      <!-- Header Section -->
+      <header class="meeting-header">
+        <div class="header-content">
+          <h1 class="main-title">AA Meetings in {stateFull}</h1>
+          <p class="subtitle">
+            Find Alcoholics Anonymous meetings across {stateFull}. Browse {sortedCities.length} cities with comprehensive meeting information, times, and locations.
+          </p>
+        </div>
+      </header>
+
+      <!-- App Promo Banner -->
+      <AppPromo appStoreUrl={appStoreUrl} />
+
+      <!-- Cities Grid Section -->
+      <section class="section-card">
+        <h2 class="section-title">Browse AA Meetings by City</h2>
+        <p class="section-description">
+          Select a city below to view AA meetings in that area. Each city page includes meeting times, locations, types, and directions.
+        </p>
+        
+        <div class="cities-grid">
+          {sortedCities.map((city) => (
+            <a 
+              href={`/meetings/${stateSlug}/${toSlug(city.city)}`} 
+              class="city-card"
+            >
+              <div class="city-card-content">
+                <h3 class="city-name">{city.city}</h3>
+                <p class="city-description">{city.areaDescription}</p>
+                {city.population && (
+                  <p class="city-population">Pop. {city.population.toLocaleString()}</p>
+                )}
+                {city.neighborhoods && (
+                  <p class="city-neighborhoods">{city.neighborhoods.split(',').slice(0, 3).join(', ')}</p>
+                )}
+              </div>
+              <div class="city-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- About AA in State Section -->
+      <section class="section-card">
+        <h2 class="section-title">About AA Meetings in {stateFull}</h2>
+        <div class="seo-content">
+          <p>
+            Alcoholics Anonymous (AA) has a strong presence throughout {stateFull}, with meetings available in {sortedCities.length} cities across the state. Whether you're looking for open meetings, closed meetings, speaker meetings, or specialty meetings, you'll find options that fit your schedule and needs.
+          </p>
+          
+          <h3>Meeting Types Available</h3>
+          <p>
+            AA meetings in {stateFull} include a variety of formats:
+          </p>
+          <ul>
+            <li><strong>Open Meetings:</strong> Open to anyone interested in learning about AA, including family members and friends</li>
+            <li><strong>Closed Meetings:</strong> For those who have a desire to stop drinking</li>
+            <li><strong>Speaker Meetings:</strong> Feature one or more speakers sharing their experience, strength, and hope</li>
+            <li><strong>Discussion Meetings:</strong> Members discuss a topic or chapter from AA literature</li>
+            <li><strong>Step Meetings:</strong> Focus on working through the 12 Steps of Alcoholics Anonymous</li>
+            <li><strong>Big Book Meetings:</strong> Study meetings focused on the AA Big Book</li>
+          </ul>
+
+          <h3>How to Find the Right Meeting</h3>
+          <p>
+            Each city page provides detailed information about meetings including times, locations, meeting types, and special notes. Use the filters on individual city pages to find meetings that match your preferences. Many meetings offer wheelchair accessibility, and some meetings are specifically for men, women, or young people.
+          </p>
+
+          <h3>Getting Started with AA</h3>
+          <p>
+            If you're new to AA, open meetings are a great place to start. These meetings welcome anyone who wants to learn about the program. You don't need to speak or identify yourself – just come and listen. Most meetings last about an hour, and you'll find a supportive, welcoming community.
+          </p>
+
+          <p>
+            AA is a fellowship of people who share their experience, strength, and hope with each other to solve their common problem and help others recover from alcoholism. The only requirement for membership is a desire to stop drinking.
+          </p>
+        </div>
+      </section>
+
+      <!-- Why Choose MyMeetings Section -->
+      <section class="section-card">
+        <h2 class="section-title">Why Choose MyMeetings?</h2>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="feature-icon">📍</div>
+            <h3>Accurate Locations</h3>
+            <p>Up-to-date meeting information with precise addresses and directions</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🕐</div>
+            <h3>Complete Schedules</h3>
+            <p>See all meeting times and days at a glance</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🔍</div>
+            <h3>Easy Filtering</h3>
+            <p>Filter by day, time, meeting type, and more</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">📱</div>
+            <h3>Mobile Friendly</h3>
+            <p>Access meeting information on any device, anywhere</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🗺️</div>
+            <h3>Interactive Maps</h3>
+            <p>Visual maps showing all meeting locations in your area</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🔄</div>
+            <h3>Daily Updates</h3>
+            <p>Meeting information updated regularly to ensure accuracy</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="final-cta">
+        <div class="cta-content">
+          <h2>Ready to Find Your Meeting?</h2>
+          <p>Browse cities above or download the MyMeetings app for the best experience on iOS.</p>
+          <a href={appStoreUrl} class="cta-button" target="_blank" rel="noopener noreferrer">
+            Download MyMeetings
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sticky Mobile CTA -->
+    <StickyCTA appStoreUrl={appStoreUrl} />
+  </body>
+</html>
+
+<style>
+  /* Reuse global styles and add page-specific styles */
+  .cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .city-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .city-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .city-card-content {
+    flex: 1;
+  }
+
+  .city-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .city-description {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .city-population {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin: 0.25rem 0 0 0;
+    font-weight: 500;
+  }
+
+  .city-neighborhoods {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .city-arrow {
+    font-size: 1.5rem;
+    color: #3b82f6;
+    margin-left: 1rem;
+    transition: transform 0.2s ease;
+  }
+
+  .city-card:hover .city-arrow {
+    transform: translateX(4px);
+  }
+
+  .section-description {
+    color: #6b7280;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .seo-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 1.5rem 0 0.75rem 0;
+  }
+
+  .seo-content p {
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .seo-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+
+  .seo-content ul li {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+
+  .seo-content ul li::before {
+    content: "•";
+    color: #3b82f6;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+
+  .seo-content ul li strong {
+    color: #1f2937;
+  }
+
+  @media (max-width: 768px) {
+    .cities-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .city-card {
+      padding: 1rem;
+    }
+
+    .city-name {
+      font-size: 1.125rem;
+    }
+  }
+</style>

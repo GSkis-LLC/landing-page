@@ -1,0 +1,666 @@
+---
+import { getAllLocations, getAllStates, getCitiesInState } from '../data/locations';
+
+interface Props {
+  stateName?: string;
+  stateSlug?: string;
+  cityName?: string;
+}
+
+const { stateName, stateSlug, cityName } = Astro.props;
+
+// Prepare locations data for client-side
+const allLocations = getAllLocations();
+const allStates = getAllStates();
+
+// Create a simplified data structure for the client
+const locationsData = allLocations.map(loc => ({
+  city: loc.city,
+  stateFull: loc.stateFull,
+  stateSlug: loc.stateSlug,
+  citySlug: loc.citySlug,
+}));
+
+const statesData = allStates.map(stateSlug => {
+  const cities = getCitiesInState(stateSlug);
+  return {
+    slug: stateSlug,
+    name: cities[0]?.stateFull || stateSlug,
+  };
+});
+---
+
+<header class="site-header">
+  <div class="header-container">
+    <div class="header-left">
+      <a href="/myMeetings" class="logo-link">
+        <img src="/MyMeetingsAppLogo.webp" alt="MyMeetings Logo" class="logo" />
+        <span class="logo-text">MyMeetings</span>
+      </a>
+      
+      {(stateName || cityName) && (
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+          {stateName && stateSlug && (
+            <>
+              <a href={`/meetings/${stateSlug}`} class="breadcrumb-link">{stateName}</a>
+              {cityName && (
+                <>
+                  <span class="breadcrumb-separator">›</span>
+                  <span class="breadcrumb-current">{cityName}</span>
+                </>
+              )}
+            </>
+          )}
+        </nav>
+      )}
+    </div>
+    
+    <div class="header-right">
+      <div class="search-container">
+        <div class="search-input-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input 
+            type="text" 
+            id="location-search" 
+            class="search-input" 
+            placeholder="Find AA meetings near ..."
+            autocomplete="off"
+            role="combobox"
+            aria-expanded="false"
+            aria-controls="search-results"
+            aria-autocomplete="list"
+          />
+        </div>
+        <div id="search-results" class="search-results" role="listbox" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Pass locations data to client-side script -->
+<script type="application/json" id="locations-data" set:html={JSON.stringify({ locations: locationsData, states: statesData })}></script>
+
+<script>
+  // Load locations data from inline JSON
+  const locationsDataEl = document.getElementById('locations-data');
+  const { locations, states } = locationsDataEl ? JSON.parse(locationsDataEl.textContent || '{"locations":[],"states":[]}') : { locations: [], states: [] };
+  
+  // Simple fuzzy match function
+  function fuzzyMatch(query: string, target: string): number {
+    query = query.toLowerCase();
+    target = target.toLowerCase();
+    
+    // Exact match gets highest score
+    if (target === query) return 1000;
+    
+    // Starts with query gets high score
+    if (target.startsWith(query)) return 500;
+    
+    // Contains query gets medium score
+    if (target.includes(query)) return 100;
+    
+    // Fuzzy character matching
+    let score = 0;
+    let queryIndex = 0;
+    
+    for (let i = 0; i < target.length && queryIndex < query.length; i++) {
+      if (target[i] === query[queryIndex]) {
+        score += 10;
+        queryIndex++;
+      }
+    }
+    
+    // Bonus if all characters matched
+    if (queryIndex === query.length) {
+      score += 50;
+    }
+    
+    return score;
+  }
+  
+  // Search function
+  function searchLocations(query: string) {
+    if (!query || query.length < 1) return [];
+    
+    const results: Array<{
+      type: 'state' | 'city';
+      name: string;
+      stateName?: string;
+      url: string;
+      score: number;
+    }> = [];
+    
+    // Search states
+    states.forEach((state: any) => {
+      const score = fuzzyMatch(query, state.name);
+      
+      if (score > 0) {
+        results.push({
+          type: 'state',
+          name: state.name,
+          url: `/meetings/${state.slug}`,
+          score
+        });
+      }
+    });
+    
+    // Search cities
+    locations.forEach((loc: any) => {
+      const cityScore = fuzzyMatch(query, loc.city);
+      const stateScore = fuzzyMatch(query, loc.stateFull);
+      const score = Math.max(cityScore, stateScore);
+      
+      if (score > 0) {
+        results.push({
+          type: 'city',
+          name: loc.city,
+          stateName: loc.stateFull,
+          url: `/meetings/${loc.stateSlug}/${loc.citySlug}`,
+          score
+        });
+      }
+    });
+    
+    // Sort by score descending and limit to top 8 results
+    return results
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 8);
+  }
+  
+  // Initialize search
+  function initSearch() {
+    const searchInput = document.getElementById('location-search') as HTMLInputElement;
+    const searchResults = document.getElementById('search-results') as HTMLElement;
+    
+    if (!searchInput || !searchResults) return;
+    
+    let debounceTimer: number;
+    
+    searchInput.addEventListener('input', (e) => {
+      const query = (e.target as HTMLInputElement).value.trim();
+      
+      clearTimeout(debounceTimer);
+      
+      if (!query) {
+        searchResults.style.display = 'none';
+        searchInput.setAttribute('aria-expanded', 'false');
+        return;
+      }
+      
+      debounceTimer = window.setTimeout(() => {
+        const results = searchLocations(query);
+        
+        if (results.length === 0) {
+          searchResults.innerHTML = '<div class="search-no-results">No locations found</div>';
+          searchResults.style.display = 'block';
+          searchInput.setAttribute('aria-expanded', 'true');
+          return;
+        }
+        
+        searchResults.innerHTML = results.map((result, index) => `
+          <a 
+            href="${result.url}" 
+            class="search-result-item" 
+            role="option"
+            aria-selected="false"
+            data-index="${index}"
+          >
+            <div class="search-result-content">
+              <div class="search-result-name">${highlightMatch(result.name, query)}</div>
+              ${result.type === 'city' ? `<div class="search-result-meta">${result.stateName}</div>` : '<div class="search-result-meta">State</div>'}
+            </div>
+            <svg class="search-result-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        `).join('');
+        
+        searchResults.style.display = 'block';
+        searchInput.setAttribute('aria-expanded', 'true');
+      }, 200);
+    });
+    
+    // Keyboard navigation
+    searchInput.addEventListener('keydown', (e) => {
+      const items = searchResults.querySelectorAll('.search-result-item');
+      const currentFocus = searchResults.querySelector('[aria-selected="true"]') as HTMLElement;
+      let currentIndex = currentFocus ? parseInt(currentFocus.getAttribute('data-index') || '0') : -1;
+      
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        currentIndex = Math.min(currentIndex + 1, items.length - 1);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        currentIndex = Math.max(currentIndex - 1, 0);
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (currentFocus) {
+          (currentFocus as HTMLAnchorElement).click();
+        }
+        return;
+      } else if (e.key === 'Escape') {
+        searchResults.style.display = 'none';
+        searchInput.setAttribute('aria-expanded', 'false');
+        return;
+      } else {
+        return;
+      }
+      
+      items.forEach((item, index) => {
+        if (index === currentIndex) {
+          item.setAttribute('aria-selected', 'true');
+          item.classList.add('focused');
+        } else {
+          item.setAttribute('aria-selected', 'false');
+          item.classList.remove('focused');
+        }
+      });
+    });
+    
+    // Close results when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!searchInput.contains(e.target as Node) && !searchResults.contains(e.target as Node)) {
+        searchResults.style.display = 'none';
+        searchInput.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+  
+  // Highlight matching characters
+  function highlightMatch(text: string, query: string): string {
+    const index = text.toLowerCase().indexOf(query.toLowerCase());
+    if (index === -1) return text;
+    
+    return text.substring(0, index) + 
+           '<mark>' + text.substring(index, index + query.length) + '</mark>' + 
+           text.substring(index + query.length);
+  }
+  
+  // Initialize on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSearch);
+  } else {
+    initSearch();
+  }
+</script>
+
+<style is:global>
+  .site-header {
+    background: linear-gradient(135deg, #2A9D8F 0%, #21867A 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100000;
+  }
+  
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: white;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+  
+  .logo-link:hover {
+    opacity: 0.9;
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+  
+  .logo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+  }
+  
+  .breadcrumb-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+  
+  .breadcrumb-link:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  
+  .breadcrumb-separator {
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 0.25rem;
+  }
+  
+  .breadcrumb-current {
+    color: white;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .header-right {
+    flex-shrink: 0;
+  }
+  
+  .search-container {
+    position: relative;
+    width: 320px;
+  }
+  
+  .search-input-wrapper {
+    position: relative;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: #6b7280;
+    pointer-events: none;
+  }
+  
+  .search-input {
+    width: -webkit-fill-available;
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background: white;
+    color: #1f2937;
+    transition: box-shadow 0.2s;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  }
+  
+  .search-input::placeholder {
+    color: #9ca3af;
+  }
+  
+  .search-results {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .search-result-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.875rem 1rem;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid #f3f4f6;
+    transition: background 0.15s;
+    cursor: pointer;
+  }
+  
+  .search-result-item:last-child {
+    border-bottom: none;
+  }
+  
+  .search-result-item:hover,
+  .search-result-item.focused {
+    background: #f9fafb;
+  }
+  
+  .search-result-content {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .search-result-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+  }
+  
+  .search-result-name mark {
+    background: #fef3c7;
+    color: #92400e;
+    padding: 0 0.125rem;
+    border-radius: 2px;
+  }
+  
+  .search-result-meta {
+    font-size: 0.8rem;
+    color: #6b7280;
+  }
+  
+  .search-result-arrow {
+    width: 20px;
+    height: 20px;
+    color: #9ca3af;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+  }
+  
+  .search-no-results {
+    padding: 1rem;
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 768px) {
+    .site-header {
+      position: sticky;
+      top: 0;
+    }
+    
+    .header-container {
+      /* flex-direction: column; */
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+    }
+    
+    .header-left {
+      width: 100%;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    
+    .logo-link {
+      gap: 0.5rem;
+    }
+    
+    .logo-text {
+      font-size: 1rem;
+    }
+    
+    .logo {
+      width: 32px;
+      height: 32px;
+    }
+    
+    .breadcrumb-nav {
+      font-size: 0.8rem;
+      flex: 1;
+      min-width: 0;
+    }
+    
+    .breadcrumb-link,
+    .breadcrumb-current {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 120px;
+    }
+    
+    .header-right {
+      width: 80%;
+    }
+    
+    .search-container {
+      width: 100%;
+    }
+    
+    .search-input {
+      padding: 0.65rem 0.875rem 0.65rem 2.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .search-icon {
+      width: 18px;
+      height: 18px;
+      left: 0.65rem;
+    }
+    
+    .search-results {
+      max-height: 300px;
+    }
+    
+    .search-result-item {
+      padding: 0.75rem 0.875rem;
+    }
+    
+    .search-result-name {
+      font-size: 0.9rem;
+    }
+    
+    .search-result-meta {
+      font-size: 0.75rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header-container {
+      padding: 0.625rem 0.875rem;
+      gap: 0.625rem;
+    }
+    
+    .logo-text {
+      display: none;
+    }
+    
+    .logo {
+      width: 28px;
+      height: 28px;
+    }
+
+    @media screen and (max-width: 720px) {
+      .breadcrumb-nav {
+        display: none;
+      }
+    }
+    
+    .breadcrumb-nav {
+      font-size: 0.75rem;
+    }
+    
+    .breadcrumb-link,
+    .breadcrumb-current {
+      max-width: 100px;
+    }
+    
+    .breadcrumb-separator {
+      margin: 0 0.15rem;
+    }
+    
+    .search-input {
+      padding: 0.6rem 0.75rem 0.6rem 2.25rem;
+      font-size: 0.875rem;
+    }
+    
+    .search-icon {
+      width: 16px;
+      height: 16px;
+      left: 0.6rem;
+    }
+    
+    .search-input::placeholder {
+      font-size: 0.85rem;
+    }
+    
+    .search-results {
+      max-height: 250px;
+    }
+    
+    .search-result-item {
+      padding: 0.625rem 0.75rem;
+    }
+    
+    .search-result-name {
+      font-size: 0.85rem;
+    }
+    
+    .search-result-meta {
+      font-size: 0.7rem;
+    }
+    
+    .search-result-arrow {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .header-container {
+      padding: 0.5rem 0.75rem;
+    }
+    
+    .breadcrumb-link,
+    .breadcrumb-current {
+      max-width: 80px;
+      font-size: 0.7rem;
+    }
+    
+    .search-input {
+      font-size: 0.8rem;
+      padding: 0.55rem 0.65rem 0.55rem 2rem;
+    }
+    
+    .search-input::placeholder {
+      font-size: 0.8rem;
+    }
+  }
+</style>

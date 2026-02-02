@@ -1,191 +1,691 @@
 ---
-
+import Header from '../components/Header.astro';
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/x-icon" href="/myMeetings.ico" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<title>GSkis</title>
+		
+		<!-- Primary Meta Tags -->
+		<title>MyMeetings: AA Companion</title>
+		<meta name="title" content="MyMeetings: AA Companion, Quit Drinking" />
+		<meta name="description" content="Find Alcoholics Anonymous meetings near you with MyMeetings. Track attendance, manage your recovery journey, and stay connected with the AA community." />
+		<meta name="keywords" content="AA meetings, Alcoholics Anonymous, recovery app, sobriety tracker, 12 step meetings, addiction recovery, sober living, AA meeting finder, recovery community, alcohol addiction help" />
+		<meta name="author" content="MyMeetings by GSkis" />
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="English" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://gskis.com/" />
+		<meta property="og:title" content="MyMeetings: AA Companion, Quit Drinking" />
+		<meta property="og:description" content="Find Alcoholics Anonymous meetings near you with MyMeetings. Track attendance, manage your recovery journey, and stay connected with the AA community." />
+		<meta property="og:image" content="/MyMeetingsAppLogo.webp" />
+		<meta property="og:site_name" content="MyMeetings" />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://gskis.com/" />
+		<meta property="twitter:title" content="MyMeetings: AA Companion, Quit Drinking" />
+		<meta property="twitter:description" content="Find Alcoholics Anonymous meetings near you with MyMeetings. Track attendance, manage your recovery journey, and stay connected with the AA community." />
+		<meta property="twitter:image" content="/MyMeetingsAppLogo.webp" />
+
+		<!-- Additional SEO Meta Tags -->
+		<meta name="theme-color" content="#2A9D8F" />
+		<meta name="msapplication-TileColor" content="#2A9D8F" />
+		<link rel="canonical" href="https://gskis.com/" />
+		
+		<!-- Structured Data for App -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "MobileApplication",
+			"name": "MyMeetings",
+			"description": "Find Alcoholics Anonymous meetings near you with MyMeetings. Track attendance, manage your recovery journey, and stay connected with the AA community.",
+			"applicationCategory": "HealthApplication",
+			"operatingSystem": "iOS, Android",
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "USD"
+			},
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "4.8",
+				"ratingCount": "1250"
+			},
+			"provider": {
+				"@type": "Organization",
+				"name": "GSkis",
+				"url": "https://gskis.com"
+			},
+			"keywords": "AA meetings, Alcoholics Anonymous, recovery app, sobriety tracker, 12 step meetings, addiction recovery, sober living, AA meeting finder, recovery community, alcohol addiction help"
+		}
+		</script>
+		
+		<!-- Local Business Structured Data -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "MyMeetings",
+			"description": "Alcoholics Anonymous meeting finder and recovery tracking app",
+			"url": "https://gskis.com/myMeetings",
+			"telephone": "+1-617-555-0123",
+			"email": "hello@gskis.com",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Boston",
+				"addressRegion": "MA",
+				"addressCountry": "US"
+			},
+			"serviceArea": {
+				"@type": "Country",
+				"name": "United States"
+			},
+			"hasOfferCatalog": {
+				"@type": "OfferCatalog",
+				"name": "Recovery Services",
+				"itemListElement": [
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "AA Meeting Finder",
+							"description": "Find Alcoholics Anonymous meetings near you"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Recovery Tracking",
+							"description": "Track your meeting attendance and sobriety journey"
+						}
+					}
+				]
+			}
+		}
+		</script>
 		<style>
 			@font-face {
-				font-family: 'VCR';
-				src: url('/fonts/VCR.ttf') format('truetype');
+				font-family: 'SF Pro Display';
+				src: url('/fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
 				font-display: swap;
 			}
-			html, body {
-				height: 100%;
+			
+			* {
 				margin: 0;
 				padding: 0;
 				box-sizing: border-box;
-				-webkit-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none;
-				user-select: none;
 			}
+			
+			html {
+				scroll-behavior: smooth;
+			}
+			
 			body {
+				font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				line-height: 1.6;
+				color: #333;
+				background: linear-gradient(180deg, #F8F9FA 0%, #FFFFFF 100%);
 				min-height: 100vh;
-				min-width: 100vw;
-				overflow: hidden;
-				position: relative;
-				background: #0a0f0a;
-				font-family: system-ui, sans-serif;
 			}
-			.terminal-bg {
-				position: fixed;
-				top: 0; left: 0; right: 0; bottom: 0;
-				width: 100vw; height: 100vh;
-				z-index: 1;
-				pointer-events: none;
-				overflow: hidden;
+			
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 2rem;
+		 }
+			
+			/* Header */
+			header {
+				padding: 2rem 0;
+				text-align: center;
 			}
-			.terminal-line {
-				font-family: 'VCR', monospace;
-				color: #39ff14;
-				font-size: clamp(1.2rem, 4vw, 2.8rem);
-				opacity: 0.7;
-				white-space: nowrap;
-				will-change: transform;
-				text-shadow: 0 0 8px #39ff14, 0 0 2px #39ff14;
-				position: absolute;
-				right: -100vw;
-				left: unset;
-				animation: slide-left 30s linear infinite;
-			}
-			.terminal-line:nth-child(2) { top: 20vh; animation-delay: 2s; }
-			.terminal-line:nth-child(3) { top: 30vh; animation-delay: 4s; }
-			.terminal-line:nth-child(4) { top: 45vh; animation-delay: 6s; }
-			.terminal-line:nth-child(5) { top: 60vh; animation-delay: 8s; }
-			.terminal-line:nth-child(6) { top: 75vh; animation-delay: 10s; }
-			@keyframes slide-left {
-				0% { transform: translateX(0); }
-				100% { transform: translateX(-300vw); }
-			}
-			.overlay {
-				position: fixed;
-				top: 0; left: 0; right: 0; bottom: 0;
-				width: 100vw; height: 100vh;
-				background: rgba(10, 15, 10, 0.82);
-				z-index: 2;
-				pointer-events: none;
-			}
-			.content {
-				position: relative;
-				z-index: 3;
+			
+			.logo-container {
 				display: flex;
-				flex-direction: column;
 				align-items: center;
 				justify-content: center;
-				min-height: 100vh;
-				text-align: center;
+				gap: 1rem;
+				margin-bottom: 0.5rem;
 			}
-			.brand {
-				font-family: 'VCR', monospace;
-				color: #39ff14;
-				font-size: clamp(2.5rem, 10vw, 5.5rem);
-				letter-spacing: 0.08em;
+			
+			.logo-image {
+				height: 60px;
+				width: auto;
+				object-fit: contain;
+				border-radius: 12px;
+			}
+			
+			.logo {
+				font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				font-size: 2.5rem;
+				font-weight: bold;
+			}
+			
+			.tagline {
+				font-size: 1.1rem;
+				color: #5A7D9A;
+				font-weight: 500;
+			}
+			
+			/* Hero Section */
+			.hero {
+				padding: 1rem 0;
+				text-align: center;
+				margin-bottom: 4rem;
+				margin-top: 1rem;
+			}
+			
+			.hero h1 {
+				font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				font-size: 3.5rem;
+				font-weight: bold;
+				color: #2A2A2A;
 				margin-bottom: 1.5rem;
-				text-shadow: 0 0 12px #39ff14, 0 0 2px #39ff14;
-				text-align: center;
-				padding: 0 1rem;
+				line-height: 1.2;
 			}
-			.contact-btn {
-				background: #39ff14;
-				color: #0a0f0a;
-				font-family: 'VCR', monospace;
-				font-size: clamp(1.2rem, 4vw, 2.5rem);
-				border: none;
-				border-radius: 0.4em;
-				padding: 0.8em 2.2em;
-				cursor: pointer;
-				box-shadow: 0 0 8px #39ff14, 0 0 2px #39ff14;
-				transition: background 0.2s, color 0.2s, transform 0.1s;
-				margin-top: 1.5rem;
+			
+			.highlight-word {
+				background: linear-gradient(135deg, #2A9D8F 0%, #5A7D9A 50%, #E9C46A 100%);
+				background-size: 200% 200%;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+				position: relative;
+				display: inline-block;
+				animation: gradientShift 3s ease-in-out infinite;
+			}
+			
+			.highlight-word::before {
+				content: '';
+				position: absolute;
+				top: -2px;
+				left: -4px;
+				right: -4px;
+				bottom: -2px;
+				background: linear-gradient(135deg, #2A9D8F, #5A7D9A, #E9C46A);
+				border-radius: 8px;
+				opacity: 0.1;
+				z-index: -1;
+				filter: blur(8px);
+				animation: pulse 2s ease-in-out infinite alternate;
+			}
+			
+			@keyframes gradientShift {
+				0%, 100% { background-position: 0% 50%; }
+				50% { background-position: 100% 50%; }
+			}
+			
+			@keyframes pulse {
+				0% { opacity: 0.1; transform: scale(1); }
+				100% { opacity: 0.2; transform: scale(1.05); }
+			}
+			
+			.hero p {
+				font-size: 1.3rem;
+				color: #4a5568;
+				max-width: 600px;
+				margin: 0 auto 2rem;
+			}
+			
+			.hero p a {
+				color: #2A9D8F;
 				text-decoration: none;
-				min-width: 200px;
+				font-weight: 500;
+				transition: color 0.3s ease;
+			}
+			
+			.hero p a:hover {
+				color: #5A7D9A;
+				text-decoration: underline;
+			}
+			
+			.cta-button {
+				display: inline-flex;
+				align-items: center;
+				gap: 1.2rem;
+				background: #2A9D8F;
+				color: white;
+				padding: 1.5rem 2.5rem;
+				border-radius: 12px;
+				text-decoration: none;
+				font-weight: 500;
+				font-size: 1.2rem;
+				transition: all 0.3s ease;
+				box-shadow: 0 6px 12px rgba(42, 157, 143, 0.25);
+				border: 1px solid #207F74;
+				transform: scale(1.1);
+				margin: 1rem 0;
+			}
+			
+			.cta-button:hover {
+				background: #21867A;
+				transform: scale(1.15) translateY(-2px);
+				box-shadow: 0 8px 16px rgba(42, 157, 143, 0.35);
+			}
+			
+			.app-store-text {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				line-height: 1.2;
+			}
+			
+			.app-store-text .small {
+				font-size: 0.9rem;
+				opacity: 0.8;
+				font-weight: 400;
+			}
+			
+			.app-store-text .large {
+				font-size: 1.3rem;
+				font-weight: 600;
+			}
+			
+			/* Screenshots Section */
+			.screenshots {
+				padding: 2rem 0;
+				background: rgba(255, 255, 255, 0.6);
+				backdrop-filter: blur(10px);
+				margin: 2rem 0;
+				border-radius: 20px;
+			}
+			
+			.screenshots h2 {
+				font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				font-size: 2.5rem;
+				text-align: center;
+				color: #2A2A2A;
+				margin-bottom: 1rem;
+			}
+			
+			.comparison-section {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 2rem;
+				margin-bottom: 4rem;
+				max-width: 900px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.comparison-card {
+				background: white;
+				border-radius: 16px;
+				padding: 2rem;
+				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+			
+			.comparison-card.featured {
+				border: 3px solid #E9C46A;
+				transform: scale(1.02);
+			}
+			
+			.comparison-card h3 {
+				font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				font-size: 1.5rem;
+				color: #2A2A2A;
+				margin-bottom: 1.5rem;
+				text-align: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 1rem;
+			}
+			
+			.comparison-card h3 img {
+				height: 40px;
+				width: auto;
+				object-fit: contain;
+				border-radius: 12px;
+			}
+			
+			.comparison-card ul {
+				list-style: none;
+				padding: 0;
+			}
+			
+			.comparison-card li {
+				padding: 0.5rem 0;
+				font-size: 1rem;
+				color: #4a5568;
+				border-bottom: 1px solid #e2e8f0;
+			}
+			
+			.comparison-card li:last-child {
+				border-bottom: none;
+			}
+			
+			.screenshot-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				margin-bottom: 3rem;
+			}
+			
+			.screenshot-item {
+				/* max-width: 200px; */
+				border-radius: 16px;
+				overflow: hidden;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+			
+			.screenshot-item:hover {
+				transform: translateY(-5px);
+			}
+			
+			.screenshot-item img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+
+			
+			/* Contact Section */
+			.contact-section {
+				padding: 1rem 0;
 				text-align: center;
 			}
-			.contact-btn:hover, .contact-btn:focus {
-				background: #0a0f0a;
-				color: #39ff14;
-				outline: 2px solid #39ff14;
-				transform: scale(1.04);
+			
+			.contact-section h2 {
+				font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				font-size: 2.5rem;
+				color: #2A2A2A;
+				margin-bottom: 1rem;
 			}
-			.footer {
-				position: fixed;
-				bottom: 0;
-				left: 0;
-				right: 0;
+			
+			.contact-section p {
+				font-size: 1.1rem;
+				color: #4a5568;
+				margin-bottom: 2rem;
+				max-width: 500px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.contact-button {
+				display: inline-block;
+				background: #2A9D8F;
+				color: white;
+				padding: 1rem 2.5rem;
+				border-radius: 8px;
+				text-decoration: none;
+				font-weight: 600;
+				font-size: 1.1rem;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 6px rgba(42, 157, 143, 0.2);
+			}
+			
+			.contact-button:hover {
+				background: #21867A;
+				transform: translateY(-2px);
+				box-shadow: 0 6px 12px rgba(42, 157, 143, 0.3);
+			}
+			
+			/* Footer */
+			footer {
+				background: #5A7D9A;
+				color: white;
 				text-align: center;
-				padding: 0.8rem;
-				font-family: 'VCR', monospace;
-				color: #39ff14;
-				font-size: clamp(0.9rem, 3vw, 1.5rem);
-				z-index: 3;
-				text-shadow: 0 0 4px #39ff14;
+				padding: 2rem 0;
+				margin-top: 4rem;
 			}
+			
+			footer p {
+				font-size: 0.9rem;
+				opacity: 0.9;
+			}
+
+			.footer-links {
+				margin-top: 1rem;
+			}
+
+			.footer-links a {
+				color: white;
+				text-decoration: none;
+				margin: 0 0.5rem;
+				font-size: 0.9rem;
+				opacity: 0.9;
+				transition: opacity 0.2s ease-in-out, color 0.2s ease-in-out;
+			}
+
+			.footer-links a:hover {
+				opacity: 1;
+				text-decoration: underline;
+				color: #E9C46A;
+			}
+			
+			/* Responsive Design */
 			@media (max-width: 768px) {
-				.brand { 
-					font-size: 3.5rem; 
-					margin-bottom: 1rem;
-					padding: 0 0.5rem;
-				}
-				.contact-btn { 
-					font-size: 1.4rem; 
-					padding: 0.7em 1.5em; 
-					min-width: 180px;
-					margin-top: 1rem;
-				}
-				.terminal-line { 
-					font-size: 1.1rem; 
-					opacity: 0.6;
-					max-width: 85vw;
-				}
-				.footer { 
-					font-size: 0.9rem; 
-					padding: 0.6rem;
-				}
-				.content {
+				.container {
 					padding: 0 1rem;
 				}
+				
+				.hero h1 {
+					font-size: 2.5rem;
+				}
+				
+				.hero p {
+					font-size: 1.1rem;
+				}
+				
+				.screenshots h2,
+				.contact-section h2 {
+					font-size: 2rem;
+				}
+				
+				.comparison-section {
+					grid-template-columns: 1fr;
+					gap: 1.5rem;
+				}
+				
+				.comparison-card {
+					padding: 1.5rem;
+				}
+				
+				.comparison-card.featured {
+					transform: none;
+				}
+				
+				.screenshot-grid {
+					grid-template-columns: 1fr;
+					gap: 1.5rem;
+				}
+				
+				.screenshots {
+					margin: 1rem 0;
+					border-radius: 12px;
+				}
 			}
+			
 			@media (max-width: 480px) {
-				.brand { 
-					font-size: 2.8rem; 
+				.hero h1 {
+					font-size: 2rem;
 				}
-				.contact-btn { 
-					font-size: 1.2rem; 
-					padding: 0.6em 1.2em;
-					min-width: 160px;
-				}
-				.terminal-line { 
+				
+				.hero p {
 					font-size: 1rem;
-					opacity: 0.5;
 				}
-				.footer { 
-					font-size: 0.8rem; 
+				
+				.logo-container {
+					gap: 0.5rem;
 				}
+				
+				.logo-image {
+					height: 40px;
+				}
+				
+				.logo {
+					font-size: 2rem;
+				}
+				
+				.cta-button,
+				.contact-button {
+					padding: 0.8rem 1.5rem;
+					font-size: 1rem;
+				}
+			}
+			
+			/* Animation */
+			@keyframes fadeInUp {
+				from {
+					opacity: 0;
+					transform: translateY(30px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+			
+			.hero,
+			.screenshots,
+			.contact-section {
+				animation: fadeInUp 0.8s ease-out;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="terminal-bg">
-			<div class="terminal-line" style="top: 10vh;">We started as a small group, trying to solve problems close to home.</div>
-			<div class="terminal-line">Each challenge lit the spark for something new.</div>
-			<div class="terminal-line">We build for ourselves first, and in doing so, for others too.</div>
-			<div class="terminal-line">We're our own toughest critics—and our most honest users.</div>
-			<div class="terminal-line">But every decision is made with others in mind.</div>
-			<div class="terminal-line">What began as personal need became something bigger. This is GSkis.</div>
-		</div>
-		<div class="overlay"></div>
-		<main class="content">
-			<div class="brand">GSkis</div>
-			<a href="mailto:hello@gskis.com" class="contact-btn">Contact Us</a>
+		<Header />
+		
+		<main>
+			<section class="hero">
+				<div class="container">
+					<h1>We couldn't do this <span class="highlight-word">alone</span>. So we built the best app to do it <span class="highlight-word">together</span></h1>
+					<p>You don't have to drink anymore. MyMeetings is your personal recovery companion. While the <a href="https://www.aa.org/meeting-guide-app" target="_blank" rel="noopener noreferrer">official AA Meeting Guide app</a> helps you find meetings, MyMeetings goes beyond with powerful recovery tracking, attendance management, and modern features that support your entire sobriety journey.</p>
+					<a href="https://apps.apple.com/app/id6748364894" target="_blank" class="cta-button">
+						<svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+							<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+						</svg>
+						<div class="app-store-text">
+							<span class="small">Download on the</span>
+							<span class="large">App Store</span>
+						</div>
+					</a>
+				</div>
+			</section>
+			
+			<section id="screenshots" class="screenshots">
+				<div class="container">
+					<div class="screenshot-grid">
+						<div class="screenshot-item">
+							<img src="/myMeetingsScreenshots/screenshot.webp" alt="AA meeting calendar view showing daily and weekly meeting schedules" />
+						</div>
+						<div class="screenshot-item">
+							<img src="/myMeetingsScreenshots/screenshot2.webp" alt="AA meeting calendar view showing daily and weekly meeting schedules" />
+						</div>
+						<div class="screenshot-item">
+							<img src="/myMeetingsScreenshots/screenshot3.webp" alt="AA meeting calendar view showing daily and weekly meeting schedules" />
+						</div>
+					</div>
+					<h2>Feature Comparison</h2>
+					<div class="comparison-section">
+						<div class="comparison-card">
+							<h3>
+								<img src="/meetingGuide.png" alt="MeetingGuide Logo" />
+								MeetingGuide
+							</h3>
+							<ul>
+								<li>✓ Find AA meetings</li>
+								<li>✓ Basic meeting information</li>
+								<li>✓ Free to use</li>
+								<li>✗ Limited features</li>
+								<li>✗ Outdated user interface</li>
+								<li>✗ No attendance tracking</li>
+							</ul>
+						</div>
+						<div class="comparison-card featured">
+							<h3>
+								<img src="/MyMeetingsAppLogo.webp" alt="MyMeetings Logo" />
+								MyMeetings
+							</h3>
+							<ul>
+								<li>✓ Find AA meetings (same data)</li>
+								<li>✓ Modern, intuitive interface</li>
+								<li>✓ Attendance tracking & check-ins</li>
+								<li>✓ Personal recovery notes</li>
+								<li>✓ Opt-in AI coaching and reflections</li>
+								<li>✓ Sobriety journey tracking</li>
+								<li>✓ Community sharing features</li>
+								<li>✓ Advanced filtering & search</li>
+								<li>✓ Web portal access</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section class="contact-section">
+				<div class="container">
+					<h2>Need More Help with Your Recovery Journey?</h2>
+					<p>Visit Substance Abuse and Mental Health Administration website for additional support with addiction and substance abuse.</p>
+					<div>
+						<a href="https://www.samhsa.gov/" target="_blank" class="contact-button">Visit SAMHSA Site</a>
+					</div>
+				</div>
+			</section>
 		</main>
-		<footer class="footer">
-			GSkis LLC 2025 • Boston MA
+		
+		<footer>
+			<div class="container">
+				<p>&copy; 2025 MyMeetings by GSkis. Your trusted AA meeting finder and recovery app. We couldn't do this alone. So we built the best app to do it together.</p>
+				<div class="footer-links">
+					<a href="/myMeetings/privacyPolicy">Privacy Policy</a> |
+					<a href="/myMeetings/termsOfService">Terms of Service</a>
+				</div>
+			</div>
 		</footer>
+		
+		<!-- Analytics Tracking Script -->
+		<script>
+			import { track } from "astrojs-mixpanel/client";
+
+			document.addEventListener('DOMContentLoaded', function() {
+				// Track App Store download button clicks
+				const downloadButton = document.querySelector('.cta-button');
+				if (downloadButton) {
+					downloadButton.addEventListener('click', function() {
+						// Track download button click
+						track('Download Button Click', {
+							page: 'myMeetings_landing',
+							button_location: 'hero_section',
+							url: window.location.href
+						});
+					});
+				}
+				
+				// Track SAMHSA button clicks
+				const samhsaButton = document.querySelector('.contact-button');
+				if (samhsaButton) {
+					samhsaButton.addEventListener('click', function() {
+						track('SAMHSA Link Click', {
+							page: 'myMeetings_landing',
+							button_location: 'contact_section',
+							url: window.location.href
+						});
+					});
+				}
+
+				// Track footer link clicks
+				const footerLinks = document.querySelectorAll('.footer-links a');
+				footerLinks.forEach(function(link) {
+					link.addEventListener('click', function() {
+						track('Footer Link Click', {
+							page: 'myMeetings_landing',
+							link_text: this.textContent.trim(),
+							link_href: this.getAttribute('href'),
+							url: window.location.href
+						});
+					});
+				});
+			});
+		</script>
 	</body>
 </html>

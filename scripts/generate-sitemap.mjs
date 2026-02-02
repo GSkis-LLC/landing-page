@@ -18,7 +18,7 @@ function toSlug(str) {
     .replace(/^-+|-+$/g, '');
 }
 
-// Parse locations.ts and extract all location entries
+// Parse locations.ts and extract all location entries (states and cities)
 async function getLocationUrls() {
   try {
     const content = await fs.readFile(LOCATIONS_FILE, 'utf8');
@@ -35,6 +35,13 @@ async function getLocationUrls() {
     
     const urls = [];
     for (const [stateSlug, cities] of Object.entries(locations)) {
+      // Add state-level page URL
+      urls.push({
+        url: `/meetings/${stateSlug}`,
+        lastmod: new Date().toISOString(),
+      });
+      
+      // Add city-level page URLs
       for (const [citySlug, config] of Object.entries(cities)) {
         urls.push({
           url: `/meetings/${stateSlug}/${citySlug}`,

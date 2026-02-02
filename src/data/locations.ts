@@ -2486,7 +2486,7 @@ export const locations: Record<string, Record<string, LocationConfig>> = {
       "transitInfo": "Manchester Transit Authority serves local routes; Manchester-Boston Regional Airport (MHT) nearby for regional flights.",
       "population": 111000
     },
-        "nashua": {
+    "nashua": {
       "city": "Nashua",
       "stateAbbr": "NH",
       "stateFull": "New Hampshire",
