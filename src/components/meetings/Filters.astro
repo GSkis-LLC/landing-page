@@ -29,6 +29,14 @@ const { initialCount = 0 } = Astro.props;
       </select>
     </div>
     <div class="filter-group">
+      <label class="filter-label" for="filter-format">Meeting Format</label>
+      <select id="filter-format" class="filter-select">
+        <option value="">All Formats</option>
+        <option value="online">Online</option>
+        <option value="in-person">In-Person</option>
+      </select>
+    </div>
+    <div class="filter-group">
       <label class="filter-label" for="filter-type">Meeting Type</label>
       <select id="filter-type" class="filter-select">
         <option value="">All Types</option>

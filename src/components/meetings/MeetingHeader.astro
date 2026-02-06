@@ -1,5 +1,5 @@
 ---
-const { city, stateFull, areaDescription, neighborhoods, meetingHighlights } = Astro.props;
+const { city, stateFull, areaDescription, neighborhoods, meetingHighlights, topLocations } = Astro.props;
 ---
 
 <header class="header">
@@ -12,6 +12,29 @@ const { city, stateFull, areaDescription, neighborhoods, meetingHighlights } = A
     <p class="header-neighborhoods">
       <strong>Serving:</strong> {neighborhoods} and surrounding areas.
     </p>
+  )}
+  {topLocations && topLocations.length > 0 && (
+    <div class="header-popular-locations">
+      <h3 class="popular-locations-title">
+        <svg class="location-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        {city}'s Busiest Meeting Locations
+      </h3>
+      <div class="popular-locations-grid">
+        {topLocations.map(({ location, count, formatted_address }) => (
+          <div class="location-card">
+            <div class="location-header">
+              <h4 class="location-name">{location}</h4>
+              <span class="location-badge">{count}</span>
+            </div>
+            {formatted_address && (
+              <p class="location-address">{formatted_address}</p>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
   )}
 </header>
 
@@ -31,5 +54,84 @@ const { city, stateFull, areaDescription, neighborhoods, meetingHighlights } = A
   }
   .header-neighborhoods strong {
     color: #2a3a4d;
+  }
+  .header-popular-locations {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+  }
+  .popular-locations-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 1rem 0;
+  }
+  .location-icon {
+    color: #2A9D8F;
+    flex-shrink: 0;
+  }
+  .popular-locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  .location-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease;
+  }
+  .location-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-color: #2A9D8F;
+  }
+  .location-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+  }
+  .location-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+    line-height: 1.4;
+    flex: 1;
+    padding-right: 0.5rem;
+  }
+  .location-badge {
+    background: #2A9D8F;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    min-width: 2rem;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .location-address {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.4;
+  }
+  @media (max-width: 640px) {
+    .popular-locations-grid {
+      grid-template-columns: 1fr;
+    }
+    .header-popular-locations {
+      padding: 1rem;
+      margin-top: 1rem;
+    }
   }
 </style>

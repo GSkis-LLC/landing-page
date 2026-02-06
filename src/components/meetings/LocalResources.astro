@@ -5,31 +5,40 @@ interface Intergroup {
   phone?: string;
 }
 
+interface MeetingGuideIntergroup {
+  name?: string;
+  url?: string;
+  phone?: string;
+  email?: string;
+  image_url?: string;
+}
+
 interface Props {
   city: string;
   stateFull: string;
-  intergroup?: Intergroup;
+  locationConfigIntergroup?: Intergroup;
+  apiResponseIntergroup?: MeetingGuideIntergroup;
 }
 
-const { city, stateFull, intergroup } = Astro.props;
+const { city, stateFull, locationConfigIntergroup, apiResponseIntergroup } = Astro.props;
 ---
 
 <section class="section-card local-resources" aria-labelledby="resources-heading">
   <h2 id="resources-heading" class="section-title">AA Resources in {city}, {stateFull}</h2>
   
   <div class="resources-grid">
-    {intergroup && (
+    {(locationConfigIntergroup || apiResponseIntergroup) && (
       <div class="resource-item">
         <h3>Local Intergroup</h3>
-        <p><strong>{intergroup.name}</strong></p>
-        {intergroup.url && (
-          <a href={intergroup.url} target="_blank" rel="noopener" class="resource-link">
+        <p><strong>{apiResponseIntergroup?.name || locationConfigIntergroup?.name}</strong></p>
+        {(apiResponseIntergroup?.url ||locationConfigIntergroup?.url) && (
+          <a href={apiResponseIntergroup?.url || locationConfigIntergroup?.url} target="_blank" rel="noopener" class="resource-link">
             Visit Website →
           </a>
         )}
-        {intergroup.phone && (
+        {(apiResponseIntergroup?.phone || locationConfigIntergroup?.phone) && (
           <p class="resource-phone">
-            <a href={`tel:${intergroup.phone.replace(/\D/g, '')}`}>{intergroup.phone}</a>
+            <a href={`tel:${(apiResponseIntergroup?.phone || locationConfigIntergroup?.phone)?.replace(/\D/g, '')}`}>{apiResponseIntergroup?.phone || locationConfigIntergroup?.phone}</a>
           </p>
         )}
       </div>

@@ -72,13 +72,17 @@
   }
 
   function applyFilters(detail) {
-    const { day, time, type } = detail || {};
+    const { day, time, type, format } = detail || {};
     const filtered = allMeetings.filter(m => {
       if (day && String(m.day) !== day) return false;
       if (time && getTimeOfDay(m.time) !== time) return false;
       if (type) {
         const types = m.types ? String(m.types).toLowerCase() : '';
         if (!types.includes(type.toLowerCase())) return false;
+      }
+      if (format) {
+        if (format === 'online' && !m.conference_url) return false;
+        if (format === 'in-person' && m.conference_url) return false;
       }
       return true;
     });

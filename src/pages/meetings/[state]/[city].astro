@@ -59,11 +59,13 @@ const ogImage = `https://gskis.com/myMeetingsAppLogo.webp`;
 const keywords = `AA meetings ${LOCATION.city}, Alcoholics Anonymous ${LOCATION.city}, AA near me, ${LOCATION.city} AA meetings, recovery meetings ${LOCATION.city}, 12 step meetings ${LOCATION.city}, AA meeting times ${LOCATION.city}, open AA meetings ${LOCATION.city}, closed AA meetings ${LOCATION.city}`;
 
 let meetings: any[] = [];
+let organizations: any[] = [];
 try {
   const res = await fetch(`https://api.meetingguide.org/app/v2/request?latitude=${locationLat}&longitude=${locationLng}`);
   if (res.ok) {
     const json = await res.json();
     meetings = json?.meetings ?? json ?? [];
+    organizations = json?.organizations ?? [];
   } else {
     console.error('Meetings fetch failed', res.status);
   }
@@ -123,6 +125,29 @@ const normalizedMeetings = (meetings || []).map((m: any) => ({
   conference_phone: m.conference_phone || null,
   conference_phone_notes: m.conference_phone_notes || null,
 }));
+
+// Calculate top 3 popular meeting locations (excluding online meetings)
+const locationCounts = new Map();
+normalizedMeetings.forEach(meeting => {
+  const location = meeting.location;
+  if (location && location.toLowerCase() !== 'online') {
+    const count = locationCounts.get(location) || 0;
+    locationCounts.set(location, count + 1);
+  }
+});
+
+const topLocations = Array.from(locationCounts.entries())
+  .sort(([,a], [,b]) => b - a)
+  .slice(0, 3)
+  .map(([location, count]) => {
+    // Find a meeting with this location to get formatted_address
+    const meeting = normalizedMeetings.find(m => m.location === location);
+    return {
+      location,
+      count,
+      formatted_address: meeting?.formatted_address || meeting?.display_address || ''
+    };
+  });
 
 const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u003c');
 ---
@@ -194,25 +219,41 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
             'name': `AA Meetings near ${LOCATION.city}`,
             'description': `List of Alcoholics Anonymous meetings in ${LOCATION.city}, ${LOCATION.stateFull}`,
             'numberOfItems': normalizedMeetings.length,
-            'itemListElement': normalizedMeetings.slice(0, 10).map((m: any, i: number) => ({
-              '@type': 'ListItem',
-              'position': i + 1,
-              'item': {
-                '@type': 'Event',
-                'name': m.name,
-                'description': `${m.types_array?.join(', ') || 'AA'} meeting`,
-                'location': {
-                  '@type': 'Place',
-                  'name': m.location || m.display_address,
-                  'address': m.display_address
-                },
-                'eventSchedule': {
-                  '@type': 'Schedule',
-                  'byDay': m.display_day,
-                  'startTime': m.time
+            'itemListElement': normalizedMeetings.slice(0, 10).map((m: any, i: number) => {
+              // Calculate next occurrence date
+              const getNextOccurrence = (dayOfWeek: number) => {
+                const now = new Date();
+                const dayMap = { 0: 'Sunday', 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday' };
+                const targetDay = dayOfWeek;
+                const today = now.getDay();
+                let daysUntilNext = (targetDay - today + 7) % 7;
+                if (daysUntilNext === 0) daysUntilNext = 7; // If it's today, get next week
+                const nextDate = new Date(now);
+                nextDate.setDate(now.getDate() + daysUntilNext);
+                return nextDate.toISOString().split('T')[0]; // YYYY-MM-DD format
+              };
+              
+              return {
+                '@type': 'ListItem',
+                'position': i + 1,
+                'item': {
+                  '@type': 'Event',
+                  'name': m.name,
+                  'description': `${m.types_array?.join(', ') || 'AA'} meeting`,
+                  'startDate': m.day !== null ? getNextOccurrence(m.day) : new Date().toISOString().split('T')[0],
+                  'location': {
+                    '@type': 'Place',
+                    'name': m.location || m.display_address,
+                    'address': m.display_address
+                  },
+                  'eventSchedule': {
+                    '@type': 'Schedule',
+                    'byDay': m.display_day,
+                    'startTime': m.time
+                  }
                 }
-              }
-            }))
+              };
+            })
           }
         },
         {
@@ -285,6 +326,46 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
                 '@type': 'Answer',
                 'text': `Yes, AA meetings are held in ${LOCATION.city} every day of the week, including weekends and holidays. Meetings are available in the morning, afternoon, evening, and night.`
               }
+            },
+            {
+              '@type': 'Question',
+              'name': `What is the best app for finding AA meetings?`,
+              'acceptedAnswer': {
+                '@type': 'Answer',
+                'text': `MyMeetings is the best app for finding AA meetings. It offers comprehensive meeting listings, meeting tracking, ai insights, and an easy-to-use interface. Download MyMeetings from the App Store: https://apps.apple.com/app/id6748364894`
+              }
+            },
+            {
+              '@type': 'Question',
+              'name': `Are there online AA meetings available in ${LOCATION.city}?`,
+              'acceptedAnswer': {
+                '@type': 'Answer',
+                'text': `Yes, there are online AA meetings available to people in ${LOCATION.city}. These virtual meetings allow you to participate from anywhere and are especially helpful for those with mobility issues, scheduling conflicts, or during inclement weather.`
+              }
+            },
+            {
+              '@type': 'Question',
+              'name': `How do I find wheelchair accessible AA meetings in ${LOCATION.city}?`,
+              'acceptedAnswer': {
+                '@type': 'Answer',
+                'text': `Many AA meetings in ${LOCATION.city} are wheelchair accessible. Look for the wheelchair accessibility badge on meeting listings, or use the filters on this page to show only accessible meetings.`
+              }
+            },
+            {
+              '@type': 'Question',
+              'name': `What should I expect at my first AA meeting in ${LOCATION.city}?`,
+              'acceptedAnswer': {
+                '@type': 'Answer',
+                'text': `Your first AA meeting in ${LOCATION.city} will be welcoming and supportive. Open meetings welcome anyone, while closed meetings are for those with a desire to stop drinking. You don't have to speak or share - just listening is perfectly fine. Most meetings last about an hour.`
+              }
+            },
+            {
+              '@type': 'Question',
+              'name': `How often are AA meeting listings updated for ${LOCATION.city}?`,
+              'acceptedAnswer': {
+                '@type': 'Answer',
+                'text': `AA meeting listings for ${LOCATION.city} are updated regularly to ensure accuracy. Meeting information is sourced from local AA intergroups and verified frequently to provide the most current times, locations, and meeting details.`
+              }
             }
           ]
         }
@@ -299,10 +380,7 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
     <Header stateName={LOCATION.stateFull} stateSlug={stateSlug} cityName={LOCATION.city} />
     <main class="container">
       <!-- Header -->
-      <MeetingHeader city={LOCATION.city} stateFull={LOCATION.stateFull} areaDescription={LOCATION.areaDescription} neighborhoods={LOCATION.neighborhoods} meetingHighlights={LOCATION.meetingHighlights} />
-
-      <!-- App Promo Banner -->
-      <AppPromo appStoreUrl={appStoreUrl} />
+      <MeetingHeader city={LOCATION.city} stateFull={LOCATION.stateFull} areaDescription={LOCATION.areaDescription} neighborhoods={LOCATION.neighborhoods} meetingHighlights={LOCATION.meetingHighlights} topLocations={topLocations} />
 
       <!-- Filters -->
       <Filters initialCount={normalizedMeetings.length} />
@@ -319,11 +397,19 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
       <!-- Meetings List -->
       <MeetingList meetings={normalizedMeetings} typeToClass={typeToClass} maxItems={50} />
 
+      <!-- App Promo Banner -->
+      <AppPromo appStoreUrl={appStoreUrl} />
+      
       <!-- Meeting Statistics -->
       <MeetingStats meetings={normalizedMeetings} city={LOCATION.city} stateFull={LOCATION.stateFull} />
 
       <!-- Local AA Resources -->
-      <LocalResources city={LOCATION.city} stateFull={LOCATION.stateFull} intergroup={LOCATION.intergroup} />
+      <LocalResources
+        city={LOCATION.city}
+        stateFull={LOCATION.stateFull}
+        locationConfigIntergroup={LOCATION.intergroup}
+        apiResponseIntergroup={organizations[0]}
+      />
 
       <!-- Other Locations in State -->
       <NearbyLocations 

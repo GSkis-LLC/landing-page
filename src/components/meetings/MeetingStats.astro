@@ -6,6 +6,7 @@ const totalMeetings = meetings.length;
 const meetingsByDay = [0, 0, 0, 0, 0, 0, 0];
 const meetingTypes = new Map<string, number>();
 const locations = new Set<string>();
+const meetingsByPeriod = new Map<string, number>();
 let onlineMeetings = 0;
 
 meetings.forEach((m: any) => {
@@ -29,6 +30,13 @@ meetings.forEach((m: any) => {
   // Count online
   if (m.conference_url) {
     onlineMeetings++;
+  }
+  
+  // Count by time period
+  if (m.time_periods && m.time_periods.length > 0) {
+    m.time_periods.forEach((period: string) => {
+      meetingsByPeriod.set(period, (meetingsByPeriod.get(period) || 0) + 1);
+    });
   }
 });
 
@@ -73,8 +81,23 @@ const uniqueLocations = locations.size;
       <p><strong>Most common meeting types:</strong> {topTypes.map(([type, count]) => `${type} (${count})`).join(', ')}</p>
     )}
     
+    <div class="time-periods">
+      <h3>Meetings by Time of Day</h3>
+      <div class="time-grid">
+        {['morning', 'evening', 'night'].map(period => {
+          const count = meetingsByPeriod.get(period) || 0;
+          return (
+            <div class="time-stat">
+              <span class="time-number">{count}</span>
+              <span class="time-label">{period.charAt(0).toUpperCase() + period.slice(1)}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+    
     <p class="stats-note">
-      Meeting data is sourced from the <a href="https://www.aa.org/find-aa" target="_blank" rel="noopener">AA Meeting Guide</a> and updated regularly to ensure accuracy.
+      Meeting data is regularly updated to ensure accuracy.
     </p>
   </div>
 </section>
@@ -123,5 +146,42 @@ const uniqueLocations = locations.size;
   
   .stats-note a {
     color: #2A9D8F;
+  }
+  
+  .time-periods {
+    margin: 1.5rem 0;
+  }
+  
+  .time-periods h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    color: #334155;
+  }
+  
+  .time-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.75rem;
+  }
+  
+  .time-stat {
+    text-align: center;
+    padding: 0.75rem;
+    background: #f1f5f9;
+    border-radius: 6px;
+    border-left: 3px solid #2A9D8F;
+  }
+  
+  .time-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2A9D8F;
+  }
+  
+  .time-label {
+    font-size: 0.8rem;
+    color: #64748b;
+    text-transform: capitalize;
   }
 </style>
