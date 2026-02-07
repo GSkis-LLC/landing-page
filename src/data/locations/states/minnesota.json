@@ -1,0 +1,74 @@
+{
+  "minneapolis": {
+    "city": "Minneapolis",
+    "stateAbbr": "MN",
+    "stateFull": "Minnesota",
+    "geoRegion": "US-MN",
+    "slug": "minneapolis",
+    "lat": 44.9778,
+    "lng": -93.265,
+    "areaDescription": "Minneapolis–Saint Paul area",
+    "neighborhoods": "Downtown, North Loop, Uptown, Longfellow, Northeast, Dinkytown",
+    "intergroup": {
+      "name": "Minneapolis Central Office",
+      "url": "https://aaminneapolis.org"
+    },
+    "meetingHighlights": "Major recovery hub with meetings throughout city and suburbs; birthplace of Minnesota Model; strong Big Book tradition.",
+    "transitInfo": "Metro Transit light rail and buses; Minneapolis-St. Paul International Airport (MSP).",
+    "population": 425000
+  },
+  "st-paul": {
+    "city": "St. Paul",
+    "stateAbbr": "MN",
+    "stateFull": "Minnesota",
+    "geoRegion": "US-MN",
+    "slug": "st-paul",
+    "lat": 44.9537,
+    "lng": -93.0900,
+    "areaDescription": "St. Paul area, Twin Cities",
+    "neighborhoods": "Downtown St. Paul, Cathedral Hill, Summit Hill, Highland Park, West Seventh",
+    "intergroup": {
+      "name": "St. Paul Intergroup",
+      "url": "https://aastpaul.org"
+    },
+    "meetingHighlights": "Twin Cities recovery with historic treatment center connections; diverse neighborhood meetings; strong service commitment.",
+    "transitInfo": "Metro Transit light rail and buses; MSP Airport shared with Minneapolis.",
+    "population": 311000
+  },
+  "rochester": {
+    "city": "Rochester",
+    "stateAbbr": "MN",
+    "stateFull": "Minnesota",
+    "geoRegion": "US-MN",
+    "slug": "rochester",
+    "lat": 44.0121,
+    "lng": -92.4802,
+    "areaDescription": "Rochester area, Southeast Minnesota",
+    "neighborhoods": "Downtown Rochester, Northwest, Southwest, Cascade",
+    "intergroup": {
+      "name": "Rochester Area Intergroup",
+      "url": "https://rochesteraa.org"
+    },
+    "meetingHighlights": "Mayo Clinic city with medical community meetings; diverse international presence; strong recovery infrastructure.",
+    "transitInfo": "Rochester Public Transit buses; Rochester International Airport (RST); I-90 corridor.",
+    "population": 121000
+  },
+  "duluth": {
+    "city": "Duluth",
+    "stateAbbr": "MN",
+    "stateFull": "Minnesota",
+    "geoRegion": "US-MN",
+    "slug": "duluth",
+    "lat": 46.7867,
+    "lng": -92.1005,
+    "areaDescription": "Duluth area, Lake Superior North Shore",
+    "neighborhoods": "Downtown Duluth, Canal Park, Lakeside, Woodland, West Duluth",
+    "intergroup": {
+      "name": "Duluth Area Intergroup",
+      "url": "https://duluthaa.org"
+    },
+    "meetingHighlights": "Lake Superior port city recovery; strong mining and shipping heritage; active downtown and neighborhood meetings.",
+    "transitInfo": "Duluth Transit Authority buses; Duluth International Airport (DLH); Great Lakes port city.",
+    "population": 87000
+  }
+}

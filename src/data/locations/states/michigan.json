@@ -1,0 +1,128 @@
+{
+  "detroit": {
+    "city": "Detroit",
+    "stateAbbr": "MI",
+    "stateFull": "Michigan",
+    "geoRegion": "US-MI",
+    "slug": "detroit",
+    "lat": 42.3314,
+    "lng": -83.0458,
+    "areaDescription": "Detroit metropolitan area",
+    "neighborhoods": "Downtown, Midtown, Corktown, New Center, Greektown, Southwest Detroit",
+    "intergroup": {
+      "name": "Detroit Central Office",
+      "url": "https://detroitaa.org"
+    },
+    "meetingHighlights": "Diverse metro meetings with strong recovery community in Corktown and Midtown; many Spanish-language and specialty meetings across neighborhoods.",
+    "transitInfo": "DDOT buses and QLine streetcar serve Detroit; Detroit Metro Airport (DTW) is a major hub nearby.",
+    "population": 639111
+  },
+  "ann-arbor": {
+    "city": "Ann Arbor",
+    "stateAbbr": "MI",
+    "stateFull": "Michigan",
+    "geoRegion": "US-MI",
+    "slug": "ann-arbor",
+    "lat": 42.2808,
+    "lng": -83.7430,
+    "areaDescription": "Ann Arbor area, home to University of Michigan",
+    "neighborhoods": "Downtown, Kerrytown, Old West Side, Burns Park, North Campus, South University",
+    "intergroup": {
+      "name": "Washtenaw County AA",
+      "url": "https://annarboraa.org"
+    },
+    "meetingHighlights": "College-town meetings with active young people's groups near U of M campus; progressive fellowship with diverse meeting options.",
+    "transitInfo": "TheRide (AAATA) provides comprehensive bus service throughout Ann Arbor and Washtenaw County.",
+    "population": 123851
+  },
+  "flint": {
+    "city": "Flint",
+    "stateAbbr": "MI",
+    "stateFull": "Michigan",
+    "geoRegion": "US-MI",
+    "slug": "flint",
+    "lat": 43.012527,
+    "lng": -83.687456,
+    "areaDescription": "Flint area",
+    "neighborhoods": "Downtown, Carriage Town, College Cultural",
+    "intergroup": {
+      "name": "Flint Area Intergroup",
+      "url": "https://flintaa.org"
+    },
+    "meetingHighlights": "Strong community meetings with focus on service and outreach; active recovery groups in Carriage Town and near University of Michigan-Flint.",
+    "transitInfo": "Flint MTA provides bus service throughout Genesee County; Bishop International Airport (FNT) offers regional flights.",
+    "population": 81252
+  },
+  "lansing": {
+    "city": "Lansing",
+    "stateAbbr": "MI",
+    "stateFull": "Michigan",
+    "geoRegion": "US-MI",
+    "slug": "lansing",
+    "lat": 42.7325,
+    "lng": -84.5555,
+    "areaDescription": "Lansing metropolitan area, Michigan's capital",
+    "neighborhoods": "Downtown, Old Town, REO Town, Eastside, Westside, Near Southside",
+    "intergroup": {
+      "name": "Lansing Area Intergroup",
+      "url": "https://lansingaa.org"
+    },
+    "meetingHighlights": "State capital meetings with diverse options around government center and Michigan State University campus; active Big Book study groups.",
+    "transitInfo": "Capital Area Transportation Authority (CATA) provides extensive bus service; Lansing Capital Region International Airport (LAN) offers regional connections.",
+    "population": 112644
+  },
+  "grand-rapids": {
+    "city": "Grand Rapids",
+    "stateAbbr": "MI",
+    "stateFull": "Michigan",
+    "geoRegion": "US-MI",
+    "slug": "grand-rapids",
+    "lat": 42.9634,
+    "lng": -85.6681,
+    "areaDescription": "Grand Rapids metropolitan area",
+    "neighborhoods": "Downtown, East Grand Rapids, Heritage Hill, Knapps Corner, Creston, South Hill",
+    "intergroup": {
+      "name": "Grand Rapids Area Intergroup",
+      "url": "https://grandrapidsaa.org"
+    },
+    "meetingHighlights": "Strong West Michigan fellowship with meetings throughout metro area; active Heritage Hill and downtown recovery community.",
+    "transitInfo": "The Rapid provides comprehensive bus service throughout Kent County; Gerald R. Ford International Airport (GRR) is nearby.",
+    "population": 198917
+  },
+  "dearborn": {
+    "city": "Dearborn",
+    "stateAbbr": "MI",
+    "stateFull": "Michigan",
+    "geoRegion": "US-MI",
+    "slug": "dearborn",
+    "lat": 42.3223,
+    "lng": -83.1763,
+    "areaDescription": "Dearborn area in metro Detroit",
+    "neighborhoods": "East Dearborn, West Dearborn, South End, Springwells Park, North Dearborn",
+    "intergroup": {
+      "name": "Detroit Central Office (serves Dearborn)",
+      "url": "https://detroitaa.org"
+    },
+    "meetingHighlights": "Diverse meetings serving metro Detroit area; culturally inclusive fellowship with Arabic-speaking meetings available.",
+    "transitInfo": "DDOT and SMART buses serve Dearborn; Detroit Metro Airport (DTW) is nearby in Romulus.",
+    "population": 109976
+  },
+  "kalamazoo": {
+    "city": "Kalamazoo",
+    "stateAbbr": "MI",
+    "stateFull": "Michigan",
+    "geoRegion": "US-MI",
+    "slug": "kalamazoo",
+    "lat": 42.291706,
+    "lng": -85.587228,
+    "areaDescription": "Kalamazoo area",
+    "neighborhoods": "Bronson Park, Vine Neighborhood, Eastside",
+    "intergroup": {
+      "name": "Kalamazoo Area Intergroup",
+      "url": "https://kalamazooaa.org"
+    },
+    "meetingHighlights": "Active college-town meetings near Western Michigan University and Kalamazoo College; strong downtown recovery community around Bronson Park.",
+    "transitInfo": "Kalamazoo Metro Transit provides bus service throughout the city; Kalamazoo/Battle Creek International Airport (AZO) nearby.",
+    "population": 73598
+  }
+}

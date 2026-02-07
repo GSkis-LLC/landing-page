@@ -1,0 +1,106 @@
+{
+  "salt-lake-city": {
+    "city": "Salt Lake City",
+    "stateAbbr": "UT",
+    "stateFull": "Utah",
+    "geoRegion": "US-UT",
+    "slug": "salt-lake-city",
+    "lat": 40.7608,
+    "lng": -111.891,
+    "areaDescription": "Salt Lake City metropolitan area",
+    "neighborhoods": "Downtown, Sugar House, The Avenues, Capitol Hill, Liberty Wells",
+    "intergroup": {
+      "name": "Salt Lake Area Intergroup",
+      "url": "https://slcintergroup.org"
+    },
+    "meetingHighlights": "Largest AA community in the state with diverse neighborhood meetings, strong newcomer programs, and frequent speaker events.",
+    "transitInfo": "UTA TRAX light rail and bus network serve the metro; Salt Lake City International Airport (SLC) offers national flights.",
+    "population": 200000
+  },
+  "provo": {
+    "city": "Provo",
+    "stateAbbr": "UT",
+    "stateFull": "Utah",
+    "geoRegion": "US-UT",
+    "slug": "provo",
+    "lat": 40.2338,
+    "lng": -111.6585,
+    "areaDescription": "Provo–Orem (Brigham Young University area)",
+    "neighborhoods": "Downtown, BYU campus, Orem (nearby)",
+    "intergroup": {
+      "name": "Provo-Orem Intergroup"
+    },
+    "meetingHighlights": "University-influenced meetings with many student-friendly schedules and strong lunchtime and evening groups.",
+    "transitInfo": "UVX and local bus services connect Provo and Orem; Provo Municipal Airport and Salt Lake City airport for wider travel.",
+    "population": 120000
+  },
+  "ogden": {
+    "city": "Ogden",
+    "stateAbbr": "UT",
+    "stateFull": "Utah",
+    "geoRegion": "US-UT",
+    "slug": "ogden",
+    "lat": 41.223,
+    "lng": -111.9738,
+    "areaDescription": "Ogden-Clearfield area",
+    "neighborhoods": "Downtown, 25th Street, Weber State area, East Bench",
+    "intergroup": {
+      "name": "Ogden Area Intergroup"
+    },
+    "meetingHighlights": "Neighborhood and downtown meetings with outdoor-recreation community overlap; steady evening attendance.",
+    "transitInfo": "UTA bus service and FrontRunner commuter rail nearby; regional highway access to Salt Lake City.",
+    "population": 87000
+  },
+  "st-george": {
+    "city": "St. George",
+    "stateAbbr": "UT",
+    "stateFull": "Utah",
+    "geoRegion": "US-UT",
+    "slug": "st-george",
+    "lat": 37.0965,
+    "lng": -113.5684,
+    "areaDescription": "St. George area (southwest Utah)",
+    "neighborhoods": "Downtown, Sun River, Red Cliffs, Bloomington",
+    "intergroup": {
+      "name": "St. George Area Intergroup"
+    },
+    "meetingHighlights": "Growing fellowship with many newcomer-friendly and seasonal meetings serving the resort and retirement communities.",
+    "transitInfo": "SunTran and regional bus services; St. George Regional Airport for regional flights.",
+    "population": 95000
+  },
+  "orem": {
+    "city": "Orem",
+    "stateAbbr": "UT",
+    "stateFull": "Utah",
+    "geoRegion": "US-UT",
+    "slug": "orem",
+    "lat": 40.2969,
+    "lng": -111.6946,
+    "areaDescription": "Orem (Provo–Orem area)",
+    "neighborhoods": "Downtown Orem, Utah Valley University area, Riverbottom",
+    "intergroup": {
+      "name": "Provo-Orem Intergroup"
+    },
+    "meetingHighlights": "Suburban meetings with strong family and commuter attendance and frequent evening options.",
+    "transitInfo": "UVX and local bus services; convenient driving links to Provo and Salt Lake City.",
+    "population": 98000
+  },
+  "west-valley-city": {
+    "city": "West Valley City",
+    "stateAbbr": "UT",
+    "stateFull": "Utah",
+    "geoRegion": "US-UT",
+    "slug": "west-valley-city",
+    "lat": 40.6916,
+    "lng": -112.0011,
+    "areaDescription": "West Valley City (Salt Lake City western suburbs)",
+    "neighborhoods": "Hunter, Granger, Westlake, Redwood",
+    "intergroup": {
+      "name": "Salt Lake Area Intergroup (serves West Valley)",
+      "url": "https://slcintergroup.org"
+    },
+    "meetingHighlights": "Diverse suburban meetings with Spanish-language options; active evening groups serving the western Salt Lake valley.",
+    "transitInfo": "UTA bus and TRAX connections to Salt Lake City; Salt Lake City International Airport (SLC) nearby.",
+    "population": 140000
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "asheville": {
+    "city": "Asheville",
+    "stateAbbr": "NC",
+    "stateFull": "North Carolina",
+    "geoRegion": "US-NC",
+    "slug": "asheville",
+    "lat": 35.595058,
+    "lng": -82.551487,
+    "areaDescription": "Asheville area",
+    "neighborhoods": "Downtown, Biltmore Village, West Asheville, River Arts District",
+    "intergroup": {
+      "name": "Asheville Area Intergroup"
+    },
+    "meetingHighlights": "Active mountain-area fellowship with many small-group and outdoor-friendly meetings; notable speaker nights.",
+    "transitInfo": "Asheville Red Line buses serve downtown and neighborhoods; Asheville Regional Airport for regional flights.",
+    "population": 94000
+  },
+  "cary": {
+    "city": "Cary",
+    "stateAbbr": "NC",
+    "stateFull": "North Carolina",
+    "geoRegion": "US-NC",
+    "slug": "cary",
+    "lat": 35.7915,
+    "lng": -78.7811,
+    "areaDescription": "Raleigh–Durham area (Cary)",
+    "neighborhoods": "Downtown Cary, Carpenter, Amberly, Weston, Preston, Lochmere",
+    "intergroup": {
+      "name": "Triangle Area Intergroup"
+    },
+    "meetingHighlights": "Suburban meetings that draw from the wider Raleigh–Durham area; many weekday and commuter-friendly options.",
+    "transitInfo": "GoTriangle and local bus services link Cary to Raleigh and Durham; Raleigh-Durham International Airport (RDU) for flights.",
+    "population": 172000
+  },
+  "charlotte": {
+    "city": "Charlotte",
+    "stateAbbr": "NC",
+    "stateFull": "North Carolina",
+    "geoRegion": "US-NC",
+    "slug": "charlotte",
+    "lat": 35.2271,
+    "lng": -80.8431,
+    "areaDescription": "Charlotte metro area",
+    "neighborhoods": "Uptown, South End, Plaza Midwood, NoDa, Dilworth, Ballantyne",
+    "intergroup": {
+      "name": "Charlotte Area Intergroup",
+      "url": "https://charlotteaa.org"
+    },
+    "meetingHighlights": "Large and diverse meeting calendar across neighborhoods with numerous specialty meetings and strong newcomer programs.",
+    "transitInfo": "CATS buses and Lynx light rail connect the city; Charlotte Douglas International Airport (CLT) serves national and international flights.",
+    "population": 900000
+  },
+  "durham": {
+    "city": "Durham",
+    "stateAbbr": "NC",
+    "stateFull": "North Carolina",
+    "geoRegion": "US-NC",
+    "slug": "durham",
+    "lat": 35.994033,
+    "lng": -78.898619,
+    "areaDescription": "Durham area",
+    "neighborhoods": "Downtown, Duke University, North Durham, Watts-Hillandale",
+    "intergroup": {
+      "name": "Triangle Area Intergroup"
+    },
+    "meetingHighlights": "University-influenced meetings with active student participation and a variety of formats including Big Book and step groups.",
+    "transitInfo": "GoDurham and GoTriangle provide transit across the Research Triangle; Raleigh-Durham International Airport (RDU) serves the region.",
+    "population": 295000
+  },
+  "fayetteville": {
+    "city": "Fayetteville",
+    "stateAbbr": "NC",
+    "stateFull": "North Carolina",
+    "geoRegion": "US-NC",
+    "slug": "fayetteville-nc",
+    "lat": 35.0527,
+    "lng": -78.8784,
+    "areaDescription": "Fayetteville area",
+    "neighborhoods": "Downtown, Haymount, Fort Bragg area, Cross Creek, Lakewood, Highland",
+    "intergroup": {
+      "name": "Fayetteville Area Intergroup"
+    },
+    "meetingHighlights": "Meetings that serve both military and civilian populations with many evening and weekend groups.",
+    "transitInfo": "Cumberland County Area Transit and Fort Bragg transit options; regional highways and Fayetteville Regional Airport.",
+    "population": 210000
+  },
+  "greenville": {
+    "city": "Greenville",
+    "stateAbbr": "NC",
+    "stateFull": "North Carolina",
+    "geoRegion": "US-NC",
+    "slug": "greenville",
+    "lat": 35.6127,
+    "lng": -77.3664,
+    "areaDescription": "Greenville & Pitt County area",
+    "neighborhoods": "Downtown, Uptown, Ayden, Winterville",
+    "intergroup": {
+      "name": "Greenville Area Intergroup"
+    },
+    "meetingHighlights": "Community meetings with steady participation and several campus-linked groups at East Carolina University.",
+    "transitInfo": "GREAT bus services and regional transit; Pitt-Greenville Airport for regional flights.",
+    "population": 93000
+  },
+  "raleigh": {
+    "city": "Raleigh",
+    "stateAbbr": "NC",
+    "stateFull": "North Carolina",
+    "geoRegion": "US-NC",
+    "slug": "raleigh",
+    "lat": 35.7796,
+    "lng": -78.6382,
+    "areaDescription": "Raleigh / Research Triangle area",
+    "neighborhoods": "Downtown, North Hills, Glenwood South, Five Points, Oakwood",
+    "intergroup": {
+      "name": "Triangle Area Intergroup",
+      "url": "https://triangleaa.org"
+    },
+    "meetingHighlights": "Extensive meeting options across the Research Triangle with many daytime, evening, and specialty meetings.",
+    "transitInfo": "GoTriangle regional services and local buses; Raleigh-Durham International Airport (RDU) serves national flights.",
+    "population": 474000
+  },
+  "greensboro": {
+    "city": "Greensboro",
+    "stateAbbr": "NC",
+    "stateFull": "North Carolina",
+    "geoRegion": "US-NC",
+    "slug": "greensboro",
+    "lat": 36.0726,
+    "lng": -79.792,
+    "areaDescription": "Greensboro metropolitan area",
+    "neighborhoods": "Downtown, Fisher Park, Irving Park, Lindley Park",
+    "intergroup": {
+      "name": "Greensboro Area Intergroup"
+    },
+    "meetingHighlights": "Diverse downtown and neighborhood meetings with regular speaker nights and active service groups.",
+    "transitInfo": "GTA buses and regional transit; Piedmont Triad International Airport for flights.",
+    "population": 300000
+  },
+  "wilmington": {
+    "city": "Wilmington",
+    "stateAbbr": "NC",
+    "stateFull": "North Carolina",
+    "geoRegion": "US-NC",
+    "slug": "wilmington",
+    "lat": 34.2257,
+    "lng": -77.9447,
+    "areaDescription": "Wilmington (Coastal NC)",
+    "neighborhoods": "Downtown, Riverfront, Wrightsville Beach, Carolina Beach",
+    "intergroup": {
+      "name": "Wilmington Area Intergroup"
+    },
+    "meetingHighlights": "Coastal meetings with a blend of city and beach-community groups; several evening and newcomer-support meetings.",
+    "transitInfo": "Wave transit and regional bus services; Wilmington International Airport for regional flights.",
+    "population": 130000
+  },
+  "asheboro": {
+    "city": "Asheboro",
+    "stateAbbr": "NC",
+    "stateFull": "North Carolina",
+    "geoRegion": "US-NC",
+    "slug": "asheboro",
+    "lat": 35.7007,
+    "lng": -79.8135,
+    "areaDescription": "Asheboro area",
+    "neighborhoods": "Downtown, West Asheboro",
+    "intergroup": {
+      "name": "Randolph County Intergroup"
+    },
+    "meetingHighlights": "Small-town meetings with steady local participation and community-focused support.",
+    "transitInfo": "Local bus services and regional road access via US-220.",
+    "population": 26000
+  }
+}

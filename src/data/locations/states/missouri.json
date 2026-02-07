@@ -1,0 +1,107 @@
+{
+  "kansas-city": {
+    "city": "Kansas City",
+    "stateAbbr": "MO",
+    "stateFull": "Missouri",
+    "geoRegion": "US-MO",
+    "slug": "kansas-city-mo",
+    "lat": 39.0997,
+    "lng": -94.5786,
+    "areaDescription": "Kansas City metropolitan area",
+    "neighborhoods": "Downtown, Westport, Country Club Plaza, Crossroads Arts District, River Market, Brookside",
+    "intergroup": {
+      "name": "Greater Kansas City Intergroup",
+      "url": "https://kcintergroup.org"
+    },
+    "meetingHighlights": "Large metro fellowship with cross-state meetings, many speaker nights, and a robust schedule of lunchtime and evening groups.",
+    "transitInfo": "RideKC bus network and regional transit connect the metro; Kansas City International Airport (MCI) serves national and international flights.",
+    "population": 508000
+  },
+  "springfield": {
+    "city": "Springfield",
+    "stateAbbr": "MO",
+    "stateFull": "Missouri",
+    "geoRegion": "US-MO",
+    "slug": "springfield-mo",
+    "lat": 37.2089,
+    "lng": -93.2923,
+    "areaDescription": "Springfield metropolitan area (MO)",
+    "neighborhoods": "Downtown, Midtown, Galloway, Rountree, South Campbell, Northern Heights",
+    "intergroup": {
+      "name": "Springfield Area Intergroup"
+    },
+    "meetingHighlights": "Active downtown and suburban meetings with several AA service groups and regular speaker events.",
+    "transitInfo": "Springfield Transit Services provides local routes; Springfield–Branson National Airport for regional flights.",
+    "population": 170000
+  },
+  "st-louis": {
+    "city": "St. Louis",
+    "stateAbbr": "MO",
+    "stateFull": "Missouri",
+    "geoRegion": "US-MO",
+    "slug": "st-louis",
+    "lat": 38.627,
+    "lng": -90.1994,
+    "areaDescription": "St. Louis metropolitan area",
+    "neighborhoods": "Downtown, The Delmar Loop, Central West End, Soulard, Lafayette Square, Clayton",
+    "intergroup": {
+      "name": "St. Louis Area Intergroup",
+      "url": "https://stlouis-aa.org"
+    },
+    "meetingHighlights": "Extensive meeting options across neighborhoods and suburbs with long-established groups and numerous specialty meetings.",
+    "transitInfo": "MetroLink light rail and MetroBus provide transit across the region; St. Louis Lambert International Airport (STL) serves national flights.",
+    "population": 301000
+  },
+  "columbia": {
+    "city": "Columbia",
+    "stateAbbr": "MO",
+    "stateFull": "Missouri",
+    "geoRegion": "US-MO",
+    "slug": "columbia-mo",
+    "lat": 38.9517,
+    "lng": -92.3341,
+    "areaDescription": "Columbia (University of Missouri)",
+    "neighborhoods": "Downtown, University District, North Columbia",
+    "intergroup": {
+      "name": "Columbia Area Intergroup"
+    },
+    "meetingHighlights": "University-area meetings with strong student involvement and a mix of lunchtime, evening, and study-format meetings.",
+    "transitInfo": "Go COMO provides local transit; Columbia Regional Airport serves regional flights.",
+    "population": 130000
+  },
+  "jefferson-city": {
+    "city": "Jefferson City",
+    "stateAbbr": "MO",
+    "stateFull": "Missouri",
+    "geoRegion": "US-MO",
+    "slug": "jefferson-city",
+    "lat": 38.5767,
+    "lng": -92.1735,
+    "areaDescription": "Jefferson City (state capital)",
+    "neighborhoods": "Downtown, Capitol District, North Jefferson",
+    "intergroup": {
+      "name": "Jefferson City Area Intergroup"
+    },
+    "meetingHighlights": "Capital-city meetings with steady weekday attendance and several civic-group hosted meetings.",
+    "transitInfo": "Jefferson City Transit provides local service; regional highways and small regional airports connect the area.",
+    "population": 43000
+  },
+  "independence": {
+    "city": "Independence",
+    "stateAbbr": "MO",
+    "stateFull": "Missouri",
+    "geoRegion": "US-MO",
+    "slug": "independence-mo",
+    "lat": 39.0911,
+    "lng": -94.4155,
+    "areaDescription": "Independence (Kansas City eastern suburbs)",
+    "neighborhoods": "Downtown Independence, Noland Road, Blue Ridge, Santa Fe Hills",
+    "intergroup": {
+      "name": "Greater Kansas City Intergroup",
+      "url": "https://kcintergroup.org"
+    },
+    "meetingHighlights": "Active suburban meetings serving eastern KC metro; strong Truman Library area fellowship with regular speaker meetings.",
+    "transitInfo": "RideKC buses connect Independence to Kansas City metro; Kansas City International Airport (MCI) accessible via highway.",
+    "population": 123000
+  }
+}

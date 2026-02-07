@@ -1,0 +1,74 @@
+{
+  "providence": {
+    "city": "Providence",
+    "stateAbbr": "RI",
+    "stateFull": "Rhode Island",
+    "geoRegion": "US-RI",
+    "slug": "providence",
+    "lat": 41.824,
+    "lng": -71.4128,
+    "areaDescription": "Greater Providence area",
+    "neighborhoods": "Downtown, Federal Hill, College Hill, Wayland, Fox Point, East Side, West End",
+    "intergroup": {
+      "name": "Rhode Island Intergroup",
+      "url": "https://ricentraloffice.org"
+    },
+    "meetingHighlights": "State capital recovery with meetings throughout metro; strong Brown University and RISD presence; Federal Hill Italian heritage.",
+    "transitInfo": "RIPTA bus service; T.F. Green Airport (PVD); Amtrak service.",
+    "population": 191000
+  },
+  "warwick": {
+    "city": "Warwick",
+    "stateAbbr": "RI",
+    "stateFull": "Rhode Island",
+    "geoRegion": "US-RI",
+    "slug": "warwick",
+    "lat": 41.7001,
+    "lng": -71.4162,
+    "areaDescription": "Warwick area, Narragansett Bay",
+    "neighborhoods": "Warwick Neck, Oakland Beach, Conimicut, Apponaug, Hillsgrove",
+    "intergroup": {
+      "name": "Rhode Island Intergroup",
+      "url": "https://ricentraloffice.org"
+    },
+    "meetingHighlights": "Suburban recovery community; Oakland Beach waterfront meetings; airport-area groups.",
+    "transitInfo": "RIPTA buses; T.F. Green Airport (PVD) located in Warwick; I-95 access.",
+    "population": 82000
+  },
+  "cranston": {
+    "city": "Cranston",
+    "stateAbbr": "RI",
+    "stateFull": "Rhode Island",
+    "geoRegion": "US-RI",
+    "slug": "cranston",
+    "lat": 41.7798,
+    "lng": -71.4373,
+    "areaDescription": "Cranston area, Providence metro",
+    "neighborhoods": "Edgewood, Garden City, Knightsville, Western Cranston",
+    "intergroup": {
+      "name": "Rhode Island Intergroup",
+      "url": "https://ricentraloffice.org"
+    },
+    "meetingHighlights": "Third-largest Rhode Island city recovery; diverse suburban meetings; strong Italian-American community presence.",
+    "transitInfo": "RIPTA bus connections; close to Providence and PVD Airport; I-95 access.",
+    "population": 82000
+  },
+  "pawtucket": {
+    "city": "Pawtucket",
+    "stateAbbr": "RI",
+    "stateFull": "Rhode Island",
+    "geoRegion": "US-RI",
+    "slug": "pawtucket",
+    "lat": 41.8787,
+    "lng": -71.3828,
+    "areaDescription": "Pawtucket area, Blackstone Valley",
+    "neighborhoods": "Downtown Pawtucket, Darlington, Fairlawn, Quality Hill",
+    "intergroup": {
+      "name": "Rhode Island Intergroup",
+      "url": "https://ricentraloffice.org"
+    },
+    "meetingHighlights": "Historic mill city recovery; working-class traditions; border city serving RI and Massachusetts.",
+    "transitInfo": "RIPTA buses; close to Providence; I-95 corridor; Pawtucket/Central Falls commuter rail.",
+    "population": 75000
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "allentown": {
+    "city": "Allentown",
+    "stateAbbr": "PA",
+    "stateFull": "Pennsylvania",
+    "geoRegion": "US-PA",
+    "slug": "allentown",
+    "lat": 40.608431,
+    "lng": -75.490183,
+    "areaDescription": "Greater Allentown area",
+    "neighborhoods": "Center City, West End, South Allentown, Old Allentown",
+    "intergroup": {
+      "name": "Lehigh Valley Intergroup",
+      "url": "https://lehighvalleyaa.org"
+    },
+    "meetingHighlights": "Active downtown meetings and several groups across the Lehigh Valley, including Spanish-language and LGBTQ-friendly meetings.",
+    "transitInfo": "LANta buses serve Allentown and nearby towns; Lehigh Valley International Airport (ABE) for regional travel.",
+    "population": 121433
+  },
+  "pittsburgh": {
+    "city": "Pittsburgh",
+    "stateAbbr": "PA",
+    "stateFull": "Pennsylvania",
+    "geoRegion": "US-PA",
+    "slug": "pittsburg",
+    "lat": 40.4406,
+    "lng": -79.9959,
+    "areaDescription": "Greater Pittsburgh area",
+    "neighborhoods": "Downtown, South Side, Shadyside, Lawrenceville, Oakland, Strip District, Squirrel Hill",
+    "intergroup": {
+      "name": "Pittsburgh Area Intergroup",
+      "url": "https://pghaa.org",
+      "phone": "(412) 471-7472"
+    },
+    "meetingHighlights": "Large, active fellowship with many campus and neighborhood meetings, notable speaker meetings in Squirrel Hill and downtown.",
+    "transitInfo": "Port Authority of Allegheny County buses and light rail connect neighborhoods; Pittsburgh International Airport (PIT) serves the region.",
+    "population": 302407
+  },
+  "philadelphia": {
+    "city": "Philadelphia",
+    "stateAbbr": "PA",
+    "stateFull": "Pennsylvania",
+    "geoRegion": "US-PA",
+    "slug": "philadelphia",
+    "lat": 39.9526,
+    "lng": -75.1652,
+    "areaDescription": "Philadelphia metropolitan area",
+    "neighborhoods": "Center City, Old City, South Philly, Fishtown, University City, Kensington, Manayunk",
+    "intergroup": {
+      "name": "Philadelphia Intergroup",
+      "url": "https://aasepia.org"
+    },
+    "meetingHighlights": "Major recovery hub with meetings throughout five boroughs; birthplace of AA traditions; diverse Center City and neighborhood presence.",
+    "transitInfo": "SEPTA subway, bus, and regional rail; Philadelphia International Airport (PHL); Amtrak hub.",
+    "population": 1600000
+  },
+  "harrisburg": {
+    "city": "Harrisburg",
+    "stateAbbr": "PA",
+    "stateFull": "Pennsylvania",
+    "geoRegion": "US-PA",
+    "slug": "harrisburg",
+    "lat": 40.2732,
+    "lng": -76.8867,
+    "areaDescription": "Harrisburg metropolitan area, state capital",
+    "neighborhoods": "Downtown Harrisburg, Midtown, Uptown, Allison Hill, Susquehanna Township",
+    "intergroup": {
+      "name": "Harrisburg Area Intergroup",
+      "url": "https://aa-harrisburg.org"
+    },
+    "meetingHighlights": "State capital recovery with government worker meetings; diverse schedule throughout metro area; Susquehanna River location.",
+    "transitInfo": "CAT bus service; Harrisburg International Airport (MDT); Amtrak service.",
+    "population": 50000
+  },
+  "scranton": {
+    "city": "Scranton",
+    "stateAbbr": "PA",
+    "stateFull": "Pennsylvania",
+    "geoRegion": "US-PA",
+    "slug": "scranton",
+    "lat": 41.4090,
+    "lng": -75.6624,
+    "areaDescription": "Scranton area, Northeastern Pennsylvania",
+    "neighborhoods": "Downtown Scranton, Green Ridge, Hill Section, Dunmore, South Side",
+    "intergroup": {
+      "name": "Scranton Intergroup",
+      "url": "https://nepaaa.org"
+    },
+    "meetingHighlights": "Historic coal mining city recovery; strong working-class traditions; Electric City meetings throughout NEPA.",
+    "transitInfo": "COLTS bus service; Wilkes-Barre/Scranton International Airport (AVP); I-81 corridor.",
+    "population": 77000
+  }
+}

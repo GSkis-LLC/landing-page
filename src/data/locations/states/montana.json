@@ -1,0 +1,74 @@
+{
+  "billings": {
+    "city": "Billings",
+    "stateAbbr": "MT",
+    "stateFull": "Montana",
+    "geoRegion": "US-MT",
+    "slug": "billings",
+    "lat": 45.783287,
+    "lng": -108.50069,
+    "areaDescription": "Billings area",
+    "neighborhoods": "Downtown, Heights, West End",
+    "intergroup": {
+      "name": "Billings Area Intergroup",
+      "url": "https://billingsaa.org"
+    },
+    "meetingHighlights": "Montana's largest city recovery with meetings throughout metro area; strong oil industry and railroad heritage.",
+    "transitInfo": "MET Transit buses; Billings Logan International Airport (BIL); I-90 corridor.",
+    "population": 118000
+  },
+  "missoula": {
+    "city": "Missoula",
+    "stateAbbr": "MT",
+    "stateFull": "Montana",
+    "geoRegion": "US-MT",
+    "slug": "missoula",
+    "lat": 46.8721,
+    "lng": -113.9940,
+    "areaDescription": "Missoula area, Western Montana",
+    "neighborhoods": "Downtown Missoula, University District, Rattlesnake, Southgate, Target Range",
+    "intergroup": {
+      "name": "Missoula Intergroup",
+      "url": "https://missoulaaa.org"
+    },
+    "meetingHighlights": "College-town recovery with University of Montana presence; vibrant young people's meetings; outdoor recovery culture.",
+    "transitInfo": "Mountain Line Transit buses; Missoula Montana Airport (MSO); I-90 location.",
+    "population": 76000
+  },
+  "great-falls": {
+    "city": "Great Falls",
+    "stateAbbr": "MT",
+    "stateFull": "Montana",
+    "geoRegion": "US-MT",
+    "slug": "great-falls",
+    "lat": 47.5053,
+    "lng": -111.2996,
+    "areaDescription": "Great Falls area, North Central Montana",
+    "neighborhoods": "Downtown Great Falls, Black Eagle, Malmstrom AFB area",
+    "intergroup": {
+      "name": "Great Falls Area Intergroup",
+      "url": "https://greatfallsaa.org"
+    },
+    "meetingHighlights": "Military community recovery serving Malmstrom AFB and city; strong service tradition; Electric City meetings.",
+    "transitInfo": "Great Falls Transit District buses; Great Falls International Airport (GTF); US Highway 87.",
+    "population": 60000
+  },
+  "bozeman": {
+    "city": "Bozeman",
+    "stateAbbr": "MT",
+    "stateFull": "Montana",
+    "geoRegion": "US-MT",
+    "slug": "bozeman",
+    "lat": 45.6770,
+    "lng": -111.0429,
+    "areaDescription": "Bozeman area, Gallatin Valley",
+    "neighborhoods": "Downtown Bozeman, MSU campus area, South Bozeman, Four Corners",
+    "intergroup": {
+      "name": "Bozeman Area Intergroup",
+      "url": "https://bozemanaa.org"
+    },
+    "meetingHighlights": "College-town and outdoor recreation recovery; Montana State University presence; young people and ski-town meetings.",
+    "transitInfo": "Streamline bus service; Bozeman Yellowstone International Airport (BZN); I-90 access.",
+    "population": 56000
+  }
+}

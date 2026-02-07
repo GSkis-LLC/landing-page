@@ -1,0 +1,88 @@
+{
+  "boise": {
+    "city": "Boise",
+    "stateAbbr": "ID",
+    "stateFull": "Idaho",
+    "geoRegion": "US-ID",
+    "slug": "boise",
+    "lat": 43.615,
+    "lng": -116.2023,
+    "areaDescription": "Boise metropolitan area (Treasure Valley)",
+    "neighborhoods": "Downtown, North End, East End, Bench, Boise State area",
+    "intergroup": {
+      "name": "Boise Area Intergroup",
+      "url": "https://boiseaa.org"
+    },
+    "meetingHighlights": "Large and active fellowship with meetings across downtown and the North End; strong newcomer programs and speaker meetings.",
+    "transitInfo": "ValleyRide buses serve Boise and surrounding areas; Boise Airport (BOI) provides regional flights.",
+    "population": 235000
+  },
+  "nampa": {
+    "city": "Nampa",
+    "stateAbbr": "ID",
+    "stateFull": "Idaho",
+    "geoRegion": "US-ID",
+    "slug": "nampa",
+    "lat": 43.5407,
+    "lng": -116.5635,
+    "areaDescription": "Nampa (Treasure Valley)",
+    "neighborhoods": "Downtown Nampa, Lakevue, Karcher, West Nampa",
+    "intergroup": {
+      "name": "Treasure Valley Intergroup"
+    },
+    "meetingHighlights": "Community-focused meetings with active evening groups and outreach to nearby smaller towns.",
+    "transitInfo": "ValleyRide and regional bus routes; easy highway access to Boise and regional airports.",
+    "population": 103000
+  },
+  "meridian": {
+    "city": "Meridian",
+    "stateAbbr": "ID",
+    "stateFull": "Idaho",
+    "geoRegion": "US-ID",
+    "slug": "meridian",
+    "lat": 43.6121,
+    "lng": -116.3915,
+    "areaDescription": "Meridian (Boise suburb)",
+    "neighborhoods": "Downtown Meridian, West Boise, Lake Hazel, Cherry Lane",
+    "intergroup": {
+      "name": "Treasure Valley Intergroup"
+    },
+    "meetingHighlights": "Rapidly growing suburban meetings with many family-friendly and weekday groups; strong newcomer support.",
+    "transitInfo": "Regional bus service connects Meridian to Boise; airport access via Boise (BOI).",
+    "population": 125000
+  },
+  "idaho-falls": {
+    "city": "Idaho Falls",
+    "stateAbbr": "ID",
+    "stateFull": "Idaho",
+    "geoRegion": "US-ID",
+    "slug": "idaho-falls",
+    "lat": 43.4917,
+    "lng": -112.0335,
+    "areaDescription": "Idaho Falls and East Idaho",
+    "neighborhoods": "Downtown, Westside, Ammon (nearby)",
+    "intergroup": {
+      "name": "Idaho Falls Area Intergroup"
+    },
+    "meetingHighlights": "Small-city meetings with steady attendance and collaborative events with neighboring towns.",
+    "transitInfo": "LOCAL bus services and regional highways; Idaho Falls Regional Airport (IDA) provides regional connections.",
+    "population": 64000
+  },
+  "coeur-dalene": {
+    "city": "Coeur d'Alene",
+    "stateAbbr": "ID",
+    "stateFull": "Idaho",
+    "geoRegion": "US-ID",
+    "slug": "coeur-dalene",
+    "lat": 47.6777,
+    "lng": -116.7805,
+    "areaDescription": "Coeur d'Alene and North Idaho",
+    "neighborhoods": "Downtown, Tubbs Hill, Hayden Lake (nearby), Worley",
+    "intergroup": {
+      "name": "North Idaho Intergroup"
+    },
+    "meetingHighlights": "Active lakeside meetings with a mix of seasonal visitors and local groups; several area retreats and speaker meetings.",
+    "transitInfo": "Local bus services and regional highways; Spokane International Airport (GEG) and Coeur d'Alene airport for regional access.",
+    "population": 54000
+  }
+}

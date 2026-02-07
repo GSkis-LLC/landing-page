@@ -1,0 +1,88 @@
+{
+  "cheyenne": {
+    "city": "Cheyenne",
+    "stateAbbr": "WY",
+    "stateFull": "Wyoming",
+    "geoRegion": "US-WY",
+    "slug": "cheyenne",
+    "lat": 41.13998,
+    "lng": -104.82025,
+    "areaDescription": "Cheyenne (state capital)",
+    "neighborhoods": "Downtown, Historic Plains, South Cheyenne",
+    "intergroup": {
+      "name": "Wyoming Intergroup",
+      "url": "https://wyomingaa.org"
+    },
+    "meetingHighlights": "Capital-city meetings with strong evening and lunchtime options; active newcomer programs.",
+    "transitInfo": "Cheyenne Transit and regional highways (I-25) provide access; most attendees drive locally.",
+    "population": 65000
+  },
+  "casper": {
+    "city": "Casper",
+    "stateAbbr": "WY",
+    "stateFull": "Wyoming",
+    "geoRegion": "US-WY",
+    "slug": "casper",
+    "lat": 42.8666,
+    "lng": -106.3131,
+    "areaDescription": "Casper metropolitan area",
+    "neighborhoods": "Downtown, North Casper, Mills",
+    "intergroup": {
+      "name": "Central Wyoming Intergroup"
+    },
+    "meetingHighlights": "Active local fellowship with steady evening meetings and periodic speaker events.",
+    "transitInfo": "Local bus services and regional highways; Casper–Natrona County International Airport for regional flights.",
+    "population": 58000
+  },
+  "laramie": {
+    "city": "Laramie",
+    "stateAbbr": "WY",
+    "stateFull": "Wyoming",
+    "geoRegion": "US-WY",
+    "slug": "laramie",
+    "lat": 41.3114,
+    "lng": -105.5911,
+    "areaDescription": "Laramie / University of Wyoming area",
+    "neighborhoods": "Downtown, University Hill, North Laramie",
+    "intergroup": {
+      "name": "Southwest Wyoming Intergroup"
+    },
+    "meetingHighlights": "University-linked meetings with flexible schedules for students and staff; strong lunchtime attendance.",
+    "transitInfo": "Local bus service and drive access via I-80; Amtrak and regional services nearby.",
+    "population": 32000
+  },
+  "gillette": {
+    "city": "Gillette",
+    "stateAbbr": "WY",
+    "stateFull": "Wyoming",
+    "geoRegion": "US-WY",
+    "slug": "gillette",
+    "lat": 44.2919,
+    "lng": -105.5057,
+    "areaDescription": "Gillette / Campbell County",
+    "neighborhoods": "Downtown, Antelope Valley, College",
+    "intergroup": {
+      "name": "Northeast Wyoming Intergroup"
+    },
+    "meetingHighlights": "Evening and weekend meetings with strong community support; mining-industry population participation.",
+    "transitInfo": "Regional highway access and local bus services; most attendees drive to meetings.",
+    "population": 33000
+  },
+  "rock-springs": {
+    "city": "Rock Springs",
+    "stateAbbr": "WY",
+    "stateFull": "Wyoming",
+    "geoRegion": "US-WY",
+    "slug": "rock-springs",
+    "lat": 41.5876,
+    "lng": -109.2023,
+    "areaDescription": "Rock Springs / Sweetwater County",
+    "neighborhoods": "Downtown, Southside, Red Desert outskirts",
+    "intergroup": {
+      "name": "Southwest Wyoming Intergroup"
+    },
+    "meetingHighlights": "Community-focused meetings with steady weekend attendance and occasional speaker nights.",
+    "transitInfo": "Local transit and regional highways; small regional airport and drive access to larger hubs.",
+    "population": 24000
+  }
+}

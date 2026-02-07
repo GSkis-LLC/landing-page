@@ -1,0 +1,87 @@
+{
+  "fargo": {
+    "city": "Fargo",
+    "stateAbbr": "ND",
+    "stateFull": "North Dakota",
+    "geoRegion": "US-ND",
+    "slug": "fargo",
+    "lat": 46.8772,
+    "lng": -96.7898,
+    "areaDescription": "Fargo–Moorhead metropolitan area",
+    "neighborhoods": "Downtown, Lindenwood, North Fargo, South Fargo",
+    "intergroup": {
+      "name": "Fargo-Moorhead Intergroup"
+    },
+    "meetingHighlights": "Largest AA community in the state with many downtown and suburban meetings, frequent speaker nights, and strong newcomer resources.",
+    "transitInfo": "MATBUS provides local transit; Hector International Airport (FAR) serves regional flights.",
+    "population": 125000
+  },
+  "bismarck": {
+    "city": "Bismarck",
+    "stateAbbr": "ND",
+    "stateFull": "North Dakota",
+    "geoRegion": "US-ND",
+    "slug": "bismarck",
+    "lat": 46.8083,
+    "lng": -100.7837,
+    "areaDescription": "Bismarck (state capital)",
+    "neighborhoods": "Downtown, South Bismarck, North Bismarck, Kirkwood",
+    "intergroup": {
+      "name": "Bismarck-Mandan Intergroup"
+    },
+    "meetingHighlights": "Capital-city meetings with steady weekday and evening attendance and active fellowship in nearby Mandan.",
+    "transitInfo": "Bis-Man Transit provides local routes; Bismarck Municipal Airport serves regional flights.",
+    "population": 74000
+  },
+  "grand-forks": {
+    "city": "Grand Forks",
+    "stateAbbr": "ND",
+    "stateFull": "North Dakota",
+    "geoRegion": "US-ND",
+    "slug": "grand-forks",
+    "lat": 47.9253,
+    "lng": -97.0329,
+    "areaDescription": "Grand Forks area (University of North Dakota nearby)",
+    "neighborhoods": "Downtown, University District, Columbia Park",
+    "intergroup": {
+      "name": "Grand Forks Area Intergroup"
+    },
+    "meetingHighlights": "University-influenced meetings and community groups with both daytime and evening schedules.",
+    "transitInfo": "Cities Area Transit provides local buses; Grand Forks International Airport serves regional routes.",
+    "population": 56000
+  },
+  "minot": {
+    "city": "Minot",
+    "stateAbbr": "ND",
+    "stateFull": "North Dakota",
+    "geoRegion": "US-ND",
+    "slug": "minot",
+    "lat": 48.232,
+    "lng": -101.2966,
+    "areaDescription": "Minot area",
+    "neighborhoods": "Downtown, North Hill, South Hill",
+    "intergroup": {
+      "name": "Minot Area Intergroup"
+    },
+    "meetingHighlights": "Active community meetings with regular newcomer and step-study groups and strong local fellowship.",
+    "transitInfo": "Minot City Transit and regional highways; Minot International Airport for regional flights.",
+    "population": 47000
+  },
+  "west-fargo": {
+    "city": "West Fargo",
+    "stateAbbr": "ND",
+    "stateFull": "North Dakota",
+    "geoRegion": "US-ND",
+    "slug": "west-fargo",
+    "lat": 46.8777,
+    "lng": -96.9187,
+    "areaDescription": "West Fargo (Fargo suburbs)",
+    "neighborhoods": "Downtown West Fargo, Sheyenne River Valley",
+    "intergroup": {
+      "name": "Fargo-Moorhead Intergroup"
+    },
+    "meetingHighlights": "Suburban meetings serving commuters and families; many evening options and newcomer support shared with Fargo groups.",
+    "transitInfo": "MATBUS connects West Fargo with Fargo; highway access via I-94.",
+    "population": 44000
+  }
+}

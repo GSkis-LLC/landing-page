@@ -1,0 +1,92 @@
+{
+  "aurora": {
+    "city": "Aurora",
+    "stateAbbr": "CO",
+    "stateFull": "Colorado",
+    "geoRegion": "US-CO",
+    "slug": "aurora-co",
+    "lat": 39.7294,
+    "lng": -104.8319,
+    "areaDescription": "Aurora (Denver metro) area",
+    "neighborhoods": "Aurora Highlands, Parker Road Corridor, City Center (A-Town), Del Mar, Heather Gardens, Meadow Hills",
+    "intergroup": {
+      "name": "Denver Area Intergroup (serves Aurora)",
+      "url": "https://denveraa.org"
+    },
+    "meetingHighlights": "Growing suburban meetings with many community and church-based groups; active newcomer and study meetings around A-Town and Parker Road.",
+    "transitInfo": "RTD light rail and bus connections link Aurora with Denver; Denver International Airport (DEN) is nearby for regional and international flights.",
+    "population": 386000
+  },
+  "colorado-springs": {
+    "city": "Colorado Springs",
+    "stateAbbr": "CO",
+    "stateFull": "Colorado",
+    "geoRegion": "US-CO",
+    "slug": "colorado-springs",
+    "lat": 38.8339,
+    "lng": -104.8214,
+    "areaDescription": "Colorado Springs area",
+    "neighborhoods": "Old Colorado City, Broadmoor, Downtown, Ivywild, North End, Briargate",
+    "intergroup": {
+      "name": "Pikes Peak Intergroup",
+      "url": "https://pikespeapaa.org"
+    },
+    "meetingHighlights": "Active mountain-region fellowship with strong downtown and Broadmoor area meetings; many outdoor and recovery events tied to the Pikes Peak community.",
+    "transitInfo": "Mountain Metropolitan Transit (MMT) provides city bus service; Colorado Springs Airport (COS) serves regional routes.",
+    "population": 478000
+  },
+  "boulder": {
+    "city": "Boulder",
+    "stateAbbr": "CO",
+    "stateFull": "Colorado",
+    "geoRegion": "US-CO",
+    "slug": "boulder",
+    "lat": 40.0150,
+    "lng": -105.2705,
+    "areaDescription": "Boulder area at the base of the Rocky Mountains",
+    "neighborhoods": "Pearl Street, University Hill, North Boulder, South Boulder, Chautauqua, Gunbarrel",
+    "intergroup": {
+      "name": "Boulder AA",
+      "url": "https://boulderaa.org"
+    },
+    "meetingHighlights": "Progressive college-town fellowship with active meetings near CU Boulder campus; strong focus on young people's meetings and outdoor recovery events in the Flatirons.",
+    "transitInfo": "RTD bus service connects Boulder to Denver; Regional Transportation District (RTD) routes serve Boulder County.",
+    "population": 108250
+  },
+  "denver": {
+    "city": "Denver",
+    "stateAbbr": "CO",
+    "stateFull": "Colorado",
+    "geoRegion": "US-CO",
+    "slug": "denver",
+    "lat": 39.7392,
+    "lng": -104.9903,
+    "areaDescription": "Greater Denver area",
+    "neighborhoods": "LoDo, River North (RiNo), Capitol Hill, Uptown, Park Hill, Cherry Creek",
+    "intergroup": {
+      "name": "Denver Area Intergroup",
+      "url": "https://denveraa.org",
+      "phone": "(303) 321-7111"
+    },
+    "meetingHighlights": "Large and diverse AA community with meetings across neighborhoods including downtown LoDo and RiNo; many specialty meetings and strong newcomer resources.",
+    "transitInfo": "RTD buses and light rail provide extensive coverage; Denver International Airport (DEN) is the major regional hub.",
+    "population": 715522
+  },
+  "pueblo": {
+    "city": "Pueblo",
+    "stateAbbr": "CO",
+    "stateFull": "Colorado",
+    "geoRegion": "US-CO",
+    "slug": "pueblo",
+    "lat": 38.254447,
+    "lng": -104.60914,
+    "areaDescription": "Pueblo area",
+    "neighborhoods": "Downtown, Bessemer, Mesa Junction, Union Avenue",
+    "intergroup": {
+      "name": "Pueblo Area Intergroup"
+    },
+    "meetingHighlights": "Small-city meetings with solid neighborhood attendance; many groups meet in downtown churches and community centers.",
+    "transitInfo": "Pueblo Transit serves the city; Pueblo Memorial Airport (PUB) and regional highways provide access.",
+    "population": 110000
+  }
+}

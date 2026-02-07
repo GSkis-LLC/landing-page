@@ -1,0 +1,115 @@
+{
+  "akron": {
+    "city": "Akron",
+    "stateAbbr": "OH",
+    "stateFull": "Ohio",
+    "geoRegion": "US-OH",
+    "slug": "akron",
+    "lat": 41.081442,
+    "lng": -81.519005,
+    "areaDescription": "Greater Akron area, the birthplace of Alcoholics Anonymous",
+    "neighborhoods": "Downtown, Highland Square, Firestone Park, Fairlawn, West Akron",
+    "intergroup": {
+      "name": "Akron Area Intergroup Council",
+      "url": "https://akronaa.org",
+      "phone": "(330) 253-8181"
+    },
+    "meetingHighlights": "Akron is the birthplace of AA where Dr. Bob and Bill W. founded the fellowship in 1935. Dr. Bob's Home is a historic landmark.",
+    "transitInfo": "METRO RTA buses connect Akron neighborhoods; Akron–Canton Airport (CAK) is nearby for regional flights.",
+    "population": 190469
+  },
+  "cincinnati": {
+    "city": "Cincinnati",
+    "stateAbbr": "OH",
+    "stateFull": "Ohio",
+    "geoRegion": "US-OH",
+    "slug": "cincinnati",
+    "lat": 39.1031,
+    "lng": -84.512,
+    "areaDescription": "Cincinnati metropolitan area",
+    "neighborhoods": "Downtown, Over-the-Rhine, Mount Adams, Hyde Park, Clifton, Northside",
+    "intergroup": {
+      "name": "Greater Cincinnati Intergroup",
+      "url": "https://aacincinnati.org",
+      "phone": "(513) 351-0422"
+    },
+    "meetingHighlights": "Large, historic AA community with prominent meetings in Over-the-Rhine and Clifton; regular speaker meetings and round-robin formats.",
+    "transitInfo": "SORTA Metro buses serve the city and the Cincinnati Bell Connector streetcar runs in downtown; Cincinnati/Northern Kentucky International Airport (CVG) nearby.",
+    "population": 309317
+  },
+  "cleveland": {
+    "city": "Cleveland",
+    "stateAbbr": "OH",
+    "stateFull": "Ohio",
+    "geoRegion": "US-OH",
+    "slug": "cleveland",
+    "lat": 41.4993,
+    "lng": -81.6944,
+    "areaDescription": "Cleveland metropolitan area",
+    "neighborhoods": "Downtown, Ohio City, Tremont, Edgewater, University Circle, Little Italy",
+    "intergroup": {
+      "name": "Cleveland District Office of AA",
+      "url": "https://aacle.org",
+      "phone": "(216) 241-7387"
+    },
+    "meetingHighlights": "A broad schedule of meetings across neighborhoods with notable groups in University Circle and Tremont; several speaker and traditions study meetings.",
+    "transitInfo": "Greater Cleveland RTA operates rail and bus lines across the city; Cleveland Hopkins International Airport (CLE) serves regional travel.",
+    "population": 372624
+  },
+  "columbus": {
+    "city": "Columbus",
+    "stateAbbr": "OH",
+    "stateFull": "Ohio",
+    "geoRegion": "US-OH",
+    "slug": "columbus-oh",
+    "lat": 39.9612,
+    "lng": -82.9988,
+    "areaDescription": "Greater Columbus area",
+    "neighborhoods": "Short North, German Village, Arena District, Clintonville, Victorian Village, Franklinton",
+    "intergroup": {
+      "name": "Columbus Area Intergroup",
+      "url": "https://aacentralohio.org",
+      "phone": "(614) 253-8501"
+    },
+    "meetingHighlights": "Very active downtown and university-area meetings (OSU area), with many Big Book, step-study, and speaker meetings throughout the week.",
+    "transitInfo": "Central Ohio Transit Authority (COTA) buses and CMAX rapid transit serve core neighborhoods; John Glenn Columbus International Airport (CMH) for longer travel.",
+    "population": 905748
+  },
+  "toledo": {
+    "city": "Toledo",
+    "stateAbbr": "OH",
+    "stateFull": "Ohio",
+    "geoRegion": "US-OH",
+    "slug": "toledo",
+    "lat": 41.6528,
+    "lng": -83.5379,
+    "areaDescription": "Toledo metropolitan area",
+    "neighborhoods": "Downtown, Old West End, Warehouse District, South Toledo, North Toledo, Rossford",
+    "intergroup": {
+      "name": "Toledo Area Intergroup",
+      "url": "https://toledoaa.com",
+      "phone": "(419) 380-9780"
+    },
+    "meetingHighlights": "Active downtown groups with a mix of open and closed meetings; several evening speaker meetings and Spanish-language meetings in South Toledo.",
+    "transitInfo": "Toledo Area Regional Transit Authority (TARTA) provides bus service across the city; Toledo Express Airport serves regional flights.",
+    "population": 270871
+  },
+  "dayton": {
+    "city": "Dayton",
+    "stateAbbr": "OH",
+    "stateFull": "Ohio",
+    "geoRegion": "US-OH",
+    "slug": "dayton",
+    "lat": 39.7589,
+    "lng": -84.1916,
+    "areaDescription": "Dayton metropolitan area",
+    "neighborhoods": "Downtown, Oregon District, South Park, Wright-Dunbar, Oakwood, Kettering",
+    "intergroup": {
+      "name": "Dayton Area Intergroup",
+      "url": "https://daytonaa.org"
+    },
+    "meetingHighlights": "Strong downtown and Oregon District meetings; active fellowship with military outreach to Wright-Patterson AFB.",
+    "transitInfo": "Greater Dayton RTA buses serve the metro area; Dayton International Airport (DAY) offers regional flights.",
+    "population": 137644
+  }
+}

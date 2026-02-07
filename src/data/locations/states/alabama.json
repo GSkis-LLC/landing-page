@@ -1,0 +1,128 @@
+{
+  "huntsville": {
+    "city": "Huntsville",
+    "stateAbbr": "AL",
+    "stateFull": "Alabama",
+    "geoRegion": "US-AL",
+    "slug": "huntsville",
+    "lat": 34.7304,
+    "lng": -86.5861,
+    "areaDescription": "Huntsville metropolitan area",
+    "neighborhoods": "Downtown, Five Points, Jones Valley, Research Park area, South Huntsville, Meridianville",
+    "intergroup": {
+      "name": "Huntsville Area Intergroup",
+      "url": "https://huntsvilleaa.org"
+    },
+    "meetingHighlights": "Growing recovery community with meetings near Research Park and downtown; a mix of Big Book and step-study groups.",
+    "transitInfo": "Limited fixed-route bus service and regional highways; Huntsville International Airport (HSV) for flights.",
+    "population": 215000
+  },
+  "mobile": {
+    "city": "Mobile",
+    "stateAbbr": "AL",
+    "stateFull": "Alabama",
+    "geoRegion": "US-AL",
+    "slug": "mobile",
+    "lat": 30.6954,
+    "lng": -88.0399,
+    "areaDescription": "Mobile metropolitan area",
+    "neighborhoods": "Downtown, Midtown, Spring Hill, Spring Hill Avenue Corridor, West Mobile, Dauphin Island Parkway",
+    "intergroup": {
+      "name": "Mobile Area Intergroup",
+      "url": "https://mobileaa.org"
+    },
+    "meetingHighlights": "Traditional neighborhood meetings with a strong presence in Spring Hill and downtown; frequent speaker meetings.",
+    "transitInfo": "Coordinated bus service and regional highway access; Mobile Regional Airport (MOB) nearby.",
+    "population": 187000
+  },
+  "montgomery": {
+    "city": "Montgomery",
+    "stateAbbr": "AL",
+    "stateFull": "Alabama",
+    "geoRegion": "US-AL",
+    "slug": "montgomery",
+    "lat": 32.379223,
+    "lng": -86.307736,
+    "areaDescription": "Montgomery area",
+    "neighborhoods": "Downtown, Cloverdale, Old Cloverdale, Garden District",
+    "intergroup": {
+      "name": "Montgomery Area Intergroup",
+      "url": "https://montgomeryaa.org"
+    },
+    "meetingHighlights": "Steady local meetings with outreach to surrounding counties; midday and evening groups in downtown and Cloverdale.",
+    "transitInfo": "Maxwell/Gunter transit and regional highways; Montgomery Regional Airport (MGM) serves the city.",
+    "population": 200000
+  },
+  "birmingham": {
+    "city": "Birmingham",
+    "stateAbbr": "AL",
+    "stateFull": "Alabama",
+    "geoRegion": "US-AL",
+    "slug": "birmingham",
+    "lat": 33.5186,
+    "lng": -86.8104,
+    "areaDescription": "Birmingham metropolitan area",
+    "neighborhoods": "Downtown, Five Points South, Avondale, Highland Park, Southside, Mountain Brook, Homewood, Hoover",
+    "intergroup": {
+      "name": "Birmingham Area Intergroup",
+      "url": "https://birminghamaa.org"
+    },
+    "meetingHighlights": "Large and diverse recovery community with meetings throughout the metro area; strong presence near UAB and downtown; many young people's meetings.",
+    "transitInfo": "Regional bus service via BJCTA; Birmingham-Shuttlesworth International Airport (BHM); Interstate 20, 59, and 65 access.",
+    "population": 200000
+  },
+  "tuscaloosa": {
+    "city": "Tuscaloosa",
+    "stateAbbr": "AL",
+    "stateFull": "Alabama",
+    "geoRegion": "US-AL",
+    "slug": "tuscaloosa",
+    "lat": 33.2098,
+    "lng": -87.5692,
+    "areaDescription": "Tuscaloosa metropolitan area",
+    "neighborhoods": "Downtown, Alberta City, Northridge, Forest Lake, Englewood, North River",
+    "intergroup": {
+      "name": "Tuscaloosa Area Intergroup",
+      "url": "https://tuscaloosaaa.org"
+    },
+    "meetingHighlights": "Active college-town recovery scene near University of Alabama campus; diverse meetings from young people to old-timers; strong Big Book study tradition.",
+    "transitInfo": "Tuscaloosa Transit Authority bus service; Tuscaloosa Regional Airport (TCL); Interstate 20 and 59 access.",
+    "population": 100000
+  },
+  "auburn": {
+    "city": "Auburn",
+    "stateAbbr": "AL",
+    "stateFull": "Alabama",
+    "geoRegion": "US-AL",
+    "slug": "auburn",
+    "lat": 32.6099,
+    "lng": -85.4808,
+    "areaDescription": "Auburn-Opelika metropolitan area",
+    "neighborhoods": "Downtown Auburn, University area, Wire Road corridor, South College Street",
+    "intergroup": {
+      "name": "East Alabama Intergroup",
+      "url": "https://eaintergroup.org"
+    },
+    "meetingHighlights": "Vibrant college-town meetings near Auburn University; young people's meetings and step studies; strong sense of community among students and locals.",
+    "transitInfo": "Auburn Transit (Tiger Transit) for campus; Auburn University Regional Airport (AUO); Interstate 85 nearby.",
+    "population": 76000
+  },
+  "dothan": {
+    "city": "Dothan",
+    "stateAbbr": "AL",
+    "stateFull": "Alabama",
+    "geoRegion": "US-AL",
+    "slug": "dothan",
+    "lat": 31.2232,
+    "lng": -85.3905,
+    "areaDescription": "Dothan metropolitan area, Wiregrass region",
+    "neighborhoods": "Downtown Dothan, Ross Clark Circle, Westgate, Northside, Webb",
+    "intergroup": {
+      "name": "Dothan Area Intergroup",
+      "url": "https://dothanaa.org"
+    },
+    "meetingHighlights": "Close-knit recovery community in the Wiregrass; meetings throughout the week at churches and community centers; strong tradition of service.",
+    "transitInfo": "Wiregrass Transit Authority dial-a-ride service; Dothan Regional Airport (DHN); US Routes 84, 231, and 431.",
+    "population": 71000
+  }
+}

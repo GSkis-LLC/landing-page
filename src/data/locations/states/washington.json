@@ -1,0 +1,146 @@
+{
+  "bellevue": {
+    "city": "Bellevue",
+    "stateAbbr": "WA",
+    "stateFull": "Washington",
+    "geoRegion": "US-WA",
+    "slug": "bellevue",
+    "lat": 47.610135,
+    "lng": -122.201516,
+    "areaDescription": "Bellevue area",
+    "neighborhoods": "Downtown Bellevue, Eastgate, Crossroads, Newport",
+    "intergroup": {
+      "name": "Puget Sound Intergroup",
+      "url": "https://pugetsoundaa.org"
+    },
+    "meetingHighlights": "Numerous weekday lunchtime and evening meetings serving Eastside commuters; several newcomer-friendly groups.",
+    "transitInfo": "King County Metro and express routes to Seattle; light rail access nearby via regional Link extensions.",
+    "population": 150000
+  },
+  "bellingham": {
+    "city": "Bellingham",
+    "stateAbbr": "WA",
+    "stateFull": "Washington",
+    "geoRegion": "US-WA",
+    "slug": "bellingham",
+    "lat": 48.759614,
+    "lng": -122.48818,
+    "areaDescription": "Bellingham area",
+    "neighborhoods": "Fairhaven, Lettered Streets, South Hill, Sehome",
+    "intergroup": {
+      "name": "Whatcom County Intergroup",
+      "url": "https://whatcomaa.org"
+    },
+    "meetingHighlights": "Active university-area meetings and evening speaker meetings; strong outdoor meeting tradition in summer.",
+    "transitInfo": "Whatcom Transit provides regional bus service; most meetings are drive- or transit-accessible within city limits.",
+    "population": 92000
+  },
+  "everett": {
+    "city": "Everett",
+    "stateAbbr": "WA",
+    "stateFull": "Washington",
+    "geoRegion": "US-WA",
+    "slug": "everett",
+    "lat": 47.978984,
+    "lng": -122.202079,
+    "areaDescription": "Everett area",
+    "neighborhoods": "Downtown Everett, Broadway, Silver Lake",
+    "intergroup": {
+      "name": "Snohomish County Intergroup",
+      "url": "https://snohomishaa.org"
+    },
+    "meetingHighlights": "Evening and noon meetings with a mix of open and closed formats; convenient meeting options for military and shipyard workers.",
+    "transitInfo": "Community Transit and Sound Transit express routes; easy drive to I-5 and regional park-and-ride lots.",
+    "population": 110000
+  },
+  "seattle": {
+    "city": "Seattle",
+    "stateAbbr": "WA",
+    "stateFull": "Washington",
+    "geoRegion": "US-WA",
+    "slug": "seattle",
+    "lat": 47.6062,
+    "lng": -122.3321,
+    "areaDescription": "Seattle metropolitan area",
+    "neighborhoods": "Downtown, Capitol Hill, Fremont, Ballard, Belltown, Queen Anne",
+    "intergroup": {
+      "name": "Greater Seattle Intergroup",
+      "url": "https://seattleaa.org"
+    },
+    "meetingHighlights": "Extensive meeting listings citywide including speaker nights, meditation meetings, and bilingual groups; strong newcomer outreach.",
+    "transitInfo": "King County Metro buses, Link light rail, streetcar, ferries and Amtrak connections; many meetings are transit-friendly.",
+    "population": 744000
+  },
+  "spokane": {
+    "city": "Spokane",
+    "stateAbbr": "WA",
+    "stateFull": "Washington",
+    "geoRegion": "US-WA",
+    "slug": "spokane",
+    "lat": 47.6588,
+    "lng": -117.426,
+    "areaDescription": "Spokane metropolitan area",
+    "neighborhoods": "Downtown, Browne's Addition, North Hill, South Hill",
+    "intergroup": {
+      "name": "Spokane Intergroup",
+      "url": "https://spokaneaa.org"
+    },
+    "meetingHighlights": "Robust local fellowship with daily meetings and a variety of formats; strong central downtown meeting cluster.",
+    "transitInfo": "Spokane Transit Authority provides bus service; Amtrak service and regional flights at Spokane International Airport.",
+    "population": 230000
+  },
+  "tacoma": {
+    "city": "Tacoma",
+    "stateAbbr": "WA",
+    "stateFull": "Washington",
+    "geoRegion": "US-WA",
+    "slug": "tacoma",
+    "lat": 47.2529,
+    "lng": -122.4443,
+    "areaDescription": "Tacoma / Pierce County",
+    "neighborhoods": "Downtown, Hilltop, Proctor, North End",
+    "intergroup": {
+      "name": "Greater Pierce County Intergroup",
+      "url": "https://piercecountyintergroup.org"
+    },
+    "meetingHighlights": "Evening and lunchtime meetings near downtown and the university; strong community-based groups.",
+    "transitInfo": "Sound Transit and Pierce Transit services; Tacoma Link streetcar and good I-5 access.",
+    "population": 220000
+  },
+  "vancouver": {
+    "city": "Vancouver",
+    "stateAbbr": "WA",
+    "stateFull": "Washington",
+    "geoRegion": "US-WA",
+    "slug": "vancouver",
+    "lat": 45.6387,
+    "lng": -122.6615,
+    "areaDescription": "Vancouver / Clark County",
+    "neighborhoods": "Downtown, Fisher's Landing, Felida, Vancouver Heights",
+    "intergroup": {
+      "name": "Clark County Intergroup",
+      "url": "https://clarkcountyaa.org"
+    },
+    "meetingHighlights": "Diverse meeting options including evening and family-friendly groups; crossover attendance from Portland.",
+    "transitInfo": "C-Tran regional buses and express connections to Portland; drive access across I-5 and I-205 bridges.",
+    "population": 190000
+  },
+  "olympia": {
+    "city": "Olympia",
+    "stateAbbr": "WA",
+    "stateFull": "Washington",
+    "geoRegion": "US-WA",
+    "slug": "olympia",
+    "lat": 47.0379,
+    "lng": -122.9007,
+    "areaDescription": "Olympia / Thurston County",
+    "neighborhoods": "Downtown, North Olympia, West Bay",
+    "intergroup": {
+      "name": "Thurston County Intergroup",
+      "url": "https://thurstoncountyaa.org"
+    },
+    "meetingHighlights": "Small but steady meetings including lunchtime groups for state employees and evening formats.",
+    "transitInfo": "Intercity Transit provides local and regional bus service; most attendees drive from surrounding towns.",
+    "population": 52000
+  }
+}

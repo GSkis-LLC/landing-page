@@ -1,0 +1,56 @@
+{
+  "jackson": {
+    "city": "Jackson",
+    "stateAbbr": "MS",
+    "stateFull": "Mississippi",
+    "geoRegion": "US-MS",
+    "slug": "jackson-ms",
+    "lat": 32.2988,
+    "lng": -90.1848,
+    "areaDescription": "Jackson metropolitan area",
+    "neighborhoods": "Downtown, Fondren, Belhaven, South Jackson, West Jackson, North Jackson",
+    "intergroup": {
+      "name": "Jackson Area Intergroup",
+      "url": "https://jacksonmsaa.org"
+    },
+    "meetingHighlights": "State capital recovery with diverse meetings from Fondren to suburbs; strong African American community presence.",
+    "transitInfo": "JATRAN bus service; Jackson-Medgar Wiley Evers International Airport (JAN); I-20 and I-55 hub.",
+    "population": 153000
+  },
+  "gulfport": {
+    "city": "Gulfport",
+    "stateAbbr": "MS",
+    "stateFull": "Mississippi",
+    "geoRegion": "US-MS",
+    "slug": "gulfport",
+    "lat": 30.3674,
+    "lng": -89.0928,
+    "areaDescription": "Gulfport area, Mississippi Gulf Coast",
+    "neighborhoods": "Downtown Gulfport, Orange Grove, West Gulfport, North Gulfport",
+    "intergroup": {
+      "name": "Gulf Coast Intergroup",
+      "url": "https://gulfcoastaa.org"
+    },
+    "meetingHighlights": "Gulf Coast recovery serving Gulfport-Biloxi area; beach community meetings; strong resilience post-Hurricane Katrina.",
+    "transitInfo": "Coast Transit Authority buses; Gulfport-Biloxi International Airport (GPT); US Highway 90.",
+    "population": 72000
+  },
+  "hattiesburg": {
+    "city": "Hattiesburg",
+    "stateAbbr": "MS",
+    "stateFull": "Mississippi",
+    "geoRegion": "US-MS",
+    "slug": "hattiesburg",
+    "lat": 31.3271,
+    "lng": -89.2903,
+    "areaDescription": "Hattiesburg area, South Mississippi",
+    "neighborhoods": "Downtown Hattiesburg, USM campus area, Oak Grove, Petal",
+    "intergroup": {
+      "name": "Hattiesburg Area Intergroup",
+      "url": "https://hattiesburgaa.org"
+    },
+    "meetingHighlights": "College-town recovery near University of Southern Mississippi; Hub City meetings; young people and family groups.",
+    "transitInfo": "Hub City Transit buses; Hattiesburg-Laurel Regional Airport (PIB); I-59 corridor.",
+    "population": 48000
+  }
+}

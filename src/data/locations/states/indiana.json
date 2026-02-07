@@ -1,0 +1,122 @@
+{
+  "fort-wayne": {
+    "city": "Fort Wayne",
+    "stateAbbr": "IN",
+    "stateFull": "Indiana",
+    "geoRegion": "US-IN",
+    "slug": "fort-wayne",
+    "lat": 41.0793,
+    "lng": -85.1394,
+    "areaDescription": "Fort Wayne area",
+    "neighborhoods": "Downtown, West Central, North Anthony, Southwood, Bloomingdale, Aboite",
+    "intergroup": {
+      "name": "Fort Wayne Area Intergroup"
+    },
+    "meetingHighlights": "Active downtown and suburban meetings with strong newcomer support and diverse meeting formats.",
+    "transitInfo": "IPFW and local bus services; accessible via I-69 and regional highways; Fort Wayne International Airport for regional flights.",
+    "population": 265000
+  },
+  "indianapolis": {
+    "city": "Indianapolis",
+    "stateAbbr": "IN",
+    "stateFull": "Indiana",
+    "geoRegion": "US-IN",
+    "slug": "indianapolis",
+    "lat": 39.7684,
+    "lng": -86.1581,
+    "areaDescription": "Indianapolis metropolitan area",
+    "neighborhoods": "Downtown, Broad Ripple, Fountain Square, Meridian-Kessler, Irvington, Mass Ave",
+    "intergroup": {
+      "name": "Indianapolis Central Office",
+      "url": "https://www.indyaa.org"
+    },
+    "meetingHighlights": "Large, diverse meeting calendar across the city with many daytime, evening, and specialty meetings including Big Book and LGBTQ+ friendly groups.",
+    "transitInfo": "IndyGo buses and Red Line rapid transit in core areas; Indianapolis International Airport (IND) serves national flights.",
+    "population": 876000
+  },
+  "south-bend": {
+    "city": "South Bend",
+    "stateAbbr": "IN",
+    "stateFull": "Indiana",
+    "geoRegion": "US-IN",
+    "slug": "south-bend",
+    "lat": 41.676398,
+    "lng": -86.252008,
+    "areaDescription": "South Bend area",
+    "neighborhoods": "Downtown, Notre Dame area, Near West Side",
+    "intergroup": {
+      "name": "South Bend Area Intergroup"
+    },
+    "meetingHighlights": "University-influenced meetings near Notre Dame and steady neighborhood meetings with evening and weekend options.",
+    "transitInfo": "Transpo buses in South Bend; regional Amtrak service and South Bend International Airport for regional flights.",
+    "population": 102000
+  },
+  "evansville": {
+    "city": "Evansville",
+    "stateAbbr": "IN",
+    "stateFull": "Indiana",
+    "geoRegion": "US-IN",
+    "slug": "evansville",
+    "lat": 37.9716,
+    "lng": -87.5713,
+    "areaDescription": "Evansville metropolitan area",
+    "neighborhoods": "Downtown, West Side, Eastland, North Park",
+    "intergroup": {
+      "name": "Evansville Area Intergroup"
+    },
+    "meetingHighlights": "Strong faith-based meeting presence and regular downtown AA meetings with newcomer-friendly formats.",
+    "transitInfo": "METS local buses; US-41 and I-69 provide regional driving access; Evansville Regional Airport for flights.",
+    "population": 119000
+  },
+  "bloomington": {
+    "city": "Bloomington",
+    "stateAbbr": "IN",
+    "stateFull": "Indiana",
+    "geoRegion": "US-IN",
+    "slug": "bloomington",
+    "lat": 39.1653,
+    "lng": -86.5264,
+    "areaDescription": "Bloomington (Indiana University)",
+    "neighborhoods": "Downtown, Indiana University area, Near West Side",
+    "intergroup": {
+      "name": "Bloomington Area Intergroup"
+    },
+    "meetingHighlights": "University-area meetings with varied formats and strong lunchtime and evening groups serving students and residents.",
+    "transitInfo": "BT buses serve the city; close to Monroe County Airport for regional flights; easy highway access via IN-37.",
+    "population": 85000
+  },
+  "lafayette": {
+    "city": "Lafayette",
+    "stateAbbr": "IN",
+    "stateFull": "Indiana",
+    "geoRegion": "US-IN",
+    "slug": "lafayette",
+    "lat": 40.4167,
+    "lng": -86.8753,
+    "areaDescription": "Lafayette/West Lafayette (Purdue University)",
+    "neighborhoods": "Downtown, Purdue area, Columbian Park",
+    "intergroup": {
+      "name": "Lafayette Area Intergroup"
+    },
+    "meetingHighlights": "Meetings that serve both the Purdue community and local residents; a mix of step-study and open discussion groups.",
+    "transitInfo": "CityBus and Purdue Transit provide local transport; Purdue Airport and major highways (I-65 nearby).",
+    "population": 72000
+  },
+  "gary": {
+    "city": "Gary",
+    "stateAbbr": "IN",
+    "stateFull": "Indiana",
+    "geoRegion": "US-IN",
+    "slug": "gary",
+    "lat": 41.5934,
+    "lng": -87.3464,
+    "areaDescription": "Gary (Northwest Indiana)",
+    "neighborhoods": "Downtown, Miller Beach, Emerson, Glen Park",
+    "intergroup": {
+      "name": "Northwest Indiana Intergroup"
+    },
+    "meetingHighlights": "Community-focused meetings with evening and weekend options; several downtown and neighborhood groups.",
+    "transitInfo": "Gary Public Transportation Corporation buses and South Shore Line commuter rail to Chicago; proximity to Gary/Chicago International Airport.",
+    "population": 69000
+  }
+}

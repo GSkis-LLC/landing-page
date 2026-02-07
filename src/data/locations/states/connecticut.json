@@ -1,0 +1,92 @@
+{
+  "hartford": {
+    "city": "Hartford",
+    "stateAbbr": "CT",
+    "stateFull": "Connecticut",
+    "geoRegion": "US-CT",
+    "slug": "hartford",
+    "lat": 41.7637,
+    "lng": -72.6851,
+    "areaDescription": "Greater Hartford area",
+    "neighborhoods": "Downtown, Frog Hollow, Asylum Hill, West End, Parkville, South Green",
+    "intergroup": {
+      "name": "Hartford Area Intergroup",
+      "url": "https://hartfordaa.org"
+    },
+    "meetingHighlights": "Active downtown and university-area meetings with strong community engagement; several speaker and traditions-study meetings weekly.",
+    "transitInfo": "CTtransit buses and local shuttles serve Hartford; Bradley International Airport (BDL) is north of the city for regional flights.",
+    "population": 121000
+  },
+  "new-haven": {
+    "city": "New Haven",
+    "stateAbbr": "CT",
+    "stateFull": "Connecticut",
+    "geoRegion": "US-CT",
+    "slug": "new-haven",
+    "lat": 41.308273,
+    "lng": -72.927879,
+    "areaDescription": "New Haven area",
+    "neighborhoods": "Downtown, Westville, East Rock, The Hill",
+    "intergroup": {
+      "name": "New Haven Area Intergroup",
+      "url": "https://newhavenaa.org"
+    },
+    "meetingHighlights": "Strong campus and community meetings near Yale and downtown; many daytime and evening groups including study and speaker formats.",
+    "transitInfo": "CTtransit buses and Shore Line East connect New Haven to the region; Tweed New Haven Airport (HVN) serves limited flights.",
+    "population": 134000
+  },
+  "norwalk": {
+    "city": "Norwalk",
+    "stateAbbr": "CT",
+    "stateFull": "Connecticut",
+    "geoRegion": "US-CT",
+    "slug": "norwalk",
+    "lat": 41.117743,
+    "lng": -73.408157,
+    "areaDescription": "Norwalk area",
+    "neighborhoods": "South Norwalk, Rowayton, Silvermine",
+    "intergroup": {
+      "name": "Fairfield County Intergroup",
+      "url": "https://fairfieldcountyaa.org"
+    },
+    "meetingHighlights": "Active meetings in South Norwalk and surrounding neighborhoods; convenient commuter access to NYC-area meetings.",
+    "transitInfo": "Norwalk Transit District and Metro-North rail provide commuter connections; Westchester County and Newark airports accessible for travel.",
+    "population": 88800
+  },
+  "bridgeport": {
+    "city": "Bridgeport",
+    "stateAbbr": "CT",
+    "stateFull": "Connecticut",
+    "geoRegion": "US-CT",
+    "slug": "bridgeport",
+    "lat": 41.1792,
+    "lng": -73.1894,
+    "areaDescription": "Bridgeport area, Fairfield County",
+    "neighborhoods": "Downtown, East End, Black Rock, North End, South End",
+    "intergroup": {
+      "name": "Fairfield County Intergroup",
+      "url": "https://fairfieldcountyaa.org"
+    },
+    "meetingHighlights": "Largest city in Connecticut with diverse recovery community; Spanish and English meetings; strong tradition of service.",
+    "transitInfo": "Metro-North Railroad and CT Transit buses; Sikorsky Memorial Airport (BDR); I-95 corridor.",
+    "population": 148000
+  },
+  "stamford": {
+    "city": "Stamford",
+    "stateAbbr": "CT",
+    "stateFull": "Connecticut",
+    "geoRegion": "US-CT",
+    "slug": "stamford",
+    "lat": 41.0534,
+    "lng": -73.5387,
+    "areaDescription": "Stamford area, Fairfield County",
+    "neighborhoods": "Downtown Stamford, Glenbrook, Springdale, Shippan, North Stamford",
+    "intergroup": {
+      "name": "Fairfield County Intergroup",
+      "url": "https://fairfieldcountyaa.org"
+    },
+    "meetingHighlights": "Corporate city recovery with early morning and lunchtime meetings; diverse downtown presence; commuter-friendly schedule.",
+    "transitInfo": "Metro-North Railroad hub with frequent NYC service; CT Transit buses; I-95 access.",
+    "population": 135000
+  }
+}

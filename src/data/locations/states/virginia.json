@@ -1,0 +1,146 @@
+{
+  "hampton": {
+    "city": "Hampton",
+    "stateAbbr": "VA",
+    "stateFull": "Virginia",
+    "geoRegion": "US-VA",
+    "slug": "hampton",
+    "lat": 37.029868,
+    "lng": -76.345221,
+    "areaDescription": "Hampton area",
+    "neighborhoods": "Downtown, Phoebus, Kecoughtan",
+    "intergroup": {
+      "name": "Hampton Roads Intergroup",
+      "url": "https://hamptonroadsaaintergroup.org"
+    },
+    "meetingHighlights": "Several evening and weekend meetings near downtown and Phoebus; veterans-focused meeting available.",
+    "transitInfo": "Served by Hampton Roads Transit (HRT) bus routes; nearby Amtrak station in Newport News for regional connections.",
+    "population": 137000
+  },
+  "newport-news": {
+    "city": "Newport News",
+    "stateAbbr": "VA",
+    "stateFull": "Virginia",
+    "geoRegion": "US-VA",
+    "slug": "newport-news",
+    "lat": 37.087081,
+    "lng": -76.473012,
+    "areaDescription": "Newport News area",
+    "neighborhoods": "Downtown, Hilton Village, Denbigh",
+    "intergroup": {
+      "name": "Hampton Roads Intergroup",
+      "url": "https://hamptonroadsaaintergroup.org"
+    },
+    "meetingHighlights": "Community meetings across Denbigh and downtown; LGBTQ-friendly step study available.",
+    "transitInfo": "Hampton Roads Transit bus service connects to Norfolk and Virginia Beach; quick drive across the James River bridges.",
+    "population": 179000
+  },
+  "norfolk": {
+    "city": "Norfolk",
+    "stateAbbr": "VA",
+    "stateFull": "Virginia",
+    "geoRegion": "US-VA",
+    "slug": "norfolk",
+    "lat": 36.8508,
+    "lng": -76.2859,
+    "areaDescription": "Norfolk / Hampton Roads area",
+    "neighborhoods": "Downtown, Freemason District, Ghent, Colley Bayview, Ocean View",
+    "intergroup": {
+      "name": "Hampton Roads Intergroup",
+      "url": "https://hamptonroadsaaintergroup.org"
+    },
+    "meetingHighlights": "Large selection of daytime and evening meetings; many waterfront locations and campus meetings.",
+    "transitInfo": "HRT light rail and bus network serve the city; ferries connect to Portsmouth; easy access to I-64.",
+    "population": 245000
+  },
+  "virginia-beach": {
+    "city": "Virginia Beach",
+    "stateAbbr": "VA",
+    "stateFull": "Virginia",
+    "geoRegion": "US-VA",
+    "slug": "virginia-beach",
+    "lat": 36.8529,
+    "lng": -75.978,
+    "areaDescription": "Virginia Beach / Hampton Roads area",
+    "neighborhoods": "Atlantic Ave, North End, Thalia, Town Center",
+    "intergroup": {
+      "name": "Hampton Roads Intergroup",
+      "url": "https://hamptonroadsaaintergroup.org"
+    },
+    "meetingHighlights": "Beachside noon and evening meetings; strong newcomers' support and outdoor summer meetings at the boardwalk.",
+    "transitInfo": "Hampton Roads Transit bus service; most attendees drive or bike along the boardwalk in summer months.",
+    "population": 450000
+  },
+  "richmond": {
+    "city": "Richmond",
+    "stateAbbr": "VA",
+    "stateFull": "Virginia",
+    "geoRegion": "US-VA",
+    "slug": "richmond",
+    "lat": 37.5407,
+    "lng": -77.436,
+    "areaDescription": "Richmond area",
+    "neighborhoods": "Downtown, Church Hill, Fan, Shockoe Bottom",
+    "intergroup": {
+      "name": "Richmond Intergroup",
+      "url": "https://aavirichmond.org"
+    },
+    "meetingHighlights": "Wide variety of meetings including bilingual and speaker meetings; active sponsorship programs.",
+    "transitInfo": "GRTC buses provide city coverage; Amtrak serves Richmond Main Street Station; accessible via I-95 and I-64.",
+    "population": 228000
+  },
+  "alexandria": {
+    "city": "Alexandria",
+    "stateAbbr": "VA",
+    "stateFull": "Virginia",
+    "geoRegion": "US-VA",
+    "slug": "alexandria",
+    "lat": 38.8048,
+    "lng": -77.0469,
+    "areaDescription": "Alexandria / DC metro",
+    "neighborhoods": "Old Town, Del Ray, West End",
+    "intergroup": {
+      "name": "Arlington/Alexandria Intergroup",
+      "url": "https://aarichmond.org"
+    },
+    "meetingHighlights": "Strong rotation of noon and evening groups in Old Town; many commuter-friendly meetings for DC workers.",
+    "transitInfo": "Close to King St-Old Town Metrorail and VRE; DASH and regional bus connections make meetings transit-accessible.",
+    "population": 159000
+  },
+  "arlington": {
+    "city": "Arlington",
+    "stateAbbr": "VA",
+    "stateFull": "Virginia",
+    "geoRegion": "US-VA",
+    "slug": "arlington",
+    "lat": 38.8816,
+    "lng": -77.09098,
+    "areaDescription": "Arlington / DC metro",
+    "neighborhoods": "Rosslyn, Clarendon, Ballston, Crystal City",
+    "intergroup": {
+      "name": "Arlington Intergroup",
+      "url": "https://aaintergroup-arlington.org"
+    },
+    "meetingHighlights": "Several early-morning and lunchtime meetings serving commuters; inclusive and LGBTQ-friendly groups.",
+    "transitInfo": "Multiple Metrorail stations and ART buses provide excellent transit access; short commute to DC.",
+    "population": 237000
+  },
+  "roanoke": {
+    "city": "Roanoke",
+    "stateAbbr": "VA",
+    "stateFull": "Virginia",
+    "geoRegion": "US-VA",
+    "slug": "roanoke",
+    "lat": 37.27097,
+    "lng": -79.94143,
+    "areaDescription": "Roanoke Valley",
+    "neighborhoods": "Downtown, Old Southwest, Grandin Village",
+    "intergroup": {
+      "name": "Roanoke Valley Intergroup",
+      "url": "https://roanokeaa.org"
+    },
+    "meetingHighlights": "Active recovery meetings across the valley with strong AA fellowship and mountain-area outdoor step meetings.",
+    "transitInfo": "Valley Metro regional bus service covers the city; most meetings are drive-accessible via I-581/I-81.",
+    "population": 100000
+  }
+}

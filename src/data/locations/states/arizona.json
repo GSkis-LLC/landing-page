@@ -1,0 +1,108 @@
+{
+  "mesa": {
+    "city": "Mesa",
+    "stateAbbr": "AZ",
+    "stateFull": "Arizona",
+    "geoRegion": "US-AZ",
+    "slug": "mesa",
+    "lat": 33.4152,
+    "lng": -111.8315,
+    "areaDescription": "Phoenix metro — East Valley",
+    "neighborhoods": "Downtown Mesa, Eastmark, Lehi, Dobson Ranch, Red Mountain, Superstition Springs",
+    "intergroup": {
+      "name": "Salt River Intergroup (Mesa/Central AZ)"
+    },
+    "meetingHighlights": "Active neighborhood meetings with strong attendance near downtown and the college areas; a mix of open and closed formats.",
+    "transitInfo": "Valley Metro buses and light rail (nearby Phoenix) provide connections; Phoenix Sky Harbor International Airport (PHX) accessible.",
+    "population": 508958
+  },
+  "phoenix": {
+    "city": "Phoenix",
+    "stateAbbr": "AZ",
+    "stateFull": "Arizona",
+    "geoRegion": "US-AZ",
+    "slug": "phoenix",
+    "lat": 33.4484,
+    "lng": -112.074,
+    "areaDescription": "Phoenix metropolitan area",
+    "neighborhoods": "Downtown, Arcadia, Camelback East, Roosevelt Row, Midtown, Biltmore",
+    "intergroup": {
+      "name": "Central Phoenix Intergroup",
+      "url": "https://aaphx.org"
+    },
+    "meetingHighlights": "Large and diverse AA presence with meetings across neighborhoods, numerous Spanish-language and specialty meetings, and strong downtown speaker events.",
+    "transitInfo": "Valley Metro light rail and buses cover Phoenix; Phoenix Sky Harbor International Airport (PHX) is the primary airport.",
+    "population": 1660000
+  },
+  "scottsdale": {
+    "city": "Scottsdale",
+    "stateAbbr": "AZ",
+    "stateFull": "Arizona",
+    "geoRegion": "US-AZ",
+    "slug": "scottsdale",
+    "lat": 33.49417,
+    "lng": -111.926052,
+    "areaDescription": "Scottsdale area",
+    "neighborhoods": "Old Town Scottsdale, DC Ranch, McDowell Mountain Ranch",
+    "intergroup": {
+      "name": "Scottsdale AA Central Office"
+    },
+    "meetingHighlights": "Popular evening and weekend meetings in Old Town and community centers; many meetings attract attendees from Greater Phoenix.",
+    "transitInfo": "Bus connections into Phoenix and local circulators; Phoenix Sky Harbor (PHX) and nearby Scottsdale Airport provide access.",
+    "population": 258069
+  },
+  "tucson": {
+    "city": "Tucson",
+    "stateAbbr": "AZ",
+    "stateFull": "Arizona",
+    "geoRegion": "US-AZ",
+    "slug": "tucson",
+    "lat": 32.2226,
+    "lng": -110.9747,
+    "areaDescription": "Tucson metropolitan area",
+    "neighborhoods": "Downtown, Catalina Foothills, Sam Hughes, Barrio Viejo, West University, South Tucson",
+    "intergroup": {
+      "name": "Tucson Area Intergroup",
+      "url": "https://tucsonaa.org"
+    },
+    "meetingHighlights": "Active university-area meetings and bilingual offerings; diverse formats including Big Book and speaker nights.",
+    "transitInfo": "Sun Tran buses serve Tucson; Tucson International Airport (TUS) for regional flights.",
+    "population": 542629
+  },
+  "chandler": {
+    "city": "Chandler",
+    "stateAbbr": "AZ",
+    "stateFull": "Arizona",
+    "geoRegion": "US-AZ",
+    "slug": "chandler",
+    "lat": 33.3062,
+    "lng": -111.8413,
+    "areaDescription": "Phoenix metro — Southeast Valley",
+    "neighborhoods": "Downtown Chandler, Ocotillo, Sun Lakes, Fulton Ranch",
+    "intergroup": {
+      "name": "Salt River Intergroup",
+      "url": "https://aaphoenix.org"
+    },
+    "meetingHighlights": "Growing suburban recovery community with evening meetings; family-friendly atmosphere; strong service commitment.",
+    "transitInfo": "Valley Metro bus connections; Phoenix Sky Harbor International Airport (PHX) nearby.",
+    "population": 275000
+  },
+  "glendale": {
+    "city": "Glendale",
+    "stateAbbr": "AZ",
+    "stateFull": "Arizona",
+    "geoRegion": "US-AZ",
+    "slug": "glendale",
+    "lat": 33.5387,
+    "lng": -112.1859,
+    "areaDescription": "Phoenix metro — West Valley",
+    "neighborhoods": "Downtown Glendale, Arrowhead Ranch, Westgate, Historic Catlin Court",
+    "intergroup": {
+      "name": "West Valley Intergroup",
+      "url": "https://westvalleyaa.org"
+    },
+    "meetingHighlights": "West Valley recovery hub with diverse meetings; strong Latino community presence; meetings near State Farm Stadium.",
+    "transitInfo": "Valley Metro bus service; Phoenix Sky Harbor International Airport (PHX) accessible.",
+    "population": 250000
+  }
+}

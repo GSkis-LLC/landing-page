@@ -1,0 +1,139 @@
+{
+  "chicago": {
+    "city": "Chicago",
+    "stateAbbr": "IL",
+    "stateFull": "Illinois",
+    "geoRegion": "US-IL",
+    "slug": "chicago",
+    "lat": 41.8781,
+    "lng": -87.6298,
+    "areaDescription": "Greater Chicago area",
+    "neighborhoods": "The Loop, River North, Lincoln Park, Wicker Park, Hyde Park, Near North Side, South Loop",
+    "intergroup": {
+      "name": "Chicago Central Office",
+      "url": "https://www.chicagoaa.org"
+    },
+    "meetingHighlights": "One of the nation's largest AA communities with meetings in every neighborhood, many specialty meetings, and 24-hour resources for newcomers.",
+    "transitInfo": "CTA trains and buses cover the metro; O'Hare (ORD) and Midway (MDW) airports provide national and international travel.",
+    "population": 2716000
+  },
+  "joliet": {
+    "city": "Joliet",
+    "stateAbbr": "IL",
+    "stateFull": "Illinois",
+    "geoRegion": "US-IL",
+    "slug": "joliet",
+    "lat": 41.525031,
+    "lng": -88.081725,
+    "areaDescription": "Joliet area",
+    "neighborhoods": "Downtown, West Joliet, Joliet Heights",
+    "intergroup": {
+      "name": "Joliet Area Intergroup"
+    },
+    "meetingHighlights": "Community meetings with a mix of open and closed groups; several evening and weekend speaker meetings.",
+    "transitInfo": "Pace suburban buses and Metra commuter rail to Chicago; regional highways provide car access.",
+    "population": 147000
+  },
+  "naperville": {
+    "city": "Naperville",
+    "stateAbbr": "IL",
+    "stateFull": "Illinois",
+    "geoRegion": "US-IL",
+    "slug": "naperville",
+    "lat": 41.750839,
+    "lng": -88.153535,
+    "areaDescription": "Naperville area",
+    "neighborhoods": "Downtown Naperville, Naper Settlement, Riverwalk",
+    "intergroup": {
+      "name": "Naperville Central Office"
+    },
+    "meetingHighlights": "Suburban meetings with strong lunchtime and evening attendance for commuters; active service structure and newcomer-friendly groups.",
+    "transitInfo": "Metra commuter rail to Chicago and Pace buses; proximity to I-88 for regional driving.",
+    "population": 147000
+  },
+  "peoria": {
+    "city": "Peoria",
+    "stateAbbr": "IL",
+    "stateFull": "Illinois",
+    "geoRegion": "US-IL",
+    "slug": "peoria",
+    "lat": 40.693648,
+    "lng": -89.589008,
+    "areaDescription": "Peoria area",
+    "neighborhoods": "Downtown, North Peoria, West Bluff",
+    "intergroup": {
+      "name": "Peoria Area Intergroup"
+    },
+    "meetingHighlights": "Active downtown and neighborhood meetings with a range of formats including Big Book and step-study groups.",
+    "transitInfo": "CityLink buses serve Peoria and surrounding towns; General Wayne A. Downing Peoria International Airport for regional flights.",
+    "population": 112000
+  },
+  "rockford": {
+    "city": "Rockford",
+    "stateAbbr": "IL",
+    "stateFull": "Illinois",
+    "geoRegion": "US-IL",
+    "slug": "rockford",
+    "lat": 42.271131,
+    "lng": -89.093995,
+    "areaDescription": "Rockford area",
+    "neighborhoods": "Downtown, Near West Side, Riverfront",
+    "intergroup": {
+      "name": "Rockford Area Intergroup"
+    },
+    "meetingHighlights": "Neighborhood-centered meetings with steady attendance and regular speaker nights in the downtown area.",
+    "transitInfo": "CityLine buses and regional routes; Chicago Rockford International Airport for regional travel.",
+    "population": 148000
+  },
+  "aurora": {
+    "city": "Aurora",
+    "stateAbbr": "IL",
+    "stateFull": "Illinois",
+    "geoRegion": "US-IL",
+    "slug": "aurora-il",
+    "lat": 41.7606,
+    "lng": -88.3201,
+    "areaDescription": "Aurora (Chicago suburbs)",
+    "neighborhoods": "Downtown Aurora, Aurora East, Aurora West, Fox Valley",
+    "intergroup": {
+      "name": "Aurora Area Intergroup"
+    },
+    "meetingHighlights": "Diverse suburban meetings with active community groups and regular speaker events serving the Fox Valley.",
+    "transitInfo": "Metra commuter rail to Chicago and Pace buses; good highway access to I-88 and I-355.",
+    "population": 199000
+  },
+  "evanston": {
+    "city": "Evanston",
+    "stateAbbr": "IL",
+    "stateFull": "Illinois",
+    "geoRegion": "US-IL",
+    "slug": "evanston",
+    "lat": 42.0451,
+    "lng": -87.6877,
+    "areaDescription": "Evanston (North Shore, Chicago suburbs)",
+    "neighborhoods": "Downtown Evanston, Central Street, Sheridan Road, South Evanston",
+    "intergroup": {
+      "name": "Evanston AA Central Office"
+    },
+    "meetingHighlights": "Active university-area meetings due to Northwestern University and a strong downtown meeting schedule; many lunchtime and evening options.",
+    "transitInfo": "CTA and Metra services provide connections to Chicago; local buses serve neighborhood routes.",
+    "population": 78000
+  },
+  "springfield": {
+    "city": "Springfield",
+    "stateAbbr": "IL",
+    "stateFull": "Illinois",
+    "geoRegion": "US-IL",
+    "slug": "springfield-il",
+    "lat": 39.7817,
+    "lng": -89.6501,
+    "areaDescription": "Springfield (state capital)",
+    "neighborhoods": "Downtown, Historic District, East Springfield, Berry",
+    "intergroup": {
+      "name": "Springfield Area Intergroup"
+    },
+    "meetingHighlights": "Active capital-city meetings with a steady weekday and evening schedule and several faith-based groups.",
+    "transitInfo": "SMTD buses serve Springfield; Abraham Lincoln Capital Airport (SPI) for regional flights.",
+    "population": 115000
+  }
+}

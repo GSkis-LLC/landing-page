@@ -1,0 +1,122 @@
+{
+  "davenport": {
+    "city": "Davenport",
+    "stateAbbr": "IA",
+    "stateFull": "Iowa",
+    "geoRegion": "US-IA",
+    "slug": "davenport",
+    "lat": 41.523643,
+    "lng": -90.577636,
+    "areaDescription": "Davenport area",
+    "neighborhoods": "Downtown, Village of East Davenport, Prospect Hill",
+    "intergroup": {
+      "name": "Davenport Area Intergroup"
+    },
+    "meetingHighlights": "Part of the Quad Cities with a mix of downtown and neighborhood meetings; several evening and speaker meetings.",
+    "transitInfo": "Davenport is served by Bettendorf Transit and regional bus connections; easy access via I-74 and I-80/280 nearby.",
+    "population": 101000
+  },
+  "des-moines": {
+    "city": "Des Moines",
+    "stateAbbr": "IA",
+    "stateFull": "Iowa",
+    "geoRegion": "US-IA",
+    "slug": "des-moines",
+    "lat": 41.5868,
+    "lng": -93.625,
+    "areaDescription": "Des Moines metropolitan area",
+    "neighborhoods": "Downtown, East Village, Sherman Hill, Beaverdale, Drake, West Des Moines (nearby)",
+    "intergroup": {
+      "name": "Des Moines Central Office",
+      "url": "https://www.dmcentraloffice.org"
+    },
+    "meetingHighlights": "Large and diverse meeting schedule across downtown and suburbs, with many lunchtime, evening, and specialty groups.",
+    "transitInfo": "Des Moines Area Regional Transit (DART) provides city bus service; Des Moines International Airport serves national flights.",
+    "population": 214000
+  },
+  "cedar-rapids": {
+    "city": "Cedar Rapids",
+    "stateAbbr": "IA",
+    "stateFull": "Iowa",
+    "geoRegion": "US-IA",
+    "slug": "cedar-rapids",
+    "lat": 41.9779,
+    "lng": -91.6656,
+    "areaDescription": "Cedar Rapids metropolitan area",
+    "neighborhoods": "Downtown, NewBo, Czech Village, Kingston, Bever Park",
+    "intergroup": {
+      "name": "Cedar Rapids Intergroup"
+    },
+    "meetingHighlights": "Strong community meetings with several specialty and open discussion groups, plus active newcomer support.",
+    "transitInfo": "CR Transit provides local buses; regional driving via I-380 and US-151.",
+    "population": 133000
+  },
+  "iowa-city": {
+    "city": "Iowa City",
+    "stateAbbr": "IA",
+    "stateFull": "Iowa",
+    "geoRegion": "US-IA",
+    "slug": "iowa-city",
+    "lat": 41.6611,
+    "lng": -91.5302,
+    "areaDescription": "Iowa City (University of Iowa)",
+    "neighborhoods": "Downtown, University Heights, Riverside",
+    "intergroup": {
+      "name": "Iowa City Area Intergroup"
+    },
+    "meetingHighlights": "University-influenced meeting schedule with many student-friendly, lunchtime, and evening groups; strong service structure.",
+    "transitInfo": "Iowa City Transit serves local routes; close to Eastern Iowa Airport for regional flights.",
+    "population": 75000
+  },
+  "sioux-city": {
+    "city": "Sioux City",
+    "stateAbbr": "IA",
+    "stateFull": "Iowa",
+    "geoRegion": "US-IA",
+    "slug": "sioux-city",
+    "lat": 42.4996,
+    "lng": -96.4003,
+    "areaDescription": "Sioux City area",
+    "neighborhoods": "Downtown, Morningside, Riverside, Fairmount",
+    "intergroup": {
+      "name": "Sioux City Area Intergroup"
+    },
+    "meetingHighlights": "Regional meetings serving northwest Iowa with steady attendance and variety of meeting formats.",
+    "transitInfo": "Sioux City Transit provides local routes; Sioux Gateway Airport serves regional flights.",
+    "population": 82000
+  },
+  "ames": {
+    "city": "Ames",
+    "stateAbbr": "IA",
+    "stateFull": "Iowa",
+    "geoRegion": "US-IA",
+    "slug": "ames",
+    "lat": 42.0308,
+    "lng": -93.6319,
+    "areaDescription": "Ames (Iowa State University)",
+    "neighborhoods": "Downtown, Campustown, College Creek",
+    "intergroup": {
+      "name": "Ames Area Intergroup"
+    },
+    "meetingHighlights": "College-town meetings with schedules catering to students and local residents; active noon and evening meetings.",
+    "transitInfo": "CyRide and regional buses provide local transit; easy driving access via I-35.",
+    "population": 66000
+  },
+  "waterloo": {
+    "city": "Waterloo",
+    "stateAbbr": "IA",
+    "stateFull": "Iowa",
+    "geoRegion": "US-IA",
+    "slug": "waterloo",
+    "lat": 42.4928,
+    "lng": -92.3426,
+    "areaDescription": "Waterloo-Cedar Falls area",
+    "neighborhoods": "Downtown, East Waterloo, Cedar Falls (nearby)",
+    "intergroup": {
+      "name": "Waterloo-Cedar Falls Intergroup"
+    },
+    "meetingHighlights": "Neighborhood and downtown meetings with a mix of formats; shared resources with Cedar Falls meetings.",
+    "transitInfo": "MET Transit provides local bus service; regional highway access via US-20.",
+    "population": 67000
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "albany": {
+    "city": "Albany",
+    "stateAbbr": "NY",
+    "stateFull": "New York",
+    "geoRegion": "US-NY",
+    "slug": "albany",
+    "lat": 42.6526,
+    "lng": -73.7562,
+    "areaDescription": "Capital District",
+    "neighborhoods": "Delaware Ave, Center Square, Pine Hills, Arbor Hill, West Hill, Buckingham",
+    "intergroup": {
+      "name": "Albany Area Intergroup",
+      "url": "https://albanyaa.org",
+      "phone": "(518) 463-0906"
+    },
+    "meetingHighlights": "Active morning and evening meetings clustered around Center Square and Pine Hills; steady intergroup activity and outreach.",
+    "transitInfo": "CDTA buses serve the Capital District with frequent routes into downtown; Albany International Airport (ALB) offers regional flights.",
+    "population": 99224
+  },
+  "buffalo": {
+    "city": "Buffalo",
+    "stateAbbr": "NY",
+    "stateFull": "New York",
+    "geoRegion": "US-NY",
+    "slug": "buffalo",
+    "lat": 42.8864,
+    "lng": -78.8784,
+    "areaDescription": "Buffalo-Niagara area",
+    "neighborhoods": "Downtown, Allentown, Elmwood Village, North Buffalo, West Side, South Buffalo",
+    "intergroup": {
+      "name": "Buffalo Area Intergroup",
+      "url": "https://buffaloaa.org"
+    },
+    "meetingHighlights": "Diverse meetings in Allentown and Elmwood Village with an active central office; numerous evening and speaker meetings.",
+    "transitInfo": "NFTA Metro buses and light rail connect key neighborhoods; Buffalo Niagara International Airport (BUF) is north of the city.",
+    "population": 255284
+  },
+  "new-york": {
+    "city": "New York",
+    "stateAbbr": "NY",
+    "stateFull": "New York",
+    "geoRegion": "US-NY",
+    "slug": "new-york",
+    "lat": 40.7128,
+    "lng": -74.006,
+    "areaDescription": "New York City area",
+    "neighborhoods": "Manhattan, Brooklyn, Queens, The Bronx, Staten Island, Midtown, Upper East Side, Lower East Side",
+    "intergroup": {
+      "name": "Intergroup/AA of New York",
+      "url": "https://www.nyintergroup.org"
+    },
+    "meetingHighlights": "Extensive, long-established AA community with meetings across all boroughs, including 24-hour and specialty meetings in Manhattan and Greenwich Village.",
+    "transitInfo": "Comprehensive MTA subway and bus network across the five boroughs; major airports include JFK, LaGuardia (LGA), and Newark (EWR).",
+    "population": 8336817
+  },
+  "rochester": {
+    "city": "Rochester",
+    "stateAbbr": "NY",
+    "stateFull": "New York",
+    "geoRegion": "US-NY",
+    "slug": "rochester",
+    "lat": 43.1566,
+    "lng": -77.6088,
+    "areaDescription": "Rochester metropolitan area",
+    "neighborhoods": "Downtown, Park Avenue, Neighborhood of the Arts, Corn Hill, Brighton, Gates",
+    "intergroup": {
+      "name": "Rochester Area Intergroup"
+    },
+    "meetingHighlights": "Strong downtown and Park Avenue groups with active Big Book and step-study meetings; annual area conventions draw participants from the region.",
+    "transitInfo": "Rochester Regional Transit Service (RTS) buses cover the metro area; Greater Rochester International Airport (ROC) serves the region.",
+    "population": 206284
+  },
+  "syracuse": {
+    "city": "Syracuse",
+    "stateAbbr": "NY",
+    "stateFull": "New York",
+    "geoRegion": "US-NY",
+    "slug": "syracuse",
+    "lat": 43.0481,
+    "lng": -76.1474,
+    "areaDescription": "Syracuse metropolitan area",
+    "neighborhoods": "Downtown, University Hill, Tipperary Hill, Eastwood, Westcott, Near Westside",
+    "intergroup": {
+      "name": "Syracuse Area Intergroup"
+    },
+    "meetingHighlights": "Active meetings near Syracuse University on University Hill and a variety of community meetings downtown; schedules include study and speaker formats.",
+    "transitInfo": "Centro bus network serves Syracuse and surrounding towns; Syracuse Hancock International Airport (SYR) handles regional flights.",
+    "population": 142749
+  },
+  "yonkers": {
+    "city": "Yonkers",
+    "stateAbbr": "NY",
+    "stateFull": "New York",
+    "geoRegion": "US-NY",
+    "slug": "yonkers",
+    "lat": 40.9312,
+    "lng": -73.8988,
+    "areaDescription": "Yonkers (NY metro)",
+    "neighborhoods": "Downtown Yonkers, Getty Square, Sprain Brook, Glenwood, Colonial Heights, Park Hill",
+    "intergroup": {
+      "name": "Yonkers AA Central Office"
+    },
+    "meetingHighlights": "Meetings concentrated around Getty Square and downtown Yonkers with convenient access for commuters traveling to NYC meetings.",
+    "transitInfo": "Bee-Line Bus network connects Yonkers neighborhoods; Metro-North Hudson Line provides frequent rail service into Manhattan.",
+    "population": 200807
+  }
+}

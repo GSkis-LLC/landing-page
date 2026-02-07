@@ -1,0 +1,92 @@
+{
+  "burlington": {
+    "city": "Burlington",
+    "stateAbbr": "VT",
+    "stateFull": "Vermont",
+    "geoRegion": "US-VT",
+    "slug": "burlington",
+    "lat": 44.4759,
+    "lng": -73.2121,
+    "areaDescription": "Greater Burlington area",
+    "neighborhoods": "Downtown, Old North End, South End, Hill Section, New North End",
+    "intergroup": {
+      "name": "Green Mountain Intergroup",
+      "url": "https://gmivt.org"
+    },
+    "meetingHighlights": "Active student and evening meetings near the university; outdoor summer meetings and strong newcomers' support.",
+    "transitInfo": "Green Mountain Transit provides local bus service; Burlington International Airport offers regional flights.",
+    "population": 45000
+  },
+  "south-burlington": {
+    "city": "South Burlington",
+    "stateAbbr": "VT",
+    "stateFull": "Vermont",
+    "geoRegion": "US-VT",
+    "slug": "south-burlington",
+    "lat": 44.4674,
+    "lng": -73.1536,
+    "areaDescription": "South Burlington / Burlington suburbs",
+    "neighborhoods": "Shoreham, Dorset, Dorset Park",
+    "intergroup": {
+      "name": "Green Mountain Intergroup",
+      "url": "https://gmivt.org"
+    },
+    "meetingHighlights": "Suburban daytime and evening meetings, family-friendly formats common.",
+    "transitInfo": "Served by Green Mountain Transit; short drive to Burlington and Burlington International Airport.",
+    "population": 19000
+  },
+  "montpelier": {
+    "city": "Montpelier",
+    "stateAbbr": "VT",
+    "stateFull": "Vermont",
+    "geoRegion": "US-VT",
+    "slug": "montpelier",
+    "lat": 44.2601,
+    "lng": -72.5754,
+    "areaDescription": "Montpelier / Central Vermont",
+    "neighborhoods": "Downtown, Hubbard Park area",
+    "intergroup": {
+      "name": "Vermont Intergroup",
+      "url": "https://aa-vermont.org"
+    },
+    "meetingHighlights": "Small but consistent meetings with strong civic engagement and midday groups for state employees.",
+    "transitInfo": "Bus service connects to regional towns; most attendees drive from surrounding communities.",
+    "population": 8000
+  },
+  "rutland": {
+    "city": "Rutland",
+    "stateAbbr": "VT",
+    "stateFull": "Vermont",
+    "geoRegion": "US-VT",
+    "slug": "rutland",
+    "lat": 43.6106,
+    "lng": -72.9726,
+    "areaDescription": "Rutland County",
+    "neighborhoods": "Downtown, West Rutland, Proctor",
+    "intergroup": {
+      "name": "Vermont Intergroup",
+      "url": "https://aa-vermont.org"
+    },
+    "meetingHighlights": "Evening and recovery-focused meetings; steady local fellowship.",
+    "transitInfo": "Local bus service and proximity to US-4; regional airport connections via Burlington.",
+    "population": 15000
+  },
+  "barre": {
+    "city": "Barre",
+    "stateAbbr": "VT",
+    "stateFull": "Vermont",
+    "geoRegion": "US-VT",
+    "slug": "barre",
+    "lat": 44.1972,
+    "lng": -72.5027,
+    "areaDescription": "Barre / Washington County",
+    "neighborhoods": "Downtown, Websterville",
+    "intergroup": {
+      "name": "Vermont Intergroup",
+      "url": "https://aa-vermont.org"
+    },
+    "meetingHighlights": "Community-based evening meetings with strong local sponsor networks.",
+    "transitInfo": "Regional bus links and drive access from Montpelier and surrounding towns.",
+    "population": 8500
+  }
+}

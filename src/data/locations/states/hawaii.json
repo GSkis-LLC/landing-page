@@ -1,0 +1,88 @@
+{
+  "honolulu": {
+    "city": "Honolulu",
+    "stateAbbr": "HI",
+    "stateFull": "Hawaii",
+    "geoRegion": "US-HI",
+    "slug": "honolulu",
+    "lat": 21.3069,
+    "lng": -157.8583,
+    "areaDescription": "Greater Honolulu area",
+    "neighborhoods": "Downtown, Waikiki, Kakaʻako, Manoa, Ala Moana, Makiki, Punchbowl",
+    "intergroup": {
+      "name": "Honolulu Intergroup",
+      "url": "https://honolulu-aa.org"
+    },
+    "meetingHighlights": "Dense island meetings across neighborhoods with strong newcomer services, many beachside and evening groups, and bilingual offerings.",
+    "transitInfo": "TheBus provides comprehensive island coverage; Daniel K. Inouye International Airport (HNL) handles inter-island and international flights.",
+    "population": 345000
+  },
+  "hilo": {
+    "city": "Hilo",
+    "stateAbbr": "HI",
+    "stateFull": "Hawaii",
+    "geoRegion": "US-HI",
+    "slug": "hilo",
+    "lat": 19.7297,
+    "lng": -155.09,
+    "areaDescription": "Hilo and East Hawaii",
+    "neighborhoods": "Downtown Hilo, Waiakea, Wainaku, Hilo Bay",
+    "intergroup": {
+      "name": "Hilo Area Intergroup"
+    },
+    "meetingHighlights": "Community-focused island meetings often held in churches and community centers; active outreach to rural Big Island communities.",
+    "transitInfo": "Hawaii County Hele-On bus service and local shuttles; Hilo International Airport (ITO) for inter-island flights.",
+    "population": 44365
+  },
+  "kahului": {
+    "city": "Kahului",
+    "stateAbbr": "HI",
+    "stateFull": "Hawaii",
+    "geoRegion": "US-HI",
+    "slug": "kahului",
+    "lat": 20.8948,
+    "lng": -156.472,
+    "areaDescription": "Kahului / Central Maui",
+    "neighborhoods": "Kahului Harbor, Puunene, Wailuku (nearby), Maalaea",
+    "intergroup": {
+      "name": "Maui Intergroup"
+    },
+    "meetingHighlights": "Central meeting hub for Maui with groups in Kahului and Wailuku; many meetings accommodate seasonal residents and visitors.",
+    "transitInfo": "Maui Bus provides island transit; Kahului Airport (OGG) is the main gateway to Maui.",
+    "population": 28000
+  },
+  "kailua": {
+    "city": "Kailua",
+    "stateAbbr": "HI",
+    "stateFull": "Hawaii",
+    "geoRegion": "US-HI",
+    "slug": "kailua",
+    "lat": 21.3956,
+    "lng": -157.7394,
+    "areaDescription": "Kailua and Windward Oahu",
+    "neighborhoods": "Kailua Town, Lanikai, Enchanted Lake, Waimanalo (nearby)",
+    "intergroup": {
+      "name": "Honolulu Intergroup (serves Windward Oahu)"
+    },
+    "meetingHighlights": "Beachside and neighborhood meetings with active newcomer engagement; many lunchtime and evening groups popular with families.",
+    "transitInfo": "TheBus connects Kailua to Honolulu and other Windward communities; Daniel K. Inouye International Airport (HNL) is accessible by highway.",
+    "population": 40430
+  },
+  "kapolei": {
+    "city": "Kapolei",
+    "stateAbbr": "HI",
+    "stateFull": "Hawaii",
+    "geoRegion": "US-HI",
+    "slug": "kapolei",
+    "lat": 21.3322,
+    "lng": -158.081,
+    "areaDescription": "Kapolei and West Oahu",
+    "neighborhoods": "Kapolei Town Center, Ko Olina, Makakilo, Nanakuli (nearby)",
+    "intergroup": {
+      "name": "Honolulu Intergroup (serves West Oahu)"
+    },
+    "meetingHighlights": "Rapidly growing suburban meetings with family-oriented evening groups and community-center meetings in Kapolei Town.",
+    "transitInfo": "TheBus service and highway access to Honolulu; Daniel K. Inouye International Airport (HNL) reachable by car.",
+    "population": 21000
+  }
+}

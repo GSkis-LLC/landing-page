@@ -1,0 +1,88 @@
+{
+  "concord": {
+    "city": "Concord",
+    "stateAbbr": "NH",
+    "stateFull": "New Hampshire",
+    "geoRegion": "US-NH",
+    "slug": "concord",
+    "lat": 43.2081,
+    "lng": -71.5376,
+    "areaDescription": "Capital Region (Concord area)",
+    "neighborhoods": "Downtown, Penacook, West Concord, East Concord",
+    "intergroup": {
+      "name": "Concord Area Intergroup"
+    },
+    "meetingHighlights": "Stable capital-city meetings with a mix of daytime and evening groups and several faith-based host locations.",
+    "transitInfo": "Local Concord Coach and city bus services connect Concord to nearby towns; Manchester-Boston Regional Airport (MHT) provides regional air service.",
+    "population": 44000
+  },
+  "manchester": {
+    "city": "Manchester",
+    "stateAbbr": "NH",
+    "stateFull": "New Hampshire",
+    "geoRegion": "US-NH",
+    "slug": "manchester",
+    "lat": 42.9956,
+    "lng": -71.4548,
+    "areaDescription": "Manchester-Nashua area",
+    "neighborhoods": "Downtown, North End, South End, West Side, Rimmon Heights, Hallsville",
+    "intergroup": {
+      "name": "Manchester Area Intergroup",
+      "url": "https://manchesteraa.org"
+    },
+    "meetingHighlights": "Largest AA community in the state with a variety of meetings—speaker nights, step studies, and newcomer-friendly options.",
+    "transitInfo": "Manchester Transit Authority serves local routes; Manchester-Boston Regional Airport (MHT) nearby for regional flights.",
+    "population": 111000
+  },
+  "nashua": {
+    "city": "Nashua",
+    "stateAbbr": "NH",
+    "stateFull": "New Hampshire",
+    "geoRegion": "US-NH",
+    "slug": "nashua",
+    "lat": 42.7654,
+    "lng": -71.4676,
+    "areaDescription": "Nashua (southern New Hampshire)",
+    "neighborhoods": "Downtown, Fairgrounds, Crown Hill, South Nashua",
+    "intergroup": {
+      "name": "Nashua Area Intergroup"
+    },
+    "meetingHighlights": "Strong suburban meetings with active evening attendance and several service-oriented groups.",
+    "transitInfo": "Nashua Transit System provides local buses; easy driving access to Manchester and Logan/Manchester airports.",
+    "population": 90000
+  },
+  "portsmouth": {
+    "city": "Portsmouth",
+    "stateAbbr": "NH",
+    "stateFull": "New Hampshire",
+    "geoRegion": "US-NH",
+    "slug": "portsmouth",
+    "lat": 43.0718,
+    "lng": -70.7626,
+    "areaDescription": "Portsmouth (Seacoast)",
+    "neighborhoods": "Downtown, South End, The Hill, Middle Street",
+    "intergroup": {
+      "name": "Seacoast Intergroup"
+    },
+    "meetingHighlights": "Coastal meetings with a mix of downtown and neighborhood groups; active speaker nights and newcomer support.",
+    "transitInfo": "COAST and regional bus services connect the Seacoast; Portsmouth International Airport at Pease (PSM) for regional flights.",
+    "population": 22000
+  },
+  "keene": {
+    "city": "Keene",
+    "stateAbbr": "NH",
+    "stateFull": "New Hampshire",
+    "geoRegion": "US-NH",
+    "slug": "keene",
+    "lat": 42.9337,
+    "lng": -72.2787,
+    "areaDescription": "Keene (Monadnock Region)",
+    "neighborhoods": "Downtown, West Keene, Keene State College area",
+    "intergroup": {
+      "name": "Keene Area Intergroup"
+    },
+    "meetingHighlights": "Small-town meetings with strong community ties and student-influenced schedules during the academic year.",
+    "transitInfo": "Local bus services and regional routes; driving access via NH-10 and nearby regional airports.",
+    "population": 23000
+  }
+}

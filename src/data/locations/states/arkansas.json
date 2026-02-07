@@ -1,0 +1,74 @@
+{
+  "little-rock": {
+    "city": "Little Rock",
+    "stateAbbr": "AR",
+    "stateFull": "Arkansas",
+    "geoRegion": "US-AR",
+    "slug": "little-rock",
+    "lat": 34.7465,
+    "lng": -92.2896,
+    "areaDescription": "Little Rock metropolitan area",
+    "neighborhoods": "Downtown, Hillcrest, River Market, The Heights, Woodland Hills, Chenal",
+    "intergroup": {
+      "name": "Central Arkansas Intergroup",
+      "url": "https://centralarkansasaaf.org"
+    },
+    "meetingHighlights": "Robust downtown and neighborhood meetings with active River Market groups and regular speaker meetings.",
+    "transitInfo": "CARTS and Rock Region Metro provide local transit; Clinton National Airport (LIT) serves the metro.",
+    "population": 197000
+  },
+  "fort-smith": {
+    "city": "Fort Smith",
+    "stateAbbr": "AR",
+    "stateFull": "Arkansas",
+    "geoRegion": "US-AR",
+    "slug": "fort-smith",
+    "lat": 35.3859,
+    "lng": -94.3985,
+    "areaDescription": "Fort Smith metropolitan area, Arkansas River Valley",
+    "neighborhoods": "Downtown Fort Smith, Chaffee Crossing, Northside, Rogers Avenue corridor",
+    "intergroup": {
+      "name": "Fort Smith Area Intergroup",
+      "url": "https://fortsmithaa.org"
+    },
+    "meetingHighlights": "Border-city recovery with meetings serving Arkansas and Oklahoma; strong Big Book tradition; active evening meetings.",
+    "transitInfo": "Fort Smith Transit provides local bus service; Fort Smith Regional Airport (FSM); close to I-40 and I-540.",
+    "population": 90000
+  },
+  "fayetteville": {
+    "city": "Fayetteville",
+    "stateAbbr": "AR",
+    "stateFull": "Arkansas",
+    "geoRegion": "US-AR",
+    "slug": "fayetteville",
+    "lat": 36.0626,
+    "lng": -94.1574,
+    "areaDescription": "Fayetteville metropolitan area, Northwest Arkansas",
+    "neighborhoods": "Downtown Fayetteville, Dickson Street, University of Arkansas area, Wilson Park",
+    "intergroup": {
+      "name": "Northwest Arkansas Intergroup",
+      "url": "https://nwaintergroup.org"
+    },
+    "meetingHighlights": "College-town recovery community with young people's meetings; diverse schedule near U of A campus; growing metro area.",
+    "transitInfo": "Ozark Regional Transit buses; Northwest Arkansas Regional Airport (XNA) serves the region.",
+    "population": 95000
+  },
+  "jonesboro": {
+    "city": "Jonesboro",
+    "stateAbbr": "AR",
+    "stateFull": "Arkansas",
+    "geoRegion": "US-AR",
+    "slug": "jonesboro",
+    "lat": 35.8423,
+    "lng": -90.7043,
+    "areaDescription": "Jonesboro area, Northeast Arkansas",
+    "neighborhoods": "Downtown Jonesboro, Highland Park, Stadium Boulevard, Johnson Avenue",
+    "intergroup": {
+      "name": "Northeast Arkansas Intergroup",
+      "url": "https://nearkansasaa.org"
+    },
+    "meetingHighlights": "Regional hub for recovery in Northeast Arkansas; college-area meetings near A-State; welcoming community atmosphere.",
+    "transitInfo": "Limited local transit; Jonesboro Municipal Airport (JBR); US Highway 49 and 63 access.",
+    "population": 79000
+  }
+}

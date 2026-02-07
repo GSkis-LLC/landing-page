@@ -1,0 +1,109 @@
+{
+  "green-bay": {
+    "city": "Green Bay",
+    "stateAbbr": "WI",
+    "stateFull": "Wisconsin",
+    "geoRegion": "US-WI",
+    "slug": "green-bay",
+    "lat": 44.519158,
+    "lng": -88.019826,
+    "areaDescription": "Green Bay area",
+    "neighborhoods": "Downtown, Broadway District, Allouez, De Pere",
+    "intergroup": {
+      "name": "Green Bay Area Intergroup",
+      "url": "https://greenbayaa.org"
+    },
+    "meetingHighlights": "Active meetings near Lambeau Field and downtown; strong Packers game-day fellowship and regular speaker meetings.",
+    "transitInfo": "Green Bay Metro transit provides bus service; Austin Straubel International Airport (GRB) offers regional flights.",
+    "population": 105100
+  },
+  "kenosha": {
+    "city": "Kenosha",
+    "stateAbbr": "WI",
+    "stateFull": "Wisconsin",
+    "geoRegion": "US-WI",
+    "slug": "kenosha",
+    "lat": 42.584694,
+    "lng": -87.821227,
+    "areaDescription": "Kenosha area",
+    "neighborhoods": "Downtown, Uptown, HarborPark",
+    "intergroup": {
+      "name": "Racine/Kenosha Intergroup",
+      "url": "https://racinekenoshaaa.org"
+    },
+    "meetingHighlights": "Lakefront meetings with active evening groups; many community-based meetings in Uptown and HarborPark areas.",
+    "transitInfo": "Kenosha Transit buses serve the city; Metra commuter rail connects to Chicago; close to I-94.",
+    "population": 99986
+  },
+  "madison": {
+    "city": "Madison",
+    "stateAbbr": "WI",
+    "stateFull": "Wisconsin",
+    "geoRegion": "US-WI",
+    "slug": "madison",
+    "lat": 43.0731,
+    "lng": -89.4012,
+    "areaDescription": "Madison metropolitan area",
+    "neighborhoods": "Downtown, State Street, Willy Street, Brayton/Monroe, Atwood, Middleton (nearby)",
+    "intergroup": {
+      "name": "Madison Area Intergroup",
+      "url": "https://aamadisonwi.org"
+    },
+    "meetingHighlights": "Large university-influenced fellowship with progressive meetings on State Street and Willy Street; strong young people's groups.",
+    "transitInfo": "Madison Metro Transit provides comprehensive bus service; Dane County Regional Airport (MSN) offers regional flights.",
+    "population": 269000
+  },
+  "appleton": {
+    "city": "Appleton",
+    "stateAbbr": "WI",
+    "stateFull": "Wisconsin",
+    "geoRegion": "US-WI",
+    "slug": "appleton",
+    "lat": 44.2619,
+    "lng": -88.4154,
+    "areaDescription": "Appleton area (Fox Cities)",
+    "neighborhoods": "Downtown, College Avenue, Memorial Park, Lawrence University area",
+    "intergroup": {
+      "name": "Fox Valley Area Intergroup",
+      "url": "https://foxvalleyaa.org"
+    },
+    "meetingHighlights": "Fox Cities meetings with active downtown groups; college-town fellowship with regular speaker meetings.",
+    "transitInfo": "Valley Transit provides bus service throughout Appleton and Fox Cities; Appleton International Airport (ATW) for regional flights.",
+    "population": 75644
+  },
+  "milwaukee": {
+    "city": "Milwaukee",
+    "stateAbbr": "WI",
+    "stateFull": "Wisconsin",
+    "geoRegion": "US-WI",
+    "slug": "milwaukee",
+    "lat": 43.0389,
+    "lng": -87.9065,
+    "areaDescription": "Milwaukee metropolitan area",
+    "neighborhoods": "Historic Third Ward, Bay View, East Side, Riverwest, Walker's Point",
+    "intergroup": {
+      "name": "Milwaukee Intergroup",
+      "url": "https://milwaukeeaaintergroup.org"
+    },
+    "meetingHighlights": "Extensive downtown and neighborhood meetings including speaker nights, Spanish-language and LGBTQ-friendly groups.",
+    "transitInfo": "Milwaukee County Transit System (MCTS) buses and streetcar provide transit; close access to I-94 and Milwaukee Mitchell International Airport (MKE).",
+    "population": 590000
+  },
+  "racine": {
+    "city": "Racine",
+    "stateAbbr": "WI",
+    "stateFull": "Wisconsin",
+    "geoRegion": "US-WI",
+    "slug": "racine",
+    "lat": 42.7261,
+    "lng": -87.7828,
+    "areaDescription": "Racine / Lake Michigan shore",
+    "neighborhoods": "Downtown, North Side, Uptown, West Racine",
+    "intergroup": {
+      "name": "Racine/Kenosha Intergroup"
+    },
+    "meetingHighlights": "Community meetings with steady evening attendance and family-friendly formats.",
+    "transitInfo": "Racine buses and regional connections to Milwaukee; many attendees drive from surrounding suburbs.",
+    "population": 77000
+  }
+}

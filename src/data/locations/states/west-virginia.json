@@ -1,0 +1,92 @@
+{
+  "charleston": {
+    "city": "Charleston",
+    "stateAbbr": "WV",
+    "stateFull": "West Virginia",
+    "geoRegion": "US-WV",
+    "slug": "charleston",
+    "lat": 38.3498,
+    "lng": -81.6326,
+    "areaDescription": "Charleston metropolitan area",
+    "neighborhoods": "Downtown, Kanawha City, South Hills, Edgewood",
+    "intergroup": {
+      "name": "Kanawha Valley Intergroup",
+      "url": "https://kanawhaaa.org"
+    },
+    "meetingHighlights": "Strong downtown and neighborhood meetings with regular speaker nights and recovery workshops.",
+    "transitInfo": "KANAWHA Valley regional buses and easy highway access via I-64 and I-77; most attendees drive locally.",
+    "population": 47000
+  },
+  "huntington": {
+    "city": "Huntington",
+    "stateAbbr": "WV",
+    "stateFull": "West Virginia",
+    "geoRegion": "US-WV",
+    "slug": "huntington",
+    "lat": 38.4192,
+    "lng": -82.4452,
+    "areaDescription": "Huntington metro area",
+    "neighborhoods": "Downtown, Central Huntington, Guyandotte, Ritter Park",
+    "intergroup": {
+      "name": "Huntington Area Intergroup",
+      "url": "https://huntingtonaa.org"
+    },
+    "meetingHighlights": "University-area and downtown evening meetings with active newcomer-focused groups and outreach events.",
+    "transitInfo": "Mountain Line Transit provides local bus service; regional highways connect to Huntington-Ashland metro area.",
+    "population": 45000
+  },
+  "morgantown": {
+    "city": "Morgantown",
+    "stateAbbr": "WV",
+    "stateFull": "West Virginia",
+    "geoRegion": "US-WV",
+    "slug": "morgantown",
+    "lat": 39.6295,
+    "lng": -79.9559,
+    "areaDescription": "Morgantown / Monongalia County",
+    "neighborhoods": "Downtown, Suncrest, South Park, Evansdale",
+    "intergroup": {
+      "name": "Northern West Virginia Intergroup",
+      "url": "https://nwvintergroup.org"
+    },
+    "meetingHighlights": "Active college-town meetings at varied times to serve students and local residents; strong lunchtime options.",
+    "transitInfo": "Morgantown Personal Rapid Transit (PRT) and Mountain Line buses provide local coverage; short drives to nearby towns.",
+    "population": 32000
+  },
+  "wheeling": {
+    "city": "Wheeling",
+    "stateAbbr": "WV",
+    "stateFull": "West Virginia",
+    "geoRegion": "US-WV",
+    "slug": "wheeling",
+    "lat": 40.0639,
+    "lng": -80.7209,
+    "areaDescription": "Wheeling / Ohio Valley",
+    "neighborhoods": "Wheeling Island, Centre Market, Oak Park",
+    "intergroup": {
+      "name": "Ohio Valley Intergroup",
+      "url": "https://ovaa.org"
+    },
+    "meetingHighlights": "Community-based evening meetings and regular speaker events; steady participation from nearby small towns.",
+    "transitInfo": "Local bus service and proximity to I-70 provide regional access; some attendees cross state lines to Ohio and Pennsylvania.",
+    "population": 26000
+  },
+  "parkersburg": {
+    "city": "Parkersburg",
+    "stateAbbr": "WV",
+    "stateFull": "West Virginia",
+    "geoRegion": "US-WV",
+    "slug": "parkersburg",
+    "lat": 39.2667,
+    "lng": -81.5615,
+    "areaDescription": "Parkersburg / Mid-Ohio Valley",
+    "neighborhoods": "Downtown, Vienna (nearby), Marietta area influence",
+    "intergroup": {
+      "name": "Mid-Ohio Valley Intergroup",
+      "url": "https://movaa.org"
+    },
+    "meetingHighlights": "Evening and weekend meetings with a mix of faith-based and community sponsor groups.",
+    "transitInfo": "Local bus services and regional highways provide access; nearby Mid-Ohio Valley airport and river transport for regional travel.",
+    "population": 30000
+  }
+}

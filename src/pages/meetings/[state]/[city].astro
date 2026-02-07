@@ -1,6 +1,6 @@
 ---
-import { getAllLocations, getLocation, toSlug, getCitiesInState } from '../../../data/locations';
-import type { LocationConfig } from '../../../data/locations';
+import { getAllLocations, getLocation, toSlug, getCitiesInState } from '../../../data/location-store';
+import type { LocationConfig } from '../../../data/location-store';
 
 // Component imports
 import Header from '../../../components/Header.astro';
@@ -46,8 +46,8 @@ if (!LOCATION) {
 // ============================================================================
 const stateSlug = toSlug(LOCATION.stateFull);
 const citySlug = toSlug(LOCATION.city);
-const title = `AA Meetings near ${LOCATION.city}, ${LOCATION.stateAbbr} - Find Alcoholics Anonymous Near You | MyMeetings`;
-const description = `Find AA Meetings near ${LOCATION.city}, ${LOCATION.stateFull}. Browse 100+ Alcoholics Anonymous meetings with times, locations, and directions. Open meetings, closed meetings, speaker meetings, and more. Updated daily.`;
+const title = `AA Meetings near ${LOCATION.city}, ${LOCATION.stateAbbr} - Find Alcoholics Anonymous Near You`;
+const description = `Find AA Meetings near ${LOCATION.city}, ${LOCATION.stateFull}. Browse from hundreds of local Alcoholics Anonymous meetings by times, locations, types, and more. Serving the ${LOCATION.neighborhoods} areas and beyond, MyMeetings is the #1 AA meeting finder`;
 const canonical = `https://gskis.com/meetings/${stateSlug}/${citySlug}`;
 const appStoreUrl = 'https://apps.apple.com/app/id6748364894';
 const locationLat = LOCATION.lat;
@@ -56,7 +56,7 @@ const locationLng = LOCATION.lng;
 // SEO-related constants
 const siteName = 'MyMeetings';
 const ogImage = `https://gskis.com/myMeetingsAppLogo.webp`;
-const keywords = `AA meetings ${LOCATION.city}, Alcoholics Anonymous ${LOCATION.city}, AA near me, ${LOCATION.city} AA meetings, recovery meetings ${LOCATION.city}, 12 step meetings ${LOCATION.city}, AA meeting times ${LOCATION.city}, open AA meetings ${LOCATION.city}, closed AA meetings ${LOCATION.city}`;
+const keywords = `AA meetings ${LOCATION.city}, AA meetings ${LOCATION.neighborhoods}, Alcoholics Anonymous ${LOCATION.city}, AA near me, ${LOCATION.city} AA meetings, recovery meetings ${LOCATION.city}, 12 step meetings ${LOCATION.city}, AA meeting times ${LOCATION.city}, open AA meetings ${LOCATION.city}, closed AA meetings ${LOCATION.city}`;
 
 let meetings: any[] = [];
 let organizations: any[] = [];
@@ -170,6 +170,8 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
     <meta name="googlebot" content="index, follow" />
     <meta name="keywords" content={keywords} />
     <meta name="author" content="MyMeetings" />
+    <meta name="application-name" content="MyMeetings" />
+    <meta name="msapplication-TileColor" content="#2A9D8F" />
     <meta name="geo.region" content={LOCATION.geoRegion} />
     <meta name="geo.placename" content={LOCATION.city} />
     <meta name="geo.position" content={`${LOCATION.lat};${LOCATION.lng}`} />
@@ -399,7 +401,7 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
 
       <!-- App Promo Banner -->
       <AppPromo appStoreUrl={appStoreUrl} />
-      
+
       <!-- Meeting Statistics -->
       <MeetingStats meetings={normalizedMeetings} city={LOCATION.city} stateFull={LOCATION.stateFull} />
 

@@ -1,0 +1,87 @@
+{
+  "sioux-falls": {
+    "city": "Sioux Falls",
+    "stateAbbr": "SD",
+    "stateFull": "South Dakota",
+    "geoRegion": "US-SD",
+    "slug": "sioux-falls",
+    "lat": 43.544595,
+    "lng": -96.731103,
+    "areaDescription": "Sioux Falls area",
+    "neighborhoods": "Downtown, Falls Park, Empire",
+    "intergroup": {
+      "name": "Sioux Falls Area Intergroup"
+    },
+    "meetingHighlights": "Largest fellowship in the state with meetings across downtown and suburbs, regular speaker nights, and active newcomer programs.",
+    "transitInfo": "Sioux Area Metro (SAM) provides local bus service; Sioux Falls Regional Airport for regional travel.",
+    "population": 190000
+  },
+  "rapid-city": {
+    "city": "Rapid City",
+    "stateAbbr": "SD",
+    "stateFull": "South Dakota",
+    "geoRegion": "US-SD",
+    "slug": "rapid-city",
+    "lat": 44.0805,
+    "lng": -103.231,
+    "areaDescription": "Rapid City area (Black Hills)",
+    "neighborhoods": "Downtown, West Rapid, East Rapid, Canyon Lake",
+    "intergroup": {
+      "name": "Rapid City Area Intergroup"
+    },
+    "meetingHighlights": "Meetings serving the Black Hills region with a mix of downtown and small-town groups and seasonal tourist-area meetings.",
+    "transitInfo": "Rapid City Rapid Ride provides local transit; regional airports and highways connect to the Black Hills.",
+    "population": 78000
+  },
+  "pierre": {
+    "city": "Pierre",
+    "stateAbbr": "SD",
+    "stateFull": "South Dakota",
+    "geoRegion": "US-SD",
+    "slug": "pierre",
+    "lat": 44.3683,
+    "lng": -100.351,
+    "areaDescription": "Pierre (state capital)",
+    "neighborhoods": "Downtown, Capitol area, East Pierre",
+    "intergroup": {
+      "name": "Pierre Area Intergroup"
+    },
+    "meetingHighlights": "Capital-city meetings with steady weekday attendance and community-focused groups.",
+    "transitInfo": "Local transit and regional highways; small regional airport for limited service.",
+    "population": 14000
+  },
+  "aberdeen": {
+    "city": "Aberdeen",
+    "stateAbbr": "SD",
+    "stateFull": "South Dakota",
+    "geoRegion": "US-SD",
+    "slug": "aberdeen",
+    "lat": 45.4647,
+    "lng": -98.4865,
+    "areaDescription": "Aberdeen area",
+    "neighborhoods": "Downtown, North Shore, South Shore",
+    "intergroup": {
+      "name": "Aberdeen Area Intergroup"
+    },
+    "meetingHighlights": "Regional meetings with steady community attendance and several evening groups.",
+    "transitInfo": "Aberdeen Transit operates local services; regional highways provide access to nearby cities.",
+    "population": 28000
+  },
+  "brookings": {
+    "city": "Brookings",
+    "stateAbbr": "SD",
+    "stateFull": "South Dakota",
+    "geoRegion": "US-SD",
+    "slug": "brookings",
+    "lat": 44.3114,
+    "lng": -96.7984,
+    "areaDescription": "Brookings (South Dakota State University)",
+    "neighborhoods": "Downtown, University area, North Brookings",
+    "intergroup": {
+      "name": "Brookings Area Intergroup"
+    },
+    "meetingHighlights": "University-influenced meetings with student-friendly schedules and steady community participation.",
+    "transitInfo": "Local transit and regional roads; Brookings Regional Airport for limited service.",
+    "population": 24500
+  }
+}

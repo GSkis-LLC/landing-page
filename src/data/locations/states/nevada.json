@@ -1,0 +1,104 @@
+{
+  "las-vegas": {
+    "city": "Las Vegas",
+    "stateAbbr": "NV",
+    "stateFull": "Nevada",
+    "geoRegion": "US-NV",
+    "slug": "las-vegas",
+    "lat": 36.1699,
+    "lng": -115.1398,
+    "areaDescription": "Las Vegas metropolitan area",
+    "neighborhoods": "The Strip, Downtown, Summerlin, Henderson (adjacent), Paradise, The Lakes",
+    "intergroup": {
+      "name": "Las Vegas Intergroup"
+    },
+    "meetingHighlights": "Large, active fellowship with meetings across the Strip, downtown, and suburbs; many speaker nights and 24-hour resources for newcomers.",
+    "transitInfo": "RTC buses and the Las Vegas monorail cover central areas; McCarran International Airport (LAS) provides major air service.",
+    "population": 640000
+  },
+  "north-las-vegas": {
+    "city": "North Las Vegas",
+    "stateAbbr": "NV",
+    "stateFull": "Nevada",
+    "geoRegion": "US-NV",
+    "slug": "north-las-vegas",
+    "lat": 36.198859,
+    "lng": -115.117501,
+    "areaDescription": "North Las Vegas area",
+    "neighborhoods": "Downtown, Aliante, Centennial",
+    "intergroup": {
+      "name": "Las Vegas Intergroup"
+    },
+    "meetingHighlights": "Suburban meetings with evening and weekend options; many groups collaborate with Las Vegas central fellowship.",
+    "transitInfo": "RTC buses serve North Las Vegas with links to Las Vegas and Henderson.",
+    "population": 260000
+  },
+  "reno": {
+    "city": "Reno",
+    "stateAbbr": "NV",
+    "stateFull": "Nevada",
+    "geoRegion": "US-NV",
+    "slug": "reno",
+    "lat": 39.5296,
+    "lng": -119.8138,
+    "areaDescription": "Reno–Tahoe area",
+    "neighborhoods": "Downtown, Midtown, Old Southwest, Arlington, South Reno, North Valleys",
+    "intergroup": {
+      "name": "Reno/Tahoe Intergroup"
+    },
+    "meetingHighlights": "Regional meetings serving the Reno–Tahoe area with a mix of weekday and weekend groups, Big Book studies, and speaker events.",
+    "transitInfo": "RTC Washoe buses serve Reno; Reno–Tahoe International Airport provides regional flights and highway access to Lake Tahoe.",
+    "population": 255000
+  },
+  "henderson": {
+    "city": "Henderson",
+    "stateAbbr": "NV",
+    "stateFull": "Nevada",
+    "geoRegion": "US-NV",
+    "slug": "henderson",
+    "lat": 36.0395,
+    "lng": -114.9817,
+    "areaDescription": "Henderson (Las Vegas suburbs)",
+    "neighborhoods": "Green Valley, Downtown Henderson, Lake Las Vegas",
+    "intergroup": {
+      "name": "Las Vegas Intergroup"
+    },
+    "meetingHighlights": "Suburban meetings popular with families and commuters; many evening and newcomer-friendly groups.",
+    "transitInfo": "RTC provides regional bus service connecting Henderson to Las Vegas; proximity to McCarran International Airport.",
+    "population": 320000
+  },
+  "carson-city": {
+    "city": "Carson City",
+    "stateAbbr": "NV",
+    "stateFull": "Nevada",
+    "geoRegion": "US-NV",
+    "slug": "carson-city",
+    "lat": 39.1638,
+    "lng": -119.7674,
+    "areaDescription": "Carson City (state capital)",
+    "neighborhoods": "Downtown, Carson River, Empire",
+    "intergroup": {
+      "name": "Carson City Area Intergroup"
+    },
+    "meetingHighlights": "Capital-city meetings with steady weekday attendance and small-community support networks.",
+    "transitInfo": "Local bus services and proximity to Reno via US-395; regional airports serve the area.",
+    "population": 56000
+  },
+  "sparks": {
+    "city": "Sparks",
+    "stateAbbr": "NV",
+    "stateFull": "Nevada",
+    "geoRegion": "US-NV",
+    "slug": "sparks",
+    "lat": 39.5349,
+    "lng": -119.7521,
+    "areaDescription": "Sparks (adjacent to Reno)",
+    "neighborhoods": "Old Town, Victorian Square, Sparks Marina",
+    "intergroup": {
+      "name": "Reno/Tahoe Intergroup"
+    },
+    "meetingHighlights": "Shared meeting resources with Reno; active neighborhood and downtown meetings.",
+    "transitInfo": "Regional buses link Sparks with Reno; quick highway access via I-80.",
+    "population": 100000
+  }
+}

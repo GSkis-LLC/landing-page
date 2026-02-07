@@ -9,51 +9,72 @@ const SRC_PAGES = path.resolve(process.cwd(), 'src/pages');
 const OUT_DIR = path.resolve(process.cwd(), 'public');
 const OUT_FILE = path.join(OUT_DIR, 'sitemap.xml');
 const LOCATIONS_FILE = path.resolve(process.cwd(), 'src/data/locations.ts');
-
-// Helper to convert string to kebab-case slug (mirrors the one in locations.ts)
-function toSlug(str) {
-  return str
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-}
+const STATES_DIR = path.resolve(process.cwd(), 'src/data/locations/states');
 
 // Parse locations.ts and extract all location entries (states and cities)
 async function getLocationUrls() {
+  const urls = [];
+
+  try {
+    const entries = await fs.readdir(STATES_DIR, { withFileTypes: true });
+    const stateFiles = entries
+      .filter((entry) => entry.isFile() && entry.name.endsWith('.json'))
+      .map((entry) => entry.name);
+
+    if (stateFiles.length > 0) {
+      for (const file of stateFiles) {
+        const stateSlug = file.replace(/\.json$/, '');
+        const content = await fs.readFile(path.join(STATES_DIR, file), 'utf8');
+        const cities = JSON.parse(content);
+
+        urls.push({
+          url: `/meetings/${stateSlug}`,
+          lastmod: new Date().toISOString(),
+        });
+
+        for (const citySlug of Object.keys(cities)) {
+          urls.push({
+            url: `/meetings/${stateSlug}/${citySlug}`,
+            lastmod: new Date().toISOString(),
+          });
+        }
+      }
+
+      return urls;
+    }
+  } catch (e) {
+    console.warn('State-split locations not found, falling back to locations.ts');
+  }
+
   try {
     const content = await fs.readFile(LOCATIONS_FILE, 'utf8');
-    // Extract the locations object from the TS file
     const match = content.match(/export const locations[^=]*=\s*(\{[\s\S]*?\n\};)/);
     if (!match) {
       console.warn('Could not parse locations from locations.ts');
       return [];
     }
-    
-    // Parse the JSON-like object (it's valid JSON in the generated file)
+
     const jsonStr = match[1].replace(/;$/, '');
     const locations = JSON.parse(jsonStr);
-    
-    const urls = [];
+
     for (const [stateSlug, cities] of Object.entries(locations)) {
-      // Add state-level page URL
       urls.push({
         url: `/meetings/${stateSlug}`,
         lastmod: new Date().toISOString(),
       });
-      
-      // Add city-level page URLs
-      for (const [citySlug, config] of Object.entries(cities)) {
+
+      for (const citySlug of Object.keys(cities)) {
         urls.push({
           url: `/meetings/${stateSlug}/${citySlug}`,
           lastmod: new Date().toISOString(),
         });
       }
     }
-    return urls;
   } catch (e) {
     console.error('Error reading locations:', e);
-    return [];
   }
+
+  return urls;
 }
 
 async function walk(dir) {

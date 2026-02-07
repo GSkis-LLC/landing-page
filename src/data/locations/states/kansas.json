@@ -1,0 +1,105 @@
+{
+  "wichita": {
+    "city": "Wichita",
+    "stateAbbr": "KS",
+    "stateFull": "Kansas",
+    "geoRegion": "US-KS",
+    "slug": "wichita-ks",
+    "lat": 37.6872,
+    "lng": -97.3301,
+    "areaDescription": "Wichita metropolitan area",
+    "neighborhoods": "Downtown, Delano, College Hill, Riverside, Old Town, Planeview",
+    "intergroup": {
+      "name": "Wichita Area Intergroup"
+    },
+    "meetingHighlights": "Large central meetings and neighborhood groups with strong outreach programs and regular speaker meetings.",
+    "transitInfo": "Wichita Transit provides local bus services; Wichita Dwight D. Eisenhower National Airport (ICT) serves regional flights.",
+    "population": 398000
+  },
+  "topeka": {
+    "city": "Topeka",
+    "stateAbbr": "KS",
+    "stateFull": "Kansas",
+    "geoRegion": "US-KS",
+    "slug": "topeka",
+    "lat": 39.0558,
+    "lng": -95.689,
+    "areaDescription": "Topeka (state capital)",
+    "neighborhoods": "Downtown, West Topeka, Potwin, North Topeka",
+    "intergroup": {
+      "name": "Topeka Area Intergroup"
+    },
+    "meetingHighlights": "Capital-city meetings with steady weekday and evening attendance; several faith-based groups host regular meetings.",
+    "transitInfo": "Topeka Metro provides local bus service; nearby airports and I-70 provide regional access.",
+    "population": 125000
+  },
+  "overland-park": {
+    "city": "Overland Park",
+    "stateAbbr": "KS",
+    "stateFull": "Kansas",
+    "geoRegion": "US-KS",
+    "slug": "overland-park",
+    "lat": 38.9822,
+    "lng": -94.6708,
+    "areaDescription": "Overland Park (Kansas City suburbs)",
+    "neighborhoods": "Downtown Overland Park, College Boulevard, Oak Park",
+    "intergroup": {
+      "name": "Johnson County Intergroup"
+    },
+    "meetingHighlights": "Suburban meetings that draw attendees from the greater Kansas City area with many evening and family-friendly groups.",
+    "transitInfo": "Johnson County Transit and regional bus routes; close to Kansas City International Airport (MCI).",
+    "population": 200000
+  },
+  "kansas-city-ks": {
+    "city": "Kansas City",
+    "stateAbbr": "KS",
+    "stateFull": "Kansas",
+    "geoRegion": "US-KS",
+    "slug": "kansas-city-ks",
+    "lat": 39.1142,
+    "lng": -94.6275,
+    "areaDescription": "Kansas City, Kansas (part of KC metro)",
+    "neighborhoods": "Downtown KCK, Strawberry Hill, Armourdale, Argentine",
+    "intergroup": {
+      "name": "Kansas City KS Intergroup"
+    },
+    "meetingHighlights": "Urban meetings with a wide range of formats and strong cross-state collaboration with Kansas City, MO groups.",
+    "transitInfo": "RideKC buses and regional transit connect to Kansas City, MO; Kansas City International Airport nearby.",
+    "population": 156000
+  },
+  "lawrence": {
+    "city": "Lawrence",
+    "stateAbbr": "KS",
+    "stateFull": "Kansas",
+    "geoRegion": "US-KS",
+    "slug": "lawrence",
+    "lat": 38.9717,
+    "lng": -95.2353,
+    "areaDescription": "Lawrence (University of Kansas)",
+    "neighborhoods": "Downtown, KU campus, North Lawrence",
+    "intergroup": {
+      "name": "Lawrence Area Intergroup"
+    },
+    "meetingHighlights": "University-influenced meeting schedule with strong student and community participation and varied meeting formats.",
+    "transitInfo": "Lawrence Transit provides local routes; easy access to I-70 and the Kansas City metro.",
+    "population": 100000
+  },
+  "olathe": {
+    "city": "Olathe",
+    "stateAbbr": "KS",
+    "stateFull": "Kansas",
+    "geoRegion": "US-KS",
+    "slug": "olathe",
+    "lat": 38.8814,
+    "lng": -94.8191,
+    "areaDescription": "Olathe (Kansas City suburbs)",
+    "neighborhoods": "Downtown Olathe, Prairie Center, Cedar Creek, Indian Creek",
+    "intergroup": {
+      "name": "Johnson County Intergroup",
+      "url": "https://johnsoncountyaa.org"
+    },
+    "meetingHighlights": "Growing suburban meetings with family-friendly schedules; many evening and weekend groups serving the KC metro area.",
+    "transitInfo": "Johnson County Transit and regional bus routes; close to Kansas City International Airport (MCI).",
+    "population": 141000
+  }
+}

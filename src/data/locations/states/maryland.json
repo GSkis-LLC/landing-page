@@ -1,0 +1,74 @@
+{
+  "annapolis": {
+    "city": "Annapolis",
+    "stateAbbr": "MD",
+    "stateFull": "Maryland",
+    "geoRegion": "US-MD",
+    "slug": "annapolis",
+    "lat": 38.9784,
+    "lng": -76.4922,
+    "areaDescription": "Annapolis & Anne Arundel County area",
+    "neighborhoods": "Downtown, Eastport, East Street, West Annapolis",
+    "intergroup": {
+      "name": "Annapolis Area Intergroup",
+      "url": "https://annapolisaa.org"
+    },
+    "meetingHighlights": "Naval Academy town recovery with waterfront meetings; diverse maritime community; strong sailing-sobriety culture.",
+    "transitInfo": "Annapolis Transit buses; BWI Marshall Airport (BWI) accessible; State Capital location.",
+    "population": 41000
+  },
+  "baltimore": {
+    "city": "Baltimore",
+    "stateAbbr": "MD",
+    "stateFull": "Maryland",
+    "geoRegion": "US-MD",
+    "slug": "baltimore",
+    "lat": 39.2904,
+    "lng": -76.6122,
+    "areaDescription": "Greater Baltimore area",
+    "neighborhoods": "Inner Harbor, Federal Hill, Fells Point, Canton, Mt. Vernon, Hampden",
+    "intergroup": {
+      "name": "Baltimore Intergroup",
+      "url": "https://baltimoreaa.org"
+    },
+    "meetingHighlights": "Major recovery community with meetings throughout city neighborhoods; strong traditions in Fells Point and Mt. Vernon; 24/7 meeting culture.",
+    "transitInfo": "MTA Light Rail, Metro, and buses; BWI Marshall Airport (BWI); Amtrak service.",
+    "population": 585000
+  },
+  "rockville": {
+    "city": "Rockville",
+    "stateAbbr": "MD",
+    "stateFull": "Maryland",
+    "geoRegion": "US-MD",
+    "slug": "rockville",
+    "lat": 39.0840,
+    "lng": -77.1528,
+    "areaDescription": "Rockville area, Montgomery County",
+    "neighborhoods": "Downtown Rockville, King Farm, Town Center, West End",
+    "intergroup": {
+      "name": "Montgomery County Intergroup",
+      "url": "https://aa-dc.org"
+    },
+    "meetingHighlights": "Suburban DC recovery with professional community meetings; diverse schedule serving commuters; strong Montgomery County network.",
+    "transitInfo": "Metro Red Line; Ride On buses; I-270 corridor; close to DC.",
+    "population": 68000
+  },
+  "frederick": {
+    "city": "Frederick",
+    "stateAbbr": "MD",
+    "stateFull": "Maryland",
+    "geoRegion": "US-MD",
+    "slug": "frederick",
+    "lat": 39.4143,
+    "lng": -77.4105,
+    "areaDescription": "Frederick area, Frederick County",
+    "neighborhoods": "Downtown Frederick, Carroll Creek, North Frederick, Monocacy area",
+    "intergroup": {
+      "name": "Frederick County Intergroup",
+      "url": "https://frederickaa.org"
+    },
+    "meetingHighlights": "Historic downtown recovery community; growing suburban meetings; strong service tradition in Frederick County.",
+    "transitInfo": "TransIT buses; Frederick Municipal Airport (FDK); I-70 and I-270 access.",
+    "population": 72000
+  }
+}

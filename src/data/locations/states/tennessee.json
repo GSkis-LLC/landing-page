@@ -1,0 +1,123 @@
+{
+  "chattanooga": {
+    "city": "Chattanooga",
+    "stateAbbr": "TN",
+    "stateFull": "Tennessee",
+    "geoRegion": "US-TN",
+    "slug": "chattanooga",
+    "lat": 35.0456,
+    "lng": -85.3097,
+    "areaDescription": "Chattanooga metro area",
+    "neighborhoods": "Downtown, North Shore, Southside, St. Elmo, East Brainerd, Missionary Ridge",
+    "intergroup": {
+      "name": "Chattanooga Area Intergroup"
+    },
+    "meetingHighlights": "Riverfront and downtown meetings with a strong outdoor-community presence; active speaker nights and newcomer-friendly beginner meetings.",
+    "transitInfo": "CARTA buses serve Chattanooga and surrounding communities; Chattanooga Metropolitan Airport for regional flights.",
+    "population": 184000
+  },
+  "knoxville": {
+    "city": "Knoxville",
+    "stateAbbr": "TN",
+    "stateFull": "Tennessee",
+    "geoRegion": "US-TN",
+    "slug": "knoxville",
+    "lat": 35.9606,
+    "lng": -83.9207,
+    "areaDescription": "Knoxville metropolitan area",
+    "neighborhoods": "Downtown, Old City, Fourth & Gill, Fort Sanders, West Knoxville, Bearden",
+    "intergroup": {
+      "name": "Knoxville Area Intergroup"
+    },
+    "meetingHighlights": "University-influenced meeting schedule with many student-friendly and neighborhood groups; robust evening options.",
+    "transitInfo": "KAT buses provide local transit; McGhee Tyson Airport (TYS) serves regional flights.",
+    "population": 187000
+  },
+  "memphis": {
+    "city": "Memphis",
+    "stateAbbr": "TN",
+    "stateFull": "Tennessee",
+    "geoRegion": "US-TN",
+    "slug": "memphis",
+    "lat": 35.1495,
+    "lng": -90.049,
+    "areaDescription": "Memphis metropolitan area",
+    "neighborhoods": "Downtown, Midtown, Cooper-Young, Beale Street, Harbor Town, South Main",
+    "intergroup": {
+      "name": "Memphis Area Intergroup",
+      "url": "https://memphisaa.org"
+    },
+    "meetingHighlights": "Large urban fellowship with many neighborhood and downtown meetings, strong tradition of speaker nights and Big Book studies.",
+    "transitInfo": "MATA buses provide transit across the city; Memphis International Airport (MEM) serves national flights.",
+    "population": 633000
+  },
+  "murfreesboro": {
+    "city": "Murfreesboro",
+    "stateAbbr": "TN",
+    "stateFull": "Tennessee",
+    "geoRegion": "US-TN",
+    "slug": "murfreesboro",
+    "lat": 35.845621,
+    "lng": -86.39027,
+    "areaDescription": "Murfreesboro area",
+    "neighborhoods": "Downtown, Blackman, Middle Tennessee State University area",
+    "intergroup": {
+      "name": "Murfreesboro Area Intergroup"
+    },
+    "meetingHighlights": "Fast-growing suburban meetings with many newcomer-focused groups and strong weekday attendance.",
+    "transitInfo": "Murfreesboro Rover provides local routes; regional access via I-24 and proximity to Nashville's airports.",
+    "population": 170000
+  },
+  "nashville": {
+    "city": "Nashville",
+    "stateAbbr": "TN",
+    "stateFull": "Tennessee",
+    "geoRegion": "US-TN",
+    "slug": "nashville",
+    "lat": 36.1627,
+    "lng": -86.7816,
+    "areaDescription": "Nashville metropolitan area",
+    "neighborhoods": "Downtown, The Gulch, East Nashville, Germantown, 12South, Midtown",
+    "intergroup": {
+      "name": "Nashville Area Intergroup",
+      "url": "https://nashvilleaa.org"
+    },
+    "meetingHighlights": "Extensive and diverse meeting schedule citywide with many specialty, music-industry friendly, and newcomer-support groups.",
+    "transitInfo": "WeGo Public Transit serves Nashville; Nashville International Airport (BNA) for national and international flights.",
+    "population": 715000
+  },
+  "clarksville": {
+    "city": "Clarksville",
+    "stateAbbr": "TN",
+    "stateFull": "Tennessee",
+    "geoRegion": "US-TN",
+    "slug": "clarksville",
+    "lat": 36.5297,
+    "lng": -87.3595,
+    "areaDescription": "Clarksville area",
+    "neighborhoods": "Downtown, St. Bethlehem, Sango",
+    "intergroup": {
+      "name": "Clarksville Area Intergroup"
+    },
+    "meetingHighlights": "Neighborhood and downtown meetings with steady evening attendance and community outreach.",
+    "transitInfo": "Clarksville Transit System and regional highways; proximity to Fort Campbell influences meeting schedules.",
+    "population": 160000
+  },
+  "johnson-city": {
+    "city": "Johnson City",
+    "stateAbbr": "TN",
+    "stateFull": "Tennessee",
+    "geoRegion": "US-TN",
+    "slug": "johnson-city",
+    "lat": 36.3134,
+    "lng": -82.3535,
+    "areaDescription": "Johnson City area",
+    "neighborhoods": "Downtown, East Side, University area",
+    "intergroup": {
+      "name": "Tri-Cities Intergroup"
+    },
+    "meetingHighlights": "University-linked and community meetings with active evening and recovery resources.",
+    "transitInfo": "Johnson City Transit and regional bus links; Tri-Cities Regional Airport for flights.",
+    "population": 68000
+  }
+}

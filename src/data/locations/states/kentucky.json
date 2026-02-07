@@ -1,0 +1,74 @@
+{
+  "lexington": {
+    "city": "Lexington",
+    "stateAbbr": "KY",
+    "stateFull": "Kentucky",
+    "geoRegion": "US-KY",
+    "slug": "lexington",
+    "lat": 38.0406,
+    "lng": -84.5037,
+    "areaDescription": "Lexington metropolitan area",
+    "neighborhoods": "Downtown, Chevy Chase, Hamburg, Fayette Mall area, Southland, New Circle",
+    "intergroup": {
+      "name": "Lexington Intergroup",
+      "url": "https://lexingtonaa.org"
+    },
+    "meetingHighlights": "Horse Capital recovery with meetings across the city; strong presence near University of Kentucky; vibrant young people's meetings.",
+    "transitInfo": "Lextran bus service; Blue Grass Airport (LEX); central Kentucky location.",
+    "population": 323000
+  },
+  "louisville": {
+    "city": "Louisville",
+    "stateAbbr": "KY",
+    "stateFull": "Kentucky",
+    "geoRegion": "US-KY",
+    "slug": "louisville",
+    "lat": 38.2527,
+    "lng": -85.7585,
+    "areaDescription": "Louisville metropolitan area",
+    "neighborhoods": "Downtown, The Highlands, Old Louisville, Butchertown, NuLu, Clifton",
+    "intergroup": {
+      "name": "Louisville Intergroup",
+      "url": "https://louisvilleaa.org"
+    },
+    "meetingHighlights": "Major recovery community with meetings throughout metro area; strong Highlands presence; Derby City traditions.",
+    "transitInfo": "TARC bus system; Louisville Muhammad Ali International Airport (SDF); Ohio River location.",
+    "population": 633000
+  },
+  "bowling-green": {
+    "city": "Bowling Green",
+    "stateAbbr": "KY",
+    "stateFull": "Kentucky",
+    "geoRegion": "US-KY",
+    "slug": "bowling-green",
+    "lat": 36.9903,
+    "lng": -86.4436,
+    "areaDescription": "Bowling Green area, South Central Kentucky",
+    "neighborhoods": "Downtown, Western Kentucky University area, Greenwood Mall, Scottsville Road",
+    "intergroup": {
+      "name": "Bowling Green Area Intergroup",
+      "url": "https://bowlinggreenaa.org"
+    },
+    "meetingHighlights": "College-town recovery with WKU student meetings; diverse schedule throughout the week; welcoming community.",
+    "transitInfo": "BG Transit bus service; Bowling Green-Warren County Regional Airport (BWG); I-65 corridor.",
+    "population": 73000
+  },
+  "owensboro": {
+    "city": "Owensboro",
+    "stateAbbr": "KY",
+    "stateFull": "Kentucky",
+    "geoRegion": "US-KY",
+    "slug": "owensboro",
+    "lat": 37.7742,
+    "lng": -87.1117,
+    "areaDescription": "Owensboro area, Western Kentucky",
+    "neighborhoods": "Downtown Owensboro, East End, West End, Fairview",
+    "intergroup": {
+      "name": "Owensboro Area Intergroup",
+      "url": "https://owensboroaa.org"
+    },
+    "meetingHighlights": "River city recovery with active downtown meetings; strong service tradition; regional hub for Western Kentucky.",
+    "transitInfo": "Green River Transit bus service; Owensboro-Daviess County Regional Airport (OWB); Ohio River location.",
+    "population": 60000
+  }
+}

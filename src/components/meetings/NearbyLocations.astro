@@ -1,15 +1,6 @@
 ---
-interface LocationConfig {
-  city: string;
-  stateAbbr: string;
-  stateFull: string;
-  geoRegion: string;
-  slug: string;
-  lat: number;
-  lng: number;
-  areaDescription: string;
-  neighborhoods: string;
-}
+import { calculateDistance, toSlug } from '../../data/location-store';
+import type { LocationConfig } from '../../data/location-store';
 
 interface Props {
   currentCity: string;
@@ -21,27 +12,6 @@ interface Props {
 }
 
 const { currentCity, stateFull, stateSlug, currentLat, currentLng, otherCities } = Astro.props;
-
-// Calculate distance between two points using Haversine formula
-function calculateDistance(lat1: number, lng1: number, lat2: number, lng2: number): number {
-  const R = 3958.8; // Earth's radius in miles
-  const dLat = (lat2 - lat1) * Math.PI / 180;
-  const dLng = (lng2 - lng1) * Math.PI / 180;
-  const a = 
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-    Math.sin(dLng / 2) * Math.sin(dLng / 2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c;
-}
-
-// Convert city name to slug
-function toSlug(str: string): string {
-  return str
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-}
 
 // Calculate distances and sort by proximity
 const citiesWithDistance = otherCities

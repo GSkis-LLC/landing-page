@@ -1,0 +1,74 @@
+{
+  "brunswick": {
+    "city": "Brunswick",
+    "stateAbbr": "ME",
+    "stateFull": "Maine",
+    "geoRegion": "US-ME",
+    "slug": "brunswick",
+    "lat": 43.9142,
+    "lng": -69.9668,
+    "areaDescription": "Brunswick & Midcoast Maine area",
+    "neighborhoods": "Downtown, Bowdoin College area, Maquoit Bay",
+    "intergroup": {
+      "name": "Southern Maine Intergroup",
+      "url": "https://aamaine.org"
+    },
+    "meetingHighlights": "College-town meetings near Bowdoin; Midcoast recovery hub; welcoming small-town atmosphere.",
+    "transitInfo": "Amtrak Downeaster service; Portland Jetport (PWM) nearby; US Route 1 access.",
+    "population": 21000
+  },
+  "portland": {
+    "city": "Portland",
+    "stateAbbr": "ME",
+    "stateFull": "Maine",
+    "geoRegion": "US-ME",
+    "slug": "portland",
+    "lat": 43.6591,
+    "lng": -70.2568,
+    "areaDescription": "Greater Portland area",
+    "neighborhoods": "Old Port, Arts District, East End, West End, Back Cove, Deering Center, Munjoy Hill",
+    "intergroup": {
+      "name": "Southern Maine Intergroup",
+      "url": "https://aamaine.org"
+    },
+    "meetingHighlights": "Maine's largest recovery community with diverse Old Port meetings; strong young people presence; active year-round.",
+    "transitInfo": "Metro bus service; Portland Jetport (PWM); Amtrak Downeaster to Boston.",
+    "population": 68000
+  },
+  "bangor": {
+    "city": "Bangor",
+    "stateAbbr": "ME",
+    "stateFull": "Maine",
+    "geoRegion": "US-ME",
+    "slug": "bangor",
+    "lat": 44.8012,
+    "lng": -68.7778,
+    "areaDescription": "Bangor area, Central Maine",
+    "neighborhoods": "Downtown Bangor, West Side, East Side, Bangor Waterfront",
+    "intergroup": {
+      "name": "Bangor Area Intergroup",
+      "url": "https://bangoraa.org"
+    },
+    "meetingHighlights": "Central Maine recovery hub serving Northern and Eastern regions; active downtown meetings; strong service tradition.",
+    "transitInfo": "Community Connector bus service; Bangor International Airport (BGR); I-95 corridor.",
+    "population": 32000
+  },
+  "lewiston": {
+    "city": "Lewiston",
+    "stateAbbr": "ME",
+    "stateFull": "Maine",
+    "geoRegion": "US-ME",
+    "slug": "lewiston",
+    "lat": 44.1004,
+    "lng": -70.2148,
+    "areaDescription": "Lewiston-Auburn area, Androscoggin Valley",
+    "neighborhoods": "Downtown Lewiston, Bates College area, Riverside, Tree Streets",
+    "intergroup": {
+      "name": "Twin Cities Intergroup",
+      "url": "https://lewistonauburnaa.org"
+    },
+    "meetingHighlights": "Twin Cities recovery serving Lewiston-Auburn; mill-town heritage; diverse French-speaking and English meetings.",
+    "transitInfo": "Citylink bus service; Auburn-Lewiston Municipal Airport (LEW); Turnpike access.",
+    "population": 37000
+  }
+}

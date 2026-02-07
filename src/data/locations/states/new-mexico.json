@@ -1,0 +1,73 @@
+{
+  "albuquerque": {
+    "city": "Albuquerque",
+    "stateAbbr": "NM",
+    "stateFull": "New Mexico",
+    "geoRegion": "US-NM",
+    "slug": "albuquerque",
+    "lat": 35.0844,
+    "lng": -106.6504,
+    "areaDescription": "Albuquerque metropolitan area",
+    "neighborhoods": "Old Town, Nob Hill, Downtown, North Valley, Uptown, Barelas",
+    "intergroup": {
+      "name": "Albuquerque Area Intergroup",
+      "url": "https://albuquerqueaa.org"
+    },
+    "meetingHighlights": "Active meeting schedule with strong presence in Nob Hill and Old Town; a variety of Big Book and step-study groups.",
+    "transitInfo": "ABQ RIDE buses serve the city; Albuquerque International Sunport (ABQ) for flights.",
+    "population": 560218
+  },
+  "roswell": {
+    "city": "Roswell",
+    "stateAbbr": "NM",
+    "stateFull": "New Mexico",
+    "geoRegion": "US-NM",
+    "slug": "roswell",
+    "lat": 33.394268,
+    "lng": -104.523024,
+    "areaDescription": "Roswell area",
+    "neighborhoods": "Downtown, Southeast Roswell, North Plains",
+    "intergroup": {
+      "name": "Roswell AA Central Office"
+    },
+    "meetingHighlights": "Small but steady community with regular hometown meetings and outreach to nearby towns.",
+    "transitInfo": "Local bus and regional road access; Roswell International Air Center (ROW) is nearby for limited flights.",
+    "population": 48201
+  },
+  "santa-fe": {
+    "city": "Santa Fe",
+    "stateAbbr": "NM",
+    "stateFull": "New Mexico",
+    "geoRegion": "US-NM",
+    "slug": "santa-fe",
+    "lat": 35.6870,
+    "lng": -105.9378,
+    "areaDescription": "Santa Fe area, state capital",
+    "neighborhoods": "Downtown Santa Fe, Railyard District, Canyon Road, Tesuque, Southside",
+    "intergroup": {
+      "name": "Santa Fe Intergroup",
+      "url": "https://santafeaa.org"
+    },
+    "meetingHighlights": "State capital recovery with art community presence; diverse meetings from Plaza area to suburbs; strong Spanish heritage.",
+    "transitInfo": "Santa Fe Trails bus service; Santa Fe Regional Airport (SAF); high-altitude capital city.",
+    "population": 88000
+  },
+  "las-cruces": {
+    "city": "Las Cruces",
+    "stateAbbr": "NM",
+    "stateFull": "New Mexico",
+    "geoRegion": "US-NM",
+    "slug": "las-cruces",
+    "lat": 32.3199,
+    "lng": -106.7637,
+    "areaDescription": "Las Cruces area, Southern New Mexico",
+    "neighborhoods": "Downtown Las Cruces, NMSU campus, Mesilla Valley, East Mesa",
+    "intergroup": {
+      "name": "Las Cruces Intergroup",
+      "url": "https://lascrucesaa.org"
+    },
+    "meetingHighlights": "College-town recovery near New Mexico State University; bilingual meetings; strong border-region community.",
+    "transitInfo": "RoadRUNNER Transit buses; Las Cruces International Airport (LRU); I-10 and I-25 junction.",
+    "population": 113000
+  }
+}

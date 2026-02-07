@@ -1,0 +1,199 @@
+{
+  "cape-coral": {
+    "city": "Cape Coral",
+    "stateAbbr": "FL",
+    "stateFull": "Florida",
+    "geoRegion": "US-FL",
+    "slug": "cape-coral",
+    "lat": 26.5629,
+    "lng": -81.9495,
+    "areaDescription": "Cape Coral–Fort Myers area",
+    "neighborhoods": "Downtown Cape Coral, Southwest Cape, Cape Harbour, Burnt Store, West Cape, Del Prado",
+    "intergroup": {
+      "name": "Lee County Intergroup",
+      "url": "https://leecountyintergroup.org"
+    },
+    "meetingHighlights": "Growing Gulf Coast meetings with active morning and evening groups; community-focused meetings in downtown and Cape Harbour.",
+    "transitInfo": "Local bus service and regional highways; Southwest Florida International Airport (RSW) serves the region.",
+    "population": 194000
+  },
+  "daytona-beach": {
+    "city": "Daytona Beach",
+    "stateAbbr": "FL",
+    "stateFull": "Florida",
+    "geoRegion": "US-FL",
+    "slug": "daytona-beach",
+    "lat": 29.210812,
+    "lng": -81.022833,
+    "areaDescription": "Daytona Beach area",
+    "neighborhoods": "Daytona Beach Shores, Seabreeze, Daytona Boardwalk area",
+    "intergroup": {
+      "name": "Volusia County Intergroup",
+      "url": "https://volusiaaa.org"
+    },
+    "meetingHighlights": "Beachfront and boardwalk-area meetings with steady tourist-season attendance and evening speaker meetings.",
+    "transitInfo": "Votran bus service and regional road access; Daytona Beach International Airport (DAB) nearby.",
+    "population": 72300
+  },
+  "fort-lauderdale": {
+    "city": "Fort Lauderdale",
+    "stateAbbr": "FL",
+    "stateFull": "Florida",
+    "geoRegion": "US-FL",
+    "slug": "fort-lauderdale",
+    "lat": 26.122438,
+    "lng": -80.137317,
+    "areaDescription": "Fort Lauderdale area",
+    "neighborhoods": "Las Olas, Victoria Park, Flagler Village",
+    "intergroup": {
+      "name": "Broward County Intergroup",
+      "url": "https://browardintergroup.org"
+    },
+    "meetingHighlights": "Diverse downtown and beach-area meetings with many Spanish-language and LGBTQ-friendly groups; active evening calendar.",
+    "transitInfo": "Broward County Transit, Sun Trolley, and Tri-Rail connections; Fort Lauderdale-Hollywood International Airport (FLL) for travel.",
+    "population": 182000
+  },
+  "gainesville": {
+    "city": "Gainesville",
+    "stateAbbr": "FL",
+    "stateFull": "Florida",
+    "geoRegion": "US-FL",
+    "slug": "gainesville",
+    "lat": 29.651634,
+    "lng": -82.324826,
+    "areaDescription": "Gainesville area",
+    "neighborhoods": "Downtown, University of Florida, Midtown",
+    "intergroup": {
+      "name": "Gainesville Area Intergroup",
+      "url": "https://gainesvilleaa.org"
+    },
+    "meetingHighlights": "Strong campus and college-town meetings with many student-oriented and late-evening groups; active service structure.",
+    "transitInfo": "Regional RTS bus service and campus shuttles; Gainesville Regional Airport (GNV) for regional flights.",
+    "population": 141000
+  },
+  "jacksonville": {
+    "city": "Jacksonville",
+    "stateAbbr": "FL",
+    "stateFull": "Florida",
+    "geoRegion": "US-FL",
+    "slug": "jacksonville",
+    "lat": 30.3322,
+    "lng": -81.6557,
+    "areaDescription": "Jacksonville metro area",
+    "neighborhoods": "Downtown, Riverside, San Marco, Avondale, Southside",
+    "intergroup": {
+      "name": "Jacksonville Area Intergroup",
+      "url": "https://jaxintergroup.org"
+    },
+    "meetingHighlights": "Large, active fellowship with many neighborhood meetings, bilingual groups, and speaker events across the metro area.",
+    "transitInfo": "JTA buses and Skyway in downtown; Jacksonville International Airport (JAX) provides regional flights.",
+    "population": 949611
+  },
+  "miami": {
+    "city": "Miami",
+    "stateAbbr": "FL",
+    "stateFull": "Florida",
+    "geoRegion": "US-FL",
+    "slug": "miami",
+    "lat": 25.7617,
+    "lng": -80.1918,
+    "areaDescription": "Miami metro area",
+    "neighborhoods": "Downtown, South Beach, Brickell, Little Havana, Wynwood, Coconut Grove",
+    "intergroup": {
+      "name": "Miami-Dade Intergroup",
+      "url": "https://miamiaa.org"
+    },
+    "meetingHighlights": "Extensive and diverse AA community with strong Spanish-language meetings, evening speaker events, and 24-hour groups in some neighborhoods.",
+    "transitInfo": "Metrorail, Metrobus, and Tri-Rail connections; Miami International Airport (MIA) and Fort Lauderdale (FLL) nearby.",
+    "population": 467963
+  },
+  "orlando": {
+    "city": "Orlando",
+    "stateAbbr": "FL",
+    "stateFull": "Florida",
+    "geoRegion": "US-FL",
+    "slug": "orlando",
+    "lat": 28.5383,
+    "lng": -81.3792,
+    "areaDescription": "Orlando metro area",
+    "neighborhoods": "Downtown, Lake Eola, Mills 50, College Park, Winter Park",
+    "intergroup": {
+      "name": "Orange County Intergroup",
+      "url": "https://orlandoaa.org"
+    },
+    "meetingHighlights": "Vibrant downtown and tourist-area meetings with many evening and weekend speaker meetings; strong service structure and newcomer resources.",
+    "transitInfo": "Lynx bus network and SunRail commuter connections; Orlando International Airport (MCO) for national and international flights.",
+    "population": 307000
+  },
+  "pembroke-pines": {
+    "city": "Pembroke Pines",
+    "stateAbbr": "FL",
+    "stateFull": "Florida",
+    "geoRegion": "US-FL",
+    "slug": "pembroke-pines",
+    "lat": 26.0078,
+    "lng": -80.2963,
+    "areaDescription": "South Florida (Pembroke Pines)",
+    "neighborhoods": "Pembroke Lakes, West Pembroke Pines, Miramar (adjacent), Pines Boulevard corridor, Whispering Pines, Chapel Trail",
+    "intergroup": {
+      "name": "Broward County Intergroup"
+    },
+    "meetingHighlights": "Suburban meetings with strong evening attendance and family-focused groups; many meetings held in community centers and churches.",
+    "transitInfo": "Broward County Transit and regional bus routes; proximity to Fort Lauderdale-Hollywood International Airport (FLL).",
+    "population": 171000
+  },
+  "st-petersburg": {
+    "city": "St. Petersburg",
+    "stateAbbr": "FL",
+    "stateFull": "Florida",
+    "geoRegion": "US-FL",
+    "slug": "st-petersburg",
+    "lat": 27.7676,
+    "lng": -82.64029,
+    "areaDescription": "St. Petersburg area",
+    "neighborhoods": "Downtown, Old Northeast, Shore Acres",
+    "intergroup": {
+      "name": "Pinellas County Intergroup",
+      "url": "https://pinellasintergroup.org"
+    },
+    "meetingHighlights": "Active waterfront and downtown meetings with many evening options and a lively speaker-meeting calendar.",
+    "transitInfo": "PSTA buses and regional transit across Tampa Bay; St. Pete–Clearwater International Airport (PIE) nearby.",
+    "population": 265000
+  },
+  "tallahassee": {
+    "city": "Tallahassee",
+    "stateAbbr": "FL",
+    "stateFull": "Florida",
+    "geoRegion": "US-FL",
+    "slug": "tallahassee",
+    "lat": 30.4383,
+    "lng": -84.2807,
+    "areaDescription": "Tallahassee area",
+    "neighborhoods": "Downtown, Killearn, Midtown, Southwood",
+    "intergroup": {
+      "name": "Big Bend Intergroup",
+      "url": "https://bigbendintergroup.org"
+    },
+    "meetingHighlights": "College-town meetings with many campus-oriented groups at FSU and FAMU; active midday and evening schedules.",
+    "transitInfo": "StarMetro bus service and regional highways; Tallahassee International Airport (TLH) serves the area.",
+    "population": 197000
+  },
+  "tampa-bay": {
+    "city": "Tampa Bay",
+    "stateAbbr": "FL",
+    "stateFull": "Florida",
+    "geoRegion": "US-FL",
+    "slug": "tampa-bay",
+    "lat": 27.9506,
+    "lng": -82.4572,
+    "areaDescription": "Tampa Bay area",
+    "neighborhoods": "Downtown Tampa, Ybor City, St. Petersburg, Clearwater",
+    "intergroup": {
+      "name": "Tampa Bay Intergroup",
+      "url": "https://tampabayaa.org"
+    },
+    "meetingHighlights": "Extensive meeting network across the Bay area with many specialty meetings, strong evening schedules, and extensive service resources.",
+    "transitInfo": "HART buses, TECO streetcar in Tampa, and regional transit to St. Pete; Tampa International Airport (TPA) for flights.",
+    "population": 385430
+  }
+}

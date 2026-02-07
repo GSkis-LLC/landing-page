@@ -1,0 +1,20 @@
+{
+  "washington": {
+    "city": "Washington",
+    "stateAbbr": "DC",
+    "stateFull": "District of Columbia",
+    "geoRegion": "US-DC",
+    "slug": "washington-dc",
+    "lat": 38.9072,
+    "lng": -77.0369,
+    "areaDescription": "Washington, D.C. metro area",
+    "neighborhoods": "Downtown, Georgetown, Capitol Hill, Dupont Circle, Adams Morgan, Logan Circle",
+    "intergroup": {
+      "name": "DC Area Intergroup",
+      "url": "https://aa-dc.org"
+    },
+    "meetingHighlights": "Extensive AA community with meetings in every neighborhood; strong specialty meetings (government workers, LGBTQ+, young people); 24-hour resources available.",
+    "transitInfo": "Metro rail and bus network throughout DC; Union Station for Amtrak; Ronald Reagan Washington National Airport (DCA), Dulles (IAD), and BWI for air travel.",
+    "population": 712816
+  }
+}

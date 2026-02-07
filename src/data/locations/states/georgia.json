@@ -1,0 +1,105 @@
+{
+  "atlanta": {
+    "city": "Atlanta",
+    "stateAbbr": "GA",
+    "stateFull": "Georgia",
+    "geoRegion": "US-GA",
+    "slug": "atlanta",
+    "lat": 33.749,
+    "lng": -84.388,
+    "areaDescription": "Atlanta metro area",
+    "neighborhoods": "Midtown, Downtown, Buckhead, Inman Park, Virginia-Highland, East Atlanta",
+    "intergroup": {
+      "name": "Atlanta Intergroup"
+    },
+    "meetingHighlights": "Extensive AA community across neighborhoods with many specialty meetings (Spanish-language, LGBTQ+, young people) and frequent large speaker events.",
+    "transitInfo": "MARTA rail and bus network serve the city; Hartsfield–Jackson Atlanta International Airport (ATL) is a major international hub.",
+    "population": 498044
+  },
+  "augusta": {
+    "city": "Augusta",
+    "stateAbbr": "GA",
+    "stateFull": "Georgia",
+    "geoRegion": "US-GA",
+    "slug": "augusta",
+    "lat": 33.47,
+    "lng": -81.9748,
+    "areaDescription": "Augusta metropolitan area",
+    "neighborhoods": "Downtown, Olde Town, Summerville, North Augusta (nearby), West Augusta, Turpin Hill",
+    "intergroup": {
+      "name": "Augusta Area Intergroup"
+    },
+    "meetingHighlights": "Active downtown and Summerville meetings with an engaged fellowship and regular speaker nights and workshops.",
+    "transitInfo": "Augusta Public Transit provides local service; Augusta Regional Airport (AGS) offers regional connections.",
+    "population": 197166
+  },
+  "columbus": {
+    "city": "Columbus",
+    "stateAbbr": "GA",
+    "stateFull": "Georgia",
+    "geoRegion": "US-GA",
+    "slug": "columbus-ga",
+    "lat": 32.460976,
+    "lng": -84.987709,
+    "areaDescription": "Columbus area",
+    "neighborhoods": "Downtown, Midtown, Wynnton",
+    "intergroup": {
+      "name": "Columbus Area Intergroup"
+    },
+    "meetingHighlights": "Community-centered meetings with strong military and university outreach (near Fort Benning), regular evening and weekend options.",
+    "transitInfo": "METRA Transit buses cover the metro; Columbus Metropolitan Airport provides regional flights.",
+    "population": 195769
+  },  "macon": {
+    "city": "Macon",
+    "stateAbbr": "GA",
+    "stateFull": "Georgia",
+    "geoRegion": "US-GA",
+    "slug": "macon",
+    "lat": 32.8407,
+    "lng": -83.6324,
+    "areaDescription": "Macon area in central Georgia",
+    "neighborhoods": "Downtown, Vineville, Shirley Hills, Ingleside, North Macon, Lizella",
+    "intergroup": {
+      "name": "Macon Area Intergroup",
+      "url": "https://maconaa.org"
+    },
+    "meetingHighlights": "Historic meetings with strong Big Book study groups; active fellowship around Mercer University and downtown area.",
+    "transitInfo": "Macon Transit Authority provides bus service; Middle Georgia Regional Airport (MCN) offers regional flights.",
+    "population": 157346
+  },
+  "savannah": {
+    "city": "Savannah",
+    "stateAbbr": "GA",
+    "stateFull": "Georgia",
+    "geoRegion": "US-GA",
+    "slug": "savannah",
+    "lat": 32.0809,
+    "lng": -81.0912,
+    "areaDescription": "Savannah area",
+    "neighborhoods": "Historic District, Victorian District, Starland, Midtown",
+    "intergroup": {
+      "name": "Savannah Area Intergroup"
+    },
+    "meetingHighlights": "Historic downtown meetings with a strong seasonal influx of visitors; active community and church-based groups in Starland and Midtown.",
+    "transitInfo": "Chatham Area Transit provides bus services; Savannah/Hilton Head International Airport (SAV) for regional travel.",
+    "population": 145352
+  },
+  "athens": {
+    "city": "Athens",
+    "stateAbbr": "GA",
+    "stateFull": "Georgia",
+    "geoRegion": "US-GA",
+    "slug": "athens-ga",
+    "lat": 33.9519,
+    "lng": -83.3576,
+    "areaDescription": "Athens area, home to University of Georgia",
+    "neighborhoods": "Downtown, Five Points, Normaltown, Cobbham, Boulevard, Eastside",
+    "intergroup": {
+      "name": "Athens Area Intergroup",
+      "url": "https://athensaa.org"
+    },
+    "meetingHighlights": "College-town meetings with young people's groups and active campus outreach at UGA; vibrant music scene recovery community.",
+    "transitInfo": "Athens Transit provides bus routes throughout the city and UGA campus; Groome Transportation connects to Atlanta airport.",
+    "population": 127315
+  }
+}

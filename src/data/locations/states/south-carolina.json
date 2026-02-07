@@ -1,0 +1,87 @@
+{
+  "charleston": {
+    "city": "Charleston",
+    "stateAbbr": "SC",
+    "stateFull": "South Carolina",
+    "geoRegion": "US-SC",
+    "slug": "charleston",
+    "lat": 32.7765,
+    "lng": -79.9311,
+    "areaDescription": "Charleston metro area",
+    "neighborhoods": "Historic Downtown, West Ashley, Mount Pleasant, North Charleston, James Island",
+    "intergroup": {
+      "name": "Charleston Area Intergroup"
+    },
+    "meetingHighlights": "Historic port-city fellowship with many downtown and beachfront meetings, plus frequent speaker events and newcomer-friendly groups.",
+    "transitInfo": "CARTA buses serve the Charleston metro; Charleston International Airport (CHS) for regional flights.",
+    "population": 150000
+  },
+  "columbia": {
+    "city": "Columbia",
+    "stateAbbr": "SC",
+    "stateFull": "South Carolina",
+    "geoRegion": "US-SC",
+    "slug": "columbia-sc",
+    "lat": 34.00071,
+    "lng": -81.034814,
+    "areaDescription": "Columbia area",
+    "neighborhoods": "Downtown, The Vista, Shandon, Forest Acres",
+    "intergroup": {
+      "name": "Columbia Area Intergroup"
+    },
+    "meetingHighlights": "State-capital meetings with a mix of university-linked and neighborhood groups; active weekday attendance.",
+    "transitInfo": "The COMET provides local transit; Columbia Metropolitan Airport serves regional flights.",
+    "population": 136000
+  },
+  "greenville": {
+    "city": "Greenville",
+    "stateAbbr": "SC",
+    "stateFull": "South Carolina",
+    "geoRegion": "US-SC",
+    "slug": "greenville-sc",
+    "lat": 34.8526,
+    "lng": -82.394,
+    "areaDescription": "Greenville metropolitan area",
+    "neighborhoods": "Downtown, West End, North Main, Augusta Road",
+    "intergroup": {
+      "name": "Upstate Intergroup"
+    },
+    "meetingHighlights": "Active downtown and suburban meetings with regular speaker nights and strong newcomer outreach.",
+    "transitInfo": "Greenlink buses serve the city; Greenville-Spartanburg International Airport (GSP) for regional flights.",
+    "population": 70000
+  },
+  "myrtle-beach": {
+    "city": "Myrtle Beach",
+    "stateAbbr": "SC",
+    "stateFull": "South Carolina",
+    "geoRegion": "US-SC",
+    "slug": "myrtle-beach",
+    "lat": 33.6891,
+    "lng": -78.8867,
+    "areaDescription": "Myrtle Beach (Grand Strand)",
+    "neighborhoods": "Downtown, Myrtle Beach Boardwalk, Market Common",
+    "intergroup": {
+      "name": "Grand Strand Intergroup"
+    },
+    "meetingHighlights": "Coastal tourist-area meetings with seasonal attendance peaks and steady local groups year-round.",
+    "transitInfo": "Coast RTA and local shuttles provide transit; Myrtle Beach International Airport for regional flights.",
+    "population": 35000
+  },
+  "spartanburg": {
+    "city": "Spartanburg",
+    "stateAbbr": "SC",
+    "stateFull": "South Carolina",
+    "geoRegion": "US-SC",
+    "slug": "spartanburg",
+    "lat": 34.9496,
+    "lng": -81.932,
+    "areaDescription": "Spartanburg area",
+    "neighborhoods": "Downtown, Northside, Converse",
+    "intergroup": {
+      "name": "Spartanburg Area Intergroup"
+    },
+    "meetingHighlights": "Neighborhood and downtown meetings with steady attendance and active service groups.",
+    "transitInfo": "SPARTA buses provide local transit; regional highways connect to Greenville and Charlotte markets.",
+    "population": 38000
+  }
+}

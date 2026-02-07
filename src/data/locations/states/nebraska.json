@@ -1,0 +1,56 @@
+{
+  "omaha": {
+    "city": "Omaha",
+    "stateAbbr": "NE",
+    "stateFull": "Nebraska",
+    "geoRegion": "US-NE",
+    "slug": "omaha",
+    "lat": 41.2565,
+    "lng": -95.9345,
+    "areaDescription": "Omaha metropolitan area",
+    "neighborhoods": "Downtown, Old Market, Dundee, Benson, Millwork District, Aksarben",
+    "intergroup": {
+      "name": "Omaha Intergroup",
+      "url": "https://omahaaa.org"
+    },
+    "meetingHighlights": "Major Midwest recovery hub with diverse meetings throughout metro; strong Old Market presence; active young people community.",
+    "transitInfo": "Metro Transit buses; Eppley Airfield (OMA); Missouri River location.",
+    "population": 486000
+  },
+  "lincoln": {
+    "city": "Lincoln",
+    "stateAbbr": "NE",
+    "stateFull": "Nebraska",
+    "geoRegion": "US-NE",
+    "slug": "lincoln",
+    "lat": 40.8136,
+    "lng": -96.7026,
+    "areaDescription": "Lincoln area, state capital",
+    "neighborhoods": "Downtown Lincoln, Near South, University of Nebraska area, Haymarket, West Lincoln",
+    "intergroup": {
+      "name": "Lincoln Intergroup",
+      "url": "https://lincolnaa.org"
+    },
+    "meetingHighlights": "State capital and college-town recovery; strong UNL student presence; diverse downtown and campus meetings.",
+    "transitInfo": "StarTran bus service; Lincoln Airport (LNK); state capital location.",
+    "population": 294000
+  },
+  "grand-island": {
+    "city": "Grand Island",
+    "stateAbbr": "NE",
+    "stateFull": "Nebraska",
+    "geoRegion": "US-NE",
+    "slug": "grand-island",
+    "lat": 40.9264,
+    "lng": -98.3420,
+    "areaDescription": "Grand Island area, Central Nebraska",
+    "neighborhoods": "Downtown Grand Island, South Locust, North Road, Westridge",
+    "intergroup": {
+      "name": "Grand Island Intergroup",
+      "url": "https://grandislandaa.org"
+    },
+    "meetingHighlights": "Central Nebraska recovery hub; railroad heritage community; diverse bilingual meetings serving agricultural area.",
+    "transitInfo": "GI Transit bus service; Central Nebraska Regional Airport (GRI); I-80 corridor.",
+    "population": 53000
+  }
+}

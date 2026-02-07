@@ -1,0 +1,332 @@
+{
+  "amarillo": {
+    "city": "Amarillo",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "amarillo",
+    "lat": 35.221997,
+    "lng": -101.831297,
+    "areaDescription": "Amarillo area",
+    "neighborhoods": "Downtown, Sunset Acres, Wolflin, Puckett",
+    "intergroup": {
+      "name": "Amarillo Area Intergroup"
+    },
+    "meetingHighlights": "Community-oriented meetings with active groups downtown and in the Sunset Acres area; steady attendance at noon and evening meetings.",
+    "transitInfo": "City bus service and regional roads; Rick Husband Amarillo International Airport (AMA) for flights.",
+    "population": 199924
+  },
+  "arlington": {
+    "city": "Arlington",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "arlington-tx",
+    "lat": 32.7357,
+    "lng": -97.1081,
+    "areaDescription": "Arlington (Dallas–Fort Worth) area",
+    "neighborhoods": "Downtown Arlington, Entertainment District, North Arlington, South Arlington, East Arlington",
+    "intergroup": {
+      "name": "Tarrant County Intergroup"
+    },
+    "meetingHighlights": "Multiple neighborhood meetings and campus-area groups; convenient speaker meetings near the Entertainment District.",
+    "transitInfo": "Served by DART and Trinity Metro connections in the DFW metro; Dallas/Fort Worth International Airport (DFW) nearby.",
+    "population": 398112
+  },
+  "austin": {
+    "city": "Austin",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "austin",
+    "lat": 30.2672,
+    "lng": -97.7431,
+    "areaDescription": "Greater Austin area",
+    "neighborhoods": "Downtown, South Congress (SoCo), Zilker, East Austin, Hyde Park, Mueller",
+    "intergroup": {
+      "name": "Austin Central Office",
+      "url": "https://austinaa.org"
+    },
+    "meetingHighlights": "Vibrant AA scene with many university-area and downtown meetings, a large offering of Big Book and speaker meetings.",
+    "transitInfo": "CapMetro buses and light rail serve Austin; Austin-Bergstrom International Airport (AUS) for flights.",
+    "population": 964254
+  },
+  "brownsville": {
+    "city": "Brownsville",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "brownsville",
+    "lat": 25.901747,
+    "lng": -97.497483,
+    "areaDescription": "Brownsville area",
+    "neighborhoods": "Downtown, East Brownsville, North Brownsville",
+    "intergroup": {
+      "name": "Brownsville AA Central Office"
+    },
+    "meetingHighlights": "Close-knit community meetings often held in neighborhood churches and community centers with bilingual groups available.",
+    "transitInfo": "Local bus routes and regional highway access; Brownsville/South Padre Island area airports serve the region.",
+    "population": 182781
+  },
+  "corpus-christi": {
+    "city": "Corpus Christi",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "corpus-christi",
+    "lat": 27.8006,
+    "lng": -97.3964,
+    "areaDescription": "Corpus Christi area",
+    "neighborhoods": "Downtown, North Beach, Southside, Flour Bluff, Padre Island, Calallen",
+    "intergroup": {
+      "name": "Corpus Christi Area Intergroup",
+      "url": "https://ccaa.org"
+    },
+    "meetingHighlights": "Strong waterfront and Southside meeting presence with varied meeting formats including speaker and step-study groups.",
+    "transitInfo": "Local bus and shuttle services; Corpus Christi International Airport (CRP) for flights.",
+    "population": 326554
+  },
+  "dallas": {
+    "city": "Dallas",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "dallas",
+    "lat": 32.7767,
+    "lng": -96.797,
+    "areaDescription": "Dallas–Fort Worth area",
+    "neighborhoods": "Downtown, Deep Ellum, Uptown, Oak Lawn, Oak Cliff, Bishop Arts District",
+    "intergroup": {
+      "name": "Dallas Area Intergroup",
+      "url": "https://dallas-aa.org"
+    },
+    "meetingHighlights": "Extensive meeting calendar across neighborhoods with strong LGBT and Spanish-language meetings in Oak Lawn and multiple nightly meetings downtown.",
+    "transitInfo": "DART light rail and buses serve the metro; Love Field (DAL) and Dallas/Fort Worth International (DFW) airports nearby.",
+    "population": 1304379
+  },
+  "el-paso": {
+    "city": "El Paso",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "el-paso",
+    "lat": 31.7619,
+    "lng": -106.485,
+    "areaDescription": "El Paso metropolitan area",
+    "neighborhoods": "Downtown, Lower Valley, East El Paso, West El Paso, Kern Place, Ysleta",
+    "intergroup": {
+      "name": "El Paso Central Office",
+      "url": "https://elpasoaa.org"
+    },
+    "meetingHighlights": "Bilingual meetings and strong neighborhood groups; regular speaker meetings and recovery events tied to the border community.",
+    "transitInfo": "Sun Metro bus services; El Paso International Airport (ELP) for regional flights.",
+    "population": 681728
+  },
+  "fort-worth": {
+    "city": "Fort Worth",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "fort-worth",
+    "lat": 32.7555,
+    "lng": -97.3308,
+    "areaDescription": "Dallas–Fort Worth metroplex (Fort Worth)",
+    "neighborhoods": "Downtown, Cultural District, Near Southside, West 7th, TCU area, Alliance",
+    "intergroup": {
+      "name": "Fort Worth Area Intergroup",
+      "url": "https://fortworthaa.org"
+    },
+    "meetingHighlights": "Active groups near TCU and downtown with a mix of closed and open meetings; community events and speaker nights are common.",
+    "transitInfo": "Trinity Metro buses and TEXRail connections; served by DFW and nearby regional airports.",
+    "population": 927720
+  },
+  "houston": {
+    "city": "Houston",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "houston",
+    "lat": 29.7604,
+    "lng": -95.3698,
+    "areaDescription": "Greater Houston area",
+    "neighborhoods": "Downtown, Midtown, Montrose, The Heights, River Oaks, Galleria",
+    "intergroup": {
+      "name": "Houston Area Intergroup",
+      "url": "https://houstonaa.org"
+    },
+    "meetingHighlights": "Large, diverse fellowship with many Spanish-language and specialty meetings; active downtown and neighborhood groups.",
+    "transitInfo": "METRO buses and light rail serve the city; George Bush Intercontinental (IAH) and William P. Hobby (HOU) airports for travel.",
+    "population": 2304580
+  },
+  "irving": {
+    "city": "Irving",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "irving",
+    "lat": 32.81402,
+    "lng": -96.948902,
+    "areaDescription": "Irving area",
+    "neighborhoods": "Las Colinas, Valley Ranch, Irving Heights",
+    "intergroup": {
+      "name": "Irving AA Central Office"
+    },
+    "meetingHighlights": "Several workplace and evening meetings serving the Las Colinas business district and residential neighborhoods.",
+    "transitInfo": "DART light rail and bus connections; Irving is adjacent to Dallas Fort Worth International Airport (DFW).",
+    "population": 254000
+  },
+  "laredo": {
+    "city": "Laredo",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "laredo",
+    "lat": 27.5306,
+    "lng": -99.4803,
+    "areaDescription": "Laredo area",
+    "neighborhoods": "Downtown, San Isidro, West Laredo, Mall area, Rio Bravo, Del Mar Heights",
+    "intergroup": {
+      "name": "Laredo Area Intergroup"
+    },
+    "meetingHighlights": "Community meetings often held in bilingual formats with steady local attendance and recovery outreach.",
+    "transitInfo": "Local bus service and proximity to U.S.–Mexico border crossings; Laredo International Airport for regional travel.",
+    "population": 259151
+  },
+  "lubbock": {
+    "city": "Lubbock",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "lubbock",
+    "lat": 33.577863,
+    "lng": -101.855166,
+    "areaDescription": "Lubbock area",
+    "neighborhoods": "Downtown, Tech Terrace, North Lubbock",
+    "intergroup": {
+      "name": "Lubbock Area Intergroup"
+    },
+    "meetingHighlights": "College-area meetings and a strong evening meeting schedule; community groups centered downtown and near Texas Tech.",
+    "transitInfo": "Citibus public transit and regional road access; Lubbock Preston Smith International Airport (LBB) nearby.",
+    "population": 258000
+  },
+  "mcallen": {
+    "city": "McAllen",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "mcallen",
+    "lat": 26.2034,
+    "lng": -98.23,
+    "areaDescription": "McAllen–Edinburg–Mission area",
+    "neighborhoods": "Downtown McAllen, Palmview (nearby), North McAllen, South McAllen, Los Ebanos, Sharyland",
+    "intergroup": {
+      "name": "McAllen Area Intergroup"
+    },
+    "meetingHighlights": "Regional RGV meetings with bilingual offerings and active weekend recovery events drawing attendees from nearby cities.",
+    "transitInfo": "Valley Metro and regional bus services; McAllen Miller International Airport (MFE) for regional travel.",
+    "population": 142212
+  },
+  "mckinney": {
+    "city": "McKinney",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "mckinney",
+    "lat": 33.197246,
+    "lng": -96.639782,
+    "areaDescription": "McKinney area",
+    "neighborhoods": "Historic Downtown, Eldorado, Stonebridge Ranch",
+    "intergroup": {
+      "name": "Collin County Intergroup"
+    },
+    "meetingHighlights": "Growing suburb with new groups forming in historic downtown and planned communities; weekday evening meetings are common.",
+    "transitInfo": "Regional DART connections and major highway access; Dallas-area airports within a short drive.",
+    "population": 207000
+  },
+  "midland": {
+    "city": "Midland",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "midland",
+    "lat": 32.036944,
+    "lng": -102.089136,
+    "areaDescription": "Midland area",
+    "neighborhoods": "Downtown, Midtown, Heritage Hills",
+    "intergroup": {
+      "name": "Midland-Odessa AA Intergroup"
+    },
+    "meetingHighlights": "Oilfield-region meetings with evening and weekend options; often combined events with Odessa groups.",
+    "transitInfo": "Local and regional road networks; Midland International Air and Space Port (MAF) serves regional flights.",
+    "population": 169000
+  },
+  "odessa": {
+    "city": "Odessa",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "odessa",
+    "lat": 31.845682,
+    "lng": -102.367646,
+    "areaDescription": "Odessa area",
+    "neighborhoods": "Downtown Odessa, Ector, Downtown",
+    "intergroup": {
+      "name": "Midland-Odessa AA Intergroup"
+    },
+    "meetingHighlights": "Shared meeting calendar with Midland; strong local participation and several evening groups.",
+    "transitInfo": "Regional road access and Midland/Odessa nearby airport; local transit options are limited.",
+    "population": 123000
+  },
+  "plano": {
+    "city": "Plano",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "plano",
+    "lat": 33.019844,
+    "lng": -96.698886,
+    "areaDescription": "Plano area",
+    "neighborhoods": "Downtown, Willow Bend, Legacy West, West Plano",
+    "intergroup": {
+      "name": "Plano AA Central Office"
+    },
+    "meetingHighlights": "Suburban groups with many weekday meetings and a number of lunchtime options for commuters.",
+    "transitInfo": "DART bus services and nearby rail connections; Dallas airports within commuting distance.",
+    "population": 289000
+  },
+  "richardson": {
+    "city": "Richardson",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "richardson",
+    "lat": 32.948238,
+    "lng": -96.729875,
+    "areaDescription": "Richardson area",
+    "neighborhoods": "Downtown Richardson, Galatyn Park, Spring Valley",
+    "intergroup": {
+      "name": "Collin County Intergroup"
+    },
+    "meetingHighlights": "Convenient weekday and evening meetings for tech and university communities in the area.",
+    "transitInfo": "DART rail and bus access; close to I-75 and other major corridors for regional travel.",
+    "population": 123000
+  },
+  "san-antonio": {
+    "city": "San Antonio",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "san-antonio",
+    "lat": 29.4241,
+    "lng": -98.4936,
+    "areaDescription": "San Antonio metropolitan area",
+    "neighborhoods": "Downtown, Pearl District, Alamo Heights, Southtown, North Central, King William",
+    "intergroup": {
+      "name": "San Antonio Intergroup",
+      "url": "https://sa-aa.org"
+    },
+    "meetingHighlights": "Large and diverse meeting offerings across the city including military base outreach and numerous Spanish-language meetings.",
+    "transitInfo": "VIA Metropolitan transit buses serve the metro; San Antonio International Airport (SAT) for flights.",
+    "population": 1532233
+  }
+}

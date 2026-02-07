@@ -1,0 +1,68 @@
+{
+  "boston": {
+    "city": "Boston",
+    "stateAbbr": "MA",
+    "stateFull": "Massachusetts",
+    "geoRegion": "US-MA",
+    "slug": "boston",
+    "lat": 42.3601,
+    "lng": -71.0589,
+    "areaDescription": "Greater Boston area",
+    "neighborhoods": "Downtown, Back Bay, South Boston, Cambridge, Somerville, Brookline"
+  },
+  "cambridge": {
+    "city": "Cambridge",
+    "stateAbbr": "MA",
+    "stateFull": "Massachusetts",
+    "geoRegion": "US-MA",
+    "slug": "cambridge",
+    "lat": 42.373615,
+    "lng": -71.109733,
+    "areaDescription": "Cambridge area",
+    "neighborhoods": "Harvard Square, Central Square, Kendall Square, Porter Square"
+  },
+  "new-bedford": {
+    "city": "New Bedford",
+    "stateAbbr": "MA",
+    "stateFull": "Massachusetts",
+    "geoRegion": "US-MA",
+    "slug": "new-bedford",
+    "lat": 41.6362,
+    "lng": -70.9342,
+    "areaDescription": "Greater New Bedford area",
+    "neighborhoods": "Downtown, North End, South End, Fort Taber"
+  },
+  "quincy": {
+    "city": "Quincy",
+    "stateAbbr": "MA",
+    "stateFull": "Massachusetts",
+    "geoRegion": "US-MA",
+    "slug": "quincy",
+    "lat": 42.252589,
+    "lng": -71.002272,
+    "areaDescription": "Quincy area",
+    "neighborhoods": "Quincy Center, Adams Shore, Marina Bay, West Quincy"
+  },
+  "springfield": {
+    "city": "Springfield",
+    "stateAbbr": "MA",
+    "stateFull": "Massachusetts",
+    "geoRegion": "US-MA",
+    "slug": "springfield",
+    "lat": 42.1015,
+    "lng": -72.5898,
+    "areaDescription": "Springfield metro area",
+    "neighborhoods": "Downtown, Forest Park, Six Corners, South End, Upper Hill"
+  },
+  "worcester": {
+    "city": "Worcester",
+    "stateAbbr": "MA",
+    "stateFull": "Massachusetts",
+    "geoRegion": "US-MA",
+    "slug": "worcester",
+    "lat": 42.2626,
+    "lng": -71.8023,
+    "areaDescription": "Worcester County / Central Massachusetts area",
+    "neighborhoods": "Downtown, Shrewsbury Street, Vernon Hill, Greendale, Tatnuck"
+  }
+}

@@ -1,0 +1,438 @@
+{
+  "bakersfield": {
+    "city": "Bakersfield",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "bakersfield",
+    "lat": 35.3733,
+    "lng": -119.0187,
+    "areaDescription": "Bakersfield metropolitan area",
+    "neighborhoods": "Downtown, The Foothills, Westchester, Oildale, Seven Oaks, College Heights",
+    "intergroup": {
+      "name": "Bakersfield Area Intergroup"
+    },
+    "meetingHighlights": "Active downtown and foothills meetings with established Big Book and step-study groups; strong evening attendance.",
+    "transitInfo": "GET bus service in the city and regional highway access; Meadows Field (BFL) for regional flights.",
+    "population": 403000
+  },
+  "elk-grove": {
+    "city": "Elk Grove",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "elk-grove",
+    "lat": 38.4088,
+    "lng": -121.3716,
+    "areaDescription": "Sacramento metropolitan area (Elk Grove)",
+    "neighborhoods": "Old Town, Sheldon, Laguna Ridge, Franklin, Elk Grove Town Center, Elk Grove Park",
+    "intergroup": {
+      "name": "Sacramento Central Office"
+    },
+    "meetingHighlights": "Rapidly growing suburban meetings in Old Town and new developments; many family-friendly and evening options.",
+    "transitInfo": "Sacramento Regional Transit and local shuttles; Sacramento International Airport (SMF) nearby.",
+    "population": 176000
+  },
+  "fresno": {
+    "city": "Fresno",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "fresno",
+    "lat": 36.7378,
+    "lng": -119.7871,
+    "areaDescription": "Fresno metropolitan area",
+    "neighborhoods": "Downtown, Tower District, Old Fig Garden, Woodward Park, Sunnyside, Bullard",
+    "intergroup": {
+      "name": "Fresno Area Central Office",
+      "url": "https://fresnoaa.org"
+    },
+    "meetingHighlights": "Robust schedule centered in the Tower District and downtown, with a mix of large early-morning and late-evening meetings.",
+    "transitInfo": "Fresno Area Express buses and regional routes; Fresno Yosemite International Airport (FAT) for flights.",
+    "population": 542000
+  },
+  "garden-grove": {
+    "city": "Garden Grove",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "garden-grove",
+    "lat": 33.7743,
+    "lng": -117.9414,
+    "areaDescription": "Orange County (Garden Grove)",
+    "neighborhoods": "Historic Downtown, Little Saigon, West Garden Grove, Bolsa Chica area, East Garden Grove, Westmont",
+    "intergroup": {
+      "name": "Orange County Intergroup",
+      "url": "https://oc-aa.org"
+    },
+    "meetingHighlights": "Numerous community and church-based meetings with a significant Vietnamese/Asian-language meeting presence in Little Saigon.",
+    "transitInfo": "OCTA buses serve Garden Grove and regional transit to Anaheim and Santa Ana; John Wayne Airport (SNA) and LAX accessible.",
+    "population": 175000
+  },
+  "los-angeles": {
+    "city": "Los Angeles",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "los-angeles",
+    "lat": 34.0522,
+    "lng": -118.2437,
+    "areaDescription": "Greater Los Angeles area",
+    "neighborhoods": "Downtown, Hollywood, Venice, Santa Monica, Echo Park, Silver Lake",
+    "intergroup": {
+      "name": "Los Angeles Central Office",
+      "url": "https://lacoaa.org"
+    },
+    "meetingHighlights": "One of the largest AA communities with meetings across neighborhoods, many specialty meetings, 24-hour groups, and strong newcomer support.",
+    "transitInfo": "Metro rail and extensive bus networks across LA County; Los Angeles International Airport (LAX) and other regional airports.",
+    "population": 3970000
+  },
+  "moreno-valley": {
+    "city": "Moreno Valley",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "moreno-valley",
+    "lat": 33.9425,
+    "lng": -117.2297,
+    "areaDescription": "Inland Empire (Moreno Valley)",
+    "neighborhoods": "Sunnymead Ranch, Alessandro Heights, Canyon Crest, March Air Reserve area, Box Spring, Indian Springs",
+    "intergroup": {
+      "name": "Inland Empire Intergroup"
+    },
+    "meetingHighlights": "Community-focused meetings serving families and military communities; regular weekend and evening options.",
+    "transitInfo": "Riverside Transit Agency and Metrolink connections; March Air Reserve Base and nearby Ontario Airport for travel.",
+    "population": 213000
+  },
+  "oakland": {
+    "city": "Oakland",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "oakland",
+    "lat": 37.8044,
+    "lng": -122.2711,
+    "areaDescription": "San Francisco Bay Area (East Bay)",
+    "neighborhoods": "Downtown, Lake Merritt, Rockridge, Temescal, Fruitvale, West Oakland",
+    "intergroup": {
+      "name": "East Bay Intergroup",
+      "url": "https://eastbayaa.org"
+    },
+    "meetingHighlights": "Diverse meetings across neighborhoods with active downtown and Rockridge groups; a hub for Bay Area recovery events.",
+    "transitInfo": "BART, AC Transit buses, and regional ferries connect Oakland; Oakland International Airport (OAK) nearby.",
+    "population": 440000
+  },
+  "oceanside": {
+    "city": "Oceanside",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "oceanside",
+    "lat": 33.1959,
+    "lng": -117.3795,
+    "areaDescription": "North San Diego County (Oceanside)",
+    "neighborhoods": "Downtown, Harbor Beach, South Oceanside, Mission Pacific, Mission San Luis Rey, Rancho Del Oro",
+    "intergroup": {
+      "name": "North County San Diego Intergroup",
+      "url": "https://ncsandiegoaa.org"
+    },
+    "meetingHighlights": "Beach-area meetings with active morning groups and community center meetings; Spanish-language meetings available.",
+    "transitInfo": "North County Transit District COASTER and bus services; nearby McClellan-Palomar Airport and San Diego International Airport (SAN).",
+    "population": 175000
+  },
+  "oxnard": {
+    "city": "Oxnard",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "oxnard",
+    "lat": 34.1975,
+    "lng": -119.1771,
+    "areaDescription": "Oxnard–Ventura area",
+    "neighborhoods": "Downtown, Port Hueneme (nearby), Channel Islands Harbor, College Park, East Oxnard, South Oxnard",
+    "intergroup": {
+      "name": "Ventura County Intergroup",
+      "url": "https://venturaaa.org"
+    },
+    "meetingHighlights": "Strong community meetings often held in churches and community centers, with active Spanish-language participation.",
+    "transitInfo": "VCTC bus services and regional highway access; Oxnard Airport and proximity to Santa Barbara and Los Angeles airports.",
+    "population": 210000
+  },
+  "palmdale": {
+    "city": "Palmdale",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "palmdale",
+    "lat": 34.5794,
+    "lng": -118.1165,
+    "areaDescription": "Antelope Valley (Palmdale)",
+    "neighborhoods": "Downtown Palmdale, East Palmdale, West Palmdale, Rancho Vista, Lake Los Angeles (nearby), South Palmdale",
+    "intergroup": {
+      "name": "Antelope Valley Intergroup"
+    },
+    "meetingHighlights": "Suburban meetings with strong evening attendance and several newcomer-friendly groups in downtown Palmdale.",
+    "transitInfo": "AVTA transit and regional highway access; general aviation nearby and LAX within driving distance.",
+    "population": 155000
+  },
+  "pasadena": {
+    "city": "Pasadena",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "pasadena",
+    "lat": 34.1478,
+    "lng": -118.1445,
+    "areaDescription": "Los Angeles County (Pasadena)",
+    "neighborhoods": "Old Pasadena, Playhouse District, Bungalow Heaven, Pasadena Highlands, Arroyo Seco, San Rafael",
+    "intergroup": {
+      "name": "Pasadena Area Intergroup"
+    },
+    "meetingHighlights": "Historic and steady meetings in Old Pasadena and the Playhouse District, with strong after-work attendance and speaker nights.",
+    "transitInfo": "Metro Gold Line and local buses; Bob Hope Airport (BUR) and LAX accessible for travel.",
+    "population": 141000
+  },
+  "rancho-cucamonga": {
+    "city": "Rancho Cucamonga",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "rancho-cucamonga",
+    "lat": 34.1064,
+    "lng": -117.5931,
+    "areaDescription": "Inland Empire (Rancho Cucamonga)",
+    "neighborhoods": "Victoria Gardens, Etiwanda, Alta Loma, New Rancho, Cypress Village, East Highlands",
+    "intergroup": {
+      "name": "Inland Empire Intergroup"
+    },
+    "meetingHighlights": "Family-friendly suburban meetings around Victoria Gardens and community centers with good evening options.",
+    "transitInfo": "Omnitrans bus service and Metrolink nearby; Ontario International Airport (ONT) serves the region.",
+    "population": 177000
+  },
+  "sacramento": {
+    "city": "Sacramento",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "sacramento",
+    "lat": 38.5816,
+    "lng": -121.4944,
+    "areaDescription": "Greater Sacramento area",
+    "neighborhoods": "Downtown, Midtown, Land Park, East Sacramento, Old Sacramento, Natomas",
+    "intergroup": {
+      "name": "Sacramento Central Office",
+      "url": "https://sacramentoaa.org"
+    },
+    "meetingHighlights": "Large and active schedule of meetings across neighborhoods including many lunchtime and evening options; strong service structure.",
+    "transitInfo": "Sacramento Regional Transit light rail and buses; Sacramento International Airport (SMF) for flights.",
+    "population": 524000
+  },
+  "san-diego": {
+    "city": "San Diego",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "san-diego",
+    "lat": 32.7157,
+    "lng": -117.1611,
+    "areaDescription": "San Diego metropolitan area",
+    "neighborhoods": "Downtown, La Jolla, North Park, Hillcrest, Gaslamp Quarter, Point Loma",
+    "intergroup": {
+      "name": "San Diego Central Office",
+      "url": "https://sandiegoaa.org"
+    },
+    "meetingHighlights": "Extensive beach-area and downtown meetings with many Spanish-language groups and evening speaker meetings.",
+    "transitInfo": "MTS trolleys and bus network; San Diego International Airport (SAN) for travel.",
+    "population": 1425000
+  },
+  "san-francisco": {
+    "city": "San Francisco",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "san-francisco",
+    "lat": 37.7749,
+    "lng": -122.4194,
+    "areaDescription": "San Francisco Bay Area",
+    "neighborhoods": "The Mission, SoMa, Fisherman's Wharf, North Beach, Castro, Sunset",
+    "intergroup": {
+      "name": "San Francisco Intergroup",
+      "url": "https://aasf.org"
+    },
+    "meetingHighlights": "Historic AA community with a dense meeting schedule across neighborhoods, specialty meetings, and strong newcomer resources.",
+    "transitInfo": "Muni buses and Muni Metro, BART connections across the Bay; San Francisco International Airport (SFO) and Oakland (OAK) nearby.",
+    "population": 884000
+  },
+  "san-jose": {
+    "city": "San Jose",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "san-jose",
+    "lat": 37.3382,
+    "lng": -121.8863,
+    "areaDescription": "San Jose metropolitan area (Silicon Valley)",
+    "neighborhoods": "Downtown, Japantown, Willow Glen, Rose Garden, Alum Rock, North San Jose",
+    "intergroup": {
+      "name": "San Jose Central Office",
+      "url": "https://aasanjose.org"
+    },
+    "meetingHighlights": "Active meetings serving the tech and university communities, with lunchtime and evening groups downtown and in suburbs.",
+    "transitInfo": "VTA light rail and buses; Norman Y. Mineta San Jose International Airport (SJC) and nearby SFO/OAK for travel.",
+    "population": 1035000
+  },
+  "santa-clarita": {
+    "city": "Santa Clarita",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "santa-clarita",
+    "lat": 34.391664,
+    "lng": -118.542586,
+    "areaDescription": "Santa Clarita Valley",
+    "neighborhoods": "Valencia, Saugus, Newhall, Canyon Country",
+    "intergroup": {
+      "name": "Santa Clarita Valley Intergroup"
+    },
+    "meetingHighlights": "Family-oriented meetings and growing new groups in master-planned communities; strong weekend recovery events.",
+    "transitInfo": "Local transit and Metrolink commuter rail access to LA; nearby Burbank and LAX for flights.",
+    "population": 212000
+  },
+  "santa-rosa": {
+    "city": "Santa Rosa",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "santa-rosa",
+    "lat": 38.440429,
+    "lng": -122.714054,
+    "areaDescription": "Santa Rosa area",
+    "neighborhoods": "Downtown, Railroad Square, Rincon Valley",
+    "intergroup": {
+      "name": "Santa Rosa Intergroup",
+      "url": "https://santarosaaa.org"
+    },
+    "meetingHighlights": "Active downtown and neighborhood groups with a strong emphasis on step study and speaker meetings; many outdoor recovery events.",
+    "transitInfo": "Santa Rosa CityBus and Sonoma County transit; Sonoma County Airport and easy access to SFO and OAK.",
+    "population": 177000
+  },
+  "simi-valley": {
+    "city": "Simi Valley",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "simi-valley",
+    "lat": 34.2694,
+    "lng": -118.7815,
+    "areaDescription": "Ventura County (Simi Valley)",
+    "neighborhoods": "Downtown, Santa Susana, Wood Ranch, Sinaloa Lake, Rocky Peak, Sycamore Drive",
+    "intergroup": {
+      "name": "Conejo Valley / Ventura County Intergroup"
+    },
+    "meetingHighlights": "Community and church-based meetings with steady evening attendance and newcomer-friendly options.",
+    "transitInfo": "VCTC and local transit; proximity to Burbank and LAX airports via highway.",
+    "population": 126000
+  },
+  "stockton": {
+    "city": "Stockton",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "stockton",
+    "lat": 37.9577,
+    "lng": -121.2908,
+    "areaDescription": "Stockton metropolitan area",
+    "neighborhoods": "Downtown, Lincoln Village, Brookside, Miracle Mile, Weberstown, Spanos Park",
+    "intergroup": {
+      "name": "San Joaquin County Intergroup"
+    },
+    "meetingHighlights": "Numerous neighborhood meetings with active downtown groups and a regular calendar of speaker meetings.",
+    "transitInfo": "RTD buses serve Stockton and regional Amtrak services; Stockton Metropolitan Airport for regional flights.",
+    "population": 320000
+  },
+  "sunnyvale": {
+    "city": "Sunnyvale",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "sunnyvale",
+    "lat": 37.3688,
+    "lng": -122.0363,
+    "areaDescription": "Silicon Valley (Sunnyvale)",
+    "neighborhoods": "Downtown Sunnyvale, Birdland, Lakewood Village, North Sunnyvale, Sunnyvale West, Ponderosa",
+    "intergroup": {
+      "name": "South Bay Intergroup"
+    },
+    "meetingHighlights": "Many commuter-friendly meetings and lunchtime groups for the tech workforce; steady evening community meetings.",
+    "transitInfo": "VTA light rail and buses; Mineta San Jose International Airport (SJC) nearby.",
+    "population": 155000
+  },
+  "torrance": {
+    "city": "Torrance",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "torrance",
+    "lat": 33.8358,
+    "lng": -118.3406,
+    "areaDescription": "South Bay (Torrance)",
+    "neighborhoods": "Downtown, Old Torrance, Del Amo, Hollywood Riviera, Southwood, North Torrance",
+    "intergroup": {
+      "name": "South Bay Intergroup"
+    },
+    "meetingHighlights": "Established South Bay meetings including both morning and evening groups; significant Japanese and Korean community meetings.",
+    "transitInfo": "Torrance Transit and LA Metro connections; LAX within a short drive.",
+    "population": 145000
+  },
+  "vallejo": {
+    "city": "Vallejo",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "vallejo",
+    "lat": 38.1041,
+    "lng": -122.2566,
+    "areaDescription": "San Francisco Bay Area (North Bay)",
+    "neighborhoods": "Downtown, Mare Island, Glen Cove, South Vallejo, Hiddenbrooke (nearby), Benicia (adjacent)",
+    "intergroup": {
+      "name": "North Bay Intergroup"
+    },
+    "meetingHighlights": "Strong waterfront and Mare Island groups with evening meetings and community outreach to nearby Benicia and Vallejo neighborhoods.",
+    "transitInfo": "SolTrans and ferries to San Francisco; Vallejo Ferry and proximity to SFO/OAK for air travel.",
+    "population": 121000
+  },
+  "victorville": {
+    "city": "Victorville",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "victorville",
+    "lat": 34.5361,
+    "lng": -117.2912,
+    "areaDescription": "Victor Valley (Victorville)",
+    "neighborhoods": "Downtown, Mojave Narrows area, Spring Valley Lake, Spring Valley Lake, Hesperia (nearby), North Victorville, East Victorville",
+    "intergroup": {
+      "name": "Victor Valley Intergroup"
+    },
+    "meetingHighlights": "Regional desert-area meetings with steady evening attendance; regular weekend recovery events draw attendees from surrounding towns.",
+    "transitInfo": "Victor Valley Transit Authority and regional highways; Ontario International Airport reachable by car.",
+    "population": 134000
+  },
+  "visalia": {
+    "city": "Visalia",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "visalia",
+    "lat": 36.3302,
+    "lng": -119.2921,
+    "areaDescription": "Visalia–Tulare area",
+    "neighborhoods": "Downtown, Mooney, Sequoia Mall area, East Visalia, Visalia Heights, Four Creeks",
+    "intergroup": {
+      "name": "Visalia Area Intergroup"
+    },
+    "meetingHighlights": "Small-city meetings with strong community ties, popular evening groups, and active participation from nearby towns.",
+    "transitInfo": "Visalia Transit and regional highways; Fresno Yosemite International Airport (FAT) within driving distance.",
+    "population": 141000
+  }
+}

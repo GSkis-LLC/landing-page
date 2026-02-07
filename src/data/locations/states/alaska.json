@@ -1,0 +1,74 @@
+{
+  "anchorage": {
+    "city": "Anchorage",
+    "stateAbbr": "AK",
+    "stateFull": "Alaska",
+    "geoRegion": "US-AK",
+    "slug": "anchorage",
+    "lat": 61.2181,
+    "lng": -149.9003,
+    "areaDescription": "Anchorage metropolitan area",
+    "neighborhoods": "Downtown, Spenard, Midtown, Turnagain, North Anchorage, South Addition",
+    "intergroup": {
+      "name": "Anchorage Area Intergroup",
+      "url": "https://anchorageaa.org"
+    },
+    "meetingHighlights": "Active meetings across the city including community center and church-based groups; strong volunteer service structure.",
+    "transitInfo": "People Mover bus network covers Anchorage; Ted Stevens Anchorage International Airport (ANC) for national and regional flights.",
+    "population": 291000
+  },
+  "fairbanks": {
+    "city": "Fairbanks",
+    "stateAbbr": "AK",
+    "stateFull": "Alaska",
+    "geoRegion": "US-AK",
+    "slug": "fairbanks",
+    "lat": 64.8378,
+    "lng": -147.7164,
+    "areaDescription": "Fairbanks metropolitan area, Interior Alaska",
+    "neighborhoods": "Downtown, College, North Pole area, Ester, Fort Wainwright, Eielson AFB",
+    "intergroup": {
+      "name": "Fairbanks Intergroup",
+      "url": "https://fairbanksaa.org"
+    },
+    "meetingHighlights": "Interior Alaska's recovery hub with meetings year-round; strong university connection near UAF; diverse meetings from downtown to military bases.",
+    "transitInfo": "Limited bus service via MACS; Fairbanks International Airport (FAI); Alaska Railroad connections.",
+    "population": 32500
+  },
+  "juneau": {
+    "city": "Juneau",
+    "stateAbbr": "AK",
+    "stateFull": "Alaska",
+    "geoRegion": "US-AK",
+    "slug": "juneau",
+    "lat": 58.3019,
+    "lng": -134.4197,
+    "areaDescription": "Juneau borough, Southeast Alaska",
+    "neighborhoods": "Downtown, Douglas Island, Mendenhall Valley, Auke Bay, Lemon Creek",
+    "intergroup": {
+      "name": "Juneau Intergroup",
+      "url": "https://juneauaa.org"
+    },
+    "meetingHighlights": "State capital recovery community with accessible meetings; strong tradition of service; meetings in downtown and valley areas.",
+    "transitInfo": "Capital Transit bus service; Juneau International Airport (JNO); Alaska Marine Highway ferry system.",
+    "population": 32000
+  },
+  "sitka": {
+    "city": "Sitka",
+    "stateAbbr": "AK",
+    "stateFull": "Alaska",
+    "geoRegion": "US-AK",
+    "slug": "sitka",
+    "lat": 57.0531,
+    "lng": -135.3300,
+    "areaDescription": "Sitka borough, Southeast Alaska",
+    "neighborhoods": "Downtown Sitka, Sawmill Creek, Halibut Point, Silver Bay",
+    "intergroup": {
+      "name": "Sitka Intergroup",
+      "url": "https://sitkaaa.org"
+    },
+    "meetingHighlights": "Island community recovery with close-knit meetings; rich cultural heritage; strong emphasis on community support.",
+    "transitInfo": "Sitka Rocky Gutierrez Airport (SIT); Alaska Marine Highway ferry connections; no road access to other cities.",
+    "population": 8400
+  }
+}

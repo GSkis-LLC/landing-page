@@ -1,0 +1,88 @@
+{
+  "eugene": {
+    "city": "Eugene",
+    "stateAbbr": "OR",
+    "stateFull": "Oregon",
+    "geoRegion": "US-OR",
+    "slug": "eugene",
+    "lat": 44.052124,
+    "lng": -123.086754,
+    "areaDescription": "Eugene area",
+    "neighborhoods": "Downtown, Whiteaker, South Eugene, West University",
+    "intergroup": {
+      "name": "Eugene Springfield Intergroup"
+    },
+    "meetingHighlights": "University-area meetings mixed with long-standing neighborhood groups; active lunchtime and evening meetings.",
+    "transitInfo": "Lane Transit District (LTD) provides bus service across Eugene and Springfield; Eugene Airport (EUG) for regional flights.",
+    "population": 176000
+  },
+  "salem": {
+    "city": "Salem",
+    "stateAbbr": "OR",
+    "stateFull": "Oregon",
+    "geoRegion": "US-OR",
+    "slug": "salem",
+    "lat": 44.9429,
+    "lng": -123.0351,
+    "areaDescription": "Salem metropolitan area",
+    "neighborhoods": "Downtown, West Salem, South Salem, Northeast Salem, Fairmount, Westgate",
+    "intergroup": {
+      "name": "Salem Area Intergroup"
+    },
+    "meetingHighlights": "Capital-city meetings with steady weekday attendance and a mix of study and open discussion groups.",
+    "transitInfo": "Cherriots buses provide local transit; Salem Municipal Airport and proximity to Portland for broader air travel.",
+    "population": 175000
+  },
+  "portland": {
+    "city": "Portland",
+    "stateAbbr": "OR",
+    "stateFull": "Oregon",
+    "geoRegion": "US-OR",
+    "slug": "portland",
+    "lat": 45.5122,
+    "lng": -122.6587,
+    "areaDescription": "Portland metropolitan area",
+    "neighborhoods": "Downtown, Pearl District, Nob Hill, Hawthorne, Alberta Arts District, Southeast",
+    "intergroup": {
+      "name": "Portland Central Office",
+      "url": "https://portlandaa.org"
+    },
+    "meetingHighlights": "Extensive and diverse meeting offerings across neighborhoods with many specialty meetings, speaker nights, and active newcomer outreach.",
+    "transitInfo": "TriMet buses, MAX light rail, and WES commuter rail serve the metro; Portland International Airport (PDX) for national and international flights.",
+    "population": 652000
+  },
+  "bend": {
+    "city": "Bend",
+    "stateAbbr": "OR",
+    "stateFull": "Oregon",
+    "geoRegion": "US-OR",
+    "slug": "bend",
+    "lat": 44.0582,
+    "lng": -121.3153,
+    "areaDescription": "Bend (Central Oregon)",
+    "neighborhoods": "Downtown, Old Bend, Southwest Bend, NorthWest Crossing",
+    "intergroup": {
+      "name": "Bend Area Intergroup"
+    },
+    "meetingHighlights": "Outdoor-friendly and community meetings with an active newcomer presence and several evening options.",
+    "transitInfo": "Cascade East Transit and local bus services; Roberts Field (RDM) for regional flights.",
+    "population": 107000
+  },
+  "medford": {
+    "city": "Medford",
+    "stateAbbr": "OR",
+    "stateFull": "Oregon",
+    "geoRegion": "US-OR",
+    "slug": "medford",
+    "lat": 42.3265,
+    "lng": -122.8756,
+    "areaDescription": "Medford (Rogue Valley)",
+    "neighborhoods": "Downtown, North Medford, South Medford",
+    "intergroup": {
+      "name": "Medford Area Intergroup"
+    },
+    "meetingHighlights": "Regional meetings serving Rogue Valley with steady attendance and both daytime and evening groups.",
+    "transitInfo": "RVTD buses and local transit; Rogue Valley International–Medford Airport for regional flights.",
+    "population": 83000
+  }
+}

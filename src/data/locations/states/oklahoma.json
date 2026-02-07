@@ -1,0 +1,89 @@
+{
+  "norman": {
+    "city": "Norman",
+    "stateAbbr": "OK",
+    "stateFull": "Oklahoma",
+    "geoRegion": "US-OK",
+    "slug": "norman",
+    "lat": 35.222566,
+    "lng": -97.439478,
+    "areaDescription": "Norman area",
+    "neighborhoods": "Downtown, Campus area, Westwood",
+    "intergroup": {
+      "name": "Norman Area Intergroup"
+    },
+    "meetingHighlights": "University-area meetings tied to the University of Oklahoma and steady neighborhood groups.",
+    "transitInfo": "CART and campus transit services; proximity to Will Rogers World Airport in Oklahoma City.",
+    "population": 129000
+  },
+  "oklahoma-city": {
+    "city": "Oklahoma City",
+    "stateAbbr": "OK",
+    "stateFull": "Oklahoma",
+    "geoRegion": "US-OK",
+    "slug": "oklahoma-city-ok",
+    "lat": 35.4676,
+    "lng": -97.5164,
+    "areaDescription": "Oklahoma City metropolitan area",
+    "neighborhoods": "Bricktown, Midtown, Automobile Alley, Uptown, Stockyards, Paseo Arts District",
+    "intergroup": {
+      "name": "Oklahoma City Central Office",
+      "url": "https://oklahomacityaa.org"
+    },
+    "meetingHighlights": "Extensive urban meeting schedule with many specialty, speaker, and Big Book study groups across neighborhoods.",
+    "transitInfo": "Embark public transit serves the city; Will Rogers World Airport (OKC) provides national flights.",
+    "population": 690000
+  },
+  "tulsa": {
+    "city": "Tulsa",
+    "stateAbbr": "OK",
+    "stateFull": "Oklahoma",
+    "geoRegion": "US-OK",
+    "slug": "tulsa",
+    "lat": 36.154,
+    "lng": -95.9928,
+    "areaDescription": "Tulsa metropolitan area",
+    "neighborhoods": "Downtown, Brookside, Cherry Street, Utica Square, South Tulsa, Midtown",
+    "intergroup": {
+      "name": "Tulsa Central Office",
+      "url": "https://tulsaa.org"
+    },
+    "meetingHighlights": "Large metro fellowship with numerous neighborhood meetings, speaker nights, and active newcomer programs.",
+    "transitInfo": "Tulsa Transit buses and regional connections; Tulsa International Airport (TUL) serves regional and some national flights.",
+    "population": 402000
+  },
+  "broken-arrow": {
+    "city": "Broken Arrow",
+    "stateAbbr": "OK",
+    "stateFull": "Oklahoma",
+    "geoRegion": "US-OK",
+    "slug": "broken-arrow",
+    "lat": 36.0606,
+    "lng": -95.7976,
+    "areaDescription": "Broken Arrow (Tulsa suburbs)",
+    "neighborhoods": "Downtown, Rose District, South Broken Arrow",
+    "intergroup": {
+      "name": "Tulsa Central Office"
+    },
+    "meetingHighlights": "Suburban meetings with family-friendly schedules and several evening groups.",
+    "transitInfo": "Regional transit links to Tulsa and nearby highways; commuter routes serve the suburbs.",
+    "population": 110000
+  },
+  "lawton": {
+    "city": "Lawton",
+    "stateAbbr": "OK",
+    "stateFull": "Oklahoma",
+    "geoRegion": "US-OK",
+    "slug": "lawton",
+    "lat": 34.6084,
+    "lng": -98.3959,
+    "areaDescription": "Lawton area",
+    "neighborhoods": "Downtown, Ranchwood, Garrison",
+    "intergroup": {
+      "name": "Lawton Area Intergroup"
+    },
+    "meetingHighlights": "Community meetings with evening and weekend groups; some military-connected meetings near Fort Sill.",
+    "transitInfo": "Lawton Area Transit services and proximity to regional highways and airports.",
+    "population": 94000
+  }
+}

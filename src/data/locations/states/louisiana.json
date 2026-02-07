@@ -1,0 +1,74 @@
+{
+  "baton-rouge": {
+    "city": "Baton Rouge",
+    "stateAbbr": "LA",
+    "stateFull": "Louisiana",
+    "geoRegion": "US-LA",
+    "slug": "baton-rouge",
+    "lat": 30.4515,
+    "lng": -91.1871,
+    "areaDescription": "Baton Rouge metropolitan area",
+    "neighborhoods": "Downtown, Garden District, LSU area, Perkins Road corridor, Mid City, Southdowns",
+    "intergroup": {
+      "name": "Baton Rouge Intergroup",
+      "url": "https://batonrougeaa.org"
+    },
+    "meetingHighlights": "Capital city recovery with strong LSU campus presence; diverse meetings from downtown to suburbs; active young people's community.",
+    "transitInfo": "CATS bus service; Baton Rouge Metropolitan Airport (BTR); Mississippi River location.",
+    "population": 227000
+  },
+  "new-orleans": {
+    "city": "New Orleans",
+    "stateAbbr": "LA",
+    "stateFull": "Louisiana",
+    "geoRegion": "US-LA",
+    "slug": "new-orleans",
+    "lat": 29.9511,
+    "lng": -90.0715,
+    "areaDescription": "New Orleans metropolitan area",
+    "neighborhoods": "French Quarter, Garden District, Bywater, Mid-City, Uptown, Lower Garden District",
+    "intergroup": {
+      "name": "New Orleans Intergroup",
+      "url": "https://aaneworleans.org"
+    },
+    "meetingHighlights": "Historic recovery community with meetings across all neighborhoods; strong Mardi Gras sobriety traditions; 24-hour meeting culture.",
+    "transitInfo": "RTA Streetcar and bus service; Louis Armstrong New Orleans International Airport (MSY).",
+    "population": 384000
+  },
+  "shreveport": {
+    "city": "Shreveport",
+    "stateAbbr": "LA",
+    "stateFull": "Louisiana",
+    "geoRegion": "US-LA",
+    "slug": "shreveport",
+    "lat": 32.5252,
+    "lng": -93.7502,
+    "areaDescription": "Shreveport metropolitan area, Northwest Louisiana",
+    "neighborhoods": "Downtown Shreveport, Highland, Southern Hills, Youree Drive area",
+    "intergroup": {
+      "name": "Shreveport-Bossier Intergroup",
+      "url": "https://shreveportaa.org"
+    },
+    "meetingHighlights": "Twin-city recovery serving Shreveport-Bossier; active meetings throughout Red River area; strong service community.",
+    "transitInfo": "SporTran bus service; Shreveport Regional Airport (SHV); I-20 corridor.",
+    "population": 189000
+  },
+  "lafayette": {
+    "city": "Lafayette",
+    "stateAbbr": "LA",
+    "stateFull": "Louisiana",
+    "geoRegion": "US-LA",
+    "slug": "lafayette",
+    "lat": 30.2241,
+    "lng": -92.0198,
+    "areaDescription": "Lafayette metropolitan area, Acadiana region",
+    "neighborhoods": "Downtown Lafayette, Oil Center, River Ranch, Northgate, Ambassador Caffery corridor",
+    "intergroup": {
+      "name": "Lafayette Area Intergroup",
+      "url": "https://lafayetteaa.org"
+    },
+    "meetingHighlights": "Cajun Country recovery with bilingual French/English meetings; strong Acadiana traditions; welcoming community atmosphere.",
+    "transitInfo": "LTS bus service; Lafayette Regional Airport (LFT); heart of Acadiana.",
+    "population": 126000
+  }
+}
