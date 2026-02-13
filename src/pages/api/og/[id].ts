@@ -279,7 +279,7 @@ function makeSvg({ title, subtitle, types, address, id, variant = 'meeting', sob
     .brand { display: flex; align-items: center; gap: 18px; font-weight:600; }
     .brand-icon { width: 56px; height: 56px; background:#0f766e; color:#fff; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:700; }
   `;
-  const meetingUrl = id ? `https://gskis.com/meeting/${encodeURIComponent(id)}` : 'https://gskis.com/meeting';
+  const meetingUrl = id ? `https://mymeetings.co/meeting/${encodeURIComponent(id)}` : 'https://mymeetings.co/meeting';
   let extra = '';
   if (variant === 'attendance' && soberTime) {
     // Plain sober time text (no leaf)
@@ -403,7 +403,7 @@ function makePlainSvg({ title, subtitle, types, address, id, variant = 'meeting'
   } else {
     // Existing QR code logic
     const footerYqr = footerY;
-    const meetingUrl = id ? `https://gskis.com/meeting/${encodeURIComponent(id)}` : 'https://gskis.com/meeting';
+    const meetingUrl = id ? `https://mymeetings.co/meeting/${encodeURIComponent(id)}` : 'https://mymeetings.co/meeting';
     const qr = QRCode(0, 'L');
     qr.addData(meetingUrl);
     qr.make();

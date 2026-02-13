@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://gskis.com/sitemap.xml
+Sitemap: https://mymeetings.co/sitemap.xml

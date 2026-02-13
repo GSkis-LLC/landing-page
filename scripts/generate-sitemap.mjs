@@ -4,7 +4,7 @@ import { SitemapStream, streamToPromise } from 'sitemap';
 import { createWriteStream } from 'fs';
 import { pathToFileURL } from 'url';
 
-const SITE_URL = 'https://gskis.com';
+const SITE_URL = 'https://mymeetings.co';
 const SRC_PAGES = path.resolve(process.cwd(), 'src/pages');
 const OUT_DIR = path.resolve(process.cwd(), 'public');
 const OUT_FILE = path.join(OUT_DIR, 'sitemap.xml');

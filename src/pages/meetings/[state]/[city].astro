@@ -48,14 +48,14 @@ const stateSlug = toSlug(LOCATION.stateFull);
 const citySlug = toSlug(LOCATION.city);
 const title = `AA Meetings near ${LOCATION.city}, ${LOCATION.stateAbbr} - Find Alcoholics Anonymous Near You`;
 const description = `Find AA Meetings near ${LOCATION.city}, ${LOCATION.stateFull}. Browse from hundreds of local Alcoholics Anonymous meetings by times, locations, types, and more. Serving the ${LOCATION.neighborhoods} areas and beyond, MyMeetings is the #1 AA meeting finder`;
-const canonical = `https://gskis.com/meetings/${stateSlug}/${citySlug}`;
+const canonical = `https://mymeetings.co/meetings/${stateSlug}/${citySlug}`;
 const appStoreUrl = 'https://apps.apple.com/app/id6748364894';
 const locationLat = LOCATION.lat;
 const locationLng = LOCATION.lng;
 
 // SEO-related constants
 const siteName = 'MyMeetings';
-const ogImage = `https://gskis.com/myMeetingsAppLogo.webp`;
+const ogImage = `https://mymeetings.co/myMeetingsAppLogo.webp`;
 const keywords = `AA meetings ${LOCATION.city}, AA meetings ${LOCATION.neighborhoods}, Alcoholics Anonymous ${LOCATION.city}, AA near me, ${LOCATION.city} AA meetings, recovery meetings ${LOCATION.city}, 12 step meetings ${LOCATION.city}, AA meeting times ${LOCATION.city}, open AA meetings ${LOCATION.city}, closed AA meetings ${LOCATION.city}`;
 
 let meetings: any[] = [];
@@ -209,7 +209,7 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
           'isPartOf': {
             '@type': 'WebSite',
             'name': siteName,
-            'url': 'https://gskis.com'
+            'url': 'https://mymeetings.co'
           },
           'about': {
             '@type': 'Thing',
@@ -280,19 +280,19 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
               '@type': 'ListItem',
               'position': 1,
               'name': 'Home',
-              'item': 'https://gskis.com/myMeetings'
+              'item': 'https://mymeetings.co/myMeetings'
             },
             {
               '@type': 'ListItem',
               'position': 2,
               'name': 'Meetings',
-              'item': 'https://gskis.com/meetings'
+              'item': 'https://mymeetings.co/meetings'
             },
             {
               '@type': 'ListItem',
               'position': 3,
               'name': LOCATION.stateFull,
-              'item': `https://gskis.com/meetings/${stateSlug}`
+              'item': `https://mymeetings.co/meetings/${stateSlug}`
             },
             {
               '@type': 'ListItem',
