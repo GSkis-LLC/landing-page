@@ -5,6 +5,7 @@ import mixpanel from "astrojs-mixpanel";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://www.mymeetings.co',
   output: 'server',
   adapter: netlify(),
   integrations: [

@@ -1,0 +1,276 @@
+---
+import { getAllStates, getCitiesInState } from '../data/location-store';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import AppPromo from '../components/meetings/AppPromo.astro';
+import StickyCTA from '../components/meetings/StickyCTA.astro';
+
+export const prerender = true;
+
+const states = getAllStates().map((stateSlug) => {
+  const cities = getCitiesInState(stateSlug);
+  const stateFull = cities[0]?.stateFull || stateSlug;
+  const stateAbbr = cities[0]?.stateAbbr || stateSlug.toUpperCase();
+  return {
+    stateSlug,
+    stateFull,
+    stateAbbr,
+    citiesCount: cities.length,
+    sampleCities: cities.slice(0, 3).map((c) => c.city),
+  };
+});
+
+const sortedStates = [...states].sort((a, b) => a.stateFull.localeCompare(b.stateFull));
+
+const title = 'AA Meetings by State - Find Alcoholics Anonymous Meetings | MyMeetings';
+const description = `Browse AA meetings by state. Find Alcoholics Anonymous meetings across ${sortedStates.length} states with locations, times, and directions.`;
+const canonical = 'https://mymeetings.co/meetings';
+const siteName = 'MyMeetings';
+const ogImage = 'https://mymeetings.co/myMeetingsAppLogo.webp';
+const keywords = 'AA meetings by state, Alcoholics Anonymous meetings, AA meeting finder, recovery meetings, 12 step meetings';
+const appStoreUrl = 'https://apps.apple.com/app/id6748364894';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="/myMeetings.ico" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- iOS Smart App Banner -->
+    <meta name="apple-itunes-app" content="app-id=6748364894, app-argument=mymeetings://meetings" />
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="MyMeetings" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="AA Meetings by State - Find Alcoholics Anonymous meetings" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'WebPage',
+          '@id': canonical,
+          'url': canonical,
+          'name': title,
+          'description': description,
+          'isPartOf': {
+            '@type': 'WebSite',
+            'name': siteName,
+            'url': 'https://mymeetings.co'
+          },
+          'about': {
+            '@type': 'Thing',
+            'name': 'Alcoholics Anonymous',
+            'sameAs': 'https://www.aa.org'
+          }
+        },
+        {
+          '@type': 'ItemList',
+          'name': 'AA Meetings by State',
+          'description': 'List of states with AA meetings',
+          'numberOfItems': sortedStates.length,
+          'itemListElement': sortedStates.map((state, i) => ({
+            '@type': 'ListItem',
+            'position': i + 1,
+            'item': {
+              '@type': 'AdministrativeArea',
+              'name': state.stateFull,
+              'address': {
+                '@type': 'PostalAddress',
+                'addressRegion': state.stateAbbr,
+                'addressCountry': 'US'
+              },
+              'url': `https://mymeetings.co/meetings/${state.stateSlug}`
+            }
+          }))
+        }
+      ]
+    })} />
+  </head>
+  <body>
+    <Header />
+    <main class="container">
+      <!-- Header Section -->
+      <header class="meeting-header">
+        <div class="header-content">
+          <h1 class="main-title">Find AA Meetings by State</h1>
+          <p class="subtitle">
+            Browse Alcoholics Anonymous meetings across the United States. Select your state to view cities, schedules, and locations.
+          </p>
+        </div>
+      </header>
+
+      <!-- App Promo Banner -->
+      <AppPromo appStoreUrl={appStoreUrl} />
+
+      <!-- States Grid Section -->
+      <section class="section-card">
+        <h2 class="section-title">Browse AA Meetings by State</h2>
+        <p class="section-description">
+          We have meeting listings across {sortedStates.length} states. Choose a state below to explore local cities and meeting options.
+        </p>
+
+        <div class="states-grid">
+          {sortedStates.map((state) => (
+            <a
+              href={`/meetings/${state.stateSlug}`}
+              class="state-card"
+            >
+              <div class="state-card-content">
+                <h3 class="state-name">{state.stateFull}</h3>
+                <p class="state-meta">{state.citiesCount} cities with AA meetings</p>
+                {state.sampleCities.length > 0 && (
+                  <p class="state-samples">Featured: {state.sampleCities.join(', ')}</p>
+                )}
+              </div>
+              <div class="state-arrow">→</div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="section-card">
+        <h2 class="section-title">How MyMeetings Helps</h2>
+        <div class="seo-content">
+          <p>
+            MyMeetings makes it easy to find Alcoholics Anonymous meetings wherever you are. Each state page provides a full list of cities and meeting locations, plus detailed schedules and directions.
+          </p>
+          <p>
+            Whether you’re new to AA or continuing your recovery journey, you’ll find open and closed meetings, speaker meetings, discussion formats, and more. You can also use the search in the header to jump straight to your city or state.
+          </p>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="final-cta">
+        <div class="cta-content">
+          <h2>Ready to Find Your Meeting?</h2>
+          <p>Choose a state above or download the MyMeetings app for the best experience on iOS.</p>
+          <a href={appStoreUrl} class="cta-button" target="_blank" rel="noopener noreferrer">
+            Download MyMeetings
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sticky Mobile CTA -->
+    <StickyCTA appStoreUrl={appStoreUrl} />
+  </body>
+</html>
+
+<style>
+  .states-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .state-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .state-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .state-card-content {
+    flex: 1;
+  }
+
+  .state-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .state-meta {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin: 0 0 0.4rem 0;
+  }
+
+  .state-samples {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    margin: 0.25rem 0 0 0;
+    font-style: italic;
+  }
+
+  .state-arrow {
+    font-size: 1.5rem;
+    color: #3b82f6;
+    margin-left: 1rem;
+    transition: transform 0.2s ease;
+  }
+
+  .state-card:hover .state-arrow {
+    transform: translateX(4px);
+  }
+
+  .section-description {
+    color: #6b7280;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .seo-content p {
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .states-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .state-card {
+      padding: 1rem;
+    }
+
+    .state-name {
+      font-size: 1.125rem;
+    }
+  }
+</style>
