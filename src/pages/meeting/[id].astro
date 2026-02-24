@@ -1,4 +1,7 @@
 ---
+import "../../styles/global.css";
+import StickyCTA from "../../components/meetings/StickyCTA.astro";
+
 export const prerender = false;
 const { id } = Astro.params;
 
@@ -87,6 +90,7 @@ const typeToClass: Record<string, string> = {
     <meta name="twitter:image" content={`https://mymeetings.co/api/og/${id}`} />
     <meta name="twitter:image:alt" content={title} />
     <meta name="apple-itunes-app" content={`app-id=6748364894, app-argument=mymeetings://`} />
+    <script src="/js/meetings/analytics.js" defer></script>
 
     
     <style>
@@ -416,7 +420,7 @@ const typeToClass: Record<string, string> = {
         <div class="section-card">Loading...</div>
       )}
     </div>
-    
+    <div style="padding-bottom: 75px;" />
     <!-- App Dialog -->
     <div id="appDialog" class="app-dialog-overlay">
       <div class="app-dialog">
@@ -443,6 +447,8 @@ const typeToClass: Record<string, string> = {
         </div>
       </div>
     </div>
+
+    <StickyCTA appStoreUrl={"https://apps.apple.com/app/id6748364894"} />
     
     <script>
       import { track } from "astrojs-mixpanel/client";

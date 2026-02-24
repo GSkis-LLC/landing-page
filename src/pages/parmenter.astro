@@ -1,0 +1,1152 @@
+---
+export const prerender = false;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Parmenter</title>
+    <link rel="icon" type="image/x-icon" href="/myMeetings.ico" />
+    <style is:global>
+      @font-face {
+        font-family: 'SF Pro Display';
+        src: url('/fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'SF Pro Display';
+        src: url('/fonts/SFPRODISPLAYBOLD.OTF') format('opentype');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #0f1117;
+        color: #e2e8f0;
+        min-height: 100vh;
+      }
+
+      /* ── Login Gate ── */
+      #login-gate {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0f1117 0%, #1a1d2e 100%);
+      }
+
+      .login-card {
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 20px;
+        padding: 3rem 2.5rem;
+        width: 100%;
+        max-width: 400px;
+        backdrop-filter: blur(20px);
+        text-align: center;
+      }
+
+      .login-card h1 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+        color: #fff;
+      }
+
+      .login-card .subtitle {
+        color: #94a3b8;
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+      }
+
+      .login-card .form-group {
+        margin-bottom: 1rem;
+        text-align: left;
+      }
+
+      .login-card label {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #94a3b8;
+        margin-bottom: 0.35rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .login-card input[type="text"],
+      .login-card input[type="password"] {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(255,255,255,0.06);
+        color: #fff;
+        font-size: 1rem;
+        font-family: inherit;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+
+      .login-card input:focus {
+        border-color: #2A9D8F;
+      }
+
+      .login-card .error-msg {
+        color: #f87171;
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+        min-height: 1.25rem;
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 0.8rem;
+        border: none;
+        border-radius: 10px;
+        background: #2A9D8F;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: inherit;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .login-btn:hover { background: #21867A; }
+      .login-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+      /* ── Dashboard ── */
+      #dashboard {
+        display: none;
+        height: 100vh;
+      }
+
+      .dash-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        background: rgba(15,17,23,0.85);
+        backdrop-filter: blur(12px);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .dash-header h1 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .dash-header h1 span {
+        font-size: 0.7rem;
+        font-weight: 500;
+        background: #2A9D8F;
+        color: #fff;
+        padding: 0.15rem 0.5rem;
+        border-radius: 6px;
+      }
+
+      .logout-btn {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.1);
+        color: #94a3b8;
+        padding: 0.4rem 1rem;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        font-family: inherit;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .logout-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
+
+      .dash-body {
+        display: grid;
+        grid-template-columns: 420px 1fr;
+        height: calc(100vh - 57px);
+        overflow: hidden;
+      }
+
+      /* ── Left Panel: Config Controls ── */
+      .config-panel {
+        padding: 1.5rem;
+        overflow-y: auto;
+        border-right: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .config-section {
+        margin-bottom: 1.75rem;
+      }
+
+      .config-section h3 {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin-bottom: 0.75rem;
+      }
+
+      .config-field {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 12px;
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .config-field .field-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.35rem;
+      }
+
+      .config-field .field-label {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #e2e8f0;
+      }
+
+      .config-field .field-desc {
+        font-size: 0.8rem;
+        color: #64748b;
+        line-height: 1.4;
+      }
+
+      .config-field input[type="text"] {
+        width: 100%;
+        padding: 0.6rem 0.75rem;
+        border-radius: 8px;
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(255,255,255,0.06);
+        color: #fff;
+        font-size: 0.9rem;
+        font-family: inherit;
+        outline: none;
+        margin-top: 0.5rem;
+        transition: border-color 0.2s;
+      }
+
+      .config-field input[type="text"]:focus { border-color: #2A9D8F; }
+
+      /* Toggle */
+      .toggle {
+        position: relative;
+        width: 44px;
+        height: 24px;
+        flex-shrink: 0;
+      }
+
+      .toggle input { opacity: 0; width: 0; height: 0; }
+
+      .toggle .slider {
+        position: absolute;
+        inset: 0;
+        background: rgba(255,255,255,0.12);
+        border-radius: 24px;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .toggle .slider::before {
+        content: '';
+        position: absolute;
+        width: 18px; height: 18px;
+        border-radius: 50%;
+        background: #fff;
+        top: 3px; left: 3px;
+        transition: transform 0.2s;
+      }
+
+      .toggle input:checked + .slider { background: #2A9D8F; }
+      .toggle input:checked + .slider::before { transform: translateX(20px); }
+
+      /* Version Selector */
+      .version-options {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .version-btn {
+        flex: 1;
+        padding: 0.6rem 0.5rem;
+        border-radius: 10px;
+        border: 2px solid rgba(255,255,255,0.1);
+        background: rgba(255,255,255,0.04);
+        color: #94a3b8;
+        font-size: 0.8rem;
+        font-weight: 600;
+        font-family: inherit;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.2s;
+      }
+
+      .version-btn:hover { border-color: rgba(255,255,255,0.2); }
+
+      .version-btn.active {
+        border-color: #2A9D8F;
+        background: rgba(42,157,143,0.12);
+        color: #2A9D8F;
+      }
+
+      .version-btn .price-label {
+        display: block;
+        font-size: 0.7rem;
+        font-weight: 400;
+        color: #64748b;
+        margin-top: 0.2rem;
+      }
+
+      .version-btn.active .price-label { color: #5eead4; }
+
+      /* Save Button */
+      .save-bar {
+        padding: 1rem 1.5rem;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        position: sticky;
+        bottom: 0;
+        background: rgba(15,17,23,0.95);
+        backdrop-filter: blur(12px);
+      }
+
+      .save-btn {
+        width: 100%;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 10px;
+        background: #2A9D8F;
+        color: #fff;
+        font-size: 0.95rem;
+        font-weight: 600;
+        font-family: inherit;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .save-btn:hover { background: #21867A; }
+      .save-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+      .save-status {
+        text-align: center;
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+        min-height: 1.2rem;
+      }
+
+      .save-status.success { color: #4ade80; }
+      .save-status.error { color: #f87171; }
+
+      /* ── Right Panel: Preview ── */
+      .preview-panel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #1a1d2e;
+        overflow: auto;
+        padding: 2rem;
+      }
+
+      .iphone-frame {
+        width: 375px;
+        height: 812px;
+        border-radius: 50px;
+        border: 6px solid #2a2d3a;
+        background: #000;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 0 0 2px #1a1d2e, 0 25px 60px rgba(0,0,0,0.5);
+        flex-shrink: 0;
+      }
+
+      .iphone-notch {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 160px;
+        height: 30px;
+        background: #000;
+        border-radius: 0 0 20px 20px;
+        z-index: 10;
+      }
+
+      .paywall-screen {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: linear-gradient(135deg, rgba(42,157,143,0.85) 0%, rgba(90,125,154,0.85) 50%, rgba(55,178,166,0.85) 100%);
+        display: flex;
+        flex-direction: column;
+        padding: 50px 20px 20px;
+      }
+
+      .paywall-screen::-webkit-scrollbar { width: 0; }
+
+      /* ── Paywall Inner Styles ── */
+      .pw-header {
+        text-align: center;
+        margin-bottom: 12px;
+      }
+
+      .pw-logo-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      .pw-logo-icon {
+        width: 40px; height: 40px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      .pw-pro-label {
+        font-size: 22px;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      .pw-close {
+        position: absolute;
+        top: 52px; right: 24px;
+        color: rgba(255,255,255,0.7);
+        font-size: 18px;
+        cursor: default;
+      }
+
+      .pw-title {
+        font-size: 24px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+        margin-bottom: 8px;
+        font-family: Georgia, 'Times New Roman', serif;
+      }
+
+      .pw-subtitle {
+        font-size: 14px;
+        color: rgba(255,255,255,0.75);
+        line-height: 1.45;
+      }
+
+      /* Feature Carousel — paged (one card at a time) */
+      .pw-features {
+        margin: 12px 0;
+        position: relative;
+      }
+
+      .pw-feature-scroller {
+        position: relative;
+        overflow: hidden;
+        height: 150px;
+      }
+
+      .pw-feature-card {
+        position: absolute;
+        inset: 0;
+        background: rgba(255,255,255,0.12);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255,255,255,0.18);
+        border-radius: 16px;
+        padding: 20px 18px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+      }
+
+      .pw-feature-card.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .pw-feature-card .fc-icon-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .pw-feature-card .fc-icon {
+        font-size: 22px;
+      }
+
+      .pw-feature-card .fc-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .pw-feature-card .fc-desc {
+        font-size: 12.5px;
+        color: rgba(255,255,255,0.85);
+        line-height: 1.45;
+        padding: 0 4px;
+      }
+
+      .pw-dots {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 10px;
+      }
+
+      .pw-dot {
+        width: 7px; height: 7px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.3);
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .pw-dot.active { background: #fff; }
+
+      /* Spacer */
+      .pw-spacer { flex: 1; min-height: 8px; }
+
+      /* Promotion Marquee */
+      .pw-marquee-wrap {
+        overflow: hidden;
+        margin-bottom: 8px;
+        height: 20px;
+      }
+
+      .pw-marquee-wrap.hidden { display: none; }
+
+      .pw-marquee {
+        display: inline-block;
+        white-space: nowrap;
+        animation: marquee 12s linear infinite;
+        font-size: 13px;
+        font-weight: 700;
+        color: rgba(233,196,106,0.85);
+      }
+
+      @keyframes marquee {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+      }
+
+      .pw-trusted {
+        text-align: center;
+        font-size: 13px;
+        color: rgba(255,255,255,0.7);
+        margin-bottom: 10px;
+      }
+
+      /* Subscription Options */
+      .pw-option {
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 2px solid transparent;
+        border-radius: 18px;
+        padding: 14px 16px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .pw-option.selected {
+        border-color: #2A9D8F;
+        background: rgba(42,157,143,0.18);
+      }
+
+      .pw-option .opt-name {
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .pw-option .opt-price {
+        font-size: 12px;
+        color: rgba(255,255,255,0.8);
+        margin-top: 2px;
+      }
+
+      .pw-option .opt-check {
+        width: 22px; height: 22px;
+        border-radius: 50%;
+        background: #2A9D8F;
+        display: flex; align-items: center; justify-content: center;
+        color: #fff;
+        font-size: 13px;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+
+      .pw-option.selected .opt-check { opacity: 1; }
+
+      /* CTA */
+      .pw-cta-btn {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 12px;
+        background: #2A9D8F;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+        font-family: inherit;
+        text-align: center;
+        margin-top: 10px;
+        cursor: default;
+      }
+
+      .pw-cta-sub {
+        text-align: center;
+        font-size: 11px;
+        color: rgba(255,255,255,0.65);
+        margin-top: 6px;
+      }
+
+      /* Footer */
+      .pw-footer {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 12px;
+        padding-bottom: 8px;
+      }
+
+      .pw-footer a {
+        font-size: 11px;
+        color: rgba(255,255,255,0.6);
+        text-decoration: none;
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 900px) {
+        .dash-body {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto 1fr;
+          height: auto;
+        }
+        .config-panel { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); max-height: 50vh; }
+        .preview-panel { min-height: 900px; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Login Gate -->
+    <div id="login-gate">
+      <div class="login-card">
+        <h1>Parmenter</h1>
+        <p class="subtitle">Configuration Tooling</p>
+        <div class="form-group">
+          <label for="login-user">Username</label>
+          <input type="text" id="login-user" autocomplete="username" />
+        </div>
+        <div class="form-group">
+          <label for="login-pass">Password</label>
+          <input type="password" id="login-pass" autocomplete="current-password" />
+        </div>
+        <p class="error-msg" id="login-error"></p>
+        <button class="login-btn" id="login-btn">Sign In</button>
+      </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard">
+      <div class="dash-header">
+        <h1>Parmenter <span>Admin</span></h1>
+        <button class="logout-btn" id="logout-btn">Sign Out</button>
+      </div>
+
+      <div class="dash-body">
+        <!-- Left: Config Panel -->
+        <div class="config-panel" id="config-panel">
+          <div class="config-section">
+            <h3>Promotion</h3>
+            <div class="config-field">
+              <div class="field-header">
+                <span class="field-label">Promotion Message</span>
+              </div>
+              <p class="field-desc">Scrolling marquee text shown above subscription options. Leave empty to hide.</p>
+              <input type="text" id="cfg-promotion" placeholder="e.g. 🎉 50% off this week only!" />
+            </div>
+          </div>
+
+          <div class="config-section">
+            <h3>Pricing Tier</h3>
+            <div class="config-field">
+              <div class="field-header">
+                <span class="field-label">Promotion Version</span>
+              </div>
+              <p class="field-desc">Controls which StoreKit product set is shown on the paywall.</p>
+              <div class="version-options">
+                <button class="version-btn" data-version="1">
+                  V1
+                  <span class="price-label">$4.99/mo · $39.99/yr</span>
+                </button>
+                <button class="version-btn" data-version="2">
+                  V2
+                  <span class="price-label">$7.99/mo · $79.99/yr</span>
+                </button>
+                <button class="version-btn" data-version="3">
+                  V3
+                  <span class="price-label">$2.99/mo · $24.99/yr</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="config-section">
+            <h3>Feature Flags</h3>
+            <div class="config-field">
+              <div class="field-header">
+                <span class="field-label">Onboarding Rescue</span>
+                <label class="toggle">
+                  <input type="checkbox" id="cfg-onboarding-rescue" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <p class="field-desc">Enable rescue notification flow for users who abandon onboarding. Will show them a notification with a reduced offer to encourage completion twice after abandonment. Only works if they enabled notifications.</p>
+            </div>
+
+            <div class="config-field">
+              <div class="field-header">
+                <span class="field-label">Show Daily Price</span>
+                <label class="toggle">
+                  <input type="checkbox" id="cfg-show-daily" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <p class="field-desc">Display pricing as $/day instead of $/month or $/year in subscription options.</p>
+            </div>
+
+            <div class="config-field">
+              <div class="field-header">
+                <span class="field-label">Show Amount on CTA</span>
+                <label class="toggle">
+                  <input type="checkbox" id="cfg-show-amount" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <p class="field-desc">When on: "3 Day Trial then $X.XX". When off: "Try for $0.00".</p>
+            </div>
+          </div>
+
+          <div class="save-bar">
+            <button class="save-btn" id="save-btn">Save Configuration</button>
+            <p class="save-status" id="save-status"></p>
+          </div>
+        </div>
+
+        <!-- Right: Live Preview -->
+        <div class="preview-panel">
+          <div class="iphone-frame">
+            <div class="iphone-notch"></div>
+            <div class="paywall-screen" id="paywall-preview">
+              <!-- Close button -->
+              <div class="pw-close">✕</div>
+
+              <!-- Header -->
+              <div class="pw-header">
+                <div class="pw-logo-row">
+                  <img class="pw-logo-icon" src="/MyMeetingsAppLogo.webp" alt="MyMeetings" />
+                  <span class="pw-pro-label">PRO</span>
+                </div>
+                <div class="pw-title">Go Beyond The Basics</div>
+                <div class="pw-subtitle">Take your sobriety to the next level with tools to take your recovery further.</div>
+              </div>
+
+              <!-- Feature carousel -->
+              <div class="pw-features">
+                <div class="pw-feature-scroller" id="pw-feature-scroller">
+                  <!-- filled by JS -->
+                </div>
+                <div class="pw-dots" id="pw-dots"></div>
+              </div>
+
+              <div class="pw-spacer"></div>
+
+              <!-- Promotion marquee -->
+              <div class="pw-marquee-wrap hidden" id="pw-marquee-wrap">
+                <span class="pw-marquee" id="pw-marquee-text"></span>
+              </div>
+
+              <div class="pw-trusted">Trusted by thousands in recovery</div>
+
+              <!-- Subscription options -->
+              <div id="pw-options"></div>
+
+              <!-- CTA -->
+              <div class="pw-cta-btn" id="pw-cta-btn">Try for $0.00</div>
+              <div class="pw-cta-sub" id="pw-cta-sub"></div>
+
+              <!-- Footer -->
+              <div class="pw-footer">
+                <a href="#">Terms of Use</a>
+                <a href="#">Restore</a>
+                <a href="#">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script is:inline>
+      const API = 'https://api.gskis.com';
+
+      // Price map per promotionVersion
+      const PRICES = {
+        1: { monthly: 4.99, annual: 39.99 },
+        2: { monthly: 7.99, annual: 79.99 },
+        3: { monthly: 2.99, annual: 24.99 },
+      };
+
+      const FEATURES = [
+        { icon: '✨', title: 'AI Insights & Coaching', desc: 'Get personalized AI insights and coaching on your notes' },
+        { icon: '💡', title: 'Recommended Meetings', desc: 'Get meeting recommendations based on your location and history' },
+        { icon: '📈', title: 'Advanced Analytics', desc: 'Dive deep into your sobriety trends with advanced analytics' },
+        { icon: '🗺️', title: 'Meeting Street View', desc: 'Know exactly where your meetings are with interactive street view maps' },
+        { icon: '🎨', title: 'Your App, Your Theme', desc: 'Make the app truly yours with a custom color scheme' },
+        { icon: '📝', title: 'Unlimited Notes', desc: 'Remove all limits on notes and log all of your thoughts and feelings' },
+        { icon: '👥', title: 'Private Groups', desc: 'Create private groups to share your sobriety journey with' },
+      ];
+
+      // State
+      let token = null;
+      let currentConfig = {
+        promotion: '',
+        promotionVersion: 1,
+        enableOnboardingRescue: false,
+        showDailyPrice: false,
+        showAmountCTA: true,
+      };
+      let selectedPlan = 'monthly'; // preview selection
+
+      // DOM refs
+      const loginGate = document.getElementById('login-gate');
+      const dashboard = document.getElementById('dashboard');
+      const loginBtn = document.getElementById('login-btn');
+      const loginError = document.getElementById('login-error');
+      const loginUser = document.getElementById('login-user');
+      const loginPass = document.getElementById('login-pass');
+      const logoutBtn = document.getElementById('logout-btn');
+      const saveBtn = document.getElementById('save-btn');
+      const saveStatus = document.getElementById('save-status');
+
+      // Config inputs
+      const cfgPromotion = document.getElementById('cfg-promotion');
+      const cfgOnboarding = document.getElementById('cfg-onboarding-rescue');
+      const cfgShowDaily = document.getElementById('cfg-show-daily');
+      const cfgShowAmount = document.getElementById('cfg-show-amount');
+      const versionBtns = document.querySelectorAll('.version-btn');
+
+      // ── Login ──
+      async function doLogin() {
+        loginError.textContent = '';
+        loginBtn.disabled = true;
+        loginBtn.textContent = 'Signing in…';
+        try {
+          const res = await fetch(`${API}/api/auth/login`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              username: loginUser.value.trim(),
+              password: loginPass.value,
+            }),
+          });
+          const data = await res.json();
+          if (!res.ok) throw new Error(data.error || 'Login failed');
+          token = data.token;
+          loginGate.style.display = 'none';
+          dashboard.style.display = 'flex';
+          dashboard.style.flexDirection = 'column';
+          await fetchConfig();
+        } catch (e) {
+          loginError.textContent = e.message;
+        } finally {
+          loginBtn.disabled = false;
+          loginBtn.textContent = 'Sign In';
+        }
+      }
+
+      loginBtn.addEventListener('click', doLogin);
+      loginPass.addEventListener('keydown', (e) => { if (e.key === 'Enter') doLogin(); });
+      loginUser.addEventListener('keydown', (e) => { if (e.key === 'Enter') loginPass.focus(); });
+
+      logoutBtn.addEventListener('click', () => {
+        token = null;
+        dashboard.style.display = 'none';
+        loginGate.style.display = 'flex';
+        loginUser.value = '';
+        loginPass.value = '';
+        loginError.textContent = '';
+      });
+
+      // ── Fetch Config ──
+      async function fetchConfig() {
+        try {
+          const res = await fetch(`${API}/api/paywall-config`);
+          if (!res.ok) throw new Error('Failed to fetch config');
+          const data = await res.json();
+          currentConfig = {
+            promotion: data.promotion || '',
+            promotionVersion: data.promotionVersion ?? 1,
+            enableOnboardingRescue: !!data.enableOnboardingRescue,
+            showDailyPrice: !!data.showDailyPrice,
+            showAmountCTA: data.showAmountCTA !== undefined ? !!data.showAmountCTA : true,
+          };
+          populateForm();
+          renderPreview();
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      function populateForm() {
+        cfgPromotion.value = currentConfig.promotion;
+        cfgOnboarding.checked = currentConfig.enableOnboardingRescue;
+        cfgShowDaily.checked = currentConfig.showDailyPrice;
+        cfgShowAmount.checked = currentConfig.showAmountCTA;
+        versionBtns.forEach((btn) => {
+          btn.classList.toggle('active', Number(btn.dataset.version) === currentConfig.promotionVersion);
+        });
+      }
+
+      // ── Save Config ──
+      async function saveConfig() {
+        saveStatus.textContent = '';
+        saveStatus.className = 'save-status';
+        saveBtn.disabled = true;
+        saveBtn.textContent = 'Saving…';
+        try {
+          const res = await fetch(`${API}/api/paywall-config`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+              promotion: currentConfig.promotion,
+              promotionVersion: currentConfig.promotionVersion,
+              enableOnboardingRescue: currentConfig.enableOnboardingRescue,
+              showDailyPrice: currentConfig.showDailyPrice,
+              showAmountCTA: currentConfig.showAmountCTA,
+            }),
+          });
+          const data = await res.json();
+          if (!res.ok) throw new Error(data.error || 'Save failed');
+          saveStatus.textContent = '✓ Configuration saved';
+          saveStatus.className = 'save-status success';
+        } catch (e) {
+          saveStatus.textContent = e.message;
+          saveStatus.className = 'save-status error';
+        } finally {
+          saveBtn.disabled = false;
+          saveBtn.textContent = 'Save Configuration';
+          setTimeout(() => { saveStatus.textContent = ''; }, 4000);
+        }
+      }
+
+      saveBtn.addEventListener('click', saveConfig);
+
+      // ── Input Listeners → Update State & Preview ──
+      cfgPromotion.addEventListener('input', () => {
+        currentConfig.promotion = cfgPromotion.value;
+        renderPreview();
+      });
+
+      cfgOnboarding.addEventListener('change', () => {
+        currentConfig.enableOnboardingRescue = cfgOnboarding.checked;
+        renderPreview();
+      });
+
+      cfgShowDaily.addEventListener('change', () => {
+        currentConfig.showDailyPrice = cfgShowDaily.checked;
+        renderPreview();
+      });
+
+      cfgShowAmount.addEventListener('change', () => {
+        currentConfig.showAmountCTA = cfgShowAmount.checked;
+        renderPreview();
+      });
+
+      versionBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          currentConfig.promotionVersion = Number(btn.dataset.version);
+          versionBtns.forEach((b) => b.classList.toggle('active', b === btn));
+          renderPreview();
+        });
+      });
+
+      // ── Render Preview ──
+      function renderPreview() {
+        renderFeatures();
+        renderMarquee();
+        renderOptions();
+        renderCTA();
+      }
+
+      let currentFeatureIndex = 0;
+      let featureAutoTimer = null;
+
+      function renderFeatures() {
+        const scroller = document.getElementById('pw-feature-scroller');
+        const dots = document.getElementById('pw-dots');
+        scroller.innerHTML = FEATURES.map(
+          (f, i) => `<div class="pw-feature-card${i === currentFeatureIndex ? ' active' : ''}">
+            <div class="fc-icon-title"><span class="fc-icon">${f.icon}</span><span class="fc-title">${f.title}</span></div>
+            <div class="fc-desc">${f.desc}</div>
+          </div>`
+        ).join('');
+        dots.innerHTML = FEATURES.map(
+          (_, i) => `<div class="pw-dot${i === currentFeatureIndex ? ' active' : ''}" data-idx="${i}"></div>`
+        ).join('');
+
+        // Click on dots to jump
+        dots.querySelectorAll('.pw-dot').forEach((dot) => {
+          dot.addEventListener('click', () => {
+            currentFeatureIndex = Number(dot.dataset.idx);
+            showFeature(currentFeatureIndex);
+            resetFeatureTimer();
+          });
+        });
+
+        // Auto-advance
+        resetFeatureTimer();
+      }
+
+      function showFeature(idx) {
+        const cards = document.querySelectorAll('.pw-feature-card');
+        const dots = document.querySelectorAll('.pw-dot');
+        cards.forEach((c, i) => c.classList.toggle('active', i === idx));
+        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+      }
+
+      function resetFeatureTimer() {
+        if (featureAutoTimer) clearInterval(featureAutoTimer);
+        featureAutoTimer = setInterval(() => {
+          currentFeatureIndex = (currentFeatureIndex + 1) % FEATURES.length;
+          showFeature(currentFeatureIndex);
+        }, 3500);
+      }
+
+      function renderMarquee() {
+        const wrap = document.getElementById('pw-marquee-wrap');
+        const text = document.getElementById('pw-marquee-text');
+        if (currentConfig.promotion && currentConfig.promotion.trim()) {
+          wrap.classList.remove('hidden');
+          text.textContent = currentConfig.promotion;
+        } else {
+          wrap.classList.add('hidden');
+        }
+      }
+
+      function renderOptions() {
+        const container = document.getElementById('pw-options');
+        const v = currentConfig.promotionVersion;
+        const prices = PRICES[v] || PRICES[1];
+        const showDaily = currentConfig.showDailyPrice;
+
+        function formatPrice(amount) {
+          return '$' + amount.toFixed(2);
+        }
+
+        function priceText(type) {
+          if (showDaily) {
+            const daily = type === 'annual' ? prices.annual / 365 : prices.monthly / 30;
+            return `Free trial for 3 days — then ${formatPrice(daily)}/day`;
+          }
+          if (type === 'annual') {
+            return `Free trial for 3 days — then ${formatPrice(prices.annual)}/year`;
+          }
+          return `Free trial for 3 days — then ${formatPrice(prices.monthly)}/month`;
+        }
+
+        container.innerHTML = `
+          <div class="pw-option ${selectedPlan === 'monthly' ? 'selected' : ''}" data-plan="monthly">
+            <div>
+              <div class="opt-name">Monthly Plan</div>
+              <div class="opt-price">${priceText('monthly')}</div>
+            </div>
+            <div class="opt-check">✓</div>
+          </div>
+          <div class="pw-option ${selectedPlan === 'annual' ? 'selected' : ''}" data-plan="annual">
+            <div>
+              <div class="opt-name">Annual Plan</div>
+              <div class="opt-price">${priceText('annual')}</div>
+            </div>
+            <div class="opt-check">✓</div>
+          </div>
+        `;
+
+        container.querySelectorAll('.pw-option').forEach((el) => {
+          el.addEventListener('click', () => {
+            selectedPlan = el.dataset.plan;
+            renderOptions();
+            renderCTA();
+          });
+        });
+      }
+
+      function renderCTA() {
+        const btn = document.getElementById('pw-cta-btn');
+        const sub = document.getElementById('pw-cta-sub');
+        const v = currentConfig.promotionVersion;
+        const prices = PRICES[v] || PRICES[1];
+
+        if (currentConfig.showAmountCTA) {
+          // showAmountCTA always shows the product's full price, never daily
+          const price = selectedPlan === 'annual' ? prices.annual : prices.monthly;
+          btn.textContent = `3 Day Trial then $${price.toFixed(2)}`;
+        } else {
+          btn.textContent = 'Try for $0.00';
+        }
+
+        // Cancellation date
+        const cancel = new Date();
+        cancel.setDate(cancel.getDate() + 3);
+        const day = cancel.getDate();
+        const suffix = daySuffix(day);
+        const month = cancel.toLocaleString('en-US', { month: 'short' });
+        sub.textContent = `Free cancellation before ${month} ${day}${suffix}`;
+      }
+
+      function daySuffix(d) {
+        if (d >= 11 && d <= 13) return 'th';
+        switch (d % 10) {
+          case 1: return 'st';
+          case 2: return 'nd';
+          case 3: return 'rd';
+          default: return 'th';
+        }
+      }
+
+      // Initial feature render (for static display before login)
+      renderPreview();
+    </script>
+  </body>
+</html>

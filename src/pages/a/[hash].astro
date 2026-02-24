@@ -1,4 +1,7 @@
 ---
+import "../../styles/global.css";
+import StickyCTA from "../../components/meetings/StickyCTA.astro";
+
 export const prerender = false;
 const { hash } = Astro.params;
 
@@ -145,6 +148,7 @@ const typeToClass: Record<string, string> = {
     <meta name="twitter:image" content={`https://mymeetings.co/api/og/${hash}?type=attendance`} />
     <meta name="twitter:image:alt" content={title} />
     <meta name="apple-itunes-app" content={`app-id=6748364894, app-argument=mymeetings://`} />
+    <script src="/js/meetings/analytics.js" defer></script>
     
     <style>
       @font-face {
@@ -455,6 +459,14 @@ const typeToClass: Record<string, string> = {
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
+      /* Sticky Mobile CTA */
+      .sticky-cta { display:none; position:fixed; bottom:0; left:0; right:0; background:white; padding:1rem; box-shadow:0 -4px 20px rgba(0,0,0,0.1); z-index:100; border-top:1px solid #e5e7eb }
+      .sticky-cta-inner { display:flex; align-items:center; justify-content:space-between; max-width:1100px; margin:0 auto; gap:1rem }
+      .sticky-cta-text { flex:1 }
+      .sticky-cta-title { font-weight:600; font-size:0.95rem; color:#2a3a4d; margin:0 }
+      .sticky-cta-subtitle { font-size:0.8rem; color:#6b7280; margin:0 }
+      .sticky-cta-button { background:#2A9D8F; color:white; padding:0.75rem 1.25rem; border-radius:10px; text-decoration:none; font-weight:600; font-size:0.9rem; white-space:nowrap; transition:background 0.2s }
+      .sticky-cta-button:hover { background:#21867A }
       .app-dialog-overlay {
         position: fixed;
         top: 0;
@@ -663,6 +675,7 @@ const typeToClass: Record<string, string> = {
         <div class="section-card">Loading...</div>
       )}
     </div>
+    <div style="padding-bottom: 75px;"></div>
     
     <!-- App Dialog -->
     <div id="appDialog" class="app-dialog-overlay">
@@ -690,6 +703,8 @@ const typeToClass: Record<string, string> = {
         </div>
       </div>
     </div>
+
+    <StickyCTA appStoreUrl={"https://apps.apple.com/app/id6748364894"} />
     
     <script>
       import { track } from "astrojs-mixpanel/client";
