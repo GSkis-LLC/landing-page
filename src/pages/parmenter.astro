@@ -128,6 +128,7 @@ export const prerender = false;
       #dashboard {
         display: none;
         height: 100vh;
+        flex-direction: column;
       }
 
       .dash-header {
@@ -174,11 +175,243 @@ export const prerender = false;
       }
       .logout-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
 
+      .tab-bar {
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        background: rgba(15,17,23,0.8);
+      }
+
+      .tab-btn {
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 8px;
+        background: rgba(255,255,255,0.04);
+        color: #94a3b8;
+        padding: 0.45rem 0.9rem;
+        font-size: 0.85rem;
+        font-family: inherit;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .tab-btn:hover {
+        border-color: rgba(255,255,255,0.22);
+        color: #cbd5e1;
+      }
+
+      .tab-btn.active {
+        background: rgba(42,157,143,0.15);
+        border-color: #2A9D8F;
+        color: #5eead4;
+      }
+
+      .tab-panel {
+        display: none;
+        flex: 1;
+        min-height: 0;
+      }
+
+      .tab-panel.active {
+        display: block;
+      }
+
       .dash-body {
         display: grid;
         grid-template-columns: 420px 1fr;
-        height: calc(100vh - 57px);
+        height: 100%;
         overflow: hidden;
+      }
+
+      /* ── ASO Tab ── */
+      .aso-panel {
+        height: 100%;
+        overflow-y: auto;
+        padding: 1.5rem;
+      }
+
+      .aso-layout {
+        display: grid;
+        grid-template-columns: minmax(320px, 420px) 1fr;
+        gap: 1rem;
+      }
+
+      .aso-controls,
+      .aso-results-wrap {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 14px;
+        padding: 1rem;
+      }
+
+      .aso-controls h3,
+      .aso-results-wrap h3 {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin-bottom: 0.75rem;
+      }
+
+      .aso-field {
+        margin-bottom: 0.8rem;
+      }
+
+      .aso-field label {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #94a3b8;
+        margin-bottom: 0.35rem;
+      }
+
+      .aso-field textarea,
+      .aso-field input {
+        width: 100%;
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 10px;
+        background: rgba(255,255,255,0.06);
+        color: #fff;
+        font-size: 0.9rem;
+        font-family: inherit;
+        outline: none;
+        padding: 0.7rem 0.8rem;
+      }
+
+      .aso-field textarea {
+        min-height: 210px;
+        resize: vertical;
+        line-height: 1.35;
+      }
+
+      .aso-field textarea:focus,
+      .aso-field input:focus {
+        border-color: #2A9D8F;
+      }
+
+      .aso-inline {
+        display: grid;
+        grid-template-columns: 1fr 120px;
+        gap: 0.65rem;
+      }
+
+      .aso-run-btn {
+        width: 100%;
+        border: none;
+        border-radius: 10px;
+        background: #2A9D8F;
+        color: #fff;
+        font-size: 0.9rem;
+        font-family: inherit;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 0.75rem;
+      }
+
+      .aso-run-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .aso-status {
+        margin-top: 0.5rem;
+        min-height: 1.2rem;
+        font-size: 0.8rem;
+        color: #94a3b8;
+      }
+
+      .aso-status.error { color: #f87171; }
+
+      .aso-results {
+        display: grid;
+        gap: 0.8rem;
+      }
+
+      .aso-keyword {
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 12px;
+        background: rgba(255,255,255,0.03);
+        padding: 0.9rem;
+      }
+
+      .aso-keyword-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.7rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .aso-keyword-title {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      .aso-rank-badge {
+        border-radius: 999px;
+        border: 1px solid rgba(42,157,143,0.6);
+        background: rgba(42,157,143,0.12);
+        color: #5eead4;
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.25rem 0.55rem;
+        white-space: nowrap;
+      }
+
+      .aso-rank-badge.missing {
+        border-color: rgba(248,113,113,0.6);
+        background: rgba(248,113,113,0.12);
+        color: #fca5a5;
+      }
+
+      .aso-app-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 0.55rem;
+      }
+
+      .aso-app-card {
+        display: grid;
+        grid-template-columns: 56px 1fr;
+        gap: 0.55rem;
+        align-items: center;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 10px;
+        background: rgba(255,255,255,0.04);
+        padding: 0.55rem;
+      }
+
+      .aso-app-card img {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        object-fit: cover;
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(255,255,255,0.06);
+      }
+
+      .aso-app-rank {
+        font-size: 0.7rem;
+        color: #5eead4;
+        font-weight: 700;
+        margin-bottom: 0.1rem;
+      }
+
+      .aso-app-name {
+        font-size: 0.83rem;
+        color: #fff;
+        font-weight: 600;
+        line-height: 1.2;
+      }
+
+      .aso-app-meta {
+        font-size: 0.72rem;
+        color: #94a3b8;
+        line-height: 1.25;
+        margin-top: 0.2rem;
       }
 
       /* ── Left Panel: Config Controls ── */
@@ -243,6 +476,69 @@ export const prerender = false;
       }
 
       .config-field input[type="text"]:focus { border-color: #2A9D8F; }
+
+      /* Onboarding Rescue Preview */
+      .rescue-preview {
+        margin-top: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .rescue-notif {
+        display: flex;
+        gap: 0.6rem;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 10px;
+        padding: 0.65rem 0.75rem;
+      }
+
+      .rescue-notif .notif-icon {
+        font-size: 1.2rem;
+        flex-shrink: 0;
+        margin-top: 0.1rem;
+      }
+
+      .rescue-notif .notif-body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+      }
+
+      .rescue-notif .notif-timing {
+        font-size: 0.65rem;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        font-weight: 600;
+      }
+
+      .rescue-notif .notif-body strong {
+        font-size: 0.82rem;
+        color: #e2e8f0;
+      }
+
+      .rescue-notif .notif-body p {
+        font-size: 0.75rem;
+        color: #94a3b8;
+        line-height: 1.35;
+        margin: 0;
+      }
+
+      .rescue-note {
+        font-size: 0.7rem;
+        color: #64748b;
+        margin-top: 0.15rem;
+      }
+
+      .rescue-note code {
+        font-size: 0.68rem;
+        background: rgba(255,255,255,0.06);
+        padding: 0.1rem 0.35rem;
+        border-radius: 4px;
+        color: #5eead4;
+      }
 
       /* Toggle */
       .toggle {
@@ -652,6 +948,12 @@ export const prerender = false;
         }
         .config-panel { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); max-height: 50vh; }
         .preview-panel { min-height: 900px; }
+        .aso-layout {
+          grid-template-columns: 1fr;
+        }
+        .aso-inline {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -681,6 +983,12 @@ export const prerender = false;
         <button class="logout-btn" id="logout-btn">Sign Out</button>
       </div>
 
+      <div class="tab-bar">
+        <button class="tab-btn active" type="button" data-tab="paywall">Paywall Config</button>
+        <button class="tab-btn" type="button" data-tab="aso">ASO</button>
+      </div>
+
+      <div class="tab-panel active" id="tab-paywall">
       <div class="dash-body">
         <!-- Left: Config Panel -->
         <div class="config-panel" id="config-panel">
@@ -730,6 +1038,25 @@ export const prerender = false;
                 </label>
               </div>
               <p class="field-desc">Enable rescue notification flow for users who abandon onboarding. Will show them a notification with a reduced offer to encourage completion twice after abandonment. Only works if they enabled notifications.</p>
+              <div class="rescue-preview">
+                <div class="rescue-notif">
+                  <div class="notif-icon">🩵</div>
+                  <div class="notif-body">
+                    <span class="notif-timing">2 hours after abandon</span>
+                    <strong>We saved your progress 🩵</strong>
+                    <p>Complete your setup today and get 40% off. Cancel before trial ends and you'll never be charged.</p>
+                  </div>
+                </div>
+                <div class="rescue-notif">
+                  <div class="notif-icon">🩵</div>
+                  <div class="notif-body">
+                    <span class="notif-timing">8 hours after abandon</span>
+                    <strong>Last chance for 40% off 🩵</strong>
+                    <p>We're sad to see you go. Cancel before trial ends and you'll never be charged. Find your next meeting today.</p>
+                  </div>
+                </div>
+                <p class="rescue-note">Deep links to <code>mymeetings://offer/v3</code> (40% off V3 pricing)</p>
+              </div>
             </div>
 
             <div class="config-field">
@@ -813,6 +1140,48 @@ export const prerender = false;
           </div>
         </div>
       </div>
+      </div>
+
+      <div class="tab-panel" id="tab-aso">
+        <div class="aso-panel">
+          <div class="aso-layout">
+            <div class="aso-controls">
+              <h3>ASO Rank Checker</h3>
+
+              <div class="aso-field">
+                <label for="aso-keywords">Keywords (one per line)</label>
+                <textarea id="aso-keywords" spellcheck="false">aa
+alcoholics anonymous
+aa meetings
+aa meeting finder
+aa meeting guide
+everything aa
+my meetings aa
+al-anon meetings</textarea>
+              </div>
+
+              <div class="aso-inline">
+                <div class="aso-field">
+                  <label for="aso-app-id">App Store App ID</label>
+                  <input id="aso-app-id" type="text" value="6748364894" />
+                </div>
+                <div class="aso-field">
+                  <label for="aso-country">Country</label>
+                  <input id="aso-country" type="text" value="us" maxlength="2" />
+                </div>
+              </div>
+
+              <button class="aso-run-btn" id="aso-run-btn" type="button">Run Check</button>
+              <p class="aso-status" id="aso-status"></p>
+            </div>
+
+            <div class="aso-results-wrap">
+              <h3>Results</h3>
+              <div class="aso-results" id="aso-results"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script is:inline>
@@ -833,6 +1202,17 @@ export const prerender = false;
         { icon: '🎨', title: 'Your App, Your Theme', desc: 'Make the app truly yours with a custom color scheme' },
         { icon: '📝', title: 'Unlimited Notes', desc: 'Remove all limits on notes and log all of your thoughts and feelings' },
         { icon: '👥', title: 'Private Groups', desc: 'Create private groups to share your sobriety journey with' },
+      ];
+
+      const ASO_DEFAULT_KEYWORDS = [
+        'aa',
+        'alcoholics anonymous',
+        'aa meetings',
+        'aa meeting finder',
+        'aa meeting guide',
+        'everything aa',
+        'my meetings aa',
+        'al-anon meetings',
       ];
 
       // State
@@ -863,6 +1243,31 @@ export const prerender = false;
       const cfgShowDaily = document.getElementById('cfg-show-daily');
       const cfgShowAmount = document.getElementById('cfg-show-amount');
       const versionBtns = document.querySelectorAll('.version-btn');
+
+      // Tabs
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabPaywall = document.getElementById('tab-paywall');
+      const tabAso = document.getElementById('tab-aso');
+
+      // ASO refs
+      const asoKeywords = document.getElementById('aso-keywords');
+      const asoAppId = document.getElementById('aso-app-id');
+      const asoCountry = document.getElementById('aso-country');
+      const asoRunBtn = document.getElementById('aso-run-btn');
+      const asoStatus = document.getElementById('aso-status');
+      const asoResults = document.getElementById('aso-results');
+
+      function switchTab(tabName) {
+        tabButtons.forEach((btn) => {
+          btn.classList.toggle('active', btn.dataset.tab === tabName);
+        });
+        tabPaywall.classList.toggle('active', tabName === 'paywall');
+        tabAso.classList.toggle('active', tabName === 'aso');
+      }
+
+      tabButtons.forEach((btn) => {
+        btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+      });
 
       // ── Login ──
       async function doLogin() {
@@ -901,10 +1306,170 @@ export const prerender = false;
         token = null;
         dashboard.style.display = 'none';
         loginGate.style.display = 'flex';
+        switchTab('paywall');
         loginUser.value = '';
         loginPass.value = '';
         loginError.textContent = '';
       });
+
+      // ── ASO Checker (Client-side) ──
+      function formatLastUpdate(value) {
+        if (!value) return 'N/A';
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) return 'N/A';
+        return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      }
+
+      function keywordListFromInput() {
+        const rows = asoKeywords.value
+          .split('\n')
+          .map((line) => line.trim())
+          .filter(Boolean);
+
+        return [...new Set(rows)];
+      }
+
+      async function getRankingForKeyword(keyword, country, appId) {
+        const url = `https://itunes.apple.com/search?term=${encodeURIComponent(keyword)}&country=${encodeURIComponent(country)}&entity=software&limit=200`;
+        const res = await fetch(url);
+
+        if (!res.ok) {
+          throw new Error(`Failed request: ${res.status}`);
+        }
+
+        const data = await res.json();
+        const results = Array.isArray(data.results) ? data.results : [];
+
+        const topApps = results.slice(0, 7).map((app, idx) => ({
+          rank: idx + 1,
+          name: app.trackName || 'Unknown App',
+          rating: app.averageUserRating ?? 'N/A',
+          ratingCount: app.userRatingCount ?? 'N/A',
+          lastUpdate: formatLastUpdate(app.currentVersionReleaseDate),
+          appId: app.trackId,
+          artwork: app.artworkUrl100 || app.artworkUrl60 || '',
+        }));
+
+        const index = results.findIndex((app) => Number(app.trackId) === Number(appId));
+        const myAppRank = index === -1 ? null : index + 1;
+
+        return { keyword, topApps, myAppRank };
+      }
+
+      function renderKeywordResult(result) {
+        const section = document.createElement('section');
+        section.className = 'aso-keyword';
+
+        const header = document.createElement('div');
+        header.className = 'aso-keyword-header';
+
+        const title = document.createElement('div');
+        title.className = 'aso-keyword-title';
+        title.textContent = `“${result.keyword}”`;
+
+        const badge = document.createElement('div');
+        badge.className = `aso-rank-badge${result.myAppRank ? '' : ' missing'}`;
+        badge.textContent = result.myAppRank ? `Your app: #${result.myAppRank}` : 'Your app: not in top 200';
+
+        header.appendChild(title);
+        header.appendChild(badge);
+        section.appendChild(header);
+
+        const list = document.createElement('div');
+        list.className = 'aso-app-list';
+
+        result.topApps.forEach((app) => {
+          const card = document.createElement('div');
+          card.className = 'aso-app-card';
+
+          const image = document.createElement('img');
+          image.src = app.artwork || '/MyMeetingsAppLogo.webp';
+          image.alt = `${app.name} artwork`;
+          image.loading = 'lazy';
+
+          const textWrap = document.createElement('div');
+
+          const rank = document.createElement('div');
+          rank.className = 'aso-app-rank';
+          rank.textContent = `#${app.rank}`;
+
+          const name = document.createElement('div');
+          name.className = 'aso-app-name';
+          name.textContent = app.name;
+
+          const meta = document.createElement('div');
+          meta.className = 'aso-app-meta';
+          meta.textContent = `Rating: ${app.rating} (${app.ratingCount} ratings) · Updated: ${app.lastUpdate}`;
+
+          textWrap.appendChild(rank);
+          textWrap.appendChild(name);
+          textWrap.appendChild(meta);
+
+          card.appendChild(image);
+          card.appendChild(textWrap);
+          list.appendChild(card);
+        });
+
+        section.appendChild(list);
+        asoResults.appendChild(section);
+      }
+
+      async function runAsoCheck() {
+        const appId = asoAppId.value.trim();
+        const country = asoCountry.value.trim().toLowerCase() || 'us';
+        const keywords = keywordListFromInput();
+
+        asoStatus.className = 'aso-status';
+        asoResults.innerHTML = '';
+
+        if (!keywords.length) {
+          asoStatus.className = 'aso-status error';
+          asoStatus.textContent = 'Add at least one keyword.';
+          return;
+        }
+
+        if (!appId || !/^\d+$/.test(appId)) {
+          asoStatus.className = 'aso-status error';
+          asoStatus.textContent = 'App ID must be numeric.';
+          return;
+        }
+
+        asoRunBtn.disabled = true;
+        asoRunBtn.textContent = 'Running…';
+
+        let successCount = 0;
+        let errorCount = 0;
+
+        for (const [index, keyword] of keywords.entries()) {
+          asoStatus.textContent = `Checking ${index + 1}/${keywords.length}: ${keyword}`;
+          try {
+            const result = await getRankingForKeyword(keyword, country, appId);
+            renderKeywordResult(result);
+            successCount += 1;
+          } catch (error) {
+            errorCount += 1;
+            const message = error instanceof Error ? error.message : 'Unknown error';
+            const failed = document.createElement('section');
+            failed.className = 'aso-keyword';
+            failed.innerHTML = `<div class="aso-keyword-header"><div class="aso-keyword-title">“${keyword}”</div><div class="aso-rank-badge missing">Error</div></div><div class="aso-app-meta">${message}</div>`;
+            asoResults.appendChild(failed);
+          }
+        }
+
+        asoRunBtn.disabled = false;
+        asoRunBtn.textContent = 'Run Check';
+
+        if (errorCount) {
+          asoStatus.className = 'aso-status error';
+          asoStatus.textContent = `Completed with ${errorCount} error${errorCount === 1 ? '' : 's'} (${successCount} successful).`;
+          return;
+        }
+
+        asoStatus.className = 'aso-status';
+        asoStatus.textContent = `Completed ${successCount} keyword${successCount === 1 ? '' : 's'}.`;
+      }
+
+      asoRunBtn.addEventListener('click', runAsoCheck);
 
       // ── Fetch Config ──
       async function fetchConfig() {
@@ -1121,7 +1686,8 @@ export const prerender = false;
         if (currentConfig.showAmountCTA) {
           // showAmountCTA always shows the product's full price, never daily
           const price = selectedPlan === 'annual' ? prices.annual : prices.monthly;
-          btn.textContent = `3 Day Trial then $${price.toFixed(2)}`;
+          const period = selectedPlan === 'annual' ? 'year' : 'month';
+          btn.textContent = `3 Day Trial then $${price.toFixed(2)}/${period}`;
         } else {
           btn.textContent = 'Try for $0.00';
         }
@@ -1143,6 +1709,10 @@ export const prerender = false;
           case 3: return 'rd';
           default: return 'th';
         }
+      }
+
+      if (!asoKeywords.value.trim()) {
+        asoKeywords.value = ASO_DEFAULT_KEYWORDS.join('\n');
       }
 
       // Initial feature render (for static display before login)
