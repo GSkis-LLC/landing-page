@@ -10,6 +10,7 @@ import MeetingList from '../../../components/meetings/MeetingList.astro';
 import MeetingStats from '../../../components/meetings/MeetingStats.astro';
 import LocalResources from '../../../components/meetings/LocalResources.astro';
 import SEOContent from '../../../components/meetings/SEOContent.astro';
+import FAQBlock from '../../../components/meetings/FAQBlock.astro';
 import FeatureGrid from '../../../components/meetings/FeatureGrid.astro';
 import FinalCTA from '../../../components/meetings/FinalCTA.astro';
 import StickyCTA from '../../../components/meetings/StickyCTA.astro';
@@ -126,6 +127,32 @@ const normalizedMeetings = (meetings || []).map((m: any) => ({
   conference_phone_notes: m.conference_phone_notes || null,
 }));
 
+// Use unique meetings for schema list items (dedupe by location/display_address)
+const schemaMeetings = (() => {
+  const seen = new Set<string>();
+  const unique: any[] = [];
+
+  for (const meeting of normalizedMeetings) {
+    if (unique.length >= 10) break;
+
+    const key = String(meeting.location || meeting.display_address || '')
+      .trim()
+      .toLowerCase();
+
+    // If no usable location key, keep the meeting so we don't drop valid records
+    if (!key) {
+      unique.push(meeting);
+      continue;
+    }
+
+    if (seen.has(key)) continue;
+    seen.add(key);
+    unique.push(meeting);
+  }
+
+  return unique;
+})();
+
 // Calculate top 3 popular meeting locations (excluding online meetings)
 const locationCounts = new Map();
 normalizedMeetings.forEach(meeting => {
@@ -221,7 +248,7 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
             'name': `AA Meetings near ${LOCATION.city}`,
             'description': `List of Alcoholics Anonymous meetings in ${LOCATION.city}, ${LOCATION.stateFull}`,
             'numberOfItems': normalizedMeetings.length,
-            'itemListElement': normalizedMeetings.slice(0, 10).map((m: any, i: number) => {
+            'itemListElement': schemaMeetings.map((m: any, i: number) => {
               // Calculate next occurrence date
               const getNextOccurrence = (dayOfWeek: number) => {
                 const now = new Date();
@@ -252,7 +279,13 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
                     '@type': 'Schedule',
                     'byDay': m.display_day,
                     'startTime': m.time
-                  }
+                  },
+                  organizer: {
+                    '@type': 'Organization',
+                    'name': organizations[0]?.name || LOCATION.intergroup?.name || 'Local AA Group',
+                    'url': organizations[0]?.url || LOCATION.intergroup?.url || 'https://www.aa.org'
+                  },
+                  eventStatus: 'https://schema.org/EventScheduled',
                 }
               };
             })
@@ -280,7 +313,7 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
               '@type': 'ListItem',
               'position': 1,
               'name': 'Home',
-              'item': 'https://mymeetings.co/myMeetings'
+              'item': 'https://mymeetings.co/'
             },
             {
               '@type': 'ListItem',
@@ -425,6 +458,9 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
 
       <!-- SEO Content Section -->
       <SEOContent city={LOCATION.city} stateFull={LOCATION.stateFull} areaDescription={LOCATION.areaDescription} neighborhoods={LOCATION.neighborhoods} />
+
+      <!-- FAQ Section -->
+      <FAQBlock city={LOCATION.city} stateFull={LOCATION.stateFull} meetingCount={normalizedMeetings.length} />
 
       <!-- Why Choose MyMeetings -->
       <FeatureGrid />

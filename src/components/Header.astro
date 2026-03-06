@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { stateName, stateSlug, cityName } = Astro.props;
+const hasLocationBreadcrumb = Boolean(stateName && stateSlug);
 
 // Prepare locations data for client-side
 const allLocations = getAllLocations();
@@ -33,26 +34,26 @@ const statesData = allStates.map(stateSlug => {
 <header class="site-header">
   <div class="header-container">
     <div class="header-left">
-      <a href="/myMeetings" class="logo-link">
+      <a href="/" class="logo-link">
         <img src="/MyMeetingsAppLogo.webp" alt="MyMeetings Logo" class="logo" />
         <span class="logo-text">MyMeetings</span>
       </a>
       
-      {(stateName || cityName) && (
-        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-          {stateName && stateSlug && (
-            <>
-              <a href={`/meetings/${stateSlug}`} class="breadcrumb-link">{stateName}</a>
-              {cityName && (
-                <>
-                  <span class="breadcrumb-separator">›</span>
-                  <span class="breadcrumb-current">{cityName}</span>
-                </>
-              )}
-            </>
-          )}
-        </nav>
-      )}
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        {hasLocationBreadcrumb ? (
+          <>
+            <a href={`/meetings/${stateSlug}`} class="breadcrumb-link">{stateName}</a>
+            {cityName && (
+              <>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">{cityName}</span>
+              </>
+            )}
+          </>
+        ) : (
+          <a href="/meetings" class="breadcrumb-link">Find Meetings</a>
+        )}
+      </nav>
     </div>
     
     <div class="header-right">
@@ -384,6 +385,13 @@ const statesData = allStates.map(stateSlug => {
   
   .search-input-wrapper {
     position: relative;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+    backdrop-filter: blur(10px) saturate(150%);
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
   }
   
   .search-icon {
@@ -393,7 +401,7 @@ const statesData = allStates.map(stateSlug => {
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    color: #6b7280;
+    color: rgba(255, 255, 255, 0.85);
     pointer-events: none;
   }
   
@@ -404,18 +412,24 @@ const statesData = allStates.map(stateSlug => {
     border-radius: 10px;
     font-size: 0.95rem;
     font-family: inherit;
-    background: white;
-    color: #1f2937;
-    transition: box-shadow 0.2s;
+    background: transparent;
+    color: #ffffff;
+    transition: box-shadow 0.2s, color 0.2s;
   }
   
   .search-input:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+    box-shadow: none;
+  }
+
+  .search-input-wrapper:focus-within {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16), 0 0 0 3px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.22);
   }
   
   .search-input::placeholder {
-    color: #9ca3af;
+    color: rgba(255, 255, 255, 0.78);
   }
   
   .search-results {
@@ -423,9 +437,12 @@ const statesData = allStates.map(stateSlug => {
     top: calc(100% + 0.5rem);
     left: 0;
     right: 0;
-    background: white;
+    background: rgba(255, 255, 255, 0.88);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
     overflow: hidden;
     max-height: 400px;
     overflow-y: auto;
@@ -498,7 +515,8 @@ const statesData = allStates.map(stateSlug => {
     }
     
     .header-container {
-      /* flex-direction: column; */
+      flex-wrap: wrap;
+      align-items: center;
       gap: 0.75rem;
       padding: 0.75rem 1rem;
     }
@@ -537,7 +555,8 @@ const statesData = allStates.map(stateSlug => {
     }
     
     .header-right {
-      width: 80%;
+      width: 100%;
+      order: 2;
     }
     
     .search-container {
@@ -587,13 +606,8 @@ const statesData = allStates.map(stateSlug => {
       height: 28px;
     }
 
-    @media screen and (max-width: 720px) {
-      .breadcrumb-nav {
-        display: none;
-      }
-    }
-    
     .breadcrumb-nav {
+      display: flex;
       font-size: 0.75rem;
     }
     

@@ -1,77 +1,43 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { SitemapStream, streamToPromise } from 'sitemap';
-import { createWriteStream } from 'fs';
-import { pathToFileURL } from 'url';
 
 const SITE_URL = 'https://mymeetings.co';
 const SRC_PAGES = path.resolve(process.cwd(), 'src/pages');
 const OUT_DIR = path.resolve(process.cwd(), 'public');
 const OUT_FILE = path.join(OUT_DIR, 'sitemap.xml');
-const LOCATIONS_FILE = path.resolve(process.cwd(), 'src/data/locations.ts');
 const STATES_DIR = path.resolve(process.cwd(), 'src/data/locations/states');
+const EXCLUDED_URLS = new Set(['/parmenter']);
 
-// Parse locations.ts and extract all location entries (states and cities)
+// Parse state-split JSON files and extract all location entries (states and cities)
 async function getLocationUrls() {
   const urls = [];
 
-  try {
-    const entries = await fs.readdir(STATES_DIR, { withFileTypes: true });
-    const stateFiles = entries
-      .filter((entry) => entry.isFile() && entry.name.endsWith('.json'))
-      .map((entry) => entry.name);
+  const entries = await fs.readdir(STATES_DIR, { withFileTypes: true });
+  const stateFiles = entries
+    .filter((entry) => entry.isFile() && entry.name.endsWith('.json'))
+    .map((entry) => entry.name);
 
-    if (stateFiles.length > 0) {
-      for (const file of stateFiles) {
-        const stateSlug = file.replace(/\.json$/, '');
-        const content = await fs.readFile(path.join(STATES_DIR, file), 'utf8');
-        const cities = JSON.parse(content);
-
-        urls.push({
-          url: `/meetings/${stateSlug}`,
-          lastmod: new Date().toISOString(),
-        });
-
-        for (const citySlug of Object.keys(cities)) {
-          urls.push({
-            url: `/meetings/${stateSlug}/${citySlug}`,
-            lastmod: new Date().toISOString(),
-          });
-        }
-      }
-
-      return urls;
-    }
-  } catch (e) {
-    console.warn('State-split locations not found, falling back to locations.ts');
+  if (!stateFiles.length) {
+    throw new Error(`No state files found in ${STATES_DIR}`);
   }
 
-  try {
-    const content = await fs.readFile(LOCATIONS_FILE, 'utf8');
-    const match = content.match(/export const locations[^=]*=\s*(\{[\s\S]*?\n\};)/);
-    if (!match) {
-      console.warn('Could not parse locations from locations.ts');
-      return [];
-    }
+  for (const file of stateFiles) {
+    const stateSlug = file.replace(/\.json$/, '');
+    const content = await fs.readFile(path.join(STATES_DIR, file), 'utf8');
+    const cities = JSON.parse(content);
 
-    const jsonStr = match[1].replace(/;$/, '');
-    const locations = JSON.parse(jsonStr);
+    urls.push({
+      url: `/meetings/${stateSlug}`,
+      lastmod: new Date().toISOString(),
+    });
 
-    for (const [stateSlug, cities] of Object.entries(locations)) {
+    for (const citySlug of Object.keys(cities)) {
       urls.push({
-        url: `/meetings/${stateSlug}`,
+        url: `/meetings/${stateSlug}/${citySlug}`,
         lastmod: new Date().toISOString(),
       });
-
-      for (const citySlug of Object.keys(cities)) {
-        urls.push({
-          url: `/meetings/${stateSlug}/${citySlug}`,
-          lastmod: new Date().toISOString(),
-        });
-      }
     }
-  } catch (e) {
-    console.error('Error reading locations:', e);
   }
 
   return urls;
@@ -122,6 +88,7 @@ async function generate() {
   for (const f of pageFiles) {
     const p = toUrlPath(f);
     if (!p) continue;
+    if (EXCLUDED_URLS.has(p)) continue;
     try {
       const st = await fs.stat(f);
       urls.push({ url: p, lastmod: st.mtime.toISOString() });
@@ -130,10 +97,10 @@ async function generate() {
     }
   }
 
-  // Add dynamic location routes from locations.ts
+  // Add dynamic location routes from state JSON files
   const locationUrls = await getLocationUrls();
   urls.push(...locationUrls);
-  console.log(`Added ${locationUrls.length} location URLs from locations.ts`);
+  console.log(`Added ${locationUrls.length} location URLs from state JSON files`);
 
   // Ensure we always include root
   if (!urls.find(u => u.url === '/')) urls.unshift({ url: '/', lastmod: new Date().toISOString() });

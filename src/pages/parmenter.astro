@@ -1061,6 +1061,17 @@ export const prerender = false;
 
             <div class="config-field">
               <div class="field-header">
+                <span class="field-label">Onboarding Hard Paywall</span>
+                <label class="toggle">
+                  <input type="checkbox" id="cfg-onboarding-hard-paywall" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <p class="field-desc">When enabled, users must subscribe after completing onboarding to continue. When disabled, users can proceed into the app normally.</p>
+            </div>
+
+            <div class="config-field">
+              <div class="field-header">
                 <span class="field-label">Show Daily Price</span>
                 <label class="toggle">
                   <input type="checkbox" id="cfg-show-daily" />
@@ -1221,6 +1232,7 @@ al-anon meetings</textarea>
         promotion: '',
         promotionVersion: 1,
         enableOnboardingRescue: false,
+        isOnboardingHardPaywall: false,
         showDailyPrice: false,
         showAmountCTA: true,
       };
@@ -1240,6 +1252,7 @@ al-anon meetings</textarea>
       // Config inputs
       const cfgPromotion = document.getElementById('cfg-promotion');
       const cfgOnboarding = document.getElementById('cfg-onboarding-rescue');
+      const cfgOnboardingHardPaywall = document.getElementById('cfg-onboarding-hard-paywall');
       const cfgShowDaily = document.getElementById('cfg-show-daily');
       const cfgShowAmount = document.getElementById('cfg-show-amount');
       const versionBtns = document.querySelectorAll('.version-btn');
@@ -1481,6 +1494,7 @@ al-anon meetings</textarea>
             promotion: data.promotion || '',
             promotionVersion: data.promotionVersion ?? 1,
             enableOnboardingRescue: !!data.enableOnboardingRescue,
+            isOnboardingHardPaywall: !!data.isOnboardingHardPaywall,
             showDailyPrice: !!data.showDailyPrice,
             showAmountCTA: data.showAmountCTA !== undefined ? !!data.showAmountCTA : true,
           };
@@ -1494,6 +1508,7 @@ al-anon meetings</textarea>
       function populateForm() {
         cfgPromotion.value = currentConfig.promotion;
         cfgOnboarding.checked = currentConfig.enableOnboardingRescue;
+        cfgOnboardingHardPaywall.checked = currentConfig.isOnboardingHardPaywall;
         cfgShowDaily.checked = currentConfig.showDailyPrice;
         cfgShowAmount.checked = currentConfig.showAmountCTA;
         versionBtns.forEach((btn) => {
@@ -1518,6 +1533,7 @@ al-anon meetings</textarea>
               promotion: currentConfig.promotion,
               promotionVersion: currentConfig.promotionVersion,
               enableOnboardingRescue: currentConfig.enableOnboardingRescue,
+              isOnboardingHardPaywall: currentConfig.isOnboardingHardPaywall,
               showDailyPrice: currentConfig.showDailyPrice,
               showAmountCTA: currentConfig.showAmountCTA,
             }),
@@ -1547,6 +1563,10 @@ al-anon meetings</textarea>
       cfgOnboarding.addEventListener('change', () => {
         currentConfig.enableOnboardingRescue = cfgOnboarding.checked;
         renderPreview();
+      });
+
+      cfgOnboardingHardPaywall.addEventListener('change', () => {
+        currentConfig.isOnboardingHardPaywall = cfgOnboardingHardPaywall.checked;
       });
 
       cfgShowDaily.addEventListener('change', () => {
