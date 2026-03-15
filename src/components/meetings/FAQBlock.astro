@@ -1,5 +1,15 @@
 ---
-const { city, stateFull, meetingCount } = Astro.props;
+interface Props {
+  city: string;
+  stateFull: string;
+  meetingCount: number;
+  busiestDay?: string;
+  busiestDayCount?: number;
+  topLocationName?: string;
+  intergroupName?: string;
+}
+
+const { city, stateFull, meetingCount, busiestDay, busiestDayCount, topLocationName, intergroupName } = Astro.props;
 
 const faqs = [
   {
@@ -12,8 +22,14 @@ const faqs = [
   },
   {
     question: `Are there AA meetings near ${city} every day?`,
-    answer: `Yes, AA meetings are held in ${city} every day of the week, including weekends and holidays. Meetings are available in the morning, afternoon, evening, and night.`
+    answer: busiestDay && busiestDayCount
+      ? `Yes, AA meetings are held in ${city} every day of the week, including weekends and holidays. ${busiestDay} is the busiest day with ${busiestDayCount} meetings scheduled. Meetings are available in the morning, afternoon, evening, and night.`
+      : `Yes, AA meetings are held in ${city} every day of the week, including weekends and holidays. Meetings are available in the morning, afternoon, evening, and night.`
   },
+  ...(topLocationName ? [{
+    question: `Where are most AA meetings held in ${city}?`,
+    answer: `One of the most active meeting venues in ${city} is <strong>${topLocationName}</strong>, which hosts multiple AA groups throughout the week. Use the map and list above to explore all meeting locations near you.`
+  }] : []),
   {
     question: `Are there online AA meetings available in ${city}?`,
     answer: `Yes, there are online AA meetings available to people in ${city}. These virtual meetings allow you to participate from anywhere and are especially helpful for those with mobility issues or scheduling conflicts.`
@@ -25,6 +41,12 @@ const faqs = [
   {
     question: `What should I expect at my first AA meeting in ${city}?`,
     answer: `Your first AA meeting in ${city} will be welcoming and supportive. You don't have to speak or share—just listening is perfectly fine. Most meetings last about an hour.`
+  },
+  {
+    question: `How do I contact the local AA office in ${city}?`,
+    answer: intergroupName
+      ? `The local AA office serving ${city} is the <strong>${intergroupName}</strong>. You can also call the national AA helpline at (212) 870-3400 at any time.`
+      : `You can reach your local AA intergroup by searching on the AA World Services website (aa.org), or call the national AA helpline at (212) 870-3400 at any time.`
   },
   {
     question: `How often are AA meeting listings updated for ${city}?`,
@@ -43,7 +65,7 @@ const faqs = [
     {faqs.map((faq) => (
       <details class="faq-item">
         <summary class="faq-question">{faq.question}</summary>
-        <p class="faq-answer">{faq.answer}</p>
+        <p class="faq-answer" set:html={faq.answer} />
       </details>
     ))}
   </div>
