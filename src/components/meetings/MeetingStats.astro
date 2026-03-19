@@ -1,5 +1,5 @@
 ---
-const { meetings = [], city, stateFull } = Astro.props;
+const { meetings = [], city, stateFull, population } = Astro.props;
 
 // Calculate real statistics from meeting data
 const totalMeetings = meetings.length;
@@ -50,6 +50,10 @@ const topTypes = [...meetingTypes.entries()]
   .slice(0, 5);
 
 const uniqueLocations = locations.size;
+
+const meetingsPerCapita = population && totalMeetings > 0
+  ? Math.round((totalMeetings / population) * 100000)
+  : null;
 ---
 
 <section class="section-card meeting-stats" aria-labelledby="stats-heading">
@@ -72,6 +76,12 @@ const uniqueLocations = locations.size;
       <span class="stat-number">7</span>
       <span class="stat-label">Days per Week</span>
     </div>
+    {meetingsPerCapita !== null && (
+      <div class="stat-item">
+        <span class="stat-number">{meetingsPerCapita}</span>
+        <span class="stat-label">Meetings per 100K Residents</span>
+      </div>
+    )}
   </div>
 
   <div class="stats-details">

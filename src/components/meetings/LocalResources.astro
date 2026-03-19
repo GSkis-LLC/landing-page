@@ -18,9 +18,10 @@ interface Props {
   stateFull: string;
   locationConfigIntergroup?: Intergroup;
   apiResponseIntergroup?: MeetingGuideIntergroup;
+  transitInfo?: string;
 }
 
-const { city, stateFull, locationConfigIntergroup, apiResponseIntergroup } = Astro.props;
+const { city, stateFull, locationConfigIntergroup, apiResponseIntergroup, transitInfo } = Astro.props;
 ---
 
 <section class="section-card local-resources" aria-labelledby="resources-heading">
@@ -60,6 +61,14 @@ const { city, stateFull, locationConfigIntergroup, apiResponseIntergroup } = Ast
         <li><a href="https://aa-intergroup.org/meetings" target="_blank" rel="noopener">Online AA Meetings (24/7)</a></li>
       </ul>
     </div>
+
+    {transitInfo && (
+      <div class="resource-item">
+        <h3>Getting to Meetings in {city}</h3>
+        <p>{transitInfo}</p>
+        <p class="transit-note">Every meeting listing includes a full address so you can plan your route before you go.</p>
+      </div>
+    )}
   </div>
 </section>
 
@@ -124,5 +133,12 @@ const { city, stateFull, locationConfigIntergroup, apiResponseIntergroup } = Ast
   
   .resource-list a:hover {
     text-decoration: underline;
+  }
+
+  .transit-note {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+    font-style: italic;
   }
 </style>

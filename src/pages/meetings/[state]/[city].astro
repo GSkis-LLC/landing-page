@@ -48,7 +48,6 @@ if (!LOCATION) {
 const stateSlug = toSlug(LOCATION.stateFull);
 const citySlug = toSlug(LOCATION.city);
 const title = `AA Meetings near ${LOCATION.city}, ${LOCATION.stateAbbr} - Find Alcoholics Anonymous Near You`;
-const description = `Find AA Meetings near ${LOCATION.city}, ${LOCATION.stateFull}. Browse from hundreds of local Alcoholics Anonymous meetings by times, locations, types, and more. Serving the ${LOCATION.neighborhoods} areas and beyond, MyMeetings is the #1 AA meeting finder`;
 const canonical = `https://mymeetings.co/meetings/${stateSlug}/${citySlug}`;
 const appStoreUrl = 'https://apps.apple.com/app/id6748364894';
 const locationLat = LOCATION.lat;
@@ -56,7 +55,7 @@ const locationLng = LOCATION.lng;
 
 // SEO-related constants
 const siteName = 'MyMeetings';
-const ogImage = `https://mymeetings.co/myMeetingsAppLogo.webp`;
+const ogImage = `https://mymeetings.co/api/og/location/${stateSlug}/${citySlug}`;
 const keywords = `AA meetings ${LOCATION.city}, AA meetings ${LOCATION.neighborhoods}, Alcoholics Anonymous ${LOCATION.city}, AA near me, ${LOCATION.city} AA meetings, recovery meetings ${LOCATION.city}, 12 step meetings ${LOCATION.city}, AA meeting times ${LOCATION.city}, open AA meetings ${LOCATION.city}, closed AA meetings ${LOCATION.city}`;
 
 let meetings: any[] = [];
@@ -177,6 +176,32 @@ const topLocations = Array.from(locationCounts.entries())
   });
 
 const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u003c');
+
+// ============================================================================
+// LOCALIZATION HELPERS (computed from live meeting data)
+// ============================================================================
+
+// Busiest day of week for this location
+const busiestDayData = (() => {
+  const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const counts = [0,0,0,0,0,0,0];
+  normalizedMeetings.forEach((m: any) => {
+    if (m.day != null) counts[Number(m.day)]++;
+  });
+  const max = Math.max(...counts);
+  const idx = counts.indexOf(max);
+  return { day: dayNames[idx], count: max };
+})();
+
+// Best intergroup name: prefer API response over config
+const intergroupName =
+  organizations[0]?.name ||
+  LOCATION.intergroup?.name ||
+  undefined;
+
+// Meta description: count-aware, ~140 chars, CTR-optimized
+const meetingCountLabel = normalizedMeetings.length > 0 ? `${normalizedMeetings.length}+` : 'local';
+const description = `Find ${meetingCountLabel} AA meetings near ${LOCATION.city}, ${LOCATION.stateFull}. Browse by day, time & type — open, closed, speaker, and online meetings available every day of the week.`;
 ---
 
 <!doctype html>
@@ -193,8 +218,8 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
     <meta name="apple-itunes-app" content={`app-id=6748364894, app-argument=mymeetings://meetings/${stateSlug}/${citySlug}`} />
     
     <!-- Additional SEO Meta Tags -->
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="keywords" content={keywords} />
     <meta name="author" content="MyMeetings" />
     <meta name="application-name" content="MyMeetings" />
@@ -222,6 +247,8 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={`AA Meetings near ${LOCATION.city} - Find Alcoholics Anonymous meetings near you`} />
+    <meta name="theme-color" content="#2A9D8F" />
+    <meta property="article:modified_time" content={new Date().toISOString()} />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -233,6 +260,11 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
           'url': canonical,
           'name': title,
           'description': description,
+          'dateModified': new Date().toISOString(),
+          'speakable': {
+            '@type': 'SpeakableSpecification',
+            'cssSelector': ['.header-title', '.header-subtitle', '#about-heading', '#faq-heading'],
+          },
           'isPartOf': {
             '@type': 'WebSite',
             'name': siteName,
@@ -270,11 +302,12 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
                   'name': m.name,
                   'description': `${m.types_array?.join(', ') || 'AA'} meeting`,
                   'startDate': m.day !== null ? getNextOccurrence(m.day) : new Date().toISOString().split('T')[0],
-                  'location': {
-                    '@type': 'Place',
-                    'name': m.location || m.display_address,
-                    'address': m.display_address
-                  },
+                  'eventAttendanceMode': m.conference_url
+                    ? 'https://schema.org/OnlineEventAttendanceMode'
+                    : 'https://schema.org/OfflineEventAttendanceMode',
+                  'location': m.conference_url
+                    ? { '@type': 'VirtualLocation', 'url': m.conference_url }
+                    : { '@type': 'Place', 'name': m.location || m.display_address, 'address': m.display_address },
                   'eventSchedule': {
                     '@type': 'Schedule',
                     'byDay': m.display_day,
@@ -335,6 +368,19 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
             }
           ]
         },
+        ...(intergroupName ? [{
+          '@type': 'Organization',
+          '@id': `${canonical}#intergroup`,
+          'name': intergroupName,
+          ...(organizations[0]?.url || LOCATION.intergroup?.url ? { 'url': organizations[0]?.url || LOCATION.intergroup?.url } : {}),
+          ...(organizations[0]?.phone || LOCATION.intergroup?.phone ? { 'telephone': organizations[0]?.phone || LOCATION.intergroup?.phone } : {}),
+          'areaServed': { '@type': 'City', 'name': LOCATION.city },
+          'parentOrganization': {
+            '@type': 'Organization',
+            'name': 'Alcoholics Anonymous World Services',
+            'url': 'https://www.aa.org',
+          },
+        }] : []),
         {
           '@type': 'FAQPage',
           'mainEntity': [
@@ -359,7 +405,7 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
               'name': `Are there AA Meetings near ${LOCATION.city} every day?`,
               'acceptedAnswer': {
                 '@type': 'Answer',
-                'text': `Yes, AA meetings are held in ${LOCATION.city} every day of the week, including weekends and holidays. Meetings are available in the morning, afternoon, evening, and night.`
+                'text': `Yes, AA meetings are held in ${LOCATION.city} every day of the week, including weekends and holidays. ${busiestDayData.count > 0 ? `${busiestDayData.day} is the busiest day with ${busiestDayData.count} meetings scheduled. ` : ''}Meetings are available in the morning, afternoon, evening, and night.`
               }
             },
             {
@@ -394,6 +440,14 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
                 'text': `Your first AA meeting in ${LOCATION.city} will be welcoming and supportive. Open meetings welcome anyone, while closed meetings are for those with a desire to stop drinking. You don't have to speak or share - just listening is perfectly fine. Most meetings last about an hour.`
               }
             },
+            ...(intergroupName ? [{
+              '@type': 'Question',
+              'name': `How do I contact the local AA office in ${LOCATION.city}?`,
+              'acceptedAnswer': {
+                '@type': 'Answer',
+                'text': `The local AA office serving ${LOCATION.city} is the ${intergroupName}.${organizations[0]?.url || LOCATION.intergroup?.url ? ` Visit ${organizations[0]?.url || LOCATION.intergroup?.url} for the most up-to-date meeting information.` : ''} You can also call the national AA helpline at (212) 870-3400 at any time.`,
+              },
+            }] : []),
             {
               '@type': 'Question',
               'name': `How often are AA meeting listings updated for ${LOCATION.city}?`,
@@ -406,6 +460,12 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
         }
       ]
     })} />
+
+    <!-- Resource hints: LCP font + map CDN -->
+    <link rel="preload" href="/fonts/SFPRODISPLAYBOLD.OTF" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/fonts/SFPRODISPLAYREGULAR.OTF" as="font" type="font/otf" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <link rel="dns-prefetch" href="https://unpkg.com" />
 
     <!-- Leaflet CDN -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -436,7 +496,7 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
       <AppPromo appStoreUrl={appStoreUrl} />
 
       <!-- Meeting Statistics -->
-      <MeetingStats meetings={normalizedMeetings} city={LOCATION.city} stateFull={LOCATION.stateFull} />
+      <MeetingStats meetings={normalizedMeetings} city={LOCATION.city} stateFull={LOCATION.stateFull} population={LOCATION.population} />
 
       <!-- Local AA Resources -->
       <LocalResources
@@ -444,6 +504,7 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
         stateFull={LOCATION.stateFull}
         locationConfigIntergroup={LOCATION.intergroup}
         apiResponseIntergroup={organizations[0]}
+        transitInfo={LOCATION.transitInfo}
       />
 
       <!-- Other Locations in State -->
@@ -457,10 +518,26 @@ const initialMeetingsJSON = JSON.stringify(normalizedMeetings).replace(/</g, '\u
       />
 
       <!-- SEO Content Section -->
-      <SEOContent city={LOCATION.city} stateFull={LOCATION.stateFull} areaDescription={LOCATION.areaDescription} neighborhoods={LOCATION.neighborhoods} />
+      <SEOContent
+        city={LOCATION.city}
+        stateFull={LOCATION.stateFull}
+        areaDescription={LOCATION.areaDescription}
+        neighborhoods={LOCATION.neighborhoods}
+        transitInfo={LOCATION.transitInfo}
+        population={LOCATION.population}
+        intergroup={LOCATION.intergroup}
+      />
 
       <!-- FAQ Section -->
-      <FAQBlock city={LOCATION.city} stateFull={LOCATION.stateFull} meetingCount={normalizedMeetings.length} />
+      <FAQBlock
+        city={LOCATION.city}
+        stateFull={LOCATION.stateFull}
+        meetingCount={normalizedMeetings.length}
+        busiestDay={busiestDayData.day}
+        busiestDayCount={busiestDayData.count}
+        topLocationName={topLocations[0]?.location}
+        intergroupName={intergroupName}
+      />
 
       <!-- Why Choose MyMeetings -->
       <FeatureGrid />

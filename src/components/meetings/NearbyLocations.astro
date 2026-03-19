@@ -21,7 +21,8 @@ const citiesWithDistance = otherCities
     distance: calculateDistance(currentLat, currentLng, city.lat, city.lng),
     citySlug: toSlug(city.city),
   }))
-  .sort((a, b) => a.distance - b.distance);
+  .sort((a, b) => a.distance - b.distance)
+  .slice(0, 10);
 ---
 
 {citiesWithDistance.length > 0 && (
