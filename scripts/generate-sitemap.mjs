@@ -7,7 +7,32 @@ const SRC_PAGES = path.resolve(process.cwd(), 'src/pages');
 const OUT_DIR = path.resolve(process.cwd(), 'public');
 const OUT_FILE = path.join(OUT_DIR, 'sitemap.xml');
 const STATES_DIR = path.resolve(process.cwd(), 'src/data/locations/states');
+const BLOG_DIR = path.resolve(process.cwd(), 'src/data/blog');
 const EXCLUDED_URLS = new Set(['/parmenter']);
+
+// Parse blog JSON files and extract blog post URLs
+async function getBlogUrls() {
+  const urls = [];
+
+  try {
+    const entries = await fs.readdir(BLOG_DIR, { withFileTypes: true });
+    const blogFiles = entries
+      .filter((entry) => entry.isFile() && entry.name.endsWith('.json'))
+      .map((entry) => entry.name);
+
+    for (const file of blogFiles) {
+      const slug = file.replace(/\.json$/, '');
+      urls.push({
+        url: `/blog/${slug}`,
+        lastmod: new Date().toISOString(),
+      });
+    }
+  } catch (e) {
+    console.warn('No blog directory found, skipping blog URLs');
+  }
+
+  return urls;
+}
 
 // Parse state-split JSON files and extract all location entries (states and cities)
 async function getLocationUrls() {
@@ -101,6 +126,11 @@ async function generate() {
   const locationUrls = await getLocationUrls();
   urls.push(...locationUrls);
   console.log(`Added ${locationUrls.length} location URLs from state JSON files`);
+
+  // Add blog post routes
+  const blogUrls = await getBlogUrls();
+  urls.push(...blogUrls);
+  console.log(`Added ${blogUrls.length} blog URLs`);
 
   // Ensure we always include root
   if (!urls.find(u => u.url === '/')) urls.unshift({ url: '/', lastmod: new Date().toISOString() });

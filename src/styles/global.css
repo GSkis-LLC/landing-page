@@ -182,9 +182,59 @@ html, body {
 .sticky-cta-button { background:#2A9D8F; color:white; padding:0.75rem 1.25rem; border-radius:10px; text-decoration:none; font-weight:600; font-size:0.9rem; white-space:nowrap; transition:background 0.2s }
 .sticky-cta-button:hover { background:#21867A }
 
+/* Blog */
+.blog-list-header { margin-bottom:2rem }
+
+.blog-grid { display:grid; gap:1.5rem; margin-bottom:2rem }
+
+.blog-card-link { text-decoration:none; color:inherit; display:block }
+.blog-card { background:#fff; border-radius:16px; box-shadow:0 2px 12px rgba(0,0,0,0.06); padding:2rem; transition:box-shadow 0.2s, border-color 0.2s; border:1px solid #e5e7eb }
+.blog-card:hover { box-shadow:0 4px 16px rgba(0,0,0,0.1); border-color:#2A9D8F }
+.blog-card-date { font-size:0.85rem; color:#6b7280; display:block; margin-bottom:0.5rem }
+.blog-card-title { font-size:1.4rem; font-weight:700; color:#2a3a4d; margin:0 0 0.5rem 0; line-height:1.3 }
+.blog-card-subtitle { font-size:1rem; color:#5A7D9A; margin:0 0 0.75rem 0; font-weight:500 }
+.blog-card-description { font-size:0.95rem; color:#4a5a6a; margin:0 0 1rem 0; line-height:1.6 }
+.blog-card-readmore { font-size:0.9rem; color:#2A9D8F; font-weight:600 }
+
+.blog-breadcrumb { margin-bottom:1.5rem }
+.blog-breadcrumb a { color:#2A9D8F; text-decoration:none; font-weight:500; font-size:0.95rem }
+.blog-breadcrumb a:hover { text-decoration:underline }
+
+.blog-article { background:#fff; border-radius:16px; box-shadow:0 2px 12px rgba(0,0,0,0.06); padding:2.5rem; margin-bottom:2rem }
+.blog-article-header { margin-bottom:2rem; border-bottom:1px solid #e5e7eb; padding-bottom:1.5rem }
+.blog-article-date { font-size:0.85rem; color:#6b7280; display:block; margin-bottom:0.75rem }
+.blog-article-title { font-size:2rem; font-weight:700; color:#2a3a4d; margin:0 0 0.75rem 0; line-height:1.25 }
+.blog-article-subtitle { font-size:1.15rem; color:#5A7D9A; margin:0; font-weight:500; line-height:1.5 }
+
+.blog-article-body { font-size:1.05rem; line-height:1.8; color:#333 }
+.blog-article-body h2 { font-size:1.5rem; font-weight:700; color:#2a3a4d; margin:2.5rem 0 1rem 0 }
+.blog-article-body h3 { font-size:1.2rem; font-weight:600; color:#2a3a4d; margin:2rem 0 0.75rem 0 }
+.blog-article-body p { margin:0 0 1.25rem 0 }
+.blog-article-body ul { margin:0 0 1.25rem 1.5rem; padding:0 }
+.blog-article-body ul li { margin-bottom:0.5rem }
+.blog-article-body a { color:#2A9D8F; text-decoration:none; font-weight:500 }
+.blog-article-body a:hover { text-decoration:underline }
+.blog-article-body strong { color:#2a3a4d }
+.blog-article-body em { font-style:italic }
+
+.blog-article-body table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.95rem }
+.blog-article-body thead th { background:#2A9D8F; color:white; padding:0.75rem 1rem; text-align:left; font-weight:600 }
+.blog-article-body thead th:first-child { border-radius:8px 0 0 0 }
+.blog-article-body thead th:last-child { border-radius:0 8px 0 0 }
+.blog-article-body tbody td { padding:0.75rem 1rem; border-bottom:1px solid #e5e7eb }
+.blog-article-body tbody tr:last-child td:first-child { border-radius:0 0 0 8px }
+.blog-article-body tbody tr:last-child td:last-child { border-radius:0 0 8px 0 }
+.blog-article-body tbody tr:hover { background:#f8faf9 }
+
 /* Responsive */
 @media (max-width: 768px) {
   .container { padding:1rem; padding-bottom:100px }
+  .blog-article { padding:1.5rem }
+  .blog-article-title { font-size:1.5rem }
+  .blog-card { padding:1.5rem }
+  .blog-card-title { font-size:1.2rem }
+  .blog-article-body table { font-size:0.85rem }
+  .blog-article-body thead th, .blog-article-body tbody td { padding:0.5rem 0.6rem }
   .sticky-cta { display:block }
   .app-promo { padding:1.5rem; align-items:flex-start }
   .app-promo-features { justify-content:center }
