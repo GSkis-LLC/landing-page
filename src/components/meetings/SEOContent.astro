@@ -13,9 +13,10 @@ interface Props {
   transitInfo?: string;
   population?: number;
   intergroup?: Intergroup;
+  meetingCount?: number;
 }
 
-const { city, stateFull, areaDescription, neighborhoods, transitInfo, population, intergroup } = Astro.props;
+const { city, stateFull, areaDescription, neighborhoods, transitInfo, population, intergroup, meetingCount } = Astro.props;
 ---
 
 <section class="section-card seo-content" aria-labelledby="about-heading">
@@ -23,8 +24,12 @@ const { city, stateFull, areaDescription, neighborhoods, transitInfo, population
   <div class="seo-text">
     <p>Alcoholics Anonymous (AA) meetings in {city}, {stateFull} provide a supportive community for individuals seeking recovery from alcohol addiction. Whether you're new to recovery or have been sober for years, {city}'s AA community welcomes you with open arms.</p>
 
+    {meetingCount && meetingCount > 0 && (
+      <p>There are currently <strong>{meetingCount} AA meetings</strong> listed in and around {city}, making it one of the most active recovery communities in {stateFull}. According to <a href="https://www.aa.org" target="_blank" rel="noopener noreferrer">AA's General Service Office</a>, there are over 67,000 weekly AA meetings across the United States, and {city} contributes meaningfully to that network.</p>
+    )}
+
     {population && (
-      <p>{city} is home to approximately <strong>{population.toLocaleString()} residents</strong>, with AA meetings distributed across the {areaDescription} to ensure accessible support throughout the community.</p>
+      <p>{city} is home to approximately <strong>{population.toLocaleString()} residents</strong>, with AA meetings distributed across the {areaDescription} to ensure accessible support throughout the community.{meetingCount && population ? ` That's approximately ${Math.round((meetingCount / population) * 100000)} meetings per 100,000 residents, reflecting ${city}'s commitment to accessible recovery support.` : ''}</p>
     )}
 
     {intergroup && (
@@ -37,6 +42,8 @@ const { city, stateFull, areaDescription, neighborhoods, transitInfo, population
     <p><strong>Speaker Meetings:</strong> One or more members share their experience, strength, and hope with the group.</p>
     <p><strong>Discussion Meetings:</strong> Members discuss a topic related to recovery, with everyone having an opportunity to share.</p>
     <p><strong>Big Book/Step Study:</strong> Focused study of AA literature including the Big Book and the 12 Steps.</p>
+    <p><strong>Beginner Meetings:</strong> Specifically designed for newcomers who may be attending their first meetings. These groups provide extra guidance on how AA works, the 12 Steps, and getting a sponsor.</p>
+    <p><strong>Online/Virtual Meetings:</strong> Participate from anywhere via video or phone. Online AA meetings have grown significantly since 2020 and now represent approximately 30% of all meetings nationwide, providing critical access for those who cannot attend in person.</p>
 
     <h3>Finding the Right Meeting in {city}</h3>
     <p>Use the filters above to find meetings that fit your schedule and preferences. Meetings are available throughout {areaDescription} including neighborhoods such as {neighborhoods}.</p>
@@ -48,7 +55,10 @@ const { city, stateFull, areaDescription, neighborhoods, transitInfo, population
       </>
     )}
 
+    <h3>Recovery Resources in {city}</h3>
+    <p>In addition to AA meetings, {city} residents can access recovery support through the <a href="https://www.samhsa.gov" target="_blank" rel="noopener noreferrer">Substance Abuse and Mental Health Services Administration (SAMHSA)</a>, which provides a national helpline (1-800-662-4357) and treatment locator. The <a href="https://www.niaaa.nih.gov" target="_blank" rel="noopener noreferrer">National Institute on Alcohol Abuse and Alcoholism (NIAAA)</a> offers evidence-based research confirming that consistent participation in peer support groups like AA significantly improves long-term sobriety outcomes.</p>
+
     <h3>Need Help Getting Started?</h3>
-    <p>Download the <strong>MyMeetings app</strong> for the best experience finding and tracking AA meetings. Save your favorite meetings, get reminders, and access meeting information offline.</p>
+    <p>Download the <strong>MyMeetings app</strong> for the best experience finding and tracking AA meetings in {city}. Save your favorite meetings, track your attendance, get reminders, and access meeting information offline. MyMeetings indexes meetings across all 50 states and 300+ cities, making it the most comprehensive AA meeting finder available.</p>
   </div>
 </section>

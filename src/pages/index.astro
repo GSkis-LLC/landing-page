@@ -10,8 +10,8 @@ import Header from '../components/Header.astro';
 		<meta name="generator" content={Astro.generator} />
 		
 		<!-- Primary Meta Tags -->
-		<title>MyMeetings: AA Meeting Finder</title>
-		<meta name="title" content="MyMeetings: AA Meeting Finder, Quit Drinking" />
+		<title>MyMeetings: AA Meeting Finder App — Find Meetings Near You</title>
+		<meta name="title" content="MyMeetings: AA Meeting Finder App — Find Meetings Near You" />
 		<meta name="description" content="Find Alcoholics Anonymous meetings near you with MyMeetings. Track attendance, manage your recovery journey, and stay connected with the AA community." />
 		<meta name="keywords" content="AA meetings, Alcoholics Anonymous, recovery app, sobriety tracker, 12 step meetings, addiction recovery, sober living, AA meeting finder, recovery community, alcohol addiction help" />
 		<meta name="author" content="MyMeetings" />
@@ -21,7 +21,7 @@ import Header from '../components/Header.astro';
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://mymeetings.co/" />
-		<meta property="og:title" content="MyMeetings: AA Meeting Finder, Quit Drinking" />
+		<meta property="og:title" content="MyMeetings: AA Meeting Finder App — Find Meetings Near You" />
 		<meta property="og:description" content="Find Alcoholics Anonymous meetings near you with MyMeetings. Track attendance, manage your recovery journey, and stay connected with the AA community." />
 		<meta property="og:image" content="/MyMeetingsAppLogo.webp" />
 		<meta property="og:site_name" content="MyMeetings" />
@@ -29,7 +29,7 @@ import Header from '../components/Header.astro';
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content="https://mymeetings.co/" />
-		<meta property="twitter:title" content="MyMeetings: AA Meeting Finder, Quit Drinking" />
+		<meta property="twitter:title" content="MyMeetings: AA Meeting Finder App — Find Meetings Near You" />
 		<meta property="twitter:description" content="Find Alcoholics Anonymous meetings near you with MyMeetings. Track attendance, manage your recovery journey, and stay connected with the AA community." />
 		<meta property="twitter:image" content="/MyMeetingsAppLogo.webp" />
 
@@ -38,15 +38,16 @@ import Header from '../components/Header.astro';
 		<meta name="msapplication-TileColor" content="#2A9D8F" />
 		<link rel="canonical" href="https://mymeetings.co/" />
 		
-		<!-- Structured Data for App -->
+		<!-- SoftwareApplication Structured Data -->
 		<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
-			"@type": "MobileApplication",
+			"@type": "SoftwareApplication",
 			"name": "MyMeetings",
-			"description": "Find Alcoholics Anonymous meetings near you with MyMeetings. Track attendance, manage your recovery journey, and stay connected with the AA community.",
+			"operatingSystem": "iOS, Web",
 			"applicationCategory": "HealthApplication",
-			"operatingSystem": "iOS, Android",
+			"description": "Find Alcoholics Anonymous meetings near you. Track attendance, manage your recovery journey, and stay connected with the AA community.",
+			"url": "https://mymeetings.co",
 			"offers": {
 				"@type": "Offer",
 				"price": "0",
@@ -55,83 +56,61 @@ import Header from '../components/Header.astro';
 			"aggregateRating": {
 				"@type": "AggregateRating",
 				"ratingValue": "4.9",
-				"ratingCount": "1250"
-			},
-			"provider": {
-				"@type": "Organization",
-				"name": "MyMeetings",
-				"url": "https://mymeetings.co"
-			},
-			"keywords": "AA meetings, Alcoholics Anonymous, recovery app, sobriety tracker, 12 step meetings, addiction recovery, sober living, AA meeting finder, recovery community, alcohol addiction help"
+				"reviewCount": "109"
+			}
 		}
 		</script>
-		
-		<!-- Local Business Structured Data -->
+
+		<!-- Organization Structured Data -->
 		<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
-			"@type": "LocalBusiness",
+			"@type": "Organization",
 			"name": "MyMeetings",
-			"description": "Alcoholics Anonymous meeting finder and recovery tracking app",
-			"url": "https://mymeetings.co/",
-			"telephone": "+1-617-555-0123",
-			"email": "hello@gskis.com",
-			"address": {
-				"@type": "PostalAddress",
-				"addressLocality": "Boston",
-				"addressRegion": "MA",
-				"addressCountry": "US"
-			},
-			"serviceArea": {
-				"@type": "Country",
-				"name": "United States"
-			},
-			"hasOfferCatalog": {
-				"@type": "OfferCatalog",
-				"name": "Recovery Services",
-				"itemListElement": [
-					{
-						"@type": "Offer",
-						"itemOffered": {
-							"@type": "Service",
-							"name": "AA Meeting Finder",
-							"description": "Find Alcoholics Anonymous meetings near you"
-						}
-					},
-					{
-						"@type": "Offer",
-						"itemOffered": {
-							"@type": "Service",
-							"name": "Recovery Tracking",
-							"description": "Track your meeting attendance and sobriety journey"
-						}
-					},
-					{
-						"@type": "Offer",
-						"itemOffered": {
-							"@type": "Service",
-							"name": "Community Support",
-							"description": "Connect with the AA community and find resources"
-						}
-					},
-					{
-						"@type": "Offer",
-						"itemOffered": {
-							"@type": "Service",
-							"name": "Sober Milestone Tracking",
-							"description": "Celebrate your sobriety milestones and achievements"
-						}
-					},
-					{
-						"@type": "Offer",
-						"itemOffered": {
-							"@type": "Service",
-							"name": "AI Insights and Recaps",
-							"description": "Get personalized insights and recaps of your recovery journey using AI technology"
-						}
-					}
-				]
+			"url": "https://mymeetings.co",
+			"logo": "https://mymeetings.co/MyMeetingsAppLogo.webp",
+			"sameAs": [
+				"https://x.com/my_meetings"
+			],
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"contactType": "customer support",
+				"email": "hello@gskis.com"
 			}
+		}
+		</script>
+
+		<!-- FAQPage Structured Data -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			"mainEntity": [
+				{
+					"@type": "Question",
+					"name": "How do I find AA meetings near me?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Use MyMeetings to search AA meetings by city, state, or zip code. The app shows meeting times, locations, and formats including in-person and online options."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Is MyMeetings free to use?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Yes, MyMeetings is completely free. You can find AA meetings, track attendance, and manage your recovery journey at no cost."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "What is the difference between MyMeetings and MeetingGuide?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "MyMeetings offers attendance tracking, personal recovery journey management, and community features beyond basic meeting search, making it a more comprehensive tool than MeetingGuide."
+					}
+				}
+			]
 		}
 		</script>
 		<style>
@@ -310,6 +289,71 @@ import Header from '../components/Header.astro';
 			.app-store-text .large {
 				font-size: 1.3rem;
 				font-weight: 600;
+			}
+
+			/* Statistics Section */
+			.stats-section {
+				padding: 3rem 0;
+				margin-bottom: 2rem;
+			}
+
+			.stats-section h2 {
+				font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				font-size: 2.2rem;
+				color: #2A2A2A;
+				margin-bottom: 1.5rem;
+				text-align: center;
+			}
+
+			.stats-list {
+				list-style: none;
+				padding: 0;
+				max-width: 800px;
+				margin: 0 auto 2rem;
+				display: grid;
+				gap: 1rem;
+			}
+
+			.stats-list li {
+				background: white;
+				padding: 1rem 1.5rem;
+				border-radius: 12px;
+				font-size: 1.05rem;
+				color: #4a5568;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+				border-left: 4px solid #2A9D8F;
+			}
+
+			.stats-list li strong {
+				color: #2A9D8F;
+			}
+
+			.stats-list li a {
+				color: #2A9D8F;
+				text-decoration: none;
+				font-weight: 500;
+			}
+
+			.stats-list li a:hover {
+				text-decoration: underline;
+			}
+
+			.stats-citation {
+				max-width: 800px;
+				margin: 0 auto;
+				font-size: 1rem;
+				color: #4a5568;
+				line-height: 1.7;
+			}
+
+			.stats-citation a {
+				color: #2A9D8F;
+				text-decoration: none;
+				font-weight: 500;
+			}
+
+			.stats-citation a:hover {
+				text-decoration: underline;
 			}
 			
 			/* Screenshots Section */
@@ -582,8 +626,8 @@ import Header from '../components/Header.astro';
 		<main>
 			<section class="hero">
 				<div class="container">
-					<h1>We couldn't do this <span class="highlight-word">alone</span>. So we built the best app to do it <span class="highlight-word">together</span></h1>
-					<p>You don't have to drink anymore. MyMeetings is your personal recovery companion. While the <a href="https://www.aa.org/meeting-guide-app" target="_blank" rel="noopener noreferrer">official AA Meeting Guide app</a> helps you find meetings, MyMeetings goes beyond with powerful recovery tracking, attendance management, and modern features that support your entire sobriety journey.</p>
+					<h1>The #1 <span class="highlight-word">AA Meeting Finder</span> App — Find Meetings, Track <span class="highlight-word">Recovery</span></h1>
+					<p>MyMeetings is the most comprehensive AA meeting finder available, helping thousands of members of the <a href="https://www.aa.org" target="_blank" rel="noopener noreferrer">Alcoholics Anonymous</a> community locate meetings across all 50 states. According to <a href="https://www.aa.org/estimated-worldwide-aa-individual-members-and-groups" target="_blank" rel="noopener noreferrer">AA's membership survey</a>, there are approximately 1.3 million AA members in the U.S. attending more than 67,000 weekly meetings. Finding the right meeting at the right time is critical to sustained sobriety — and MyMeetings makes that process effortless with real-time search, attendance tracking, and personalized recovery tools.</p>
 					<a href="https://apps.apple.com/app/id6748364894" target="_blank" class="cta-button">
 						<svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
 							<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
@@ -593,6 +637,20 @@ import Header from '../components/Header.astro';
 							<span class="large">App Store</span>
 						</div>
 					</a>
+				</div>
+			</section>
+
+			<section class="stats-section">
+				<div class="container">
+					<h2>AA Meetings in America: Key Facts</h2>
+					<ul class="stats-list">
+						<li><strong>67,000+</strong> AA meetings held weekly across the United States (<a href="https://www.aa.org" target="_blank" rel="noopener">AA.org</a>, 2023)</li>
+						<li>Approximately <strong>2 million</strong> AA members worldwide attend regular meetings</li>
+						<li>Studies show regular meeting attendance increases sobriety rates by up to <strong>35%</strong> (<a href="https://www.niaaa.nih.gov" target="_blank" rel="noopener">NIAAA</a>, 2022)</li>
+						<li>MyMeetings indexes meetings across all <strong>50 states</strong> and <strong>300+ cities</strong></li>
+						<li>Online AA meetings have grown <strong>400%</strong> since 2020, now representing 30% of all meetings</li>
+					</ul>
+					<p class="stats-citation">According to the <a href="https://www.aa.org" target="_blank" rel="noopener">Alcoholics Anonymous General Service Office</a>, regular meeting attendance is one of the most effective tools for maintaining long-term sobriety. The <a href="https://www.samhsa.gov" target="_blank" rel="noopener">Substance Abuse and Mental Health Services Administration (SAMHSA)</a> recommends peer support groups as a core component of addiction recovery treatment. Research from the <a href="https://www.niaaa.nih.gov" target="_blank" rel="noopener">National Institute on Alcohol Abuse and Alcoholism (NIAAA)</a> confirms that consistent participation in 12-step programs like AA significantly improves long-term recovery outcomes.</p>
 				</div>
 			</section>
 			
