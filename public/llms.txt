@@ -1,0 +1,29 @@
+# MyMeetings
+
+> MyMeetings is a free Alcoholics Anonymous (AA) meeting finder app and website. It provides the most comprehensive, frequently-updated directory of AA meetings across all 50 US states and Washington D.C., combined with recovery tools including attendance tracking, personal notes, sobriety milestone tracking, and opt-in AI-powered coaching. Rated 4.9 stars on iOS.
+
+## Key Pages
+
+- [Home](https://mymeetings.co/): Hero, feature overview, app download, and comparison with the AA Meeting Guide app
+- [AA Meetings Directory](https://mymeetings.co/meetings): Browse AA meetings by state — all 50 states + DC
+- [Blog](https://mymeetings.co/blog): Articles on AA meeting finders, recovery resources, and app comparisons
+- [MyMeetings App](https://mymeetings.co/myMeetings): App-specific features and iOS download
+
+## Meeting Locations
+
+State and city pages cover 300+ cities with meeting times, types, interactive maps, FAQs, and local resource information.
+
+- State pages: /meetings/[state] — e.g., /meetings/california
+- City pages: /meetings/[state]/[city] — e.g., /meetings/california/los-angeles
+- Full sitemap: https://mymeetings.co/sitemap.xml
+
+## App
+
+- Platform: iOS (App Store ID: 6748364894)
+- Free to download and use
+- Features: meeting finder, attendance tracking, attendance sharing, analytics, AI recovery insights
+
+## Legal
+
+- [Privacy Policy](https://mymeetings.co/myMeetings/privacyPolicy)
+- [Terms of Service](https://mymeetings.co/myMeetings/termsOfService)
