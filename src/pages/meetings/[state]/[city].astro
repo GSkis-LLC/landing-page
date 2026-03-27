@@ -61,7 +61,7 @@ const keywords = `AA meetings ${LOCATION.city}, AA meetings ${LOCATION.neighborh
 let meetings: any[] = [];
 let organizations: any[] = [];
 try {
-  const res = await fetch(`https://api.meetingguide.org/app/v2/request?latitude=${locationLat}&longitude=${locationLng}`);
+  const res = await fetch(`https://api.mymeetings.co/api/v1/meetings?latitude=${locationLat}&longitude=${locationLng}`);
   if (res.ok) {
     const json = await res.json();
     meetings = json?.meetings ?? json ?? [];
