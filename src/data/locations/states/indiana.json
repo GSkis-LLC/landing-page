@@ -118,5 +118,39 @@
     "meetingHighlights": "Community-focused meetings with evening and weekend options; several downtown and neighborhood groups.",
     "transitInfo": "Gary Public Transportation Corporation buses and South Shore Line commuter rail to Chicago; proximity to Gary/Chicago International Airport.",
     "population": 69000
+  },
+  "terre-haute": {
+    "city": "Terre Haute",
+    "stateAbbr": "IN",
+    "stateFull": "Indiana",
+    "geoRegion": "US-IN",
+    "slug": "terre-haute",
+    "lat": 39.4667,
+    "lng": -87.4139,
+    "areaDescription": "Terre Haute and Vigo County along the Wabash River",
+    "neighborhoods": "Downtown Terre Haute, Indiana State University area, South Side, North Terre Haute, Honey Creek",
+    "intergroup": {
+      "name": "Terre Haute Area Intergroup"
+    },
+    "meetingHighlights": "Wabash Valley recovery community with meetings near Indiana State University and downtown churches; evening discussion and Big Book study groups; welcoming fellowship serving surrounding rural counties.",
+    "transitInfo": "Terre Haute Transit Utility provides local bus service; Terre Haute Regional Airport (HUF); I-70 and US-41 provide regional access.",
+    "population": 58000
+  },
+  "muncie": {
+    "city": "Muncie",
+    "stateAbbr": "IN",
+    "stateFull": "Indiana",
+    "geoRegion": "US-IN",
+    "slug": "muncie",
+    "lat": 40.1934,
+    "lng": -85.3864,
+    "areaDescription": "Muncie and Delaware County in east-central Indiana",
+    "neighborhoods": "Downtown Muncie, Ball State University area, Westside, Old West End, Yorktown",
+    "intergroup": {
+      "name": "Muncie Area Intergroup"
+    },
+    "meetingHighlights": "College-town meetings near Ball State University with student-friendly and evening groups; active downtown fellowship and step-study traditions in community centers and churches.",
+    "transitInfo": "Muncie Indiana Transit System (MITS) provides local bus service; Delaware County Regional Airport (MIE); I-69 and State Road 332 provide regional access.",
+    "population": 65000
   }
 }

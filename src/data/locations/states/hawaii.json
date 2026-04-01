@@ -84,5 +84,40 @@
     "meetingHighlights": "Rapidly growing suburban meetings with family-oriented evening groups and community-center meetings in Kapolei Town.",
     "transitInfo": "TheBus service and highway access to Honolulu; Daniel K. Inouye International Airport (HNL) reachable by car.",
     "population": 21000
+  },
+  "kona": {
+    "city": "Kailua-Kona",
+    "stateAbbr": "HI",
+    "stateFull": "Hawaii",
+    "geoRegion": "US-HI",
+    "slug": "kona",
+    "lat": 19.6400,
+    "lng": -155.9969,
+    "areaDescription": "Kailua-Kona and West Hawaii on the Big Island",
+    "neighborhoods": "Kailua Village (Ali'i Drive), Keauhou, Holualoa, Kalaoa, Waikoloa Village, Kohala Coast",
+    "intergroup": {
+      "name": "West Hawaii Intergroup",
+      "url": "https://westhawaiintergroup.org"
+    },
+    "meetingHighlights": "Resort-area recovery community with meetings along Ali'i Drive and in Keauhou; welcoming to visitors and seasonal residents; outdoor fellowship culture with beach and lanai meetings.",
+    "transitInfo": "Hawaii County Hele-On bus provides limited service along the Kona Coast; Ellison Onizuka Kona International Airport (KOA) for inter-island and mainland flights; Queen Kaahumanu Highway (Highway 19) connects Kona to Waikoloa and Kohala.",
+    "population": 23000
+  },
+  "lihue": {
+    "city": "Lihue",
+    "stateAbbr": "HI",
+    "stateFull": "Hawaii",
+    "geoRegion": "US-HI",
+    "slug": "lihue",
+    "lat": 21.9811,
+    "lng": -159.3711,
+    "areaDescription": "Lihue and the island of Kauai",
+    "neighborhoods": "Lihue Town, Rice Street area, Kapaa, Poipu, Princeville, Koloa",
+    "intergroup": {
+      "name": "Kauai Intergroup"
+    },
+    "meetingHighlights": "Small-island recovery community with meetings spread across Kauai from Princeville to Poipu; close-knit fellowship welcoming to tourists and locals; church and community center groups.",
+    "transitInfo": "Kauai Bus provides island-wide public transit; Lihue Airport (LIH) handles inter-island and mainland flights; Kaumualii Highway and Kuhio Highway connect the island's communities.",
+    "population": 7000
   }
 }

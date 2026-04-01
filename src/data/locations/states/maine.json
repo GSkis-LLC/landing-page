@@ -70,5 +70,39 @@
     "meetingHighlights": "Twin Cities recovery serving Lewiston-Auburn; mill-town heritage; diverse French-speaking and English meetings.",
     "transitInfo": "Citylink bus service; Auburn-Lewiston Municipal Airport (LEW); Turnpike access.",
     "population": 37000
+  },
+  "augusta": {
+    "city": "Augusta",
+    "stateAbbr": "ME",
+    "stateFull": "Maine",
+    "geoRegion": "US-ME",
+    "slug": "augusta-me",
+    "lat": 44.3106,
+    "lng": -69.7795,
+    "areaDescription": "Augusta, the state capital, along the Kennebec River",
+    "neighborhoods": "Downtown Augusta, Capitol area, Western Avenue corridor, Hallowell (nearby), Gardiner (nearby)",
+    "intergroup": {
+      "name": "Kennebec Valley Intergroup"
+    },
+    "meetingHighlights": "State capital recovery community with meetings near the State House and along the Kennebec River; fellowship shared with neighboring Hallowell and Gardiner; evening discussion and step-study groups.",
+    "transitInfo": "Kennebec Explorer bus service; Augusta State Airport (AUG); I-95 and US-202 provide regional access.",
+    "population": 19000
+  },
+  "bar-harbor": {
+    "city": "Bar Harbor",
+    "stateAbbr": "ME",
+    "stateFull": "Maine",
+    "geoRegion": "US-ME",
+    "slug": "bar-harbor",
+    "lat": 44.3876,
+    "lng": -68.2039,
+    "areaDescription": "Bar Harbor and Mount Desert Island on the Downeast Maine coast",
+    "neighborhoods": "Downtown Bar Harbor, Cottage Street, Acadia National Park area, Northeast Harbor, Southwest Harbor",
+    "intergroup": {
+      "name": "Downeast Intergroup"
+    },
+    "meetingHighlights": "Coastal resort-town recovery with year-round meetings that swell during summer tourist season; welcoming to visitors exploring Acadia National Park; church and community center groups in Bar Harbor and neighboring villages.",
+    "transitInfo": "Island Explorer free shuttle (seasonal, serving Acadia and MDI); Hancock County-Bar Harbor Airport (BHB); Route 3 connects to Ellsworth and I-95 via US-1A.",
+    "population": 5500
   }
 }

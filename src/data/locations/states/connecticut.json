@@ -88,5 +88,41 @@
     "meetingHighlights": "Corporate city recovery with early morning and lunchtime meetings; diverse downtown presence; commuter-friendly schedule.",
     "transitInfo": "Metro-North Railroad hub with frequent NYC service; CT Transit buses; I-95 access.",
     "population": 135000
+  },
+  "waterbury": {
+    "city": "Waterbury",
+    "stateAbbr": "CT",
+    "stateFull": "Connecticut",
+    "geoRegion": "US-CT",
+    "slug": "waterbury",
+    "lat": 41.5582,
+    "lng": -73.0515,
+    "areaDescription": "Waterbury area in the Naugatuck River Valley",
+    "neighborhoods": "Downtown Waterbury, Town Plot, Bunker Hill, Overlook, Waterville, Wolcott",
+    "intergroup": {
+      "name": "Waterbury Area Intergroup",
+      "url": "https://waterburyaa.org"
+    },
+    "meetingHighlights": "Working-class recovery community with well-attended evening meetings in downtown churches and community centers; strong tradition of Big Book study and speaker meetings in the Naugatuck Valley.",
+    "transitInfo": "CT Transit Waterbury Division provides local bus service; Metro-North Waterbury Branch line to Bridgeport; I-84 and Route 8 access.",
+    "population": 114000
+  },
+  "danbury": {
+    "city": "Danbury",
+    "stateAbbr": "CT",
+    "stateFull": "Connecticut",
+    "geoRegion": "US-CT",
+    "slug": "danbury",
+    "lat": 41.4015,
+    "lng": -73.4540,
+    "areaDescription": "Danbury area in western Connecticut",
+    "neighborhoods": "Downtown Danbury, Mill Plain, Candlewood Lake area, Bethel, New Fairfield, Brookfield",
+    "intergroup": {
+      "name": "Fairfield County Intergroup",
+      "url": "https://fairfieldcountyaa.org"
+    },
+    "meetingHighlights": "Active western Connecticut meetings with groups in downtown Danbury and surrounding towns; strong evening schedule and welcoming newcomer meetings near Candlewood Lake communities.",
+    "transitInfo": "Housatonic Area Regional Transit (HART) bus service; Metro-North Danbury Branch line; I-84 provides east-west access; Danbury Municipal Airport (DXR).",
+    "population": 86000
   }
 }

@@ -70,5 +70,40 @@
     "meetingHighlights": "Cajun Country recovery with bilingual French/English meetings; strong Acadiana traditions; welcoming community atmosphere.",
     "transitInfo": "LTS bus service; Lafayette Regional Airport (LFT); heart of Acadiana.",
     "population": 126000
+  },
+  "lake-charles": {
+    "city": "Lake Charles",
+    "stateAbbr": "LA",
+    "stateFull": "Louisiana",
+    "geoRegion": "US-LA",
+    "slug": "lake-charles",
+    "lat": 30.2266,
+    "lng": -93.2174,
+    "areaDescription": "Lake Charles and Calcasieu Parish in Southwest Louisiana",
+    "neighborhoods": "Downtown Lake Charles, Prien Lake area, Moss Bluff, Westlake, Sulphur",
+    "intergroup": {
+      "name": "Lake Charles Area Intergroup",
+      "url": "https://lakecharlesaa.org"
+    },
+    "meetingHighlights": "Southwest Louisiana recovery hub with meetings in downtown churches and along the Prien Lake Road corridor; resilient community rebuilt after hurricane seasons; strong evening and weekend speaker meetings.",
+    "transitInfo": "City of Lake Charles Transit provides local bus service; Lake Charles Regional Airport (LCH); I-10 and I-210 loop provide regional highway access.",
+    "population": 83000
+  },
+  "monroe": {
+    "city": "Monroe",
+    "stateAbbr": "LA",
+    "stateFull": "Louisiana",
+    "geoRegion": "US-LA",
+    "slug": "monroe-la",
+    "lat": 32.5093,
+    "lng": -92.1193,
+    "areaDescription": "Monroe-West Monroe area in Northeast Louisiana along the Ouachita River",
+    "neighborhoods": "Downtown Monroe, South Monroe, West Monroe, University of Louisiana Monroe area, Forsythe Park",
+    "intergroup": {
+      "name": "Monroe Area Intergroup"
+    },
+    "meetingHighlights": "Twin-city recovery community serving Monroe and West Monroe across the Ouachita River; meetings near ULM campus and in downtown churches; welcoming fellowship with evening discussion and Big Book study groups.",
+    "transitInfo": "Monroe Transit provides local bus service; Monroe Regional Airport (MLU); I-20 corridor and US-165 provide regional access.",
+    "population": 47000
   }
 }

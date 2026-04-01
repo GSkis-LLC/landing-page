@@ -88,5 +88,41 @@
     "meetingHighlights": "Small-city meetings with solid neighborhood attendance; many groups meet in downtown churches and community centers.",
     "transitInfo": "Pueblo Transit serves the city; Pueblo Memorial Airport (PUB) and regional highways provide access.",
     "population": 110000
+  },
+  "fort-collins": {
+    "city": "Fort Collins",
+    "stateAbbr": "CO",
+    "stateFull": "Colorado",
+    "geoRegion": "US-CO",
+    "slug": "fort-collins",
+    "lat": 40.5853,
+    "lng": -105.0844,
+    "areaDescription": "Fort Collins and northern Colorado along the Cache la Poudre River",
+    "neighborhoods": "Old Town, Campus West near CSU, Midtown, South Fort Collins, Timnath, Wellington",
+    "intergroup": {
+      "name": "Fort Collins Area Intergroup",
+      "url": "https://fortcollinsaa.org"
+    },
+    "meetingHighlights": "Thriving college-town recovery community near Colorado State University; active Old Town and Campus West meetings; strong young people's groups and outdoor recovery fellowship in the Poudre Canyon area.",
+    "transitInfo": "Transfort bus system serves Fort Collins; FLEX regional bus connects to Loveland and Longmont; Northern Colorado Regional Airport (FNL); Interstate 25 access.",
+    "population": 169000
+  },
+  "lakewood": {
+    "city": "Lakewood",
+    "stateAbbr": "CO",
+    "stateFull": "Colorado",
+    "geoRegion": "US-CO",
+    "slug": "lakewood",
+    "lat": 39.7047,
+    "lng": -105.0814,
+    "areaDescription": "Lakewood and the western Denver metro foothills",
+    "neighborhoods": "Belmar, Green Mountain, Union Boulevard corridor, Bear Creek, Applewood, West Colfax",
+    "intergroup": {
+      "name": "Denver Area Intergroup (serves Lakewood)",
+      "url": "https://denveraa.org"
+    },
+    "meetingHighlights": "Active West Denver metro meetings with groups near Belmar and along Union Boulevard; gateway to mountain recovery events; mix of Big Book study, discussion, and speaker formats.",
+    "transitInfo": "RTD light rail (W Line) and bus routes connect Lakewood to downtown Denver; close to US-6 and C-470; Denver International Airport (DEN) accessible via light rail.",
+    "population": 155000
   }
 }

@@ -124,5 +124,41 @@
     "meetingHighlights": "Close-knit recovery community in the Wiregrass; meetings throughout the week at churches and community centers; strong tradition of service.",
     "transitInfo": "Wiregrass Transit Authority dial-a-ride service; Dothan Regional Airport (DHN); US Routes 84, 231, and 431.",
     "population": 71000
+  },
+  "decatur": {
+    "city": "Decatur",
+    "stateAbbr": "AL",
+    "stateFull": "Alabama",
+    "geoRegion": "US-AL",
+    "slug": "decatur",
+    "lat": 34.6059,
+    "lng": -86.9833,
+    "areaDescription": "Decatur and Morgan County area along the Tennessee River",
+    "neighborhoods": "Downtown Decatur, Albany, Westmeade, Austin Ferry, Priceville, Hartselle",
+    "intergroup": {
+      "name": "North Alabama Area Intergroup",
+      "url": "https://huntsvilleaa.org"
+    },
+    "meetingHighlights": "Established recovery groups meeting at churches and community centers along the 6th Avenue corridor and near Point Mallard; a blend of open discussion, speaker, and step-study formats.",
+    "transitInfo": "Decatur Transit system provides limited fixed-route service; close to Interstate 65 and US-31; Huntsville International Airport (HSV) is about 25 miles east.",
+    "population": 57000
+  },
+  "florence": {
+    "city": "Florence",
+    "stateAbbr": "AL",
+    "stateFull": "Alabama",
+    "geoRegion": "US-AL",
+    "slug": "florence",
+    "lat": 34.7998,
+    "lng": -87.6772,
+    "areaDescription": "Florence–Muscle Shoals metropolitan area (the Shoals) in northwest Alabama",
+    "neighborhoods": "Downtown Florence, Shoals area, Muscle Shoals, Sheffield, Tuscumbia, College Street corridor near UNA",
+    "intergroup": {
+      "name": "Shoals Area Intergroup",
+      "url": "https://shoalsaa.org"
+    },
+    "meetingHighlights": "Active Shoals-area recovery community with meetings in Florence, Muscle Shoals, Sheffield, and Tuscumbia; groups near University of North Alabama campus and along the Wilson Dam corridor; strong tradition of Big Book study.",
+    "transitInfo": "Shoals Area Transit provides local bus service; Northwest Alabama Regional Airport (MSL) in Muscle Shoals; US-72 and the Natchez Trace Parkway provide regional access.",
+    "population": 40000
   }
 }

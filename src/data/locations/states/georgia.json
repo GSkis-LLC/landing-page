@@ -101,5 +101,41 @@
     "meetingHighlights": "College-town meetings with young people's groups and active campus outreach at UGA; vibrant music scene recovery community.",
     "transitInfo": "Athens Transit provides bus routes throughout the city and UGA campus; Groome Transportation connects to Atlanta airport.",
     "population": 127315
+  },
+  "marietta": {
+    "city": "Marietta",
+    "stateAbbr": "GA",
+    "stateFull": "Georgia",
+    "geoRegion": "US-GA",
+    "slug": "marietta",
+    "lat": 33.9526,
+    "lng": -84.5499,
+    "areaDescription": "Marietta and Cobb County in northwest metro Atlanta",
+    "neighborhoods": "Marietta Square, East Cobb, West Cobb, Kennesaw, Acworth, Powder Springs",
+    "intergroup": {
+      "name": "Cobb County Intergroup",
+      "url": "https://cobbaa.org"
+    },
+    "meetingHighlights": "Active suburban recovery community with meetings around the Marietta Square and throughout Cobb County; strong evening and weekend groups; Kennesaw State University area meetings attract younger members.",
+    "transitInfo": "CobbLinc bus service connects Marietta to Atlanta MARTA; close to I-75 and I-575; Hartsfield-Jackson Atlanta International Airport (ATL) accessible via highway.",
+    "population": 60972
+  },
+  "valdosta": {
+    "city": "Valdosta",
+    "stateAbbr": "GA",
+    "stateFull": "Georgia",
+    "geoRegion": "US-GA",
+    "slug": "valdosta",
+    "lat": 30.8327,
+    "lng": -83.2785,
+    "areaDescription": "Valdosta and Lowndes County in south Georgia near the Florida border",
+    "neighborhoods": "Downtown Valdosta, North Valdosta, Remerton, Moody AFB area, Valdosta State University area",
+    "intergroup": {
+      "name": "South Georgia Intergroup",
+      "url": "https://southgeorgiaaa.org"
+    },
+    "meetingHighlights": "South Georgia recovery hub with meetings near Valdosta State University and Moody Air Force Base; welcoming community with evening discussion and Big Book study groups.",
+    "transitInfo": "Valdosta-Lowndes County Transit provides local bus service; Valdosta Regional Airport (VLD); I-75 corridor near the Georgia-Florida state line.",
+    "population": 56500
   }
 }

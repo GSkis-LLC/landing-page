@@ -70,5 +70,39 @@
     "meetingHighlights": "Lake Superior port city recovery; strong mining and shipping heritage; active downtown and neighborhood meetings.",
     "transitInfo": "Duluth Transit Authority buses; Duluth International Airport (DLH); Great Lakes port city.",
     "population": 87000
+  },
+  "st-cloud": {
+    "city": "St. Cloud",
+    "stateAbbr": "MN",
+    "stateFull": "Minnesota",
+    "geoRegion": "US-MN",
+    "slug": "st-cloud",
+    "lat": 45.5579,
+    "lng": -94.1632,
+    "areaDescription": "St. Cloud and Stearns County in central Minnesota",
+    "neighborhoods": "Downtown St. Cloud, SCSU campus area, Waite Park, Sauk Rapids, Sartell",
+    "intergroup": {
+      "name": "St. Cloud Area Intergroup"
+    },
+    "meetingHighlights": "Central Minnesota recovery hub with meetings near St. Cloud State University and downtown; strong granite-city fellowship with evening discussion, speaker, and Big Book study groups serving surrounding counties.",
+    "transitInfo": "Metro Bus provides local service in St. Cloud metro; St. Cloud Regional Airport (STC); I-94 and US-10 provide regional highway access.",
+    "population": 70000
+  },
+  "mankato": {
+    "city": "Mankato",
+    "stateAbbr": "MN",
+    "stateFull": "Minnesota",
+    "geoRegion": "US-MN",
+    "slug": "mankato",
+    "lat": 44.1636,
+    "lng": -93.9994,
+    "areaDescription": "Mankato-North Mankato area in the Minnesota River Valley",
+    "neighborhoods": "Downtown Mankato, MSU campus area, Hilltop, North Mankato, Eagle Lake",
+    "intergroup": {
+      "name": "Mankato Area Intergroup"
+    },
+    "meetingHighlights": "College-town recovery near Minnesota State University with young people's and evening meetings; river-valley fellowship serving Blue Earth and Nicollet counties; step-study and speaker formats.",
+    "transitInfo": "Mankato Transit System provides local bus routes; Mankato Regional Airport (MKT); US-169 and US-14 provide regional access.",
+    "population": 44000
   }
 }

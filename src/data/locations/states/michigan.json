@@ -124,5 +124,39 @@
     "meetingHighlights": "Active college-town meetings near Western Michigan University and Kalamazoo College; strong downtown recovery community around Bronson Park.",
     "transitInfo": "Kalamazoo Metro Transit provides bus service throughout the city; Kalamazoo/Battle Creek International Airport (AZO) nearby.",
     "population": 73598
+  },
+  "traverse-city": {
+    "city": "Traverse City",
+    "stateAbbr": "MI",
+    "stateFull": "Michigan",
+    "geoRegion": "US-MI",
+    "slug": "traverse-city",
+    "lat": 44.7631,
+    "lng": -85.6206,
+    "areaDescription": "Traverse City and the Grand Traverse Bay region in northern Lower Michigan",
+    "neighborhoods": "Downtown Traverse City, Old Town, Slabtown, West Bay Shore, Greilickville, Garfield Township",
+    "intergroup": {
+      "name": "Grand Traverse Area Intergroup"
+    },
+    "meetingHighlights": "Northern Michigan resort-area recovery with meetings in downtown and along Grand Traverse Bay; seasonal attendance swells in summer and cherry festival season; strong outdoor fellowship and year-round step-study groups.",
+    "transitInfo": "BATA (Bay Area Transportation Authority) provides local bus service; Cherry Capital Airport (TVC); US-31 and M-72 provide regional access.",
+    "population": 15000
+  },
+  "muskegon": {
+    "city": "Muskegon",
+    "stateAbbr": "MI",
+    "stateFull": "Michigan",
+    "geoRegion": "US-MI",
+    "slug": "muskegon",
+    "lat": 43.2342,
+    "lng": -86.2484,
+    "areaDescription": "Muskegon and the Lakeshore region of West Michigan",
+    "neighborhoods": "Downtown Muskegon, Lakeside, Nelson, North Muskegon, Norton Shores, Muskegon Heights",
+    "intergroup": {
+      "name": "Muskegon Area Intergroup"
+    },
+    "meetingHighlights": "Lake Michigan port-city recovery with meetings in downtown and lakeshore communities; strong evening and weekend groups at churches and community centers; welcoming fellowship serving surrounding rural areas.",
+    "transitInfo": "Muskegon Area Transit System (MATS) provides local bus service; Muskegon County Airport (MKG); US-31 connects to Grand Rapids and Holland.",
+    "population": 38000
   }
 }

@@ -101,5 +101,39 @@
     "meetingHighlights": "Growing suburban meetings with family-friendly schedules; many evening and weekend groups serving the KC metro area.",
     "transitInfo": "Johnson County Transit and regional bus routes; close to Kansas City International Airport (MCI).",
     "population": 141000
+  },
+  "manhattan": {
+    "city": "Manhattan",
+    "stateAbbr": "KS",
+    "stateFull": "Kansas",
+    "geoRegion": "US-KS",
+    "slug": "manhattan-ks",
+    "lat": 39.1836,
+    "lng": -96.5717,
+    "areaDescription": "Manhattan and the Flint Hills, home to Kansas State University",
+    "neighborhoods": "Downtown Manhattan, Aggieville, Westloop, Miller Ranch, Ogden, Fort Riley (nearby)",
+    "intergroup": {
+      "name": "Manhattan Area Intergroup"
+    },
+    "meetingHighlights": "College-town recovery community near K-State with young people's meetings in Aggieville area; military-connected fellowship near Fort Riley; evening discussion and Big Book study groups.",
+    "transitInfo": "Flint Hills ATA bus service; Manhattan Regional Airport (MHK); US-24 and K-177 provide regional access; close to I-70.",
+    "population": 55000
+  },
+  "salina": {
+    "city": "Salina",
+    "stateAbbr": "KS",
+    "stateFull": "Kansas",
+    "geoRegion": "US-KS",
+    "slug": "salina",
+    "lat": 38.8403,
+    "lng": -97.6114,
+    "areaDescription": "Salina and Saline County in central Kansas",
+    "neighborhoods": "Downtown Salina, South Santa Fe, Kenwood Park, Sunset Park, North Salina",
+    "intergroup": {
+      "name": "Salina Area Intergroup"
+    },
+    "meetingHighlights": "Central Kansas recovery hub with meetings in downtown churches and community centers; serves a wide rural area; strong evening speaker and step-study traditions.",
+    "transitInfo": "CityGo provides local bus service in Salina; Salina Regional Airport (SLN); I-70 and I-135 interchange provides north-south and east-west highway access.",
+    "population": 47000
   }
 }

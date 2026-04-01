@@ -195,5 +195,41 @@
     "meetingHighlights": "Extensive meeting network across the Bay area with many specialty meetings, strong evening schedules, and extensive service resources.",
     "transitInfo": "HART buses, TECO streetcar in Tampa, and regional transit to St. Pete; Tampa International Airport (TPA) for flights.",
     "population": 385430
+  },
+  "sarasota": {
+    "city": "Sarasota",
+    "stateAbbr": "FL",
+    "stateFull": "Florida",
+    "geoRegion": "US-FL",
+    "slug": "sarasota",
+    "lat": 27.3364,
+    "lng": -82.5307,
+    "areaDescription": "Sarasota and Manatee County Gulf Coast area",
+    "neighborhoods": "Downtown Sarasota, St. Armands Circle, Siesta Key, Gulf Gate, Bee Ridge, Lakewood Ranch",
+    "intergroup": {
+      "name": "Sarasota/Manatee Intergroup",
+      "url": "https://aasrq.org"
+    },
+    "meetingHighlights": "Active Gulf Coast recovery community with meetings near downtown, St. Armands, and Siesta Key; strong snowbird-season attendance; many early-morning and evening groups at churches and clubhouses.",
+    "transitInfo": "SCAT bus service covers Sarasota County; Sarasota-Bradenton International Airport (SRQ); I-75 and US-41 (Tamiami Trail) access.",
+    "population": 57000
+  },
+  "pensacola": {
+    "city": "Pensacola",
+    "stateAbbr": "FL",
+    "stateFull": "Florida",
+    "geoRegion": "US-FL",
+    "slug": "pensacola",
+    "lat": 30.4213,
+    "lng": -87.2169,
+    "areaDescription": "Pensacola and Escambia County in the Florida Panhandle",
+    "neighborhoods": "Downtown Pensacola, East Hill, North Hill, Cordova Park, Pensacola Beach, Perdido Key",
+    "intergroup": {
+      "name": "Pensacola Area Intergroup",
+      "url": "https://pensacolaaa.org"
+    },
+    "meetingHighlights": "Panhandle recovery hub with meetings throughout downtown and beach communities; strong military-connected fellowship near NAS Pensacola; active speaker and step-study traditions.",
+    "transitInfo": "ECAT bus service covers Escambia County; Pensacola International Airport (PNS); I-10 and US-98 Gulf Coast access.",
+    "population": 54000
   }
 }

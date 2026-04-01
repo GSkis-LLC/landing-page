@@ -135,5 +135,40 @@
     "meetingHighlights": "Active capital-city meetings with a steady weekday and evening schedule and several faith-based groups.",
     "transitInfo": "SMTD buses serve Springfield; Abraham Lincoln Capital Airport (SPI) for regional flights.",
     "population": 115000
+  },
+  "champaign": {
+    "city": "Champaign",
+    "stateAbbr": "IL",
+    "stateFull": "Illinois",
+    "geoRegion": "US-IL",
+    "slug": "champaign",
+    "lat": 40.1164,
+    "lng": -88.2434,
+    "areaDescription": "Champaign-Urbana twin cities, home to University of Illinois",
+    "neighborhoods": "Downtown Champaign, Campustown, Urbana, Savoy, West Champaign, South Neil Street corridor",
+    "intergroup": {
+      "name": "Champaign-Urbana Area Intergroup",
+      "url": "https://cuaa.org"
+    },
+    "meetingHighlights": "Active college-town recovery community near U of I campus with young people's meetings, late-evening groups, and step-study formats; strong Campustown and downtown attendance.",
+    "transitInfo": "Champaign-Urbana Mass Transit District (CUMTD) provides extensive bus service; University of Illinois Willard Airport (CMI); I-57, I-72, and I-74 access.",
+    "population": 88000
+  },
+  "decatur": {
+    "city": "Decatur",
+    "stateAbbr": "IL",
+    "stateFull": "Illinois",
+    "geoRegion": "US-IL",
+    "slug": "decatur-il",
+    "lat": 39.8403,
+    "lng": -88.9548,
+    "areaDescription": "Decatur and Macon County in central Illinois",
+    "neighborhoods": "Downtown Decatur, South Shores, East Decatur, Mount Zion, Forsyth",
+    "intergroup": {
+      "name": "Decatur Area Intergroup"
+    },
+    "meetingHighlights": "Central Illinois recovery community with meetings near Lake Decatur and in downtown churches; evening discussion and speaker groups with strong local fellowship.",
+    "transitInfo": "Decatur Public Transit System (DPTS) provides local bus service; Decatur Airport (DEC); I-72 and US-51 provide regional highway access.",
+    "population": 70000
   }
 }

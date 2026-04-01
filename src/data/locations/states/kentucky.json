@@ -70,5 +70,40 @@
     "meetingHighlights": "River city recovery with active downtown meetings; strong service tradition; regional hub for Western Kentucky.",
     "transitInfo": "Green River Transit bus service; Owensboro-Daviess County Regional Airport (OWB); Ohio River location.",
     "population": 60000
+  },
+  "covington": {
+    "city": "Covington",
+    "stateAbbr": "KY",
+    "stateFull": "Kentucky",
+    "geoRegion": "US-KY",
+    "slug": "covington",
+    "lat": 39.0837,
+    "lng": -84.5086,
+    "areaDescription": "Covington and Northern Kentucky across the Ohio River from Cincinnati",
+    "neighborhoods": "MainStrasse Village, Downtown Covington, Latonia, Devou Park area, Fort Wright, Erlanger",
+    "intergroup": {
+      "name": "Northern Kentucky Intergroup",
+      "url": "https://nkyaa.org"
+    },
+    "meetingHighlights": "Cross-river recovery community shared with Greater Cincinnati; active MainStrasse and downtown meetings; strong evening schedule with Big Book study and speaker formats.",
+    "transitInfo": "TANK bus service connects Northern Kentucky to Cincinnati; Cincinnati/Northern Kentucky International Airport (CVG) in nearby Hebron; I-71, I-75, and Roebling Suspension Bridge access.",
+    "population": 41000
+  },
+  "frankfort": {
+    "city": "Frankfort",
+    "stateAbbr": "KY",
+    "stateFull": "Kentucky",
+    "geoRegion": "US-KY",
+    "slug": "frankfort",
+    "lat": 38.2009,
+    "lng": -84.8733,
+    "areaDescription": "Frankfort, the state capital, along the Kentucky River",
+    "neighborhoods": "Downtown Frankfort, South Frankfort, West Side, Capital Avenue area, Peaks Mill",
+    "intergroup": {
+      "name": "Frankfort Area Intergroup"
+    },
+    "meetingHighlights": "State capital recovery community with meetings near the Capitol complex and along the Kentucky River; close-knit fellowship with evening discussion and step-study groups.",
+    "transitInfo": "Frankfort Transit provides local bus service; Capital City Airport (FFT); US-60 and US-127 provide regional access; midway between Lexington and Louisville on I-64.",
+    "population": 28000
   }
 }

@@ -52,5 +52,39 @@
     "meetingHighlights": "College-town recovery near University of Southern Mississippi; Hub City meetings; young people and family groups.",
     "transitInfo": "Hub City Transit buses; Hattiesburg-Laurel Regional Airport (PIB); I-59 corridor.",
     "population": 48000
+  },
+  "tupelo": {
+    "city": "Tupelo",
+    "stateAbbr": "MS",
+    "stateFull": "Mississippi",
+    "geoRegion": "US-MS",
+    "slug": "tupelo",
+    "lat": 34.2576,
+    "lng": -88.7034,
+    "areaDescription": "Tupelo and Lee County in northeast Mississippi",
+    "neighborhoods": "Downtown Tupelo, North Gloster, South Tupelo, Saltillo, Plantersville, Natchez Trace corridor",
+    "intergroup": {
+      "name": "Northeast Mississippi Intergroup"
+    },
+    "meetingHighlights": "Northeast Mississippi recovery hub with meetings in downtown churches and along North Gloster Street; birthplace of Elvis with a welcoming small-city fellowship; strong evening speaker and discussion groups.",
+    "transitInfo": "TRAMS dial-a-ride service; Tupelo Regional Airport (TUP); Natchez Trace Parkway and US-78/US-45 provide regional access.",
+    "population": 38000
+  },
+  "meridian": {
+    "city": "Meridian",
+    "stateAbbr": "MS",
+    "stateFull": "Mississippi",
+    "geoRegion": "US-MS",
+    "slug": "meridian-ms",
+    "lat": 32.3643,
+    "lng": -88.7037,
+    "areaDescription": "Meridian and Lauderdale County in east-central Mississippi",
+    "neighborhoods": "Downtown Meridian, Highland Park, Poplar Springs, North Hills, Bonita",
+    "intergroup": {
+      "name": "Meridian Area Intergroup"
+    },
+    "meetingHighlights": "East Mississippi recovery community with meetings near the historic downtown railroad district; evening and weekend groups at churches and community centers; regional hub serving surrounding rural counties.",
+    "transitInfo": "Meridian Transit System provides local bus service; Key Field (MEI); I-20 and I-59 interchange provides major highway access.",
+    "population": 34000
   }
 }

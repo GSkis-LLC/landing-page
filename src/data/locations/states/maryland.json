@@ -70,5 +70,39 @@
     "meetingHighlights": "Historic downtown recovery community; growing suburban meetings; strong service tradition in Frederick County.",
     "transitInfo": "TransIT buses; Frederick Municipal Airport (FDK); I-70 and I-270 access.",
     "population": 72000
+  },
+  "hagerstown": {
+    "city": "Hagerstown",
+    "stateAbbr": "MD",
+    "stateFull": "Maryland",
+    "geoRegion": "US-MD",
+    "slug": "hagerstown",
+    "lat": 39.6418,
+    "lng": -77.7200,
+    "areaDescription": "Hagerstown and Washington County in western Maryland",
+    "neighborhoods": "Downtown Hagerstown, City Park area, Halfway, Smithsburg, Funkstown, Robinwood",
+    "intergroup": {
+      "name": "Washington County Intergroup"
+    },
+    "meetingHighlights": "Western Maryland recovery hub with meetings in downtown churches and along Dual Highway; serves the tri-state area of Maryland, West Virginia, and Pennsylvania; strong evening and weekend speaker meetings.",
+    "transitInfo": "County Commuter bus service; Hagerstown Regional Airport (HGR); I-70 and I-81 interchange provides regional access.",
+    "population": 44000
+  },
+  "salisbury": {
+    "city": "Salisbury",
+    "stateAbbr": "MD",
+    "stateFull": "Maryland",
+    "geoRegion": "US-MD",
+    "slug": "salisbury",
+    "lat": 38.3607,
+    "lng": -75.5994,
+    "areaDescription": "Salisbury and the Eastern Shore of Maryland",
+    "neighborhoods": "Downtown Salisbury, Salisbury University area, North Salisbury, Fruitland, Delmar",
+    "intergroup": {
+      "name": "Eastern Shore Intergroup"
+    },
+    "meetingHighlights": "Eastern Shore recovery hub serving Wicomico County and surrounding Delmarva communities; meetings near Salisbury University and downtown; welcoming fellowship with evening discussion and step-study groups.",
+    "transitInfo": "Shore Transit provides local and regional bus service across the Lower Eastern Shore; Salisbury-Ocean City Wicomico Regional Airport (SBY); US-13 and US-50 provide regional access.",
+    "population": 33000
   }
 }

@@ -104,5 +104,41 @@
     "meetingHighlights": "West Valley recovery hub with diverse meetings; strong Latino community presence; meetings near State Farm Stadium.",
     "transitInfo": "Valley Metro bus service; Phoenix Sky Harbor International Airport (PHX) accessible.",
     "population": 250000
+  },
+  "flagstaff": {
+    "city": "Flagstaff",
+    "stateAbbr": "AZ",
+    "stateFull": "Arizona",
+    "geoRegion": "US-AZ",
+    "slug": "flagstaff",
+    "lat": 35.1983,
+    "lng": -111.6513,
+    "areaDescription": "Flagstaff and northern Arizona high-country region",
+    "neighborhoods": "Downtown Flagstaff, NAU campus area, Southside, Sunnyside, Cheshire, Kachina Village",
+    "intergroup": {
+      "name": "Northern Arizona Intergroup",
+      "url": "https://northernarizonaaa.org"
+    },
+    "meetingHighlights": "Mountain-town recovery community with meetings near Northern Arizona University and along Route 66; a mix of young people's groups, step studies, and outdoor-oriented fellowship.",
+    "transitInfo": "Mountain Line bus service throughout Flagstaff; Amtrak Southwest Chief stop downtown; Flagstaff Pulliam Airport (FLG); Interstate 40 and Interstate 17 access.",
+    "population": 76000
+  },
+  "tempe": {
+    "city": "Tempe",
+    "stateAbbr": "AZ",
+    "stateFull": "Arizona",
+    "geoRegion": "US-AZ",
+    "slug": "tempe",
+    "lat": 33.4255,
+    "lng": -111.9400,
+    "areaDescription": "Phoenix metro — East Valley, home of Arizona State University",
+    "neighborhoods": "Downtown Tempe, Mill Avenue District, Tempe Town Lake area, South Tempe, Guadalupe, McClintock Corridor",
+    "intergroup": {
+      "name": "Salt River Intergroup",
+      "url": "https://aaphoenix.org"
+    },
+    "meetingHighlights": "Strong college-area recovery scene near ASU with young people's meetings, speaker meetings on Mill Avenue, and midday groups popular with students and professionals.",
+    "transitInfo": "Valley Metro light rail runs through downtown Tempe; extensive bus network; Phoenix Sky Harbor International Airport (PHX) borders Tempe to the west.",
+    "population": 184000
   }
 }

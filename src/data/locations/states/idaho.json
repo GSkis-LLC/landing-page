@@ -84,5 +84,39 @@
     "meetingHighlights": "Active lakeside meetings with a mix of seasonal visitors and local groups; several area retreats and speaker meetings.",
     "transitInfo": "Local bus services and regional highways; Spokane International Airport (GEG) and Coeur d'Alene airport for regional access.",
     "population": 54000
+  },
+  "twin-falls": {
+    "city": "Twin Falls",
+    "stateAbbr": "ID",
+    "stateFull": "Idaho",
+    "geoRegion": "US-ID",
+    "slug": "twin-falls",
+    "lat": 42.5558,
+    "lng": -114.4601,
+    "areaDescription": "Twin Falls and the Magic Valley in south-central Idaho",
+    "neighborhoods": "Downtown Twin Falls, Blue Lakes Boulevard, Kimberly, Filer, Jerome (nearby)",
+    "intergroup": {
+      "name": "Magic Valley Intergroup"
+    },
+    "meetingHighlights": "Regional recovery hub for the Magic Valley with meetings in downtown churches and along Blue Lakes Boulevard; steady evening and weekend groups serving a wide rural area.",
+    "transitInfo": "Trans IV dial-a-ride service; Joslin Field Magic Valley Regional Airport (TWF); US-93 and I-84 provide regional highway access.",
+    "population": 51000
+  },
+  "pocatello": {
+    "city": "Pocatello",
+    "stateAbbr": "ID",
+    "stateFull": "Idaho",
+    "geoRegion": "US-ID",
+    "slug": "pocatello",
+    "lat": 42.8713,
+    "lng": -112.4455,
+    "areaDescription": "Pocatello and Bannock County in southeast Idaho",
+    "neighborhoods": "Old Town Pocatello, ISU campus area, Chubbuck, Highland, Alameda",
+    "intergroup": {
+      "name": "Southeast Idaho Intergroup"
+    },
+    "meetingHighlights": "University-town recovery community near Idaho State University with student-friendly and evening meetings; Big Book study and discussion groups in Old Town and Chubbuck.",
+    "transitInfo": "Pocatello Regional Transit provides local bus service; Pocatello Regional Airport (PIH); I-15 and I-86 interchange provides north-south and east-west highway access.",
+    "population": 56000
   }
 }

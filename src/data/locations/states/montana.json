@@ -70,5 +70,39 @@
     "meetingHighlights": "College-town and outdoor recreation recovery; Montana State University presence; young people and ski-town meetings.",
     "transitInfo": "Streamline bus service; Bozeman Yellowstone International Airport (BZN); I-90 access.",
     "population": 56000
+  },
+  "helena": {
+    "city": "Helena",
+    "stateAbbr": "MT",
+    "stateFull": "Montana",
+    "geoRegion": "US-MT",
+    "slug": "helena",
+    "lat": 46.5958,
+    "lng": -112.0270,
+    "areaDescription": "Helena, the state capital, in the Helena Valley of west-central Montana",
+    "neighborhoods": "Downtown Helena, Last Chance Gulch, Reeder's Alley, East Helena, Montana City, Canyon Ferry area",
+    "intergroup": {
+      "name": "Helena Area Intergroup"
+    },
+    "meetingHighlights": "State capital recovery community with meetings along Last Chance Gulch and near the Capitol building; close-knit fellowship with evening discussion, speaker, and Big Book study groups; outdoor recovery culture near Gates of the Mountains.",
+    "transitInfo": "Capital Transit provides local bus service; Helena Regional Airport (HLN); I-15 provides north-south highway access.",
+    "population": 33000
+  },
+  "kalispell": {
+    "city": "Kalispell",
+    "stateAbbr": "MT",
+    "stateFull": "Montana",
+    "geoRegion": "US-MT",
+    "slug": "kalispell",
+    "lat": 48.1920,
+    "lng": -114.3168,
+    "areaDescription": "Kalispell and the Flathead Valley, gateway to Glacier National Park",
+    "neighborhoods": "Downtown Kalispell, Whitefish, Columbia Falls, Bigfork, Evergreen, Lakeside",
+    "intergroup": {
+      "name": "Flathead Valley Intergroup"
+    },
+    "meetingHighlights": "Flathead Valley recovery community with meetings in Kalispell, Whitefish, and Columbia Falls; gateway to Glacier National Park with seasonal visitor attendance; ski-town and outdoor fellowship in Whitefish; strong step-study tradition.",
+    "transitInfo": "Eagle Transit provides local bus service in the Flathead Valley; Glacier Park International Airport (FCA); US-93 and US-2 provide regional access.",
+    "population": 28000
   }
 }

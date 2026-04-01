@@ -1823,6 +1823,41 @@ al-anon meetings</textarea>
               <div class="notif-results" id="notif-results"></div>
             </div>
           </div>
+          <div class="notifications-layout" style="margin-top: 20px;">
+            <div class="notif-card">
+              <h3>Compose Alert</h3>
+
+              <div class="notif-field">
+                <label for="alert-content">Content</label>
+                <div class="notif-row">
+                  <input id="alert-content" type="text" />
+                </div>
+              </div>
+
+              <div class="notif-field">
+                <label for="alert-link">Link</label>
+                <div class="notif-row">
+                  <input id="alert-link" type="text" />
+                </div>
+              </div>
+
+              <div class="notif-field">
+                <label for="alert-link-cta">Link CTA</label>
+                <div class="notif-row">
+                  <input id="alert-link-cta" type="text" />
+                </div>
+              </div>
+
+              <button class="notif-send-btn" id="alert-create-btn" type="button">Send Alert</button>
+              <p class="notif-status" id="alert-create-status"></p>
+            </div>
+
+            <div class="notif-card">
+              <h3>All Alerts</h3>
+
+              <div class="notif-results" id="alerts-list"></div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -2214,6 +2249,93 @@ al-anon meetings</textarea>
         if (e.key === 'Enter') searchUsersForNotification();
       });
       notifSendBtn.addEventListener('click', sendManualNotification);
+
+      // --- Alerts API logic ---
+      const alertContent = document.getElementById('alert-content');
+      const alertLink = document.getElementById('alert-link');
+      const alertLinkCTA = document.getElementById('alert-link-cta');
+      const alertCreateBtn = document.getElementById('alert-create-btn');
+      const alertCreateStatus = document.getElementById('alert-create-status');
+      const alertsList = document.getElementById('alerts-list');
+
+      async function fetchAlerts() {
+        alertsList.innerHTML = 'Loading...';
+        try {
+          const res = await fetch(`${API}/api/alerts`);
+          const data = await res.json();
+          if (!Array.isArray(data)) throw new Error('Failed to load alerts');
+          if (!data.length) {
+            alertsList.innerHTML = '<div style="color:#64748b;">No active alerts.</div>';
+            return;
+          }
+          alertsList.innerHTML = data.map(alert => `
+            <div style="margin-bottom:1rem;padding:0.7rem 0.8rem;border-radius:8px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);">
+              <div style="font-size:1rem;color:#fff;margin-bottom:0.2rem;">${escapeHtml(alert.content)}</div>
+              ${alert.link ? `<a href="${escapeHtml(alert.link)}" target="_blank" style="color:#5eead4;font-size:0.9rem;">${escapeHtml(alert.linkCTA ?? alert.link)}</a><br/>` : ''}
+              <button type="button" style="margin-top:0.4rem;" class="notif-default-btn" onclick="deleteAlert(${alert.id})">Delete</button>
+            </div>
+          `).join('');
+        } catch (e) {
+          alertsList.innerHTML = `<span style="color:#f87171;">${e.message}</span>`;
+        }
+      }
+
+      window.deleteAlert = async function(id) {
+        if (!confirm('Delete this alert?')) return;
+        try {
+          const res = await fetch(`${API}/api/alert/${id}`, { 
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          if (!res.ok) throw new Error('Delete failed');
+          fetchAlerts();
+        } catch (e) {
+          alert('Failed to delete: ' + e.message);
+        }
+      };
+
+      alertCreateBtn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        alertCreateStatus.textContent = '';
+        alertCreateBtn.disabled = true;
+        try {
+          const content = alertContent.value.trim();
+          const link = alertLink.value.trim();
+          const linkCTA = alertLinkCTA.value.trim();
+          const res = await fetch(`${API}/api/alert`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({ content, link: link || null, linkCTA: linkCTA || null }),
+          });
+          if (!res.ok) {
+            const data = await res.json();
+            throw new Error(data.error || 'Create failed');
+          }
+          alertContent.value = '';
+          alertLink.value = '';
+          alertLinkCTA.value = '';
+          alertCreateStatus.textContent = '✓ Alert created';
+          alertCreateStatus.className = 'notif-status success';
+          fetchAlerts();
+        } catch (e) {
+          alertCreateStatus.textContent = e.message;
+          alertCreateStatus.className = 'notif-status error';
+        } finally {
+          alertCreateBtn.disabled = false;
+          setTimeout(() => { alertCreateStatus.textContent = ''; }, 3000);
+        }
+      });
+
+      // Fetch alerts on tab open
+      document.querySelector('[data-tab="notifications"]').addEventListener('click', fetchAlerts);
+      // Also fetch on page load if notifications tab is default
+      if (tabNotifications.classList.contains('active')) fetchAlerts();
 
       // ── ASO Checker (Client-side) ──
       function formatLastUpdate(value) {

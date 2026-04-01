@@ -103,5 +103,39 @@
     "meetingHighlights": "Active suburban meetings serving eastern KC metro; strong Truman Library area fellowship with regular speaker meetings.",
     "transitInfo": "RideKC buses connect Independence to Kansas City metro; Kansas City International Airport (MCI) accessible via highway.",
     "population": 123000
+  },
+  "joplin": {
+    "city": "Joplin",
+    "stateAbbr": "MO",
+    "stateFull": "Missouri",
+    "geoRegion": "US-MO",
+    "slug": "joplin",
+    "lat": 37.0842,
+    "lng": -94.5133,
+    "areaDescription": "Joplin and the Four State area in southwest Missouri",
+    "neighborhoods": "Downtown Joplin, Murphysburg, Eastmoreland, North Heights, West Joplin, Carl Junction",
+    "intergroup": {
+      "name": "Joplin Area Intergroup"
+    },
+    "meetingHighlights": "Four State recovery community rebuilt after the 2011 tornado; resilient fellowship with meetings in downtown and rebuilt community centers; serves southwest Missouri, southeast Kansas, and northeast Oklahoma.",
+    "transitInfo": "Joplin Globe Express trolley and dial-a-ride service; Joplin Regional Airport (JLN); I-44 and US-71 provide regional access.",
+    "population": 51000
+  },
+  "cape-girardeau": {
+    "city": "Cape Girardeau",
+    "stateAbbr": "MO",
+    "stateFull": "Missouri",
+    "geoRegion": "US-MO",
+    "slug": "cape-girardeau",
+    "lat": 37.3059,
+    "lng": -89.5181,
+    "areaDescription": "Cape Girardeau and the southeast Missouri river region",
+    "neighborhoods": "Downtown Cape, SEMO campus area, West Park, North Cape, Jackson (nearby)",
+    "intergroup": {
+      "name": "Cape Girardeau Area Intergroup"
+    },
+    "meetingHighlights": "Mississippi River town recovery with meetings near Southeast Missouri State University and downtown; cross-river fellowship with southern Illinois; evening discussion and Big Book study groups.",
+    "transitInfo": "Cape Girardeau Transit provides local bus service; Cape Girardeau Regional Airport (CGI); I-55 corridor along the Mississippi River.",
+    "population": 40000
   }
 }

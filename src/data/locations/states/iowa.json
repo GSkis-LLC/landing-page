@@ -118,5 +118,39 @@
     "meetingHighlights": "Neighborhood and downtown meetings with a mix of formats; shared resources with Cedar Falls meetings.",
     "transitInfo": "MET Transit provides local bus service; regional highway access via US-20.",
     "population": 67000
+  },
+  "dubuque": {
+    "city": "Dubuque",
+    "stateAbbr": "IA",
+    "stateFull": "Iowa",
+    "geoRegion": "US-IA",
+    "slug": "dubuque",
+    "lat": 42.5006,
+    "lng": -90.6646,
+    "areaDescription": "Dubuque and the tri-state area along the Mississippi River",
+    "neighborhoods": "Downtown Dubuque, Port of Dubuque, Cathedral District, West End, Asbury, Key West",
+    "intergroup": {
+      "name": "Dubuque Area Intergroup"
+    },
+    "meetingHighlights": "Mississippi River bluff-town recovery community with meetings in the Cathedral District and downtown; tri-state fellowship drawing members from Iowa, Illinois, and Wisconsin; strong tradition of speaker and step-study meetings.",
+    "transitInfo": "Jule Transit provides local bus service; Dubuque Regional Airport (DBQ); US-20 and US-61/151 provide regional highway access.",
+    "population": 59000
+  },
+  "council-bluffs": {
+    "city": "Council Bluffs",
+    "stateAbbr": "IA",
+    "stateFull": "Iowa",
+    "geoRegion": "US-IA",
+    "slug": "council-bluffs",
+    "lat": 41.2619,
+    "lng": -95.8608,
+    "areaDescription": "Council Bluffs and Pottawattamie County across the Missouri River from Omaha",
+    "neighborhoods": "Downtown Council Bluffs, Broadway corridor, Lake Manawa area, Westside, North Broadway",
+    "intergroup": {
+      "name": "Council Bluffs Area Intergroup"
+    },
+    "meetingHighlights": "Metro-area recovery community with cross-river fellowship shared with Omaha, Nebraska; evening and weekend groups in downtown churches and community centers; strong newcomer welcome.",
+    "transitInfo": "Southwest Iowa Transit Agency (SWITA) and Metro Area Transit (MAT) buses connect to Omaha; Eppley Airfield (OMA) in Omaha; I-80 and I-29 interchange.",
+    "population": 63000
   }
 }

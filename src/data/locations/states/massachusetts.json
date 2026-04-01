@@ -64,5 +64,27 @@
     "lng": -71.8023,
     "areaDescription": "Worcester County / Central Massachusetts area",
     "neighborhoods": "Downtown, Shrewsbury Street, Vernon Hill, Greendale, Tatnuck"
+  },
+  "lowell": {
+    "city": "Lowell",
+    "stateAbbr": "MA",
+    "stateFull": "Massachusetts",
+    "geoRegion": "US-MA",
+    "slug": "lowell",
+    "lat": 42.6334,
+    "lng": -71.3162,
+    "areaDescription": "Lowell and the Merrimack Valley",
+    "neighborhoods": "Downtown Lowell, Pawtucketville, Centralville, Belvidere, Acre, Highlands"
+  },
+  "fall-river": {
+    "city": "Fall River",
+    "stateAbbr": "MA",
+    "stateFull": "Massachusetts",
+    "geoRegion": "US-MA",
+    "slug": "fall-river",
+    "lat": 41.7015,
+    "lng": -71.1550,
+    "areaDescription": "Fall River and the South Coast of Massachusetts",
+    "neighborhoods": "Downtown Fall River, The Highlands, Flint, South End, Somerset (nearby), Swansea (nearby)"
   }
 }

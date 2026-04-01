@@ -70,5 +70,41 @@
     "meetingHighlights": "Regional hub for recovery in Northeast Arkansas; college-area meetings near A-State; welcoming community atmosphere.",
     "transitInfo": "Limited local transit; Jonesboro Municipal Airport (JBR); US Highway 49 and 63 access.",
     "population": 79000
+  },
+  "hot-springs": {
+    "city": "Hot Springs",
+    "stateAbbr": "AR",
+    "stateFull": "Arkansas",
+    "geoRegion": "US-AR",
+    "slug": "hot-springs",
+    "lat": 34.5037,
+    "lng": -93.0552,
+    "areaDescription": "Hot Springs and Garland County area in the Ouachita Mountains",
+    "neighborhoods": "Downtown Hot Springs, Bathhouse Row, Park Avenue, Lake Hamilton, Fountain Lake",
+    "intergroup": {
+      "name": "Hot Springs Area Intergroup",
+      "url": "https://hotspringsaa.org"
+    },
+    "meetingHighlights": "Recovery community centered around downtown and the national park area; meetings at churches near Central Avenue and Bathhouse Row; strong tradition of speaker and step-study groups serving locals and visitors alike.",
+    "transitInfo": "Hot Springs Intracity Transit (IntraCITY) bus service; Memorial Field Airport (HOT); US-70 and Highway 7 provide regional access; about 55 miles west of Little Rock via I-30.",
+    "population": 38000
+  },
+  "rogers": {
+    "city": "Rogers",
+    "stateAbbr": "AR",
+    "stateFull": "Arkansas",
+    "geoRegion": "US-AR",
+    "slug": "rogers",
+    "lat": 36.3320,
+    "lng": -94.1185,
+    "areaDescription": "Rogers and Bentonville area in Northwest Arkansas",
+    "neighborhoods": "Downtown Rogers, Pinnacle Hills, Pleasant Crossing, Blossom Way, Bentonville adjacent areas",
+    "intergroup": {
+      "name": "Northwest Arkansas Intergroup",
+      "url": "https://nwaintergroup.org"
+    },
+    "meetingHighlights": "Fast-growing Northwest Arkansas recovery community with meetings in Rogers and neighboring Bentonville; evening and lunchtime groups popular with corporate professionals; welcoming newcomer meetings.",
+    "transitInfo": "Ozark Regional Transit provides bus service; Northwest Arkansas Regional Airport (XNA) is nearby; Interstate 49 and US-71 access.",
+    "population": 72000
   }
 }
