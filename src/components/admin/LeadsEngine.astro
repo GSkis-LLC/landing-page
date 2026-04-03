@@ -1,0 +1,528 @@
+<div class="leads-panel" id="leads-panel">
+  <style is:inline>
+    .leads-panel { height: 100%; display: flex; flex-direction: column; overflow: hidden; }
+    .leads-subnav { display: flex; gap: 0.25rem; padding: 0.75rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(15,17,23,0.6); }
+    .leads-subnav-btn { border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; background: transparent; color: #94a3b8; padding: 0.35rem 0.75rem; font-size: 0.8rem; font-family: inherit; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .leads-subnav-btn:hover { color: #cbd5e1; border-color: rgba(255,255,255,0.2); }
+    .leads-subnav-btn.active { background: rgba(42,157,143,0.15); border-color: #2A9D8F; color: #5eead4; }
+    .leads-view { display: none; flex: 1; overflow-y: auto; padding: 1rem 1.5rem; }
+    .leads-view.active { display: block; }
+    .leads-toolbar { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.75rem; }
+    .leads-select { padding: 0.45rem 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); color: #e2e8f0; font-size: 0.85rem; font-family: inherit; outline: none; }
+    .leads-select option { background: #1a1d2e; }
+    .leads-select-full { width: 100%; }
+    .leads-btn { padding: 0.45rem 0.9rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); color: #e2e8f0; font-size: 0.85rem; font-family: inherit; font-weight: 600; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+    .leads-btn:hover { background: rgba(255,255,255,0.1); }
+    .leads-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .leads-btn-primary { background: #2A9D8F; border-color: #2A9D8F; color: #fff; }
+    .leads-btn-primary:hover { background: #21867A; }
+    .leads-btn-ghost { background: transparent; }
+    .leads-btn-sm { padding: 0.25rem 0.55rem; font-size: 0.75rem; border-radius: 6px; }
+    .leads-status-bar { font-size: 0.8rem; color: #94a3b8; min-height: 1.25rem; margin-bottom: 0.5rem; }
+    .leads-status-bar.error { color: #f87171; }
+    .leads-table-wrap { overflow-x: auto; }
+    .leads-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .leads-table th { text-align: left; padding: 0.5rem 0.6rem; color: #94a3b8; font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.3px; border-bottom: 1px solid rgba(255,255,255,0.1); white-space: nowrap; }
+    .leads-table td { padding: 0.55rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: #e2e8f0; vertical-align: middle; }
+    .leads-table tr:hover td { background: rgba(255,255,255,0.03); }
+    .leads-badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
+    .leads-badge-new { background: rgba(59,130,246,0.15); color: #60a5fa; }
+    .leads-badge-viewed { background: rgba(168,85,247,0.15); color: #c084fc; }
+    .leads-badge-emailed { background: rgba(42,157,143,0.15); color: #5eead4; }
+    .leads-badge-replied { background: rgba(34,197,94,0.15); color: #4ade80; }
+    .leads-badge-ignored { background: rgba(100,116,139,0.15); color: #94a3b8; }
+    .leads-badge-bad_fit { background: rgba(239,68,68,0.15); color: #f87171; }
+    .leads-score { display: inline-block; min-width: 2rem; text-align: center; padding: 0.15rem 0.4rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; }
+    .leads-score-high { background: rgba(34,197,94,0.15); color: #4ade80; }
+    .leads-score-med { background: rgba(250,204,21,0.15); color: #fbbf24; }
+    .leads-score-low { background: rgba(239,68,68,0.15); color: #f87171; }
+    .leads-actions { display: flex; gap: 0.4rem; flex-wrap: nowrap; align-items: center; }
+    .leads-actions select { appearance: none; -webkit-appearance: none; padding: 0.3rem 1.4rem 0.3rem 0.55rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.12); background-color: rgba(255,255,255,0.06); color: #cbd5e1; font-size: 0.72rem; font-family: inherit; font-weight: 600; cursor: pointer; outline: none; transition: all 0.2s; min-width: 5.5rem; }
+    .leads-actions select:hover { border-color: rgba(255,255,255,0.25); background-color: rgba(255,255,255,0.08); }
+    .leads-actions select:focus { border-color: #2A9D8F; box-shadow: 0 0 0 2px rgba(42,157,143,0.2); }
+    .leads-actions select option { background: #1a1d2e; color: #e2e8f0; }
+    .leads-actions .leads-btn { padding: 0.3rem 0.7rem; font-size: 0.72rem; font-weight: 700; border-radius: 6px; letter-spacing: 0.2px; display: inline-flex; align-items: center; gap: 0.3rem; }
+    .leads-actions .leads-btn-primary { background: linear-gradient(135deg, #2A9D8F, #21867A); border-color: transparent; box-shadow: 0 1px 3px rgba(42,157,143,0.3); }
+    .leads-actions .leads-btn-primary:hover { background: linear-gradient(135deg, #32b5a5, #2A9D8F); box-shadow: 0 2px 6px rgba(42,157,143,0.4); transform: translateY(-0.5px); }
+    .leads-actions .leads-btn-primary:active { transform: translateY(0); box-shadow: 0 1px 2px rgba(42,157,143,0.3); }
+    .leads-templates-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 1rem; }
+    .leads-template-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1rem 1.25rem; }
+    .leads-template-card h4 { font-size: 0.9rem; color: #fff; margin-bottom: 0.15rem; }
+    .leads-template-card .template-type { font-size: 0.72rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 0.75rem; }
+    .leads-template-card label { display: block; font-size: 0.72rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 0.2rem; }
+    .leads-template-card input, .leads-template-card textarea { width: 100%; padding: 0.5rem 0.65rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #e2e8f0; font-size: 0.83rem; font-family: inherit; outline: none; margin-bottom: 0.6rem; resize: vertical; transition: border-color 0.2s; }
+    .leads-template-card input:focus, .leads-template-card textarea:focus { border-color: #2A9D8F; }
+    .leads-template-card textarea { min-height: 100px; }
+    .leads-template-card .template-actions { display: flex; justify-content: flex-end; gap: 0.4rem; margin-top: 0.25rem; }
+    .leads-modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 500; display: flex; align-items: center; justify-content: center; }
+    .leads-modal { background: #1a1d2e; border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; width: 100%; max-width: 520px; overflow: hidden; }
+    .leads-modal-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .leads-modal-header h3 { font-size: 1rem; color: #fff; }
+    .leads-modal-close { background: none; border: none; color: #94a3b8; font-size: 1.4rem; cursor: pointer; line-height: 1; }
+    .leads-modal-close:hover { color: #fff; }
+    .leads-modal-body { padding: 1rem 1.25rem; }
+    .leads-modal-info { color: #94a3b8; font-size: 0.85rem; margin-bottom: 0.75rem; }
+    .leads-modal-footer { display: flex; justify-content: flex-end; gap: 0.5rem; padding: 0.75rem 1.25rem; border-top: 1px solid rgba(255,255,255,0.08); }
+    .leads-label { display: block; font-size: 0.72rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 0.3rem; }
+    .leads-email-preview { margin-top: 0.75rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 0.75rem; font-size: 0.82rem; color: #94a3b8; white-space: pre-wrap; max-height: 200px; overflow-y: auto; }
+  </style>
+  <!-- Sub-nav -->
+  <div class="leads-subnav">
+    <button class="leads-subnav-btn active" data-leads-view="leads">Leads</button>
+    <button class="leads-subnav-btn" data-leads-view="companies">Companies</button>
+    <button class="leads-subnav-btn" data-leads-view="templates">Templates</button>
+    <button class="leads-subnav-btn" data-leads-view="audit">Audit Log</button>
+  </div>
+
+  <!-- ── Leads View ── -->
+  <div class="leads-view active" id="leads-view-leads">
+    <div class="leads-toolbar">
+      <select id="leads-status-filter" class="leads-select">
+        <option value="">All Statuses</option>
+        <option value="new">New</option>
+        <option value="viewed">Viewed</option>
+        <option value="emailed">Emailed</option>
+        <option value="replied">Replied</option>
+        <option value="ignored">Ignored</option>
+        <option value="bad_fit">Bad Fit</option>
+      </select>
+      <button class="leads-btn" id="leads-refresh-btn">Refresh</button>
+    </div>
+    <div class="leads-status-bar" id="leads-status"></div>
+    <div class="leads-table-wrap">
+      <table class="leads-table">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Domain</th>
+            <th>Location</th>
+            <th>Type</th>
+            <th>Score</th>
+            <th>Contact</th>
+            <th>Status</th>
+            <th>Last Contacted</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="leads-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── Companies View ── -->
+  <div class="leads-view" id="leads-view-companies">
+    <div class="leads-toolbar">
+      <button class="leads-btn" id="companies-refresh-btn">Refresh</button>
+    </div>
+    <div class="leads-status-bar" id="companies-status"></div>
+    <div class="leads-table-wrap">
+      <table class="leads-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Domain</th>
+            <th>Location</th>
+            <th>Type</th>
+            <th>Score</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody id="companies-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── Templates View ── -->
+  <div class="leads-view" id="leads-view-templates">
+    <div class="leads-status-bar" id="templates-status"></div>
+    <div class="leads-templates-grid" id="templates-grid"></div>
+  </div>
+
+  <!-- ── Audit Log View ── -->
+  <div class="leads-view" id="leads-view-audit">
+    <div class="leads-toolbar">
+      <button class="leads-btn" id="audit-refresh-btn">Refresh</button>
+    </div>
+    <div class="leads-status-bar" id="audit-status"></div>
+    <div class="leads-table-wrap">
+      <table class="leads-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Action</th>
+            <th>Entity</th>
+            <th>User</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody id="audit-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── Send Email Modal ── -->
+  <div class="leads-modal-backdrop" id="leads-email-modal" style="display:none;">
+    <div class="leads-modal">
+      <div class="leads-modal-header">
+        <h3>Send Email</h3>
+        <button class="leads-modal-close" id="leads-email-modal-close">&times;</button>
+      </div>
+      <div class="leads-modal-body">
+        <p class="leads-modal-info" id="leads-email-info"></p>
+        <label class="leads-label">Template</label>
+        <select id="leads-email-template" class="leads-select leads-select-full"></select>
+        <div class="leads-email-preview" id="leads-email-preview"></div>
+      </div>
+      <div class="leads-modal-footer">
+        <button class="leads-btn leads-btn-ghost" id="leads-email-cancel">Cancel</button>
+        <button class="leads-btn leads-btn-primary" id="leads-email-send">Send Email</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+(function() {
+  const LEADS_API = 'https://leads-engine-1fecdf3ac4fa.herokuapp.com';
+
+  // Helper to get token from parent scope
+  function getToken() { return window.__parmenterToken; }
+
+  function authHeaders() {
+    return { 'Authorization': `Bearer ${getToken()}`, 'Content-Type': 'application/json' };
+  }
+
+  // ── State ──
+  let leads = [];
+  let companies = [];
+  let templates = [];
+  let auditLogs = [];
+  let emailModalLead = null;
+  let leadsLoaded = false;
+
+  // ── DOM ──
+  const subnavBtns = document.querySelectorAll('.leads-subnav-btn');
+  const views = document.querySelectorAll('.leads-view');
+
+  // Sub-nav switching
+  subnavBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const view = btn.dataset.leadsView;
+      subnavBtns.forEach(b => b.classList.toggle('active', b === btn));
+      views.forEach(v => v.classList.toggle('active', v.id === `leads-view-${view}`));
+      // Lazy load on first visit
+      if (view === 'leads' && !leadsLoaded) fetchLeads();
+      if (view === 'companies' && companies.length === 0) fetchCompanies();
+      if (view === 'templates' && templates.length === 0) fetchTemplates();
+      if (view === 'audit' && auditLogs.length === 0) fetchAuditLogs();
+    });
+  });
+
+  // ── Leads ──
+  const leadsStatusFilter = document.getElementById('leads-status-filter');
+  const leadsRefreshBtn = document.getElementById('leads-refresh-btn');
+  const leadsTbody = document.getElementById('leads-tbody');
+  const leadsStatus = document.getElementById('leads-status');
+
+  leadsRefreshBtn.addEventListener('click', fetchLeads);
+  leadsStatusFilter.addEventListener('change', fetchLeads);
+
+  async function fetchLeads() {
+    const status = leadsStatusFilter.value;
+    leadsStatus.textContent = 'Loading leads…';
+    leadsStatus.classList.remove('error');
+    try {
+      const url = status ? `${LEADS_API}/leads?status=${encodeURIComponent(status)}` : `${LEADS_API}/leads`;
+      const res = await fetch(url, { headers: authHeaders() });
+      if (!res.ok) throw new Error((await res.json()).error || `HTTP ${res.status}`);
+      leads = await res.json();
+      leadsLoaded = true;
+      leadsStatus.textContent = `${leads.length} lead${leads.length !== 1 ? 's' : ''}`;
+      renderLeads();
+    } catch (e) {
+      leadsStatus.textContent = e.message;
+      leadsStatus.classList.add('error');
+    }
+  }
+
+  function renderLeads() {
+    leadsTbody.innerHTML = leads.map(lead => {
+      const c = lead.Company || {};
+      const ct = lead.Contact || {};
+      const scoreClass = (c.relevance_score || 0) >= 80 ? 'high' : (c.relevance_score || 0) >= 60 ? 'med' : 'low';
+      const contacted = lead.last_contacted_at ? new Date(lead.last_contacted_at).toLocaleDateString() : '—';
+      return `<tr>
+        <td><strong>${esc(c.name || '—')}</strong></td>
+        <td>${c.domain ? `<a href="https://${esc(c.domain)}" target="_blank" rel="noopener" style="color:#5eead4;text-decoration:none;">${esc(c.domain)}</a>` : '—'}</td>
+        <td>${esc(c.city || '')}${c.city && c.state ? ', ' : ''}${esc(c.state || '')}</td>
+        <td>${esc(c.type || '—')}</td>
+        <td><span class="leads-score leads-score-${scoreClass}">${c.relevance_score ?? '—'}</span></td>
+        <td>${esc(ct.email || ct.name || '—')}</td>
+        <td><span class="leads-badge leads-badge-${lead.status}">${esc(lead.status)}</span></td>
+        <td>${contacted}</td>
+        <td class="leads-actions">
+          <select data-lead-status="${lead.id}">
+            <option value="" disabled selected>Set status…</option>
+            <option value="viewed">Viewed</option>
+            <option value="ignored">Ignored</option>
+            <option value="replied">Replied</option>
+            <option value="bad_fit">Bad Fit</option>
+          </select>
+          ${ct.email ? `<button class="leads-btn leads-btn-primary" data-lead-email="${lead.id}">✉ Email</button>` : ''}
+        </td>
+      </tr>`;
+    }).join('');
+
+    // Status change handlers
+    leadsTbody.querySelectorAll('[data-lead-status]').forEach(sel => {
+      sel.addEventListener('change', async () => {
+        const id = sel.dataset.leadStatus;
+        const newStatus = sel.value;
+        sel.disabled = true;
+        try {
+          const res = await fetch(`${LEADS_API}/leads/${encodeURIComponent(id)}/status`, {
+            method: 'POST',
+            headers: authHeaders(),
+            body: JSON.stringify({ status: newStatus }),
+          });
+          if (!res.ok) throw new Error((await res.json()).error || 'Failed');
+          await fetchLeads();
+        } catch (e) {
+          alert('Status update failed: ' + e.message);
+          sel.value = '';
+        } finally {
+          sel.disabled = false;
+        }
+      });
+    });
+
+    // Email button handlers
+    leadsTbody.querySelectorAll('[data-lead-email]').forEach(btn => {
+      btn.addEventListener('click', () => openEmailModal(btn.dataset.leadEmail));
+    });
+  }
+
+  // ── Email Modal ──
+  const emailModal = document.getElementById('leads-email-modal');
+  const emailInfo = document.getElementById('leads-email-info');
+  const emailTemplateSelect = document.getElementById('leads-email-template');
+  const emailPreview = document.getElementById('leads-email-preview');
+  const emailSendBtn = document.getElementById('leads-email-send');
+  const emailCancelBtn = document.getElementById('leads-email-cancel');
+  const emailCloseBtn = document.getElementById('leads-email-modal-close');
+
+  async function openEmailModal(leadId) {
+    emailModalLead = leads.find(l => l.id === leadId);
+    if (!emailModalLead) return;
+
+    const c = emailModalLead.Company || {};
+    const ct = emailModalLead.Contact || {};
+    emailInfo.textContent = `To: ${ct.email || '—'} (${c.name || 'Unknown'})`;
+
+    // Ensure templates loaded
+    if (templates.length === 0) await fetchTemplates();
+    emailTemplateSelect.innerHTML = templates.map(t =>
+      `<option value="${t.id}">${esc(t.name)}</option>`
+    ).join('');
+
+    updateEmailPreview();
+    emailModal.style.display = 'flex';
+  }
+
+  function updateEmailPreview() {
+    const tpl = templates.find(t => t.id === emailTemplateSelect.value);
+    if (!tpl || !emailModalLead) { emailPreview.textContent = ''; return; }
+    const c = emailModalLead.Company || {};
+    const subject = replaceTplVars(tpl.subject, c);
+    const body = replaceTplVars(tpl.body, c);
+    emailPreview.textContent = `Subject: ${subject}\n\n${body}`;
+  }
+
+  function replaceTplVars(str, company) {
+    return (str || '')
+      .replace(/\{\{company_name\}\}/g, company.name || '')
+      .replace(/\{\{city\}\}/g, company.city || '')
+      .replace(/\{\{state\}\}/g, company.state || '');
+  }
+
+  emailTemplateSelect.addEventListener('change', updateEmailPreview);
+
+  emailCancelBtn.addEventListener('click', () => { emailModal.style.display = 'none'; });
+  emailCloseBtn.addEventListener('click', () => { emailModal.style.display = 'none'; });
+  emailModal.addEventListener('click', (e) => { if (e.target === emailModal) emailModal.style.display = 'none'; });
+
+  emailSendBtn.addEventListener('click', async () => {
+    if (!emailModalLead) return;
+    const templateId = emailTemplateSelect.value;
+    if (!templateId) { alert('Select a template'); return; }
+
+    emailSendBtn.disabled = true;
+    emailSendBtn.textContent = 'Sending…';
+    try {
+      const res = await fetch(`${LEADS_API}/leads/${encodeURIComponent(emailModalLead.id)}/send-email`, {
+        method: 'POST',
+        headers: authHeaders(),
+        body: JSON.stringify({ templateId }),
+      });
+      if (!res.ok) throw new Error((await res.json()).error || 'Send failed');
+      emailModal.style.display = 'none';
+      await fetchLeads();
+    } catch (e) {
+      alert('Send failed: ' + e.message);
+    } finally {
+      emailSendBtn.disabled = false;
+      emailSendBtn.textContent = 'Send Email';
+    }
+  });
+
+  // ── Companies ──
+  const companiesTbody = document.getElementById('companies-tbody');
+  const companiesStatus = document.getElementById('companies-status');
+  document.getElementById('companies-refresh-btn').addEventListener('click', fetchCompanies);
+
+  async function fetchCompanies() {
+    companiesStatus.textContent = 'Loading companies…';
+    companiesStatus.classList.remove('error');
+    try {
+      const res = await fetch(`${LEADS_API}/companies`, { headers: authHeaders() });
+      if (!res.ok) throw new Error((await res.json()).error || `HTTP ${res.status}`);
+      companies = await res.json();
+      companiesStatus.textContent = `${companies.length} compan${companies.length !== 1 ? 'ies' : 'y'}`;
+      renderCompanies();
+    } catch (e) {
+      companiesStatus.textContent = e.message;
+      companiesStatus.classList.add('error');
+    }
+  }
+
+  function renderCompanies() {
+    companiesTbody.innerHTML = companies.map(c => {
+      const scoreClass = (c.relevance_score || 0) >= 80 ? 'high' : (c.relevance_score || 0) >= 60 ? 'med' : 'low';
+      return `<tr>
+        <td><strong>${esc(c.name || '—')}</strong></td>
+        <td>${c.domain ? `<a href="https://${esc(c.domain)}" target="_blank" rel="noopener" style="color:#5eead4;text-decoration:none;">${esc(c.domain)}</a>` : '—'}</td>
+        <td>${esc(c.city || '')}${c.city && c.state ? ', ' : ''}${esc(c.state || '')}</td>
+        <td>${esc(c.type || '—')}</td>
+        <td><span class="leads-score leads-score-${scoreClass}">${c.relevance_score ?? '—'}</span></td>
+        <td>${c.source_url ? `<a href="${esc(c.source_url)}" target="_blank" rel="noopener" style="color:#5eead4;text-decoration:none;font-size:0.75rem;">View</a>` : '—'}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  // ── Templates ──
+  const templatesGrid = document.getElementById('templates-grid');
+  const templatesStatus = document.getElementById('templates-status');
+
+  async function fetchTemplates() {
+    templatesStatus.textContent = 'Loading templates…';
+    templatesStatus.classList.remove('error');
+    try {
+      const res = await fetch(`${LEADS_API}/templates`, { headers: authHeaders() });
+      if (!res.ok) throw new Error((await res.json()).error || `HTTP ${res.status}`);
+      templates = await res.json();
+      templatesStatus.textContent = `${templates.length} template${templates.length !== 1 ? 's' : ''}`;
+      renderTemplates();
+    } catch (e) {
+      templatesStatus.textContent = e.message;
+      templatesStatus.classList.add('error');
+    }
+  }
+
+  function renderTemplates() {
+    templatesGrid.innerHTML = templates.map(t => `
+      <div class="leads-template-card" data-tpl-id="${t.id}">
+        <h4>${esc(t.name)}</h4>
+        <div class="template-type">${esc(t.type)}</div>
+        <label>Subject</label>
+        <input type="text" class="tpl-subject" value="${escAttr(t.subject)}" />
+        <label>Body</label>
+        <textarea class="tpl-body">${esc(t.body)}</textarea>
+        <div class="template-actions">
+          <button class="leads-btn leads-btn-sm leads-btn-primary tpl-save-btn">Save</button>
+        </div>
+      </div>
+    `).join('');
+
+    templatesGrid.querySelectorAll('.tpl-save-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const card = btn.closest('.leads-template-card');
+        const id = card.dataset.tplId;
+        const subject = card.querySelector('.tpl-subject').value;
+        const body = card.querySelector('.tpl-body').value;
+        btn.disabled = true;
+        btn.textContent = 'Saving…';
+        try {
+          const res = await fetch(`${LEADS_API}/templates/${encodeURIComponent(id)}`, {
+            method: 'PUT',
+            headers: authHeaders(),
+            body: JSON.stringify({ subject, body }),
+          });
+          if (!res.ok) throw new Error((await res.json()).error || 'Save failed');
+          const updated = await res.json();
+          const idx = templates.findIndex(t => t.id === id);
+          if (idx !== -1) templates[idx] = updated;
+          btn.textContent = 'Saved!';
+          setTimeout(() => { btn.textContent = 'Save'; }, 1500);
+        } catch (e) {
+          alert('Save failed: ' + e.message);
+          btn.textContent = 'Save';
+        } finally {
+          btn.disabled = false;
+        }
+      });
+    });
+  }
+
+  // ── Audit Logs ──
+  const auditTbody = document.getElementById('audit-tbody');
+  const auditStatus = document.getElementById('audit-status');
+  document.getElementById('audit-refresh-btn').addEventListener('click', fetchAuditLogs);
+
+  async function fetchAuditLogs() {
+    auditStatus.textContent = 'Loading audit logs…';
+    auditStatus.classList.remove('error');
+    try {
+      const res = await fetch(`${LEADS_API}/audit-logs`, { headers: authHeaders() });
+      if (!res.ok) throw new Error((await res.json()).error || `HTTP ${res.status}`);
+      auditLogs = await res.json();
+      auditStatus.textContent = `${auditLogs.length} entr${auditLogs.length !== 1 ? 'ies' : 'y'}`;
+      renderAuditLogs();
+    } catch (e) {
+      auditStatus.textContent = e.message;
+      auditStatus.classList.add('error');
+    }
+  }
+
+  function renderAuditLogs() {
+    auditTbody.innerHTML = auditLogs.map(log => {
+      const d = log.createdAt ? new Date(log.createdAt) : null;
+      console.log('log createdAt:', log, 'parsed date:', d);
+      const time = d && !isNaN(d.getTime()) ? d.toLocaleString() : '—';
+      const meta = log.metadata ? JSON.stringify(log.metadata) : '—';
+      const userId = log.user_id != null ? String(log.user_id) : '—';
+      return `<tr>
+        <td style="white-space:nowrap;">${esc(time)}</td>
+        <td><span class="leads-badge leads-badge-${log.action === 'send_email' ? 'emailed' : 'viewed'}">${esc(log.action)}</span></td>
+        <td>${esc(log.entity_type || '')} ${esc((log.entity_id || '').slice(0, 8))}…</td>
+        <td>${esc(userId)}</td>
+        <td style="font-size:0.72rem;color:#64748b;max-width:250px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${escAttr(meta)}">${esc(meta)}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  // ── Helpers ──
+  function esc(s) {
+    const d = document.createElement('div');
+    d.textContent = String(s ?? '');
+    return d.innerHTML;
+  }
+  function escAttr(s) {
+    return esc(s).replace(/"/g, '&quot;');
+  }
+
+  // ── Public initializer (called when tab is activated) ──
+  window.__leadsEngineInit = function() {
+    if (!leadsLoaded && getToken()) fetchLeads();
+  };
+})();
+</script>

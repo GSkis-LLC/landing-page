@@ -1,5 +1,6 @@
 ---
 export const prerender = false;
+import LeadsEngine from '../components/admin/LeadsEngine.astro';
 ---
 
 <html lang="en">
@@ -1557,6 +1558,7 @@ export const prerender = false;
         <button class="tab-btn" type="button" data-tab="aso">ASO</button>
         <button class="tab-btn" type="button" data-tab="notifications">Notifications</button>
         <button class="tab-btn" type="button" data-tab="groups">Groups</button>
+        <button class="tab-btn" type="button" data-tab="leads">Leads Engine</button>
       </div>
 
       <div class="tab-panel active" id="tab-paywall">
@@ -1875,6 +1877,9 @@ al-anon meetings</textarea>
           </div>
         </div>
       </div>
+      <div class="tab-panel" id="tab-leads">
+        <LeadsEngine />
+      </div>
     </div>
 
     <script is:inline>
@@ -1959,6 +1964,7 @@ al-anon meetings</textarea>
       const tabAso = document.getElementById('tab-aso');
       const tabNotifications = document.getElementById('tab-notifications');
       const tabGroups = document.getElementById('tab-groups');
+      const tabLeads = document.getElementById('tab-leads');
 
       // Groups DOM refs
       const orgSearchInput = document.getElementById('org-search');
@@ -1997,8 +2003,12 @@ al-anon meetings</textarea>
         tabAso.classList.toggle('active', tabName === 'aso');
         tabNotifications.classList.toggle('active', tabName === 'notifications');
         tabGroups.classList.toggle('active', tabName === 'groups');
+        tabLeads.classList.toggle('active', tabName === 'leads');
         if (tabName === 'groups' && !groupsFetched && token) {
           fetchOrganizations();
+        }
+        if (tabName === 'leads' && window.__leadsEngineInit) {
+          window.__leadsEngineInit();
         }
       }
 
@@ -2023,6 +2033,7 @@ al-anon meetings</textarea>
           const data = await res.json();
           if (!res.ok) throw new Error(data.error || 'Login failed');
           token = data.token;
+          window.__parmenterToken = token;
           loginGate.style.display = 'none';
           dashboard.style.display = 'flex';
           dashboard.style.flexDirection = 'column';
@@ -2041,6 +2052,7 @@ al-anon meetings</textarea>
 
       logoutBtn.addEventListener('click', () => {
         token = null;
+        window.__parmenterToken = null;
         organizations = [];
         selectedOrg = null;
         groupsFetched = false;
