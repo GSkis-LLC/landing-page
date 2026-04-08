@@ -64,7 +64,113 @@
     .leads-modal-info { color: #94a3b8; font-size: 0.85rem; margin-bottom: 0.75rem; }
     .leads-modal-footer { display: flex; justify-content: flex-end; gap: 0.5rem; padding: 0.75rem 1.25rem; border-top: 1px solid rgba(255,255,255,0.08); }
     .leads-label { display: block; font-size: 0.72rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 0.3rem; }
-    .leads-email-preview { margin-top: 0.75rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 0.75rem; font-size: 0.82rem; color: #94a3b8; white-space: pre-wrap; max-height: 200px; overflow-y: auto; }
+    .leads-email-preview { margin-top: 0.75rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 0.75rem; font-size: 0.82rem; color: #e2e8f0; white-space: pre-wrap; max-height: 260px; overflow-y: auto; line-height: 1.5; }
+    .leads-email-preview-subject { font-weight: 700; color: #fff; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .leads-email-preview .tpl-resolved { color: #5eead4; }
+    .leads-email-preview .tpl-fallback { color: #fbbf24; text-decoration: underline dotted; cursor: help; }
+    .leads-email-preview .tpl-missing { color: #f87171; background: rgba(239,68,68,0.1); padding: 0 0.2rem; border-radius: 3px; font-size: 0.75rem; }
+    .leads-email-data-ctx { display: grid; grid-template-columns: 1fr 1fr; gap: 0.3rem 1rem; margin-bottom: 0.75rem; padding: 0.65rem 0.75rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; font-size: 0.75rem; }
+    .leads-email-data-ctx-title { grid-column: 1 / -1; font-weight: 700; color: #94a3b8; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 0.15rem; }
+    .leads-email-data-row { display: flex; gap: 0.3rem; align-items: baseline; }
+    .leads-email-data-key { color: #64748b; font-family: ui-monospace, monospace; font-size: 0.7rem; }
+    .leads-email-data-val { color: #e2e8f0; }
+    .leads-email-data-val.empty { color: #f87171; font-style: italic; }
+    .leads-email-legend { display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem; font-size: 0.7rem; color: #64748b; flex-wrap: wrap; }
+    .leads-email-legend span { display: inline-flex; align-items: center; gap: 0.25rem; }
+    .leads-email-legend .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+    .leads-email-legend .dot-resolved { background: #5eead4; }
+    .leads-email-legend .dot-fallback { background: #fbbf24; }
+    .leads-email-legend .dot-missing { background: #f87171; }
+    .leads-modal-wide { max-width: 620px; }
+    .leads-pagination { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0.25rem; border-top: 1px solid rgba(255,255,255,0.06); margin-top: 0.5rem; font-size: 0.8rem; color: #94a3b8; }
+    .leads-pagination-info { display: flex; align-items: center; gap: 0.75rem; }
+    .leads-pagination-btns { display: flex; gap: 0.35rem; }
+    .leads-pagination-btns button { padding: 0.3rem 0.65rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); color: #e2e8f0; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.15s; }
+    .leads-pagination-btns button:hover:not(:disabled) { background: rgba(255,255,255,0.1); }
+    .leads-pagination-btns button:disabled { opacity: 0.35; cursor: not-allowed; }
+    .leads-pagination-btns button.active { background: rgba(42,157,143,0.2); border-color: #2A9D8F; color: #5eead4; }
+    .leads-contact-chip { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.55rem; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); cursor: pointer; transition: all 0.15s; max-width: 180px; }
+    .leads-contact-chip:hover { background: rgba(42,157,143,0.12); border-color: rgba(42,157,143,0.3); }
+    .leads-contact-chip-name { font-weight: 600; color: #e2e8f0; font-size: 0.78rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .leads-contact-chip-arrow { color: #64748b; font-size: 0.6rem; flex-shrink: 0; transition: transform 0.15s; }
+    .leads-contact-chip.open .leads-contact-chip-arrow { transform: rotate(180deg); }
+    .leads-contact-none { color: #64748b; font-size: 0.78rem; font-style: italic; }
+    .leads-contact-popover { position: absolute; z-index: 100; top: calc(100% + 4px); left: 0; min-width: 260px; background: #1e2235; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); padding: 0.75rem 0.85rem; display: none; }
+    .leads-contact-popover.open { display: block; }
+    .leads-contact-popover-row { display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.45rem; font-size: 0.78rem; }
+    .leads-contact-popover-row:last-child { margin-bottom: 0; }
+    .leads-contact-popover-label { color: #64748b; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; min-width: 3.2rem; flex-shrink: 0; padding-top: 1px; }
+    .leads-contact-popover-value { color: #e2e8f0; word-break: break-word; }
+    .leads-contact-popover-value a { color: #5eead4; text-decoration: none; }
+    .leads-contact-popover-value a:hover { text-decoration: underline; }
+    .leads-contact-td { position: relative; }
+    .leads-modal-body .leads-input { width: 100%; padding: 0.5rem 0.65rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #e2e8f0; font-size: 0.83rem; font-family: inherit; outline: none; margin-bottom: 0.6rem; transition: border-color 0.2s; }
+    .leads-modal-body .leads-input:focus { border-color: #2A9D8F; }
+    .leads-checkbox-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.82rem; color: #cbd5e1; }
+    .leads-checkbox-row input[type="checkbox"] { accent-color: #2A9D8F; width: 1rem; height: 1rem; }
+    .leads-checkbox-hint { font-size: 0.72rem; color: #64748b; margin-top: -0.3rem; margin-bottom: 0.5rem; }
+    .company-cards { display: flex; flex-direction: column; gap: 0.75rem; }
+    .company-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; transition: border-color 0.15s; }
+    .company-card:hover { border-color: rgba(255,255,255,0.14); }
+    .company-card-header { display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 1rem; cursor: pointer; user-select: none; }
+    .company-card-expand { color: #64748b; font-size: 0.65rem; flex-shrink: 0; transition: transform 0.2s; width: 1rem; text-align: center; }
+    .company-card.open .company-card-expand { transform: rotate(90deg); }
+    .company-card-name { font-weight: 700; color: #fff; font-size: 0.88rem; }
+    .company-card-domain { font-size: 0.75rem; color: #5eead4; text-decoration: none; }
+    .company-card-domain:hover { text-decoration: underline; }
+    .company-card-meta { display: flex; gap: 0.6rem; align-items: center; margin-left: auto; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
+    .company-card-meta-item { font-size: 0.72rem; color: #94a3b8; white-space: nowrap; }
+    .company-card-body { border-top: 1px solid rgba(255,255,255,0.06); display: none; }
+    .company-card.open .company-card-body { display: block; }
+    .company-contacts-header { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 1rem 0.4rem; }
+    .company-contacts-title { font-size: 0.72rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; }
+    .company-contact-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.55rem 1rem; border-top: 1px solid rgba(255,255,255,0.04); transition: background 0.1s; }
+    .company-contact-row:hover { background: rgba(255,255,255,0.03); }
+    .company-contact-primary { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.1rem; }
+    .company-contact-primary-name { font-weight: 600; color: #e2e8f0; font-size: 0.82rem; }
+    .company-contact-primary-role { font-size: 0.72rem; color: #94a3b8; }
+    .company-contact-fields { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    .company-contact-field { font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.3rem; }
+    .company-contact-field a { color: #5eead4; text-decoration: none; }
+    .company-contact-field a:hover { text-decoration: underline; }
+    .company-contact-field-icon { font-size: 0.7rem; color: #64748b; flex-shrink: 0; }
+    .company-contact-actions { flex-shrink: 0; }
+    .company-no-contacts { padding: 0.75rem 1rem; color: #64748b; font-size: 0.8rem; font-style: italic; }
+    .company-card-source { font-size: 0.72rem; }
+    .company-card-source a { color: #5eead4; text-decoration: none; }
+    .company-card-source a:hover { text-decoration: underline; }
+    .audit-cards { display: flex; flex-direction: column; gap: 0.6rem; }
+    .audit-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 0.85rem 1rem; transition: border-color 0.15s; }
+    .audit-card:hover { border-color: rgba(255,255,255,0.14); }
+    .audit-card-top { display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; }
+    .audit-card-time { font-size: 0.72rem; color: #64748b; white-space: nowrap; }
+    .audit-card-action { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
+    .audit-action-send_email { background: rgba(42,157,143,0.15); color: #5eead4; }
+    .audit-action-update_status { background: rgba(168,85,247,0.15); color: #c084fc; }
+    .audit-action-update_contact { background: rgba(250,204,21,0.15); color: #fbbf24; }
+    .audit-card-user { font-size: 0.72rem; color: #94a3b8; margin-left: auto; }
+    .audit-card-context { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.55rem; padding-top: 0.55rem; border-top: 1px solid rgba(255,255,255,0.05); }
+    .audit-ctx-block { min-width: 0; }
+    .audit-ctx-label { font-size: 0.65rem; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 0.15rem; }
+    .audit-ctx-value { font-size: 0.8rem; color: #e2e8f0; }
+    .audit-ctx-value a { color: #5eead4; text-decoration: none; }
+    .audit-ctx-value a:hover { text-decoration: underline; }
+    .audit-ctx-sub { font-size: 0.72rem; color: #94a3b8; }
+    .audit-card-meta { margin-top: 0.5rem; padding: 0.5rem 0.65rem; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; font-size: 0.75rem; color: #94a3b8; }
+    .audit-meta-row { display: flex; gap: 0.4rem; align-items: baseline; margin-bottom: 0.2rem; }
+    .audit-meta-row:last-child { margin-bottom: 0; }
+    .audit-meta-key { color: #64748b; font-family: ui-monospace, monospace; font-size: 0.7rem; min-width: 5rem; flex-shrink: 0; }
+    .audit-meta-val { color: #cbd5e1; word-break: break-word; }
+    .audit-meta-arrow { color: #64748b; margin: 0 0.15rem; }
+    .audit-empty { text-align: center; padding: 2rem; color: #64748b; font-size: 0.85rem; }
+    .audit-action-update_company { background: rgba(59,130,246,0.15); color: #60a5fa; }
+    .company-edit-inline { background: none; border: none; color: #64748b; cursor: pointer; font-size: 0.78rem; padding: 0.15rem 0.3rem; border-radius: 4px; transition: all 0.15s; flex-shrink: 0; }
+    .company-edit-inline:hover { color: #5eead4; background: rgba(42,157,143,0.12); }
+    .leads-input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    .leads-input-row .leads-input-group { display: flex; flex-direction: column; }
+    .leads-input-row .leads-input-group .leads-input { margin-bottom: 0; }
+    .leads-input-row .leads-label { margin-bottom: 0.2rem; }
+    .leads-input-group { margin-bottom: 0.6rem; }
   </style>
   <!-- Sub-nav -->
   <div class="leads-subnav">
@@ -107,6 +213,13 @@
         <tbody id="leads-tbody"></tbody>
       </table>
     </div>
+    <div class="leads-pagination" id="leads-pagination" style="display:none;">
+      <div class="leads-pagination-info"><span id="leads-page-info"></span></div>
+      <div class="leads-pagination-btns">
+        <button id="leads-page-prev" disabled>← Prev</button>
+        <button id="leads-page-next" disabled>Next →</button>
+      </div>
+    </div>
   </div>
 
   <!-- ── Companies View ── -->
@@ -115,20 +228,13 @@
       <button class="leads-btn" id="companies-refresh-btn">Refresh</button>
     </div>
     <div class="leads-status-bar" id="companies-status"></div>
-    <div class="leads-table-wrap">
-      <table class="leads-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Domain</th>
-            <th>Location</th>
-            <th>Type</th>
-            <th>Score</th>
-            <th>Source</th>
-          </tr>
-        </thead>
-        <tbody id="companies-tbody"></tbody>
-      </table>
+    <div class="company-cards" id="companies-list"></div>
+    <div class="leads-pagination" id="companies-pagination" style="display:none;">
+      <div class="leads-pagination-info"><span id="companies-page-info"></span></div>
+      <div class="leads-pagination-btns">
+        <button id="companies-page-prev" disabled>← Prev</button>
+        <button id="companies-page-next" disabled>Next →</button>
+      </div>
     </div>
   </div>
 
@@ -144,38 +250,147 @@
       <button class="leads-btn" id="audit-refresh-btn">Refresh</button>
     </div>
     <div class="leads-status-bar" id="audit-status"></div>
-    <div class="leads-table-wrap">
-      <table class="leads-table">
-        <thead>
-          <tr>
-            <th>Time</th>
-            <th>Action</th>
-            <th>Entity</th>
-            <th>User</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-        <tbody id="audit-tbody"></tbody>
-      </table>
+    <div class="audit-cards" id="audit-cards"></div>
+    <div class="leads-pagination" id="audit-pagination" style="display:none;">
+      <div class="leads-pagination-info"><span id="audit-page-info"></span></div>
+      <div class="leads-pagination-btns">
+        <button id="audit-page-prev" disabled>← Prev</button>
+        <button id="audit-page-next" disabled>Next →</button>
+      </div>
     </div>
   </div>
 
   <!-- ── Send Email Modal ── -->
   <div class="leads-modal-backdrop" id="leads-email-modal" style="display:none;">
-    <div class="leads-modal">
+    <div class="leads-modal leads-modal-wide">
       <div class="leads-modal-header">
         <h3>Send Email</h3>
         <button class="leads-modal-close" id="leads-email-modal-close">&times;</button>
       </div>
       <div class="leads-modal-body">
         <p class="leads-modal-info" id="leads-email-info"></p>
+
         <label class="leads-label">Template</label>
         <select id="leads-email-template" class="leads-select leads-select-full"></select>
+
+        <div class="leads-email-data-ctx" id="leads-email-data-ctx"></div>
+
+        <label class="leads-label">Preview</label>
         <div class="leads-email-preview" id="leads-email-preview"></div>
+
+        <div class="leads-email-legend">
+          <span><span class="dot dot-resolved"></span> Resolved</span>
+          <span><span class="dot dot-fallback"></span> Fallback used</span>
+          <span><span class="dot dot-missing"></span> Missing &amp; no fallback</span>
+        </div>
       </div>
       <div class="leads-modal-footer">
         <button class="leads-btn leads-btn-ghost" id="leads-email-cancel">Cancel</button>
         <button class="leads-btn leads-btn-primary" id="leads-email-send">Send Email</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Contact Edit Modal ── -->
+  <div class="leads-modal-backdrop" id="leads-contact-modal" style="display:none;">
+    <div class="leads-modal">
+      <div class="leads-modal-header">
+        <h3 id="contact-modal-title">Edit Contact</h3>
+        <button class="leads-modal-close" id="contact-modal-close">&times;</button>
+      </div>
+      <div class="leads-modal-body">
+        <p class="leads-modal-info" id="contact-modal-info"></p>
+        <label class="leads-label">Name</label>
+        <input type="text" class="leads-input" id="contact-name" placeholder="Jane Doe" />
+        <label class="leads-label">Email</label>
+        <input type="email" class="leads-input" id="contact-email" placeholder="jane@company.com" />
+        <label class="leads-label">Phone</label>
+        <input type="tel" class="leads-input" id="contact-phone" placeholder="+1 617-555-1212" />
+        <label class="leads-label">Role</label>
+        <input type="text" class="leads-input" id="contact-role" placeholder="Owner" />
+        <label class="leads-label">Source URL</label>
+        <input type="url" class="leads-input" id="contact-source-url" placeholder="https://company.com/contact" />
+        <div id="contact-assign-section" style="display:none;">
+          <div class="leads-checkbox-row">
+            <input type="checkbox" id="contact-assign-leads" />
+            <label for="contact-assign-leads">Assign this contact to company leads</label>
+          </div>
+          <div id="contact-force-section" style="display:none;">
+            <div class="leads-checkbox-row">
+              <input type="checkbox" id="contact-force-assign" />
+              <label for="contact-force-assign">Overwrite existing lead contacts</label>
+            </div>
+            <p class="leads-checkbox-hint">When unchecked, only fills leads with no contact assigned.</p>
+          </div>
+        </div>
+      </div>
+      <div class="leads-modal-footer">
+        <button class="leads-btn leads-btn-ghost" id="contact-modal-cancel">Cancel</button>
+        <button class="leads-btn leads-btn-primary" id="contact-modal-save">Save Contact</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Company Edit Modal ── -->
+  <div class="leads-modal-backdrop" id="leads-company-modal" style="display:none;">
+    <div class="leads-modal leads-modal-wide">
+      <div class="leads-modal-header">
+        <h3 id="company-modal-title">Edit Company</h3>
+        <button class="leads-modal-close" id="company-modal-close">&times;</button>
+      </div>
+      <div class="leads-modal-body">
+        <p class="leads-modal-info" id="company-modal-info"></p>
+        <div class="leads-input-row">
+          <div class="leads-input-group">
+            <label class="leads-label">Name</label>
+            <input type="text" class="leads-input" id="company-edit-name" placeholder="Company Name" />
+          </div>
+          <div class="leads-input-group">
+            <label class="leads-label">Domain</label>
+            <input type="text" class="leads-input" id="company-edit-domain" placeholder="example.com" />
+          </div>
+        </div>
+        <div class="leads-input-row">
+          <div class="leads-input-group">
+            <label class="leads-label">City</label>
+            <input type="text" class="leads-input" id="company-edit-city" placeholder="Boston" />
+          </div>
+          <div class="leads-input-group">
+            <label class="leads-label">State</label>
+            <input type="text" class="leads-input" id="company-edit-state" placeholder="MA" />
+          </div>
+        </div>
+        <div class="leads-input-row">
+          <div class="leads-input-group">
+            <label class="leads-label">Country</label>
+            <input type="text" class="leads-input" id="company-edit-country" placeholder="United States" />
+          </div>
+          <div class="leads-input-group">
+            <label class="leads-label">Type</label>
+            <select class="leads-input leads-select" id="company-edit-type" style="height:2.35rem;">
+              <option value="">Select type…</option>
+              <option value="sober_house">Sober House</option>
+              <option value="rehab">Rehab</option>
+              <option value="blog">Blog</option>
+              <option value="municipality">Municipality</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="leads-input-row">
+          <div class="leads-input-group">
+            <label class="leads-label">Relevance Score (0–100)</label>
+            <input type="number" class="leads-input" id="company-edit-score" min="0" max="100" placeholder="85" />
+          </div>
+          <div class="leads-input-group">
+            <label class="leads-label">Source URL</label>
+            <input type="url" class="leads-input" id="company-edit-source-url" placeholder="https://…" />
+          </div>
+        </div>
+      </div>
+      <div class="leads-modal-footer">
+        <button class="leads-btn leads-btn-ghost" id="company-modal-cancel">Cancel</button>
+        <button class="leads-btn leads-btn-primary" id="company-modal-save">Save Company</button>
       </div>
     </div>
   </div>
@@ -200,6 +415,17 @@
   let emailModalLead = null;
   let leadsLoaded = false;
 
+  // Pagination state
+  let leadsPagination = { total: 0, limit: 25, offset: 0, pages: 0 };
+  let companiesPagination = { total: 0, limit: 25, offset: 0, pages: 0 };
+  let auditPagination = { total: 0, limit: 25, offset: 0, pages: 0 };
+  let auditLoaded = false;
+
+  // Contact modal state
+  let contactModalMode = null; // 'lead' or 'company'
+  let contactModalEntityId = null;
+  let contactModalEntity = null;
+
   // ── DOM ──
   const subnavBtns = document.querySelectorAll('.leads-subnav-btn');
   const views = document.querySelectorAll('.leads-view');
@@ -212,9 +438,9 @@
       views.forEach(v => v.classList.toggle('active', v.id === `leads-view-${view}`));
       // Lazy load on first visit
       if (view === 'leads' && !leadsLoaded) fetchLeads();
-      if (view === 'companies' && companies.length === 0) fetchCompanies();
+      if (view === 'companies' && companiesPagination.total === 0 && companies.length === 0) fetchCompanies();
       if (view === 'templates' && templates.length === 0) fetchTemplates();
-      if (view === 'audit' && auditLogs.length === 0) fetchAuditLogs();
+      if (view === 'audit' && !auditLoaded) fetchAuditLogs();
     });
   });
 
@@ -224,40 +450,92 @@
   const leadsTbody = document.getElementById('leads-tbody');
   const leadsStatus = document.getElementById('leads-status');
 
-  leadsRefreshBtn.addEventListener('click', fetchLeads);
-  leadsStatusFilter.addEventListener('change', fetchLeads);
+  leadsRefreshBtn.addEventListener('click', () => { leadsPagination.offset = 0; fetchLeads(); });
+  leadsStatusFilter.addEventListener('change', () => { leadsPagination.offset = 0; fetchLeads(); });
+
+  // Pagination DOM
+  const leadsPaginationEl = document.getElementById('leads-pagination');
+  const leadsPageInfo = document.getElementById('leads-page-info');
+  const leadsPagePrev = document.getElementById('leads-page-prev');
+  const leadsPageNext = document.getElementById('leads-page-next');
+
+  leadsPagePrev.addEventListener('click', () => {
+    leadsPagination.offset = Math.max(0, leadsPagination.offset - leadsPagination.limit);
+    fetchLeads();
+  });
+  leadsPageNext.addEventListener('click', () => {
+    leadsPagination.offset += leadsPagination.limit;
+    fetchLeads();
+  });
 
   async function fetchLeads() {
     const status = leadsStatusFilter.value;
     leadsStatus.textContent = 'Loading leads…';
     leadsStatus.classList.remove('error');
     try {
-      const url = status ? `${LEADS_API}/leads?status=${encodeURIComponent(status)}` : `${LEADS_API}/leads`;
+      const params = new URLSearchParams();
+      if (status) params.set('status', status);
+      params.set('limit', String(leadsPagination.limit));
+      params.set('offset', String(leadsPagination.offset));
+      const url = `${LEADS_API}/leads?${params.toString()}`;
       const res = await fetch(url, { headers: authHeaders() });
       if (!res.ok) throw new Error((await res.json()).error || `HTTP ${res.status}`);
-      leads = await res.json();
+      const json = await res.json();
+      leads = json.data;
+      leadsPagination = json.pagination;
       leadsLoaded = true;
-      leadsStatus.textContent = `${leads.length} lead${leads.length !== 1 ? 's' : ''}`;
+      const start = leadsPagination.offset + 1;
+      const end = Math.min(leadsPagination.offset + leads.length, leadsPagination.total);
+      leadsStatus.textContent = `${leadsPagination.total} lead${leadsPagination.total !== 1 ? 's' : ''}`;
       renderLeads();
+      renderLeadsPagination(start, end);
     } catch (e) {
       leadsStatus.textContent = e.message;
       leadsStatus.classList.add('error');
     }
   }
 
+  function renderLeadsPagination(start, end) {
+    if (leadsPagination.total <= leadsPagination.limit) {
+      leadsPaginationEl.style.display = 'none';
+      return;
+    }
+    leadsPaginationEl.style.display = 'flex';
+    const currentPage = Math.floor(leadsPagination.offset / leadsPagination.limit) + 1;
+    leadsPageInfo.textContent = `${start}–${end} of ${leadsPagination.total}  ·  Page ${currentPage} of ${leadsPagination.pages}`;
+    leadsPagePrev.disabled = leadsPagination.offset <= 0;
+    leadsPageNext.disabled = leadsPagination.offset + leadsPagination.limit >= leadsPagination.total;
+  }
+
+  function buildContactCell(ct) {
+    if (!ct || (!ct.name && !ct.email)) {
+      return '<span class="leads-contact-none">No contact</span>';
+    }
+    const chipLabel = ct.name || ct.email || 'Contact';
+    const rows = [];
+    if (ct.name) rows.push(`<div class="leads-contact-popover-row"><span class="leads-contact-popover-label">Name</span><span class="leads-contact-popover-value">${esc(ct.name)}</span></div>`);
+    if (ct.role) rows.push(`<div class="leads-contact-popover-row"><span class="leads-contact-popover-label">Role</span><span class="leads-contact-popover-value">${esc(ct.role)}</span></div>`);
+    if (ct.email) rows.push(`<div class="leads-contact-popover-row"><span class="leads-contact-popover-label">Email</span><span class="leads-contact-popover-value"><a href="mailto:${escAttr(ct.email)}">${esc(ct.email)}</a></span></div>`);
+    if (ct.phone) rows.push(`<div class="leads-contact-popover-row"><span class="leads-contact-popover-label">Phone</span><span class="leads-contact-popover-value"><a href="tel:${escAttr(ct.phone)}">${esc(ct.phone)}</a></span></div>`);
+    if (ct.source_url) rows.push(`<div class="leads-contact-popover-row"><span class="leads-contact-popover-label">Source</span><span class="leads-contact-popover-value"><a href="${escAttr(ct.source_url)}" target="_blank" rel="noopener">${esc(ct.source_url.replace(/^https?:\/\//, '').slice(0, 35))}${ct.source_url.replace(/^https?:\/\//, '').length > 35 ? '…' : ''}</a></span></div>`);
+    return `<div class="leads-contact-chip" data-contact-toggle><span class="leads-contact-chip-name">${esc(chipLabel)}</span><span class="leads-contact-chip-arrow">▼</span></div><div class="leads-contact-popover">${rows.join('')}</div>`;
+  }
+
   function renderLeads() {
     leadsTbody.innerHTML = leads.map(lead => {
       const c = lead.Company || {};
       const ct = lead.Contact || {};
+      const companyId = lead.company_id || c.id || '';
       const scoreClass = (c.relevance_score || 0) >= 80 ? 'high' : (c.relevance_score || 0) >= 60 ? 'med' : 'low';
       const contacted = lead.last_contacted_at ? new Date(lead.last_contacted_at).toLocaleDateString() : '—';
+      const contactCell = buildContactCell(lead.Contact);
       return `<tr>
-        <td><strong>${esc(c.name || '—')}</strong></td>
+        <td><strong>${esc(c.name || '—')}</strong> ${companyId ? `<button class="company-edit-inline" data-edit-company-from-lead="${companyId}" title="Edit company">✎</button>` : ''}</td>
         <td>${c.domain ? `<a href="https://${esc(c.domain)}" target="_blank" rel="noopener" style="color:#5eead4;text-decoration:none;">${esc(c.domain)}</a>` : '—'}</td>
         <td>${esc(c.city || '')}${c.city && c.state ? ', ' : ''}${esc(c.state || '')}</td>
         <td>${esc(c.type || '—')}</td>
         <td><span class="leads-score leads-score-${scoreClass}">${c.relevance_score ?? '—'}</span></td>
-        <td>${esc(ct.email || ct.name || '—')}</td>
+        <td class="leads-contact-td">${contactCell}</td>
         <td><span class="leads-badge leads-badge-${lead.status}">${esc(lead.status)}</span></td>
         <td>${contacted}</td>
         <td class="leads-actions">
@@ -268,6 +546,7 @@
             <option value="replied">Replied</option>
             <option value="bad_fit">Bad Fit</option>
           </select>
+          <button class="leads-btn leads-btn-sm" data-lead-contact="${lead.id}" title="Edit contact">✎</button>
           ${ct.email ? `<button class="leads-btn leads-btn-primary" data-lead-email="${lead.id}">✉ Email</button>` : ''}
         </td>
       </tr>`;
@@ -300,7 +579,46 @@
     leadsTbody.querySelectorAll('[data-lead-email]').forEach(btn => {
       btn.addEventListener('click', () => openEmailModal(btn.dataset.leadEmail));
     });
+
+    // Contact edit button handlers
+    leadsTbody.querySelectorAll('[data-lead-contact]').forEach(btn => {
+      btn.addEventListener('click', () => openContactModal('lead', btn.dataset.leadContact));
+    });
+
+    // Company edit button handlers (from leads tab)
+    leadsTbody.querySelectorAll('[data-edit-company-from-lead]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openCompanyModal(btn.dataset.editCompanyFromLead, 'leads');
+      });
+    });
+
+    // Contact popover toggle handlers
+    leadsTbody.querySelectorAll('[data-contact-toggle]').forEach(chip => {
+      chip.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const popover = chip.nextElementSibling;
+        const isOpen = popover.classList.contains('open');
+        // Close all other open popovers first
+        leadsTbody.querySelectorAll('.leads-contact-popover.open').forEach(p => {
+          p.classList.remove('open');
+          p.previousElementSibling.classList.remove('open');
+        });
+        if (!isOpen) {
+          popover.classList.add('open');
+          chip.classList.add('open');
+        }
+      });
+    });
   }
+
+  // Close contact popovers when clicking outside
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.leads-contact-popover.open').forEach(p => {
+      p.classList.remove('open');
+      p.previousElementSibling.classList.remove('open');
+    });
+  });
 
   // ── Email Modal ──
   const emailModal = document.getElementById('leads-email-modal');
@@ -311,12 +629,33 @@
   const emailCancelBtn = document.getElementById('leads-email-cancel');
   const emailCloseBtn = document.getElementById('leads-email-modal-close');
 
+  const emailDataCtx = document.getElementById('leads-email-data-ctx');
+
+  // Build the variable lookup map from a lead's Company + Contact
+  function buildVarMap(lead) {
+    const c = lead.Company || {};
+    const ct = lead.Contact || {};
+    return {
+      company_name:   c.name || '',
+      company_domain: c.domain || '',
+      city:           c.city || '',
+      state:          c.state || '',
+      country:        c.country || '',
+      company_type:   c.type || '',
+      relevance_score: c.relevance_score != null ? String(c.relevance_score) : '',
+      contact_name:   ct.name || '',
+      contact_email:  ct.email || '',
+      contact_phone:  ct.phone || '',
+      contact_role:   ct.role || '',
+    };
+  }
+
   async function openEmailModal(leadId) {
     emailModalLead = leads.find(l => l.id === leadId);
     if (!emailModalLead) return;
 
-    const c = emailModalLead.Company || {};
     const ct = emailModalLead.Contact || {};
+    const c = emailModalLead.Company || {};
     emailInfo.textContent = `To: ${ct.email || '—'} (${c.name || 'Unknown'})`;
 
     // Ensure templates loaded
@@ -325,24 +664,57 @@
       `<option value="${t.id}">${esc(t.name)}</option>`
     ).join('');
 
+    renderDataContext();
     updateEmailPreview();
     emailModal.style.display = 'flex';
   }
 
-  function updateEmailPreview() {
-    const tpl = templates.find(t => t.id === emailTemplateSelect.value);
-    if (!tpl || !emailModalLead) { emailPreview.textContent = ''; return; }
-    const c = emailModalLead.Company || {};
-    const subject = replaceTplVars(tpl.subject, c);
-    const body = replaceTplVars(tpl.body, c);
-    emailPreview.textContent = `Subject: ${subject}\n\n${body}`;
+  // Render the data context panel so the user can see what values are available
+  function renderDataContext() {
+    if (!emailModalLead) { emailDataCtx.innerHTML = ''; return; }
+    const varMap = buildVarMap(emailModalLead);
+    const companyVars = ['company_name','company_domain','city','state','country','company_type','relevance_score'];
+    const contactVars = ['contact_name','contact_email','contact_phone','contact_role'];
+
+    function renderRows(keys) {
+      return keys.map(k => {
+        const val = varMap[k];
+        const valHtml = val
+          ? `<span class="leads-email-data-val">${esc(val)}</span>`
+          : `<span class="leads-email-data-val empty">empty</span>`;
+        return `<div class="leads-email-data-row"><span class="leads-email-data-key">{{${k}}}</span>${valHtml}</div>`;
+      }).join('');
+    }
+
+    emailDataCtx.innerHTML =
+      `<div class="leads-email-data-ctx-title">Company data</div>` +
+      renderRows(companyVars) +
+      `<div class="leads-email-data-ctx-title" style="margin-top:0.35rem;">Contact data</div>` +
+      renderRows(contactVars);
   }
 
-  function replaceTplVars(str, company) {
-    return (str || '')
-      .replace(/\{\{company_name\}\}/g, company.name || '')
-      .replace(/\{\{city\}\}/g, company.city || '')
-      .replace(/\{\{state\}\}/g, company.state || '');
+  function updateEmailPreview() {
+    const tpl = templates.find(t => t.id === emailTemplateSelect.value);
+    if (!tpl || !emailModalLead) { emailPreview.innerHTML = ''; return; }
+    const varMap = buildVarMap(emailModalLead);
+    const subjectHtml = renderTplHtml(tpl.subject, varMap);
+    const bodyHtml = renderTplHtml(tpl.body, varMap);
+    emailPreview.innerHTML =
+      `<div class="leads-email-preview-subject">Subject: ${subjectHtml}</div>${bodyHtml}`;
+  }
+
+  // Replace {{var}} and {{var|fallback}} with color-coded HTML spans
+  function renderTplHtml(str, varMap) {
+    return esc(str || '').replace(/\{\{(\w+?)(?:\|([^}]*))?\}\}/g, (match, key, fallback) => {
+      const val = varMap[key];
+      if (val) {
+        return `<span class="tpl-resolved" title="{{${key}}} → ${esc(val)}">${esc(val)}</span>`;
+      }
+      if (fallback !== undefined && fallback !== '') {
+        return `<span class="tpl-fallback" title="{{${key}}} was empty — using fallback">${esc(fallback)}</span>`;
+      }
+      return `<span class="tpl-missing" title="{{${key}}} is empty and has no fallback">⚠ ${esc(key)}</span>`;
+    });
   }
 
   emailTemplateSelect.addEventListener('change', updateEmailPreview);
@@ -376,37 +748,136 @@
   });
 
   // ── Companies ──
-  const companiesTbody = document.getElementById('companies-tbody');
   const companiesStatus = document.getElementById('companies-status');
-  document.getElementById('companies-refresh-btn').addEventListener('click', fetchCompanies);
+  document.getElementById('companies-refresh-btn').addEventListener('click', () => { companiesPagination.offset = 0; fetchCompanies(); });
+
+  // Companies pagination DOM
+  const companiesPaginationEl = document.getElementById('companies-pagination');
+  const companiesPageInfo = document.getElementById('companies-page-info');
+  const companiesPagePrev = document.getElementById('companies-page-prev');
+  const companiesPageNext = document.getElementById('companies-page-next');
+
+  companiesPagePrev.addEventListener('click', () => {
+    companiesPagination.offset = Math.max(0, companiesPagination.offset - companiesPagination.limit);
+    fetchCompanies();
+  });
+  companiesPageNext.addEventListener('click', () => {
+    companiesPagination.offset += companiesPagination.limit;
+    fetchCompanies();
+  });
 
   async function fetchCompanies() {
     companiesStatus.textContent = 'Loading companies…';
     companiesStatus.classList.remove('error');
     try {
-      const res = await fetch(`${LEADS_API}/companies`, { headers: authHeaders() });
+      const params = new URLSearchParams();
+      params.set('limit', String(companiesPagination.limit));
+      params.set('offset', String(companiesPagination.offset));
+      const res = await fetch(`${LEADS_API}/companies?${params.toString()}`, { headers: authHeaders() });
       if (!res.ok) throw new Error((await res.json()).error || `HTTP ${res.status}`);
-      companies = await res.json();
-      companiesStatus.textContent = `${companies.length} compan${companies.length !== 1 ? 'ies' : 'y'}`;
+      const json = await res.json();
+      companies = json.data;
+      companiesPagination = json.pagination;
+      const start = companiesPagination.offset + 1;
+      const end = Math.min(companiesPagination.offset + companies.length, companiesPagination.total);
+      companiesStatus.textContent = `${companiesPagination.total} compan${companiesPagination.total !== 1 ? 'ies' : 'y'}`;
       renderCompanies();
+      renderCompaniesPagination(start, end);
     } catch (e) {
       companiesStatus.textContent = e.message;
       companiesStatus.classList.add('error');
     }
   }
 
+  function renderCompaniesPagination(start, end) {
+    if (companiesPagination.total <= companiesPagination.limit) {
+      companiesPaginationEl.style.display = 'none';
+      return;
+    }
+    companiesPaginationEl.style.display = 'flex';
+    const currentPage = Math.floor(companiesPagination.offset / companiesPagination.limit) + 1;
+    companiesPageInfo.textContent = `${start}–${end} of ${companiesPagination.total}  ·  Page ${currentPage} of ${companiesPagination.pages}`;
+    companiesPagePrev.disabled = companiesPagination.offset <= 0;
+    companiesPageNext.disabled = companiesPagination.offset + companiesPagination.limit >= companiesPagination.total;
+  }
+
   function renderCompanies() {
-    companiesTbody.innerHTML = companies.map(c => {
+    const companiesList = document.getElementById('companies-list');
+    companiesList.innerHTML = companies.map(c => {
       const scoreClass = (c.relevance_score || 0) >= 80 ? 'high' : (c.relevance_score || 0) >= 60 ? 'med' : 'low';
-      return `<tr>
-        <td><strong>${esc(c.name || '—')}</strong></td>
-        <td>${c.domain ? `<a href="https://${esc(c.domain)}" target="_blank" rel="noopener" style="color:#5eead4;text-decoration:none;">${esc(c.domain)}</a>` : '—'}</td>
-        <td>${esc(c.city || '')}${c.city && c.state ? ', ' : ''}${esc(c.state || '')}</td>
-        <td>${esc(c.type || '—')}</td>
-        <td><span class="leads-score leads-score-${scoreClass}">${c.relevance_score ?? '—'}</span></td>
-        <td>${c.source_url ? `<a href="${esc(c.source_url)}" target="_blank" rel="noopener" style="color:#5eead4;text-decoration:none;font-size:0.75rem;">View</a>` : '—'}</td>
-      </tr>`;
+      const contacts = c.Contacts || [];
+      const location = [c.city, c.state].filter(Boolean).join(', ');
+
+      const contactRows = contacts.length ? contacts.map(ct => {
+        const nameStr = ct.name ? esc(ct.name) : '<span style="color:#64748b;font-style:italic;">Unnamed</span>';
+        const roleStr = ct.role ? `<span class="company-contact-primary-role">${esc(ct.role)}</span>` : '';
+        const fields = [];
+        if (ct.email) fields.push(`<span class="company-contact-field"><span class="company-contact-field-icon">✉</span><a href="mailto:${escAttr(ct.email)}">${esc(ct.email)}</a></span>`);
+        if (ct.phone) fields.push(`<span class="company-contact-field"><span class="company-contact-field-icon">☎</span><a href="tel:${escAttr(ct.phone)}">${esc(ct.phone)}</a></span>`);
+        if (ct.source_url) fields.push(`<span class="company-contact-field"><span class="company-contact-field-icon">🔗</span><a href="${escAttr(ct.source_url)}" target="_blank" rel="noopener">${esc(ct.source_url.replace(/^https?:\/\//, '').slice(0, 30))}${ct.source_url.replace(/^https?:\/\//, '').length > 30 ? '…' : ''}</a></span>`);
+        return `<div class="company-contact-row">
+          <div class="company-contact-primary">
+            <span class="company-contact-primary-name">${nameStr}</span>
+            ${roleStr}
+          </div>
+          <div class="company-contact-fields">${fields.join('')}</div>
+          <div class="company-contact-actions">
+            <button class="leads-btn leads-btn-sm" data-company-id="${c.id}" data-contact-id="${ct.id}" title="Edit contact">✎</button>
+          </div>
+        </div>`;
+      }).join('') : '<div class="company-no-contacts">No contacts found for this company</div>';
+
+      return `<div class="company-card">
+        <div class="company-card-header" data-company-toggle="${c.id}">
+          <span class="company-card-expand">▶</span>
+          <span class="company-card-name">${esc(c.name || '—')}</span>
+          ${c.domain ? `<a href="https://${esc(c.domain)}" target="_blank" rel="noopener" class="company-card-domain" onclick="event.stopPropagation();">${esc(c.domain)}</a>` : ''}
+          <div class="company-card-meta">
+            ${location ? `<span class="company-card-meta-item">📍 ${esc(location)}</span>` : ''}
+            <span class="company-card-meta-item">${esc(c.type || '—')}</span>
+            <span class="leads-score leads-score-${scoreClass}" style="font-size:0.7rem;">${c.relevance_score ?? '—'}</span>
+            <span class="company-card-meta-item">${contacts.length} contact${contacts.length !== 1 ? 's' : ''}</span>
+            ${c.source_url ? `<span class="company-card-source"><a href="${escAttr(c.source_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation();">Source</a></span>` : ''}
+            <button class="company-edit-inline" data-edit-company="${c.id}" onclick="event.stopPropagation();" title="Edit company">✎</button>
+          </div>
+        </div>
+        <div class="company-card-body">
+          <div class="company-contacts-header">
+            <span class="company-contacts-title">Contacts</span>
+            <button class="leads-btn leads-btn-sm leads-btn-primary" data-add-contact="${c.id}">+ Add Contact</button>
+          </div>
+          ${contactRows}
+        </div>
+      </div>`;
     }).join('');
+
+    // Toggle expand/collapse
+    companiesList.querySelectorAll('[data-company-toggle]').forEach(header => {
+      header.addEventListener('click', () => {
+        header.closest('.company-card').classList.toggle('open');
+      });
+    });
+
+    // Edit contact buttons (per-contact)
+    companiesList.querySelectorAll('[data-contact-id]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        openContactModal('company', btn.dataset.companyId, btn.dataset.contactId);
+      });
+    });
+
+    // Add contact buttons (company-level, no contactId)
+    companiesList.querySelectorAll('[data-add-contact]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        openContactModal('company', btn.dataset.addContact, null);
+      });
+    });
+
+    // Company edit buttons
+    companiesList.querySelectorAll('[data-edit-company]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        openCompanyModal(btn.dataset.editCompany, 'companies');
+      });
+    });
   }
 
   // ── Templates ──
@@ -474,41 +945,384 @@
   }
 
   // ── Audit Logs ──
-  const auditTbody = document.getElementById('audit-tbody');
+  const auditCardsEl = document.getElementById('audit-cards');
   const auditStatus = document.getElementById('audit-status');
-  document.getElementById('audit-refresh-btn').addEventListener('click', fetchAuditLogs);
+  const auditPaginationEl = document.getElementById('audit-pagination');
+  const auditPageInfo = document.getElementById('audit-page-info');
+  const auditPagePrev = document.getElementById('audit-page-prev');
+  const auditPageNext = document.getElementById('audit-page-next');
+
+  document.getElementById('audit-refresh-btn').addEventListener('click', () => { auditPagination.offset = 0; fetchAuditLogs(); });
+  auditPagePrev.addEventListener('click', () => {
+    auditPagination.offset = Math.max(0, auditPagination.offset - auditPagination.limit);
+    fetchAuditLogs();
+  });
+  auditPageNext.addEventListener('click', () => {
+    auditPagination.offset += auditPagination.limit;
+    fetchAuditLogs();
+  });
 
   async function fetchAuditLogs() {
     auditStatus.textContent = 'Loading audit logs…';
     auditStatus.classList.remove('error');
     try {
-      const res = await fetch(`${LEADS_API}/audit-logs`, { headers: authHeaders() });
+      const params = new URLSearchParams();
+      params.set('limit', String(auditPagination.limit));
+      params.set('offset', String(auditPagination.offset));
+      const res = await fetch(`${LEADS_API}/audit-logs?${params.toString()}`, { headers: authHeaders() });
       if (!res.ok) throw new Error((await res.json()).error || `HTTP ${res.status}`);
-      auditLogs = await res.json();
-      auditStatus.textContent = `${auditLogs.length} entr${auditLogs.length !== 1 ? 'ies' : 'y'}`;
+      const json = await res.json();
+      auditLogs = json.data;
+      auditPagination = json.pagination;
+      auditLoaded = true;
+      const start = auditPagination.offset + 1;
+      const end = Math.min(auditPagination.offset + auditLogs.length, auditPagination.total);
+      auditStatus.textContent = `${auditPagination.total} entr${auditPagination.total !== 1 ? 'ies' : 'y'}`;
       renderAuditLogs();
+      renderAuditPagination(start, end);
     } catch (e) {
       auditStatus.textContent = e.message;
       auditStatus.classList.add('error');
     }
   }
 
+  function renderAuditPagination(start, end) {
+    if (auditPagination.total <= auditPagination.limit) {
+      auditPaginationEl.style.display = 'none';
+      return;
+    }
+    auditPaginationEl.style.display = 'flex';
+    const currentPage = Math.floor(auditPagination.offset / auditPagination.limit) + 1;
+    auditPageInfo.textContent = `${start}–${end} of ${auditPagination.total}  ·  Page ${currentPage} of ${auditPagination.pages}`;
+    auditPagePrev.disabled = auditPagination.offset <= 0;
+    auditPageNext.disabled = auditPagination.offset + auditPagination.limit >= auditPagination.total;
+  }
+
+  function formatAuditAction(action) {
+    const labels = { send_email: 'Email Sent', update_status: 'Status Changed', update_contact: 'Contact Updated', update_company: 'Company Updated' };
+    return labels[action] || action;
+  }
+
+  function buildAuditContext(log) {
+    const lead = log.Lead;
+    if (!lead) return '<div class="audit-ctx-block"><span class="audit-ctx-sub" style="font-style:italic;">Lead deleted or unavailable</span></div>';
+
+    const blocks = [];
+
+    // Company context
+    const co = lead.Company;
+    if (co) {
+      let coHtml = `<div class="audit-ctx-value">${esc(co.name || '—')}</div>`;
+      if (co.domain) coHtml += `<div class="audit-ctx-sub"><a href="https://${escAttr(co.domain)}" target="_blank" rel="noopener">${esc(co.domain)}</a></div>`;
+      if (co.location) coHtml += `<div class="audit-ctx-sub">${esc(co.location)}</div>`;
+      blocks.push(`<div class="audit-ctx-block"><div class="audit-ctx-label">Company</div>${coHtml}</div>`);
+    }
+
+    // Contact context
+    const ct = lead.Contact;
+    if (ct && (ct.name || ct.email)) {
+      let ctHtml = '';
+      if (ct.name) ctHtml += `<div class="audit-ctx-value">${esc(ct.name)}${ct.role ? ` <span class="audit-ctx-sub">· ${esc(ct.role)}</span>` : ''}</div>`;
+      if (ct.email) ctHtml += `<div class="audit-ctx-sub"><a href="mailto:${escAttr(ct.email)}">${esc(ct.email)}</a></div>`;
+      if (ct.phone) ctHtml += `<div class="audit-ctx-sub">${esc(ct.phone)}</div>`;
+      blocks.push(`<div class="audit-ctx-block"><div class="audit-ctx-label">Contact</div>${ctHtml}</div>`);
+    }
+
+    // Lead status + score
+    const statusCls = lead.status ? `leads-badge-${lead.status}` : 'leads-badge-new';
+    blocks.push(`<div class="audit-ctx-block"><div class="audit-ctx-label">Lead</div><div class="audit-ctx-value"><span class="leads-badge ${statusCls}">${esc(lead.status || 'new')}</span></div>${lead.score != null ? `<div class="audit-ctx-sub">Score: ${esc(String(lead.score))}</div>` : ''}</div>`);
+
+    return blocks.join('');
+  }
+
+  function buildAuditMeta(log) {
+    const meta = log.metadata;
+    if (!meta || Object.keys(meta).length === 0) return '';
+
+    const rows = [];
+
+    if (log.action === 'send_email') {
+      if (meta.template_name) rows.push(`<div class="audit-meta-row"><span class="audit-meta-key">Template</span><span class="audit-meta-val">${esc(meta.template_name)}</span></div>`);
+      if (meta.to) rows.push(`<div class="audit-meta-row"><span class="audit-meta-key">To</span><span class="audit-meta-val">${esc(meta.to)}</span></div>`);
+      if (meta.subject) rows.push(`<div class="audit-meta-row"><span class="audit-meta-key">Subject</span><span class="audit-meta-val">${esc(meta.subject)}</span></div>`);
+    } else if (log.action === 'update_status') {
+      if (meta.from && meta.to) {
+        rows.push(`<div class="audit-meta-row"><span class="audit-meta-key">Changed</span><span class="audit-meta-val"><span class="leads-badge leads-badge-${meta.from}">${esc(meta.from)}</span> <span class="audit-meta-arrow">→</span> <span class="leads-badge leads-badge-${meta.to}">${esc(meta.to)}</span></span></div>`);
+      }
+    } else if (log.action === 'update_contact') {
+      const fields = meta.fields_updated || meta.updated_fields;
+      if (Array.isArray(fields) && fields.length) {
+        rows.push(`<div class="audit-meta-row"><span class="audit-meta-key">Fields</span><span class="audit-meta-val">${fields.map(f => esc(f)).join(', ')}</span></div>`);
+      }
+    } else if (log.action === 'update_company') {
+      const fields = meta.updated_fields;
+      if (Array.isArray(fields) && fields.length) {
+        rows.push(`<div class="audit-meta-row"><span class="audit-meta-key">Fields</span><span class="audit-meta-val">${fields.map(f => esc(f)).join(', ')}</span></div>`);
+      }
+      const changes = meta.changes;
+      if (changes && typeof changes === 'object') {
+        Object.entries(changes).forEach(([k, v]) => {
+          rows.push(`<div class="audit-meta-row"><span class="audit-meta-key">${esc(k)}</span><span class="audit-meta-val">${esc(String(v))}</span></div>`);
+        });
+      }
+    }
+
+    // Fallback: show any remaining keys not already rendered
+    const shown = new Set(['template_name', 'to', 'subject', 'from', 'fields_updated', 'updated_fields', 'changes']);
+    Object.entries(meta).forEach(([k, v]) => {
+      if (!shown.has(k) && v != null) {
+        rows.push(`<div class="audit-meta-row"><span class="audit-meta-key">${esc(k)}</span><span class="audit-meta-val">${esc(typeof v === 'object' ? JSON.stringify(v) : String(v))}</span></div>`);
+      }
+    });
+
+    if (rows.length === 0) return '';
+    return `<div class="audit-card-meta">${rows.join('')}</div>`;
+  }
+
   function renderAuditLogs() {
-    auditTbody.innerHTML = auditLogs.map(log => {
+    if (auditLogs.length === 0) {
+      auditCardsEl.innerHTML = '<div class="audit-empty">No audit log entries found.</div>';
+      return;
+    }
+    auditCardsEl.innerHTML = auditLogs.map(log => {
       const d = log.createdAt ? new Date(log.createdAt) : null;
-      console.log('log createdAt:', log, 'parsed date:', d);
       const time = d && !isNaN(d.getTime()) ? d.toLocaleString() : '—';
-      const meta = log.metadata ? JSON.stringify(log.metadata) : '—';
+      const actionCls = `audit-action-${log.action || 'send_email'}`;
       const userId = log.user_id != null ? String(log.user_id) : '—';
-      return `<tr>
-        <td style="white-space:nowrap;">${esc(time)}</td>
-        <td><span class="leads-badge leads-badge-${log.action === 'send_email' ? 'emailed' : 'viewed'}">${esc(log.action)}</span></td>
-        <td>${esc(log.entity_type || '')} ${esc((log.entity_id || '').slice(0, 8))}…</td>
-        <td>${esc(userId)}</td>
-        <td style="font-size:0.72rem;color:#64748b;max-width:250px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${escAttr(meta)}">${esc(meta)}</td>
-      </tr>`;
+
+      return `<div class="audit-card">
+        <div class="audit-card-top">
+          <span class="audit-card-time">${esc(time)}</span>
+          <span class="audit-card-action ${actionCls}">${esc(formatAuditAction(log.action))}</span>
+          <span class="audit-card-user">User ${esc(userId)}</span>
+        </div>
+        <div class="audit-card-context">${buildAuditContext(log)}</div>
+        ${buildAuditMeta(log)}
+      </div>`;
     }).join('');
   }
+
+  // ── Contact Edit Modal ──
+  const contactModal = document.getElementById('leads-contact-modal');
+  const contactModalTitle = document.getElementById('contact-modal-title');
+  const contactModalInfo = document.getElementById('contact-modal-info');
+  const contactName = document.getElementById('contact-name');
+  const contactEmail = document.getElementById('contact-email');
+  const contactPhone = document.getElementById('contact-phone');
+  const contactRole = document.getElementById('contact-role');
+  const contactSourceUrl = document.getElementById('contact-source-url');
+  const contactAssignSection = document.getElementById('contact-assign-section');
+  const contactAssignLeads = document.getElementById('contact-assign-leads');
+  const contactForceSection = document.getElementById('contact-force-section');
+  const contactForceAssign = document.getElementById('contact-force-assign');
+  const contactSaveBtn = document.getElementById('contact-modal-save');
+  const contactCancelBtn = document.getElementById('contact-modal-cancel');
+  const contactCloseBtn = document.getElementById('contact-modal-close');
+
+  let contactModalContactId = null; // specific contact being edited
+
+  function openContactModal(mode, entityId, contactId) {
+    contactModalMode = mode;
+    contactModalEntityId = entityId;
+    contactModalContactId = contactId || null;
+
+    // Clear fields
+    contactName.value = '';
+    contactEmail.value = '';
+    contactPhone.value = '';
+    contactRole.value = '';
+    contactSourceUrl.value = '';
+    contactAssignLeads.checked = false;
+    contactForceAssign.checked = false;
+
+    if (mode === 'lead') {
+      const lead = leads.find(l => l.id === entityId);
+      contactModalEntity = lead;
+      const c = lead?.Company || {};
+      const ct = lead?.Contact || {};
+      contactModalTitle.textContent = 'Edit Lead Contact';
+      contactModalInfo.textContent = `Company: ${c.name || 'Unknown'}`;
+      contactName.value = ct.name || '';
+      contactEmail.value = ct.email || '';
+      contactPhone.value = ct.phone || '';
+      contactRole.value = ct.role || '';
+      contactSourceUrl.value = ct.source_url || '';
+      contactAssignSection.style.display = 'none';
+    } else {
+      const company = companies.find(c => c.id === entityId);
+      contactModalEntity = company;
+      let ct = {};
+      if (contactId && company?.Contacts) {
+        ct = company.Contacts.find(c => c.id === contactId) || {};
+        contactModalTitle.textContent = 'Edit Contact';
+      } else {
+        contactModalTitle.textContent = 'Add New Contact';
+      }
+      contactModalInfo.textContent = `Company: ${company?.name || 'Unknown'}`;
+      contactName.value = ct.name || '';
+      contactEmail.value = ct.email || '';
+      contactPhone.value = ct.phone || '';
+      contactRole.value = ct.role || '';
+      contactSourceUrl.value = ct.source_url || '';
+      contactAssignSection.style.display = 'block';
+    }
+    contactForceSection.style.display = contactAssignLeads.checked ? 'block' : 'none';
+    contactModal.style.display = 'flex';
+  }
+
+  contactAssignLeads.addEventListener('change', () => {
+    contactForceSection.style.display = contactAssignLeads.checked ? 'block' : 'none';
+    if (!contactAssignLeads.checked) contactForceAssign.checked = false;
+  });
+
+  function closeContactModal() { contactModal.style.display = 'none'; }
+  contactCancelBtn.addEventListener('click', closeContactModal);
+  contactCloseBtn.addEventListener('click', closeContactModal);
+  contactModal.addEventListener('click', (e) => { if (e.target === contactModal) closeContactModal(); });
+
+  contactSaveBtn.addEventListener('click', async () => {
+    if (!contactModalMode || !contactModalEntityId) return;
+
+    const body = {};
+    const name = contactName.value.trim();
+    const email = contactEmail.value.trim();
+    const phone = contactPhone.value.trim();
+    const role = contactRole.value.trim();
+    const sourceUrl = contactSourceUrl.value.trim();
+    if (name) body.name = name;
+    if (email) body.email = email;
+    if (phone) body.phone = phone;
+    if (role) body.role = role;
+    if (sourceUrl) body.source_url = sourceUrl;
+
+    if (contactModalMode === 'company') {
+      body.assignToLeads = contactAssignLeads.checked;
+      body.forceAssign = contactForceAssign.checked;
+      if (contactModalContactId) body.contactId = contactModalContactId;
+    }
+
+    contactSaveBtn.disabled = true;
+    contactSaveBtn.textContent = 'Saving…';
+    try {
+      const endpoint = contactModalMode === 'lead'
+        ? `${LEADS_API}/leads/${encodeURIComponent(contactModalEntityId)}/contact`
+        : `${LEADS_API}/companies/${encodeURIComponent(contactModalEntityId)}/contact`;
+      const res = await fetch(endpoint, {
+        method: 'PUT',
+        headers: authHeaders(),
+        body: JSON.stringify(body),
+      });
+      if (!res.ok) throw new Error((await res.json()).error || 'Save failed');
+      closeContactModal();
+      if (contactModalMode === 'lead') {
+        await fetchLeads();
+      } else {
+        await fetchCompanies();
+      }
+    } catch (e) {
+      alert('Contact save failed: ' + e.message);
+    } finally {
+      contactSaveBtn.disabled = false;
+      contactSaveBtn.textContent = 'Save Contact';
+    }
+  });
+
+  // ── Company Edit Modal ──
+  const companyModal = document.getElementById('leads-company-modal');
+  const companyModalTitle = document.getElementById('company-modal-title');
+  const companyModalInfo = document.getElementById('company-modal-info');
+  const companyEditName = document.getElementById('company-edit-name');
+  const companyEditDomain = document.getElementById('company-edit-domain');
+  const companyEditCity = document.getElementById('company-edit-city');
+  const companyEditState = document.getElementById('company-edit-state');
+  const companyEditCountry = document.getElementById('company-edit-country');
+  const companyEditType = document.getElementById('company-edit-type');
+  const companyEditScore = document.getElementById('company-edit-score');
+  const companyEditSourceUrl = document.getElementById('company-edit-source-url');
+  const companyModalSaveBtn = document.getElementById('company-modal-save');
+  const companyModalCancelBtn = document.getElementById('company-modal-cancel');
+  const companyModalCloseBtn = document.getElementById('company-modal-close');
+
+  let companyModalCompanyId = null;
+  let companyModalSource = null; // 'leads' or 'companies'
+
+  function openCompanyModal(companyId, source) {
+    companyModalCompanyId = companyId;
+    companyModalSource = source;
+
+    // Try to find the company from companies array first, then from leads
+    let company = companies.find(c => c.id === companyId);
+    if (!company) {
+      const lead = leads.find(l => (l.company_id === companyId) || (l.Company && l.Company.id === companyId));
+      company = lead?.Company || {};
+    }
+
+    companyModalTitle.textContent = 'Edit Company';
+    companyModalInfo.textContent = company.name ? `Editing: ${company.name}` : 'Edit company details';
+    companyEditName.value = company.name || '';
+    companyEditDomain.value = company.domain || '';
+    companyEditCity.value = company.city || '';
+    companyEditState.value = company.state || '';
+    companyEditCountry.value = company.country || '';
+    companyEditType.value = company.type || '';
+    companyEditScore.value = company.relevance_score != null ? String(company.relevance_score) : '';
+    companyEditSourceUrl.value = company.source_url || '';
+
+    companyModal.style.display = 'flex';
+  }
+
+  function closeCompanyModal() { companyModal.style.display = 'none'; }
+  companyModalCancelBtn.addEventListener('click', closeCompanyModal);
+  companyModalCloseBtn.addEventListener('click', closeCompanyModal);
+  companyModal.addEventListener('click', (e) => { if (e.target === companyModal) closeCompanyModal(); });
+
+  companyModalSaveBtn.addEventListener('click', async () => {
+    if (!companyModalCompanyId) return;
+
+    const body = {};
+    const name = companyEditName.value.trim();
+    const domain = companyEditDomain.value.trim();
+    const city = companyEditCity.value.trim();
+    const state = companyEditState.value.trim();
+    const country = companyEditCountry.value.trim();
+    const type = companyEditType.value;
+    const scoreVal = companyEditScore.value.trim();
+    const sourceUrl = companyEditSourceUrl.value.trim();
+
+    if (name) body.name = name;
+    if (domain) body.domain = domain;
+    if (city) body.city = city;
+    if (state) body.state = state;
+    if (country) body.country = country;
+    if (type) body.type = type;
+    if (scoreVal !== '') body.relevance_score = parseInt(scoreVal, 10);
+    if (sourceUrl) body.source_url = sourceUrl;
+
+    if (Object.keys(body).length === 0) {
+      alert('No fields to update.');
+      return;
+    }
+
+    companyModalSaveBtn.disabled = true;
+    companyModalSaveBtn.textContent = 'Saving…';
+    try {
+      const res = await fetch(`${LEADS_API}/companies/${encodeURIComponent(companyModalCompanyId)}`, {
+        method: 'PUT',
+        headers: authHeaders(),
+        body: JSON.stringify(body),
+      });
+      if (!res.ok) throw new Error((await res.json()).error || 'Save failed');
+      closeCompanyModal();
+      // Refresh whichever view the user came from (and both if companies are loaded)
+      if (companyModalSource === 'leads' || leadsLoaded) await fetchLeads();
+      if (companyModalSource === 'companies' || companies.length > 0) await fetchCompanies();
+    } catch (e) {
+      alert('Company update failed: ' + e.message);
+    } finally {
+      companyModalSaveBtn.disabled = false;
+      companyModalSaveBtn.textContent = 'Save Company';
+    }
+  });
 
   // ── Helpers ──
   function esc(s) {

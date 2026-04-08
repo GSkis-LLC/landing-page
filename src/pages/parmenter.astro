@@ -1922,6 +1922,23 @@ al-anon meetings</textarea>
 
       // State
       let token = null;
+
+      // Restore session from localStorage
+      (function restoreSession() {
+        try {
+          const saved = localStorage.getItem('parmenter_token');
+          if (saved) {
+            token = saved;
+            window.__parmenterToken = saved;
+            document.getElementById('login-gate').style.display = 'none';
+            const dash = document.getElementById('dashboard');
+            dash.style.display = 'flex';
+            dash.style.flexDirection = 'column';
+            // fetchConfig will be called after DOM refs are set up below
+            setTimeout(() => { if (typeof fetchConfig === 'function') fetchConfig(); }, 0);
+          }
+        } catch (_) {}
+      })();
       let currentConfig = {
         promotion: '',
         promotionVersion: 1,
@@ -2034,6 +2051,7 @@ al-anon meetings</textarea>
           if (!res.ok) throw new Error(data.error || 'Login failed');
           token = data.token;
           window.__parmenterToken = token;
+          try { localStorage.setItem('parmenter_token', token); } catch (_) {}
           loginGate.style.display = 'none';
           dashboard.style.display = 'flex';
           dashboard.style.flexDirection = 'column';
@@ -2053,6 +2071,7 @@ al-anon meetings</textarea>
       logoutBtn.addEventListener('click', () => {
         token = null;
         window.__parmenterToken = null;
+        try { localStorage.removeItem('parmenter_token'); } catch (_) {}
         organizations = [];
         selectedOrg = null;
         groupsFetched = false;
