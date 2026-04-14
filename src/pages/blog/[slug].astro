@@ -25,6 +25,30 @@ const siteName = 'MyMeetings';
 const ogImage = post.ogImage;
 const keywords = post.keywords;
 const dateFormatted = new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://mymeetings.co/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: 'https://mymeetings.co/blog',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: post.title,
+      item: canonical,
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -89,6 +113,9 @@ const dateFormatted = new Date(post.date).toLocaleDateString('en-US', { year: 'n
         '@id': canonical
       }
     })} />
+
+    <!-- JSON-LD BreadcrumbList -->
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   </head>
   <body>
     <Header />

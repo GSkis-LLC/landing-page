@@ -23,6 +23,10 @@ export const prerender = true;
 
 // Generate static paths for all locations
 export function getStaticPaths() {
+  if (import.meta.env.SKIP_MEETING_PAGES === '1') {
+    return [];
+  }
+
   const locations = getAllLocations();
   return locations.map((loc) => ({
     params: {
