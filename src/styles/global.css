@@ -225,6 +225,11 @@ html, body {
 .blog-article-body tbody tr:last-child td:first-child { border-radius:0 0 0 8px }
 .blog-article-body tbody tr:last-child td:last-child { border-radius:0 0 8px 0 }
 .blog-article-body tbody tr:hover { background:#f8faf9 }
+.blog-article-body code { background:#f3f4f6; padding:0.15rem 0.4rem; border-radius:4px; font-family:monospace; font-size:0.9em; color:#2a3a4d }
+
+/* Phone screenshots in blog posts */
+.phone-screenshot { display:block; width:260px; max-width:100%; height:auto; border-radius:28px; box-shadow:0 8px 32px rgba(0,0,0,0.15); border:1px solid rgba(0,0,0,0.06) }
+.screenshot-row { display:flex; gap:1.5rem; justify-content:center; align-items:flex-start; flex-wrap:wrap; margin:2rem 0 }
 
 /* Responsive */
 @media (max-width: 768px) {
