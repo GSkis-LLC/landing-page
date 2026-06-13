@@ -135,5 +135,47 @@
     "meetingHighlights": "Central Kansas recovery hub with meetings in downtown churches and community centers; serves a wide rural area; strong evening speaker and step-study traditions.",
     "transitInfo": "CityGo provides local bus service in Salina; Salina Regional Airport (SLN); I-70 and I-135 interchange provides north-south and east-west highway access.",
     "population": 47000
+  },
+  "shawnee": {
+    "city": "Shawnee",
+    "stateAbbr": "KS",
+    "stateFull": "Kansas",
+    "geoRegion": "US-KS",
+    "slug": "shawnee",
+    "lat": 39.0228,
+    "lng": -94.7152,
+    "areaDescription": "Northeast Kansas suburb in the Kansas City metropolitan area",
+    "neighborhoods": "Downtown Shawnee, Shawnee Mission Parkway corridor, Monticello, Lake Quivira vicinity, Pflumm Road area, Westbrooke",
+    "meetingHighlights": "Meetings serve western Johnson County with convenient access from surrounding Kansas City suburbs.",
+    "transitInfo": "RideKC bus service and I-35/I-435 connections provide regional access.",
+    "population": 68000
+  },
+  "hutchinson": {
+    "city": "Hutchinson",
+    "stateAbbr": "KS",
+    "stateFull": "Kansas",
+    "geoRegion": "US-KS",
+    "slug": "hutchinson",
+    "lat": 38.0608,
+    "lng": -97.9298,
+    "areaDescription": "South-central Kansas city in Reno County",
+    "neighborhoods": "Downtown, Fairgrounds area, East Hutchinson, South Hutchinson vicinity, 30th Avenue corridor, Carey Park area",
+    "meetingHighlights": "Meetings serve Hutchinson and nearby rural communities with steady local participation.",
+    "transitInfo": "Reno Area Transit offers limited service; K-96, US-50, and Wichita airport access support regional travel.",
+    "population": 40000
+  },
+  "dodge-city": {
+    "city": "Dodge City",
+    "stateAbbr": "KS",
+    "stateFull": "Kansas",
+    "geoRegion": "US-KS",
+    "slug": "dodge-city",
+    "lat": 37.7528,
+    "lng": -100.0171,
+    "areaDescription": "Historic regional center in southwest Kansas",
+    "neighborhoods": "Downtown, Historic Front Street area, North 2nd corridor, South Side, Wright Park area, Airport Road district",
+    "meetingHighlights": "Meetings support a broad southwest Kansas service area with reliable in-town options.",
+    "transitInfo": "US-50 and US-283 are the primary routes; Dodge City Regional Airport provides scheduled air service.",
+    "population": 27000
   }
 }

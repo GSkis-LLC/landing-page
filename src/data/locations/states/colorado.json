@@ -41,7 +41,7 @@
     "stateFull": "Colorado",
     "geoRegion": "US-CO",
     "slug": "boulder",
-    "lat": 40.0150,
+    "lat": 40.015,
     "lng": -105.2705,
     "areaDescription": "Boulder area at the base of the Rocky Mountains",
     "neighborhoods": "Pearl Street, University Hill, North Boulder, South Boulder, Chautauqua, Gunbarrel",
@@ -124,5 +124,47 @@
     "meetingHighlights": "Active West Denver metro meetings with groups near Belmar and along Union Boulevard; gateway to mountain recovery events; mix of Big Book study, discussion, and speaker formats.",
     "transitInfo": "RTD light rail (W Line) and bus routes connect Lakewood to downtown Denver; close to US-6 and C-470; Denver International Airport (DEN) accessible via light rail.",
     "population": 155000
+  },
+  "thornton": {
+    "city": "Thornton",
+    "stateAbbr": "CO",
+    "stateFull": "Colorado",
+    "geoRegion": "US-CO",
+    "slug": "thornton",
+    "lat": 39.868,
+    "lng": -104.9719,
+    "areaDescription": "North metro Denver city in Adams and Weld counties",
+    "neighborhoods": "Original Thornton, Northglenn border area, Eastlake, Thornton Town Center, Hunters Glen, Trail Winds area",
+    "meetingHighlights": "North metro meetings serve Thornton and nearby suburbs with regular neighborhood-based discussion groups.",
+    "transitInfo": "RTD buses and N Line commuter rail connect Thornton with downtown Denver; I-25 is the main corridor.",
+    "population": 145000
+  },
+  "greeley": {
+    "city": "Greeley",
+    "stateAbbr": "CO",
+    "stateFull": "Colorado",
+    "geoRegion": "US-CO",
+    "slug": "greeley",
+    "lat": 40.4233,
+    "lng": -104.7091,
+    "areaDescription": "Weld County regional center on the northern Front Range",
+    "neighborhoods": "Downtown, UNC area, West Greeley, Evans vicinity, Bittersweet, Promontory",
+    "meetingHighlights": "Meetings serve the university community and the wider Weld County region with dependable weekly schedules.",
+    "transitInfo": "Greeley-Evans Transit and Bustang connections support travel; US-34 and US-85 provide regional access.",
+    "population": 111000
+  },
+  "grand-junction": {
+    "city": "Grand Junction",
+    "stateAbbr": "CO",
+    "stateFull": "Colorado",
+    "geoRegion": "US-CO",
+    "slug": "grand-junction",
+    "lat": 39.0639,
+    "lng": -108.5506,
+    "areaDescription": "Western Colorado hub in the Grand Valley",
+    "neighborhoods": "Downtown, Redlands, Orchard Mesa, North Avenue corridor, Fruitvale, Horizon Drive area",
+    "meetingHighlights": "Regional meetings draw from Mesa County and nearby mountain communities with regular in-town options.",
+    "transitInfo": "Grand Valley Transit serves the city; Grand Junction Regional Airport and I-70 provide broader access.",
+    "population": 68000
   }
 }

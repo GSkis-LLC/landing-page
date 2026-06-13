@@ -137,5 +137,47 @@
     "meetingHighlights": "Mississippi River town recovery with meetings near Southeast Missouri State University and downtown; cross-river fellowship with southern Illinois; evening discussion and Big Book study groups.",
     "transitInfo": "Cape Girardeau Transit provides local bus service; Cape Girardeau Regional Airport (CGI); I-55 corridor along the Mississippi River.",
     "population": 40000
+  },
+  "st-charles": {
+    "city": "St. Charles",
+    "stateAbbr": "MO",
+    "stateFull": "Missouri",
+    "geoRegion": "US-MO",
+    "slug": "st-charles",
+    "lat": 38.7881,
+    "lng": -90.4974,
+    "areaDescription": "Historic Missouri River city in the western St. Louis metro",
+    "neighborhoods": "Historic Main Street, Frenchtown, New Town, St. Charles Convention Center area, Zumbehl corridor, Duchesne",
+    "meetingHighlights": "Meetings serve St. Charles County with strong access from western St. Louis suburbs.",
+    "transitInfo": "MetroBus regional links and nearby I-70, I-64, and Lambert International Airport support travel.",
+    "population": 71000
+  },
+  "lees-summit": {
+    "city": "Lee's Summit",
+    "stateAbbr": "MO",
+    "stateFull": "Missouri",
+    "geoRegion": "US-MO",
+    "slug": "lees-summit",
+    "lat": 38.9108,
+    "lng": -94.3822,
+    "areaDescription": "Large eastern suburb in the Kansas City metropolitan area",
+    "neighborhoods": "Downtown, Raintree Lake area, Lakewood, New Longview, Summit Fair district, Pryor Road corridor",
+    "meetingHighlights": "Meetings serve eastern Jackson County with dependable suburban access and regular evening options.",
+    "transitInfo": "Primarily car-oriented via US-50, I-470, and MO-291; Kansas City International Airport is the nearest major airport.",
+    "population": 104000
+  },
+  "branson": {
+    "city": "Branson",
+    "stateAbbr": "MO",
+    "stateFull": "Missouri",
+    "geoRegion": "US-MO",
+    "slug": "branson",
+    "lat": 36.6437,
+    "lng": -93.2185,
+    "areaDescription": "Entertainment and tourism center in the Ozarks",
+    "neighborhoods": "Downtown, Branson Landing, Theatre District, Hollister vicinity, Table Rock Lake area, Gretna Road corridor",
+    "meetingHighlights": "Meetings serve local residents, hospitality workers, and visitors across the Branson area.",
+    "transitInfo": "Road access via US-65 and MO-76; Branson Airport and nearby Springfield-Branson National Airport support travel.",
+    "population": 13000
   }
 }

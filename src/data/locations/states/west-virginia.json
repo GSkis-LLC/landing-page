@@ -88,5 +88,47 @@
     "meetingHighlights": "Evening and weekend meetings with a mix of faith-based and community sponsor groups.",
     "transitInfo": "Local bus services and regional highways provide access; nearby Mid-Ohio Valley airport and river transport for regional travel.",
     "population": 30000
+  },
+  "martinsburg": {
+    "city": "Martinsburg",
+    "stateAbbr": "WV",
+    "stateFull": "West Virginia",
+    "geoRegion": "US-WV",
+    "slug": "martinsburg",
+    "lat": 39.4562,
+    "lng": -77.9639,
+    "areaDescription": "Martinsburg area, Eastern Panhandle",
+    "neighborhoods": "Downtown, South Martinsburg, Rosemont, Baker Heights",
+    "meetingHighlights": "Eastern Panhandle hub with commuter and local population bases supporting steady regional meeting access.",
+    "transitInfo": "Eastern Panhandle Transit, I-81, and MARC rail connections support regional access.",
+    "population": 18502
+  },
+  "beckley": {
+    "city": "Beckley",
+    "stateAbbr": "WV",
+    "stateFull": "West Virginia",
+    "geoRegion": "US-WV",
+    "slug": "beckley",
+    "lat": 37.7782,
+    "lng": -81.1882,
+    "areaDescription": "Beckley area, southern West Virginia",
+    "neighborhoods": "Downtown, Raleigh Court, Mabscott area, Harper Road corridor",
+    "meetingHighlights": "Southern West Virginia service center suited for meetings serving Raleigh County and nearby mountain communities.",
+    "transitInfo": "Primarily car-based via I-64 and I-77; Raleigh County Memorial Airport serves the area.",
+    "population": 17286
+  },
+  "clarksburg": {
+    "city": "Clarksburg",
+    "stateAbbr": "WV",
+    "stateFull": "West Virginia",
+    "geoRegion": "US-WV",
+    "slug": "clarksburg",
+    "lat": 39.2806,
+    "lng": -80.3445,
+    "areaDescription": "Clarksburg area, north-central West Virginia",
+    "neighborhoods": "Downtown, Glen Elk, Stealey, North View",
+    "meetingHighlights": "North-central West Virginia hub with a compact downtown and countywide reach for community meeting access.",
+    "transitInfo": "Car-based travel centers on I-79 and US 50; North Central West Virginia Airport is nearby.",
+    "population": 16061
   }
 }

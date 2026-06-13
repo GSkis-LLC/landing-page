@@ -84,5 +84,47 @@
     "meetingHighlights": "Regional meetings serving Rogue Valley with steady attendance and both daytime and evening groups.",
     "transitInfo": "RVTD buses and local transit; Rogue Valley International–Medford Airport for regional flights.",
     "population": 83000
+  },
+  "hillsboro": {
+    "city": "Hillsboro",
+    "stateAbbr": "OR",
+    "stateFull": "Oregon",
+    "geoRegion": "US-OR",
+    "slug": "hillsboro",
+    "lat": 45.5229,
+    "lng": -122.9898,
+    "areaDescription": "Hillsboro area, west Portland metro",
+    "neighborhoods": "Downtown, Orenco, Tanasbourne, Reedville",
+    "meetingHighlights": "Large west metro employment center with strong transit access, suited for meetings across Washington County.",
+    "transitInfo": "MAX light rail and buses connect Hillsboro to the Portland metro; US 26 is the main highway corridor.",
+    "population": 106447
+  },
+  "gresham": {
+    "city": "Gresham",
+    "stateAbbr": "OR",
+    "stateFull": "Oregon",
+    "geoRegion": "US-OR",
+    "slug": "gresham",
+    "lat": 45.5001,
+    "lng": -122.4302,
+    "areaDescription": "Gresham area, east Portland metro",
+    "neighborhoods": "Historic Downtown, Rockwood, Kelly Creek, Hollybrook",
+    "meetingHighlights": "Large east Portland metro city with dense residential areas and transit links that support neighborhood-accessible meetings.",
+    "transitInfo": "TriMet MAX and buses serve the city; I-84 and US 26 provide regional road access.",
+    "population": 114247
+  },
+  "corvallis": {
+    "city": "Corvallis",
+    "stateAbbr": "OR",
+    "stateFull": "Oregon",
+    "geoRegion": "US-OR",
+    "slug": "corvallis",
+    "lat": 44.5646,
+    "lng": -123.262,
+    "areaDescription": "Corvallis area, mid-Willamette Valley",
+    "neighborhoods": "Downtown, OSU campus area, Timberhill, Southtown",
+    "meetingHighlights": "University-centered regional hub with compact neighborhoods and strong demand for evening and young-adult meetings.",
+    "transitInfo": "CTS buses and regional links to Albany serve the city; US 20 and OR 99W connect the valley.",
+    "population": 59922
   }
 }

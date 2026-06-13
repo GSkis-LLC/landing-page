@@ -434,5 +434,47 @@
     "meetingHighlights": "Small-city meetings with strong community ties, popular evening groups, and active participation from nearby towns.",
     "transitInfo": "Visalia Transit and regional highways; Fresno Yosemite International Airport (FAT) within driving distance.",
     "population": 141000
+  },
+  "long-beach": {
+    "city": "Long Beach",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "long-beach",
+    "lat": 33.7701,
+    "lng": -118.1937,
+    "areaDescription": "Major coastal city in southern Los Angeles County",
+    "neighborhoods": "Downtown, Belmont Shore, Bixby Knolls, Cambodia Town, Naples, Wrigley",
+    "meetingHighlights": "Long Beach has a large meeting base with options across downtown, coastal neighborhoods, and surrounding districts.",
+    "transitInfo": "Long Beach Transit, Metro A Line access, and Long Beach Airport support regional travel.",
+    "population": 451000
+  },
+  "anaheim": {
+    "city": "Anaheim",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "anaheim",
+    "lat": 33.8366,
+    "lng": -117.9143,
+    "areaDescription": "Orange County city centered on the Anaheim Resort and surrounding neighborhoods",
+    "neighborhoods": "Downtown Anaheim, Anaheim Resort, Anaheim Hills, Platinum Triangle, West Anaheim, Colony Historic District",
+    "meetingHighlights": "Meetings are spread across central and west Anaheim with strong access from the broader north Orange County area.",
+    "transitInfo": "OCTA buses, Metrolink/Amtrak at ARTIC, and nearby John Wayne Airport support transit access.",
+    "population": 347000
+  },
+  "irvine": {
+    "city": "Irvine",
+    "stateAbbr": "CA",
+    "stateFull": "California",
+    "geoRegion": "US-CA",
+    "slug": "irvine",
+    "lat": 33.6846,
+    "lng": -117.8265,
+    "areaDescription": "Master-planned city in central Orange County",
+    "neighborhoods": "University Town Center, Woodbridge, Northwood, Irvine Spectrum, Turtle Rock, Great Park area",
+    "meetingHighlights": "Meetings serve students, professionals, and families across central Orange County with regular evening attendance.",
+    "transitInfo": "OCTA buses, Metrolink at Irvine Station, and proximity to John Wayne Airport provide regional access.",
+    "population": 314000
   }
 }

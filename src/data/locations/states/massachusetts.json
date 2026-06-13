@@ -83,8 +83,50 @@
     "geoRegion": "US-MA",
     "slug": "fall-river",
     "lat": 41.7015,
-    "lng": -71.1550,
+    "lng": -71.155,
     "areaDescription": "Fall River and the South Coast of Massachusetts",
     "neighborhoods": "Downtown Fall River, The Highlands, Flint, South End, Somerset (nearby), Swansea (nearby)"
+  },
+  "brockton": {
+    "city": "Brockton",
+    "stateAbbr": "MA",
+    "stateFull": "Massachusetts",
+    "geoRegion": "US-MA",
+    "slug": "brockton",
+    "lat": 42.0834,
+    "lng": -71.0184,
+    "areaDescription": "South Shore city in Plymouth County",
+    "neighborhoods": "Downtown, Campello, Montello, East Side, Cary Hill, Thorny Lea area",
+    "meetingHighlights": "Meetings serve Brockton and surrounding South Shore communities with steady neighborhood participation.",
+    "transitInfo": "BAT buses, MBTA commuter rail, and Routes 24 and 27 provide regional access.",
+    "population": 106000
+  },
+  "lynn": {
+    "city": "Lynn",
+    "stateAbbr": "MA",
+    "stateFull": "Massachusetts",
+    "geoRegion": "US-MA",
+    "slug": "lynn",
+    "lat": 42.4668,
+    "lng": -70.9495,
+    "areaDescription": "North Shore city on Massachusetts Bay",
+    "neighborhoods": "Downtown, Central Square, Wyoma, West Lynn, Diamond District, Lynn Woods area",
+    "meetingHighlights": "Meetings serve the North Shore with accessible urban locations and strong links to nearby communities.",
+    "transitInfo": "MBTA commuter rail and bus routes connect Lynn with Boston and the North Shore corridor.",
+    "population": 101000
+  },
+  "pittsfield": {
+    "city": "Pittsfield",
+    "stateAbbr": "MA",
+    "stateFull": "Massachusetts",
+    "geoRegion": "US-MA",
+    "slug": "pittsfield",
+    "lat": 42.4501,
+    "lng": -73.2454,
+    "areaDescription": "Berkshire County hub in western Massachusetts",
+    "neighborhoods": "Downtown, West Side, Morningside, Allendale, Coltsville, Berkshire Medical Center area",
+    "meetingHighlights": "Meetings serve the Berkshires with regular in-town options and participation from surrounding hill towns.",
+    "transitInfo": "BRTA bus service and regional highway access via US-7 and US-20 support travel.",
+    "population": 43000
   }
 }

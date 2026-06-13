@@ -114,7 +114,7 @@
     "geoRegion": "US-CT",
     "slug": "danbury",
     "lat": 41.4015,
-    "lng": -73.4540,
+    "lng": -73.454,
     "areaDescription": "Danbury area in western Connecticut",
     "neighborhoods": "Downtown Danbury, Mill Plain, Candlewood Lake area, Bethel, New Fairfield, Brookfield",
     "intergroup": {
@@ -124,5 +124,47 @@
     "meetingHighlights": "Active western Connecticut meetings with groups in downtown Danbury and surrounding towns; strong evening schedule and welcoming newcomer meetings near Candlewood Lake communities.",
     "transitInfo": "Housatonic Area Regional Transit (HART) bus service; Metro-North Danbury Branch line; I-84 provides east-west access; Danbury Municipal Airport (DXR).",
     "population": 86000
+  },
+  "new-britain": {
+    "city": "New Britain",
+    "stateAbbr": "CT",
+    "stateFull": "Connecticut",
+    "geoRegion": "US-CT",
+    "slug": "new-britain",
+    "lat": 41.6612,
+    "lng": -72.7795,
+    "areaDescription": "Central Connecticut city southwest of Hartford",
+    "neighborhoods": "Downtown, Little Poland, East Side, West End, Corbin Heights, Walnut Hill area",
+    "meetingHighlights": "Meetings serve a dense central Connecticut population with steady neighborhood and parish-based options.",
+    "transitInfo": "CTfastrak, CTtransit buses, and nearby I-84 support access across the region.",
+    "population": 74000
+  },
+  "bristol": {
+    "city": "Bristol",
+    "stateAbbr": "CT",
+    "stateFull": "Connecticut",
+    "geoRegion": "US-CT",
+    "slug": "bristol",
+    "lat": 41.6718,
+    "lng": -72.9493,
+    "areaDescription": "Central Connecticut city between Hartford and Waterbury",
+    "neighborhoods": "Downtown, Forestville, Federal Hill, Lake Compounce area, Chippens Hill, Northeast Bristol",
+    "meetingHighlights": "Meetings serve Bristol and nearby towns with a consistent mix of open discussion and step formats.",
+    "transitInfo": "CTtransit routes serve the city; Route 72 and I-84 provide regional road access.",
+    "population": 61000
+  },
+  "meriden": {
+    "city": "Meriden",
+    "stateAbbr": "CT",
+    "stateFull": "Connecticut",
+    "geoRegion": "US-CT",
+    "slug": "meriden",
+    "lat": 41.5382,
+    "lng": -72.807,
+    "areaDescription": "South-central Connecticut city in the Hartford-New Haven corridor",
+    "neighborhoods": "Downtown, South Meriden, East Side, Hubbard Park area, North Meriden, West Main corridor",
+    "meetingHighlights": "Meetings serve a broad local base in central Connecticut with good access from surrounding communities.",
+    "transitInfo": "CTtransit buses and the Meriden station on the Hartford Line and Amtrak New Haven-Hartford-Springfield corridor improve access.",
+    "population": 61000
   }
 }

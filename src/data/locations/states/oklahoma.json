@@ -85,5 +85,47 @@
     "meetingHighlights": "Community meetings with evening and weekend groups; some military-connected meetings near Fort Sill.",
     "transitInfo": "Lawton Area Transit services and proximity to regional highways and airports.",
     "population": 94000
+  },
+  "edmond": {
+    "city": "Edmond",
+    "stateAbbr": "OK",
+    "stateFull": "Oklahoma",
+    "geoRegion": "US-OK",
+    "slug": "edmond",
+    "lat": 35.6528,
+    "lng": -97.4781,
+    "areaDescription": "Edmond area, north Oklahoma City metro",
+    "neighborhoods": "Downtown Edmond, Oak Tree, Coffee Creek, UCO area",
+    "meetingHighlights": "Large north metro city with suburban neighborhoods and a university presence, supporting broad local meeting access.",
+    "transitInfo": "Car-based travel via I-35 and Broadway; Will Rogers World Airport in Oklahoma City is the main airport.",
+    "population": 94428
+  },
+  "enid": {
+    "city": "Enid",
+    "stateAbbr": "OK",
+    "stateFull": "Oklahoma",
+    "geoRegion": "US-OK",
+    "slug": "enid",
+    "lat": 36.3956,
+    "lng": -97.8784,
+    "areaDescription": "Enid area, north-central Oklahoma",
+    "neighborhoods": "Downtown, Kenwood, Waverley, Meadowlake",
+    "meetingHighlights": "Regional center for north-central Oklahoma with a compact urban core suited for city and countywide meetings.",
+    "transitInfo": "Primarily car-oriented via US 81 and US 412; the nearest commercial airport is in Oklahoma City.",
+    "population": 51308
+  },
+  "stillwater": {
+    "city": "Stillwater",
+    "stateAbbr": "OK",
+    "stateFull": "Oklahoma",
+    "geoRegion": "US-OK",
+    "slug": "stillwater",
+    "lat": 36.1156,
+    "lng": -97.0584,
+    "areaDescription": "Stillwater area, north-central Oklahoma",
+    "neighborhoods": "Downtown, OSU campus area, Westwood, Berry Creek",
+    "meetingHighlights": "University city where campus and local neighborhoods can support young-adult and community meeting demand.",
+    "transitInfo": "Travel is mostly by car via US 177 and State Highway 51; Oklahoma City and Tulsa airports are both within driving range.",
+    "population": 48394
   }
 }

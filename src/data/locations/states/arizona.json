@@ -130,7 +130,7 @@
     "geoRegion": "US-AZ",
     "slug": "tempe",
     "lat": 33.4255,
-    "lng": -111.9400,
+    "lng": -111.94,
     "areaDescription": "Phoenix metro — East Valley, home of Arizona State University",
     "neighborhoods": "Downtown Tempe, Mill Avenue District, Tempe Town Lake area, South Tempe, Guadalupe, McClintock Corridor",
     "intergroup": {
@@ -140,5 +140,47 @@
     "meetingHighlights": "Strong college-area recovery scene near ASU with young people's meetings, speaker meetings on Mill Avenue, and midday groups popular with students and professionals.",
     "transitInfo": "Valley Metro light rail runs through downtown Tempe; extensive bus network; Phoenix Sky Harbor International Airport (PHX) borders Tempe to the west.",
     "population": 184000
+  },
+  "gilbert": {
+    "city": "Gilbert",
+    "stateAbbr": "AZ",
+    "stateFull": "Arizona",
+    "geoRegion": "US-AZ",
+    "slug": "gilbert",
+    "lat": 33.3528,
+    "lng": -111.789,
+    "areaDescription": "Southeast Valley suburb in the Phoenix metropolitan area",
+    "neighborhoods": "Heritage District, Val Vista Lakes, Power Ranch, Agritopia area, Seville, Spectrum",
+    "meetingHighlights": "Meetings serve the East Valley with strong suburban attendance and a mix of discussion and step-study groups.",
+    "transitInfo": "Primarily car-oriented via US-60 and Loop 202; Phoenix Sky Harbor International Airport is the nearest major airport.",
+    "population": 288000
+  },
+  "peoria": {
+    "city": "Peoria",
+    "stateAbbr": "AZ",
+    "stateFull": "Arizona",
+    "geoRegion": "US-AZ",
+    "slug": "peoria",
+    "lat": 33.5806,
+    "lng": -112.2374,
+    "areaDescription": "Northwest Valley city in the Phoenix metropolitan area",
+    "neighborhoods": "Old Town Peoria, Vistancia, Westbrook Village, Peoria Sports Complex area, Fletcher Heights, Lake Pleasant corridor",
+    "meetingHighlights": "Northwest Valley meetings are spread across neighborhood churches and community sites with reliable evening schedules.",
+    "transitInfo": "Valley Metro bus service reaches parts of the city; Loop 101 and US-60 provide regional access.",
+    "population": 198000
+  },
+  "surprise": {
+    "city": "Surprise",
+    "stateAbbr": "AZ",
+    "stateFull": "Arizona",
+    "geoRegion": "US-AZ",
+    "slug": "surprise",
+    "lat": 33.6292,
+    "lng": -112.3679,
+    "areaDescription": "Far northwest Phoenix metro suburb",
+    "neighborhoods": "Original Town Site, Sun City Grand area, Marley Park, Surprise Farms, Bell Road corridor, Sierra Montana",
+    "meetingHighlights": "Meetings serve retirees and families across the west Valley with regular daytime and evening options.",
+    "transitInfo": "Travel is mostly by car via Loop 303 and US-60; limited Valley Metro service connects to the broader metro.",
+    "population": 163000
   }
 }

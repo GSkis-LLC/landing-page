@@ -70,5 +70,47 @@
     "meetingHighlights": "Historic mill city recovery; working-class traditions; border city serving RI and Massachusetts.",
     "transitInfo": "RIPTA buses; close to Providence; I-95 corridor; Pawtucket/Central Falls commuter rail.",
     "population": 75000
+  },
+  "east-providence": {
+    "city": "East Providence",
+    "stateAbbr": "RI",
+    "stateFull": "Rhode Island",
+    "geoRegion": "US-RI",
+    "slug": "east-providence",
+    "lat": 41.8137,
+    "lng": -71.3701,
+    "areaDescription": "East Providence area, East Bay",
+    "neighborhoods": "Riverside, Rumford, Watchemoket, Kent Heights",
+    "meetingHighlights": "Dense East Bay city with quick access to Providence, suited for neighborhood and metro-area meeting coverage.",
+    "transitInfo": "RIPTA buses and I-195 connect the city to Providence and the East Bay; T.F. Green Airport is nearby.",
+    "population": 47139
+  },
+  "newport": {
+    "city": "Newport",
+    "stateAbbr": "RI",
+    "stateFull": "Rhode Island",
+    "geoRegion": "US-RI",
+    "slug": "newport",
+    "lat": 41.4901,
+    "lng": -71.3128,
+    "areaDescription": "Newport area, Aquidneck Island",
+    "neighborhoods": "Historic Hill, Broadway, Fifth Ward, The Point",
+    "meetingHighlights": "Aquidneck Island hub with a year-round local base and seasonal workforce, supporting reliable meeting demand.",
+    "transitInfo": "RIPTA buses, Newport ferries, and the Pell Bridge support access; T.F. Green Airport is the nearest major airport.",
+    "population": 24999
+  },
+  "woonsocket": {
+    "city": "Woonsocket",
+    "stateAbbr": "RI",
+    "stateFull": "Rhode Island",
+    "geoRegion": "US-RI",
+    "slug": "woonsocket",
+    "lat": 42.0029,
+    "lng": -71.5148,
+    "areaDescription": "Woonsocket area, Blackstone Valley",
+    "neighborhoods": "Downtown, Bernon, Globe District, East Woonsocket",
+    "meetingHighlights": "Blackstone Valley population center positioned to serve northern Rhode Island with accessible city meetings.",
+    "transitInfo": "RIPTA buses connect to Providence; Route 146 and I-295 provide the main road access.",
+    "population": 43240
   }
 }

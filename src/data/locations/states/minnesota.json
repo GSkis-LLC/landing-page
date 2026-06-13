@@ -24,7 +24,7 @@
     "geoRegion": "US-MN",
     "slug": "st-paul",
     "lat": 44.9537,
-    "lng": -93.0900,
+    "lng": -93.09,
     "areaDescription": "St. Paul area, Twin Cities",
     "neighborhoods": "Downtown St. Paul, Cathedral Hill, Summit Hill, Highland Park, West Seventh",
     "intergroup": {
@@ -104,5 +104,47 @@
     "meetingHighlights": "College-town recovery near Minnesota State University with young people's and evening meetings; river-valley fellowship serving Blue Earth and Nicollet counties; step-study and speaker formats.",
     "transitInfo": "Mankato Transit System provides local bus routes; Mankato Regional Airport (MKT); US-169 and US-14 provide regional access.",
     "population": 44000
+  },
+  "bloomington": {
+    "city": "Bloomington",
+    "stateAbbr": "MN",
+    "stateFull": "Minnesota",
+    "geoRegion": "US-MN",
+    "slug": "bloomington",
+    "lat": 44.8408,
+    "lng": -93.2983,
+    "areaDescription": "South metro city in the Minneapolis-Saint Paul metropolitan area",
+    "neighborhoods": "Normandale Lake area, West Bloomington, East Bloomington, South Loop, Mall of America district, Penn American",
+    "meetingHighlights": "Meetings serve south metro residents with easy access from Bloomington, Richfield, and nearby suburbs.",
+    "transitInfo": "Metro Transit buses and METRO Blue Line service connect Bloomington to Minneapolis, St. Paul, and the airport.",
+    "population": 89000
+  },
+  "maple-grove": {
+    "city": "Maple Grove",
+    "stateAbbr": "MN",
+    "stateFull": "Minnesota",
+    "geoRegion": "US-MN",
+    "slug": "maple-grove",
+    "lat": 45.0725,
+    "lng": -93.4558,
+    "areaDescription": "Northwest Twin Cities suburb in Hennepin County",
+    "neighborhoods": "Arbor Lakes, Downtown Maple Grove, Weaver Lake area, Fish Lake, Elm Creek area, Bass Lake corridor",
+    "meetingHighlights": "Meetings serve the northwest metro with a strong suburban base and regular evening scheduling.",
+    "transitInfo": "Metro Transit routes and I-94/I-494 provide regional access across the Twin Cities.",
+    "population": 71000
+  },
+  "moorhead": {
+    "city": "Moorhead",
+    "stateAbbr": "MN",
+    "stateFull": "Minnesota",
+    "geoRegion": "US-MN",
+    "slug": "moorhead",
+    "lat": 46.8739,
+    "lng": -96.7678,
+    "areaDescription": "Clay County city across the Red River from Fargo",
+    "neighborhoods": "Downtown, Concordia area, Minnesota State University Moorhead district, South Moorhead, Village Green, Bluestem area",
+    "meetingHighlights": "Meetings serve the Fargo-Moorhead area with participation from both sides of the state line.",
+    "transitInfo": "MATBUS serves the Fargo-Moorhead metro; I-94 and nearby Hector International Airport support travel.",
+    "population": 45000
   }
 }

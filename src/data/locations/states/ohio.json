@@ -111,5 +111,47 @@
     "meetingHighlights": "Strong downtown and Oregon District meetings; active fellowship with military outreach to Wright-Patterson AFB.",
     "transitInfo": "Greater Dayton RTA buses serve the metro area; Dayton International Airport (DAY) offers regional flights.",
     "population": 137644
+  },
+  "canton": {
+    "city": "Canton",
+    "stateAbbr": "OH",
+    "stateFull": "Ohio",
+    "geoRegion": "US-OH",
+    "slug": "canton",
+    "lat": 40.7989,
+    "lng": -81.3784,
+    "areaDescription": "Canton area, Stark County",
+    "neighborhoods": "Downtown, Market Heights, Ridgewood, Harter Heights",
+    "meetingHighlights": "Stark County seat with a sizable urban core and nearby suburbs, supporting regular neighborhood and regional meetings.",
+    "transitInfo": "SARTA buses serve the county; I-77 and US 30 provide road access, with Akron-Canton Airport nearby.",
+    "population": 70872
+  },
+  "youngstown": {
+    "city": "Youngstown",
+    "stateAbbr": "OH",
+    "stateFull": "Ohio",
+    "geoRegion": "US-OH",
+    "slug": "youngstown",
+    "lat": 41.0998,
+    "lng": -80.6495,
+    "areaDescription": "Youngstown area, Mahoning Valley",
+    "neighborhoods": "Downtown, Wick Park, Brownlee Woods, Idora",
+    "meetingHighlights": "Mahoning Valley hub with strong regional identity and a dense urban grid suited for community-based meetings.",
+    "transitInfo": "WRTA buses serve the city; I-80 and I-680 provide regional access, with Youngstown-Warren Regional Airport nearby.",
+    "population": 60068
+  },
+  "parma": {
+    "city": "Parma",
+    "stateAbbr": "OH",
+    "stateFull": "Ohio",
+    "geoRegion": "US-OH",
+    "slug": "parma",
+    "lat": 41.4048,
+    "lng": -81.7229,
+    "areaDescription": "Parma area, Greater Cleveland west side",
+    "neighborhoods": "Parma Circle, Ukrainian Village, State Road corridor, Ridgewood",
+    "meetingHighlights": "Large inner-ring Cleveland suburb that can support high-access meetings for west-side and south-side residents.",
+    "transitInfo": "Served by Greater Cleveland RTA buses and close to I-480 and I-77; Cleveland Hopkins International Airport is nearby.",
+    "population": 81146
   }
 }

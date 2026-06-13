@@ -83,5 +83,47 @@
     "meetingHighlights": "Suburban meetings serving commuters and families; many evening options and newcomer support shared with Fargo groups.",
     "transitInfo": "MATBUS connects West Fargo with Fargo; highway access via I-94.",
     "population": 44000
+  },
+  "dickinson": {
+    "city": "Dickinson",
+    "stateAbbr": "ND",
+    "stateFull": "North Dakota",
+    "geoRegion": "US-ND",
+    "slug": "dickinson",
+    "lat": 46.8792,
+    "lng": -102.7896,
+    "areaDescription": "Dickinson area, southwestern North Dakota",
+    "neighborhoods": "Downtown, Heart River, Prairie Hills, West Ridge",
+    "meetingHighlights": "Southwestern North Dakota hub serving energy, ranching, and service-sector communities across the region.",
+    "transitInfo": "Travel is mostly by car via I-94 and US 85; Dickinson Theodore Roosevelt Regional Airport serves the city.",
+    "population": 25679
+  },
+  "williston": {
+    "city": "Williston",
+    "stateAbbr": "ND",
+    "stateFull": "North Dakota",
+    "geoRegion": "US-ND",
+    "slug": "williston",
+    "lat": 48.1469,
+    "lng": -103.617,
+    "areaDescription": "Williston area, Bakken region",
+    "neighborhoods": "Downtown, University Avenue corridor, Spring Lake Park, Harvest Hills",
+    "meetingHighlights": "Bakken population center positioned for meetings serving local workers, families, and nearby oil-field communities.",
+    "transitInfo": "Primarily car-oriented via US 2 and US 85; Williston Basin International Airport is nearby.",
+    "population": 29160
+  },
+  "jamestown": {
+    "city": "Jamestown",
+    "stateAbbr": "ND",
+    "stateFull": "North Dakota",
+    "geoRegion": "US-ND",
+    "slug": "jamestown",
+    "lat": 46.9105,
+    "lng": -98.7084,
+    "areaDescription": "Jamestown area, central North Dakota",
+    "neighborhoods": "Downtown, Northside, Hillcrest, Buffalo Mall area",
+    "meetingHighlights": "Central North Dakota service center suited for steady meetings serving Stutsman County and I-94 travelers.",
+    "transitInfo": "Car-based travel via I-94 and US 281; Jamestown Regional Airport serves the area.",
+    "population": 15849
   }
 }

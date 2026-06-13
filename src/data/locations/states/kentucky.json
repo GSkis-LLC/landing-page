@@ -105,5 +105,47 @@
     "meetingHighlights": "State capital recovery community with meetings near the Capitol complex and along the Kentucky River; close-knit fellowship with evening discussion and step-study groups.",
     "transitInfo": "Frankfort Transit provides local bus service; Capital City Airport (FFT); US-60 and US-127 provide regional access; midway between Lexington and Louisville on I-64.",
     "population": 28000
+  },
+  "richmond": {
+    "city": "Richmond",
+    "stateAbbr": "KY",
+    "stateFull": "Kentucky",
+    "geoRegion": "US-KY",
+    "slug": "richmond",
+    "lat": 37.7479,
+    "lng": -84.2947,
+    "areaDescription": "Madison County city southeast of Lexington",
+    "neighborhoods": "Downtown, EKU area, Eastern Bypass corridor, Arlington, Boone Way area, South Richmond",
+    "meetingHighlights": "Meetings serve Richmond and nearby communities with support from the local college and regional population.",
+    "transitInfo": "Travel is mainly by car via I-75; Blue Grass Airport in Lexington is the nearest major airport.",
+    "population": 37000
+  },
+  "elizabethtown": {
+    "city": "Elizabethtown",
+    "stateAbbr": "KY",
+    "stateFull": "Kentucky",
+    "geoRegion": "US-KY",
+    "slug": "elizabethtown",
+    "lat": 37.6939,
+    "lng": -85.8591,
+    "areaDescription": "Hardin County regional center south of Louisville",
+    "neighborhoods": "Downtown, Freeman Lake area, Ring Road corridor, Valley Creek, St. John Road area, North Miles Street",
+    "meetingHighlights": "Meetings serve central Kentucky communities along the I-65 corridor with regular weekday coverage.",
+    "transitInfo": "Road access via I-65 and the Bluegrass Parkway; local transit is limited and most travel is by car.",
+    "population": 32000
+  },
+  "paducah": {
+    "city": "Paducah",
+    "stateAbbr": "KY",
+    "stateFull": "Kentucky",
+    "geoRegion": "US-KY",
+    "slug": "paducah",
+    "lat": 37.0834,
+    "lng": -88.6,
+    "areaDescription": "Western Kentucky river city at the confluence region of the Ohio and Tennessee rivers",
+    "neighborhoods": "Downtown, Lowertown Arts District, Midtown, Lone Oak, Southside, Noble Park area",
+    "meetingHighlights": "Meetings serve the Paducah area and surrounding counties with a stable mix of local formats.",
+    "transitInfo": "Paducah Area Transit System serves the city; I-24 and Barkley Regional Airport provide regional access.",
+    "population": 26000
   }
 }

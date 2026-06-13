@@ -231,5 +231,47 @@
     "meetingHighlights": "Panhandle recovery hub with meetings throughout downtown and beach communities; strong military-connected fellowship near NAS Pensacola; active speaker and step-study traditions.",
     "transitInfo": "ECAT bus service covers Escambia County; Pensacola International Airport (PNS); I-10 and US-98 Gulf Coast access.",
     "population": 54000
+  },
+  "fort-myers": {
+    "city": "Fort Myers",
+    "stateAbbr": "FL",
+    "stateFull": "Florida",
+    "geoRegion": "US-FL",
+    "slug": "fort-myers",
+    "lat": 26.6406,
+    "lng": -81.8723,
+    "areaDescription": "Lee County city on the Caloosahatchee River",
+    "neighborhoods": "Downtown River District, McGregor, Villas area, Cypress Lake, Fort Myers Shores, Tice vicinity",
+    "meetingHighlights": "Meetings serve the broader Fort Myers-Cape Coral area with year-round and seasonal attendance.",
+    "transitInfo": "LeeTran buses serve the city; Southwest Florida International Airport is southeast of Fort Myers.",
+    "population": 97000
+  },
+  "west-palm-beach": {
+    "city": "West Palm Beach",
+    "stateAbbr": "FL",
+    "stateFull": "Florida",
+    "geoRegion": "US-FL",
+    "slug": "west-palm-beach",
+    "lat": 26.7153,
+    "lng": -80.0534,
+    "areaDescription": "Palm Beach County urban center on Florida's southeast coast",
+    "neighborhoods": "Downtown, Northwood, Flamingo Park, El Cid, Westgate, Clematis Street corridor",
+    "meetingHighlights": "Meetings are widely available across central Palm Beach County with strong downtown and neighborhood participation.",
+    "transitInfo": "Palm Tran buses, Tri-Rail, Brightline nearby, and Palm Beach International Airport support regional access.",
+    "population": 124000
+  },
+  "clearwater": {
+    "city": "Clearwater",
+    "stateAbbr": "FL",
+    "stateFull": "Florida",
+    "geoRegion": "US-FL",
+    "slug": "clearwater",
+    "lat": 27.9659,
+    "lng": -82.8001,
+    "areaDescription": "Pinellas County Gulf Coast city west of Tampa",
+    "neighborhoods": "Downtown, Clearwater Beach, Countryside, Island Estates, Belleair border area, Coachman corridor",
+    "meetingHighlights": "Meetings serve beach communities and inland neighborhoods with a steady mix of daytime and evening formats.",
+    "transitInfo": "PSTA bus service links Clearwater to St. Petersburg and Tampa; St. Pete-Clearwater International Airport is nearby.",
+    "population": 117000
   }
 }

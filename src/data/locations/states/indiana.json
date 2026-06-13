@@ -152,5 +152,47 @@
     "meetingHighlights": "College-town meetings near Ball State University with student-friendly and evening groups; active downtown fellowship and step-study traditions in community centers and churches.",
     "transitInfo": "Muncie Indiana Transit System (MITS) provides local bus service; Delaware County Regional Airport (MIE); I-69 and State Road 332 provide regional access.",
     "population": 65000
+  },
+  "carmel": {
+    "city": "Carmel",
+    "stateAbbr": "IN",
+    "stateFull": "Indiana",
+    "geoRegion": "US-IN",
+    "slug": "carmel",
+    "lat": 39.9784,
+    "lng": -86.118,
+    "areaDescription": "North Indianapolis suburb in Hamilton County",
+    "neighborhoods": "City Center, Arts & Design District, Midtown, WestClay, Home Place, Village of WestClay area",
+    "meetingHighlights": "Meetings serve north Indianapolis suburbs with strong accessibility for families and professionals.",
+    "transitInfo": "Primarily car-oriented via US-31 and I-465; IndyGo regional connections and Indianapolis International Airport serve the area.",
+    "population": 103000
+  },
+  "hammond": {
+    "city": "Hammond",
+    "stateAbbr": "IN",
+    "stateFull": "Indiana",
+    "geoRegion": "US-IN",
+    "slug": "hammond",
+    "lat": 41.5834,
+    "lng": -87.5,
+    "areaDescription": "Northwest Indiana city in the Chicago metropolitan area",
+    "neighborhoods": "Downtown, Hessville, Robertsdale, Woodmar, Purdue Northwest area, South Hammond",
+    "meetingHighlights": "Meetings serve the Calumet region with convenient access from northwest Indiana and south Chicagoland.",
+    "transitInfo": "Pace and local transit links, South Shore Line nearby, and Interstates 80, 90, and 94 support travel.",
+    "population": 76000
+  },
+  "fishers": {
+    "city": "Fishers",
+    "stateAbbr": "IN",
+    "stateFull": "Indiana",
+    "geoRegion": "US-IN",
+    "slug": "fishers",
+    "lat": 39.9568,
+    "lng": -86.0133,
+    "areaDescription": "Growing northeast Indianapolis suburb in Hamilton County",
+    "neighborhoods": "Downtown Nickel Plate District, Geist area, Saxony, Fishers District, Sunblest, Lantern Road corridor",
+    "meetingHighlights": "Meetings serve northeast metro residents with reliable evening and weekend schedules.",
+    "transitInfo": "Travel is mainly by car via I-69 and 116th Street; Indianapolis International Airport is the nearest major airport.",
+    "population": 103000
   }
 }

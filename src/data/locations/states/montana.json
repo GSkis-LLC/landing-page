@@ -24,7 +24,7 @@
     "geoRegion": "US-MT",
     "slug": "missoula",
     "lat": 46.8721,
-    "lng": -113.9940,
+    "lng": -113.994,
     "areaDescription": "Missoula area, Western Montana",
     "neighborhoods": "Downtown Missoula, University District, Rattlesnake, Southgate, Target Range",
     "intergroup": {
@@ -59,7 +59,7 @@
     "stateFull": "Montana",
     "geoRegion": "US-MT",
     "slug": "bozeman",
-    "lat": 45.6770,
+    "lat": 45.677,
     "lng": -111.0429,
     "areaDescription": "Bozeman area, Gallatin Valley",
     "neighborhoods": "Downtown Bozeman, MSU campus area, South Bozeman, Four Corners",
@@ -78,7 +78,7 @@
     "geoRegion": "US-MT",
     "slug": "helena",
     "lat": 46.5958,
-    "lng": -112.0270,
+    "lng": -112.027,
     "areaDescription": "Helena, the state capital, in the Helena Valley of west-central Montana",
     "neighborhoods": "Downtown Helena, Last Chance Gulch, Reeder's Alley, East Helena, Montana City, Canyon Ferry area",
     "intergroup": {
@@ -94,7 +94,7 @@
     "stateFull": "Montana",
     "geoRegion": "US-MT",
     "slug": "kalispell",
-    "lat": 48.1920,
+    "lat": 48.192,
     "lng": -114.3168,
     "areaDescription": "Kalispell and the Flathead Valley, gateway to Glacier National Park",
     "neighborhoods": "Downtown Kalispell, Whitefish, Columbia Falls, Bigfork, Evergreen, Lakeside",
@@ -104,5 +104,47 @@
     "meetingHighlights": "Flathead Valley recovery community with meetings in Kalispell, Whitefish, and Columbia Falls; gateway to Glacier National Park with seasonal visitor attendance; ski-town and outdoor fellowship in Whitefish; strong step-study tradition.",
     "transitInfo": "Eagle Transit provides local bus service in the Flathead Valley; Glacier Park International Airport (FCA); US-93 and US-2 provide regional access.",
     "population": 28000
+  },
+  "butte": {
+    "city": "Butte",
+    "stateAbbr": "MT",
+    "stateFull": "Montana",
+    "geoRegion": "US-MT",
+    "slug": "butte",
+    "lat": 46.0038,
+    "lng": -112.5348,
+    "areaDescription": "Butte area, Southwest Montana",
+    "neighborhoods": "Uptown, The Flats, Walkerville, Meaderville",
+    "meetingHighlights": "Historic regional center with venues concentrated around Uptown and community corridors, serving Butte-Silver Bow and nearby mining towns.",
+    "transitInfo": "Primarily car-oriented via I-90 and I-15; Bert Mooney Airport serves regional flights.",
+    "population": 34900
+  },
+  "belgrade": {
+    "city": "Belgrade",
+    "stateAbbr": "MT",
+    "stateFull": "Montana",
+    "geoRegion": "US-MT",
+    "slug": "belgrade",
+    "lat": 45.7766,
+    "lng": -111.1771,
+    "areaDescription": "Belgrade area, Gallatin Valley",
+    "neighborhoods": "Downtown, River Rock, Prescott Ranch, West Belgrade",
+    "meetingHighlights": "Fast-growing Gallatin Valley city that can support commuter-friendly meetings for residents between Bozeman and Three Forks.",
+    "transitInfo": "Local travel is car-based via I-90 and Jackrabbit Lane; Bozeman Yellowstone International Airport is in Belgrade.",
+    "population": 10460
+  },
+  "whitefish": {
+    "city": "Whitefish",
+    "stateAbbr": "MT",
+    "stateFull": "Montana",
+    "geoRegion": "US-MT",
+    "slug": "whitefish",
+    "lat": 48.4111,
+    "lng": -114.3376,
+    "areaDescription": "Whitefish area, Flathead Valley",
+    "neighborhoods": "Downtown, Railway District, Wisconsin Avenue corridor, Whitefish Mountain area",
+    "meetingHighlights": "Year-round tourism and a permanent local population make Whitefish a practical base for meetings in the north Flathead Valley.",
+    "transitInfo": "Walkable downtown with car travel on US 93; Amtrak and Glacier Park International Airport serve the area.",
+    "population": 7751
   }
 }

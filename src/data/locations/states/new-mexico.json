@@ -40,7 +40,7 @@
     "stateFull": "New Mexico",
     "geoRegion": "US-NM",
     "slug": "santa-fe",
-    "lat": 35.6870,
+    "lat": 35.687,
     "lng": -105.9378,
     "areaDescription": "Santa Fe area, state capital",
     "neighborhoods": "Downtown Santa Fe, Railyard District, Canyon Road, Tesuque, Southside",
@@ -69,5 +69,47 @@
     "meetingHighlights": "College-town recovery near New Mexico State University; bilingual meetings; strong border-region community.",
     "transitInfo": "RoadRUNNER Transit buses; Las Cruces International Airport (LRU); I-10 and I-25 junction.",
     "population": 113000
+  },
+  "rio-rancho": {
+    "city": "Rio Rancho",
+    "stateAbbr": "NM",
+    "stateFull": "New Mexico",
+    "geoRegion": "US-NM",
+    "slug": "rio-rancho",
+    "lat": 35.2328,
+    "lng": -106.663,
+    "areaDescription": "Rio Rancho area, Albuquerque metro west side",
+    "neighborhoods": "City Centre, Enchanted Hills, Cabezon, Northern Meadows",
+    "meetingHighlights": "Large west-side Albuquerque metro city with broad suburban coverage and strong demand for neighborhood-accessible meetings.",
+    "transitInfo": "Car-based travel via NM 528 and US 550; Albuquerque International Sunport is the main airport.",
+    "population": 104046
+  },
+  "farmington": {
+    "city": "Farmington",
+    "stateAbbr": "NM",
+    "stateFull": "New Mexico",
+    "geoRegion": "US-NM",
+    "slug": "farmington",
+    "lat": 36.7281,
+    "lng": -108.2187,
+    "areaDescription": "Farmington area, Four Corners region",
+    "neighborhoods": "Downtown, Animas Valley, Northeast Farmington, Foothills",
+    "meetingHighlights": "Four Corners service hub that can anchor meetings for San Juan County and nearby tribal and rural communities.",
+    "transitInfo": "Primarily car-oriented via US 64 and US 550; Four Corners Regional Airport serves the city.",
+    "population": 46624
+  },
+  "hobbs": {
+    "city": "Hobbs",
+    "stateAbbr": "NM",
+    "stateFull": "New Mexico",
+    "geoRegion": "US-NM",
+    "slug": "hobbs",
+    "lat": 32.7026,
+    "lng": -103.136,
+    "areaDescription": "Hobbs area, Southeast New Mexico",
+    "neighborhoods": "Downtown, Broadmoor, College Lane area, North Hobbs",
+    "meetingHighlights": "Southeast New Mexico oil-field center that can support meetings for local residents and surrounding Lea County communities.",
+    "transitInfo": "Travel is largely by car via US 62/180 and NM 18; Lea County Regional Airport provides commercial service.",
+    "population": 40508
   }
 }

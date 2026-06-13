@@ -84,5 +84,47 @@
     "meetingHighlights": "Community-focused meetings with steady weekend attendance and occasional speaker nights.",
     "transitInfo": "Local transit and regional highways; small regional airport and drive access to larger hubs.",
     "population": 24000
+  },
+  "sheridan": {
+    "city": "Sheridan",
+    "stateAbbr": "WY",
+    "stateFull": "Wyoming",
+    "geoRegion": "US-WY",
+    "slug": "sheridan",
+    "lat": 44.7972,
+    "lng": -106.9562,
+    "areaDescription": "Sheridan area, north-central Wyoming",
+    "neighborhoods": "Downtown, Historic Main, South Sheridan, Trail End area",
+    "meetingHighlights": "North-central Wyoming service hub well placed for meetings serving ranching communities and I-90 travelers.",
+    "transitInfo": "Primarily car-based via I-90 and US 87; Sheridan County Airport provides regional flights.",
+    "population": 18737
+  },
+  "cody": {
+    "city": "Cody",
+    "stateAbbr": "WY",
+    "stateFull": "Wyoming",
+    "geoRegion": "US-WY",
+    "slug": "cody",
+    "lat": 44.5263,
+    "lng": -109.0565,
+    "areaDescription": "Cody area, Bighorn Basin",
+    "neighborhoods": "Downtown, Yellowstone Avenue corridor, Southfork area, Cody Commons",
+    "meetingHighlights": "Tourism and service center east of Yellowstone, positioned to serve the Bighorn Basin with year-round local demand.",
+    "transitInfo": "Travel is mostly by car via US 14/16/20; Yellowstone Regional Airport serves the city.",
+    "population": 10028
+  },
+  "jackson": {
+    "city": "Jackson",
+    "stateAbbr": "WY",
+    "stateFull": "Wyoming",
+    "geoRegion": "US-WY",
+    "slug": "jackson",
+    "lat": 43.4799,
+    "lng": -110.7624,
+    "areaDescription": "Jackson area, Jackson Hole",
+    "neighborhoods": "Town Square, West Jackson, East Jackson, South Park",
+    "meetingHighlights": "Jackson Hole population center with a large service workforce and transit access, supporting varied local meeting needs.",
+    "transitInfo": "START buses, pathways, and US 26/89/191 support access; Jackson Hole Airport serves the valley.",
+    "population": 10760
   }
 }

@@ -24,7 +24,7 @@
     "geoRegion": "US-MI",
     "slug": "ann-arbor",
     "lat": 42.2808,
-    "lng": -83.7430,
+    "lng": -83.743,
     "areaDescription": "Ann Arbor area, home to University of Michigan",
     "neighborhoods": "Downtown, Kerrytown, Old West Side, Burns Park, North Campus, South University",
     "intergroup": {
@@ -158,5 +158,47 @@
     "meetingHighlights": "Lake Michigan port-city recovery with meetings in downtown and lakeshore communities; strong evening and weekend groups at churches and community centers; welcoming fellowship serving surrounding rural areas.",
     "transitInfo": "Muskegon Area Transit System (MATS) provides local bus service; Muskegon County Airport (MKG); US-31 connects to Grand Rapids and Holland.",
     "population": 38000
+  },
+  "warren": {
+    "city": "Warren",
+    "stateAbbr": "MI",
+    "stateFull": "Michigan",
+    "geoRegion": "US-MI",
+    "slug": "warren",
+    "lat": 42.5145,
+    "lng": -83.0147,
+    "areaDescription": "Large Macomb County suburb north of Detroit",
+    "neighborhoods": "Southwest Warren, Fitzgerald, Northeast Warren, Van Dyke corridor, Civic Center area, Warren Woods",
+    "meetingHighlights": "Meetings serve the inner northern suburbs with strong access from Macomb and Oakland counties.",
+    "transitInfo": "SMART bus routes and I-696/I-75 provide regional connectivity across metro Detroit.",
+    "population": 136000
+  },
+  "sterling-heights": {
+    "city": "Sterling Heights",
+    "stateAbbr": "MI",
+    "stateFull": "Michigan",
+    "geoRegion": "US-MI",
+    "slug": "sterling-heights",
+    "lat": 42.5803,
+    "lng": -83.0302,
+    "areaDescription": "Major Macomb County suburb northeast of Detroit",
+    "neighborhoods": "Dodge Park area, Utica Road corridor, Sterling Heights City Center, Lakeside vicinity, 15 Mile Road area, Plum Brook",
+    "meetingHighlights": "Meetings serve a large suburban base with dependable neighborhood and church-hosted options.",
+    "transitInfo": "SMART bus service and easy access to M-53, M-59, and I-75 support travel.",
+    "population": 133000
+  },
+  "saginaw": {
+    "city": "Saginaw",
+    "stateAbbr": "MI",
+    "stateFull": "Michigan",
+    "geoRegion": "US-MI",
+    "slug": "saginaw",
+    "lat": 43.4195,
+    "lng": -83.9508,
+    "areaDescription": "Mid-Michigan city on the Saginaw River",
+    "neighborhoods": "Downtown, Old Town, Cathedral District, Adams Boulevard area, Southwest Side, Northmoor",
+    "meetingHighlights": "Meetings serve the Tri-Cities region with regular attendance from Saginaw and surrounding communities.",
+    "transitInfo": "STARS bus service, I-75 and I-675 access, and nearby MBS International Airport support the region.",
+    "population": 43000
   }
 }

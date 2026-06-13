@@ -104,5 +104,47 @@
     "meetingHighlights": "Meetings concentrated around Getty Square and downtown Yonkers with convenient access for commuters traveling to NYC meetings.",
     "transitInfo": "Bee-Line Bus network connects Yonkers neighborhoods; Metro-North Hudson Line provides frequent rail service into Manhattan.",
     "population": 200807
+  },
+  "white-plains": {
+    "city": "White Plains",
+    "stateAbbr": "NY",
+    "stateFull": "New York",
+    "geoRegion": "US-NY",
+    "slug": "white-plains",
+    "lat": 41.033,
+    "lng": -73.7629,
+    "areaDescription": "White Plains area, Lower Hudson Valley",
+    "neighborhoods": "Downtown, Battle Hill, North Broadway, Gedney Farms",
+    "meetingHighlights": "Westchester County seat and employment center, suited for frequent meetings with strong regional transit access.",
+    "transitInfo": "Metro-North rail, Bee-Line buses, and parkways provide strong regional access; Westchester County Airport is nearby.",
+    "population": 59559
+  },
+  "binghamton": {
+    "city": "Binghamton",
+    "stateAbbr": "NY",
+    "stateFull": "New York",
+    "geoRegion": "US-NY",
+    "slug": "binghamton",
+    "lat": 42.0987,
+    "lng": -75.9179,
+    "areaDescription": "Binghamton area, Southern Tier",
+    "neighborhoods": "Downtown, West Side, South Side, East Side",
+    "meetingHighlights": "Southern Tier hub with a university presence and downtown core that can support diverse community meeting schedules.",
+    "transitInfo": "Local buses serve the urban core; I-81 and I-86 intersect here, and Greater Binghamton Airport serves the region.",
+    "population": 47969
+  },
+  "utica": {
+    "city": "Utica",
+    "stateAbbr": "NY",
+    "stateFull": "New York",
+    "geoRegion": "US-NY",
+    "slug": "utica",
+    "lat": 43.1009,
+    "lng": -75.2327,
+    "areaDescription": "Utica area, Mohawk Valley",
+    "neighborhoods": "Downtown, Cornhill, South Utica, West Utica",
+    "meetingHighlights": "Mohawk Valley population center with established civic and church venues suited for regional meeting access.",
+    "transitInfo": "Amtrak and intercity buses serve downtown; the city sits on the New York State Thruway with nearby air service in Rome.",
+    "population": 65283
   }
 }

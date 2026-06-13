@@ -152,5 +152,47 @@
     "meetingHighlights": "Metro-area recovery community with cross-river fellowship shared with Omaha, Nebraska; evening and weekend groups in downtown churches and community centers; strong newcomer welcome.",
     "transitInfo": "Southwest Iowa Transit Agency (SWITA) and Metro Area Transit (MAT) buses connect to Omaha; Eppley Airfield (OMA) in Omaha; I-80 and I-29 interchange.",
     "population": 63000
+  },
+  "west-des-moines": {
+    "city": "West Des Moines",
+    "stateAbbr": "IA",
+    "stateFull": "Iowa",
+    "geoRegion": "US-IA",
+    "slug": "west-des-moines",
+    "lat": 41.5772,
+    "lng": -93.7113,
+    "areaDescription": "Major western suburb in the Des Moines metropolitan area",
+    "neighborhoods": "Historic Valley Junction, Jordan Creek, Glen Oaks, West Glen, Southwoods, Grand Avenue corridor",
+    "meetingHighlights": "Meetings serve the west side of the Des Moines metro with convenient suburban access and steady attendance.",
+    "transitInfo": "DART buses connect West Des Moines with the wider metro; I-35, I-80, and I-235 serve the city.",
+    "population": 69000
+  },
+  "ankeny": {
+    "city": "Ankeny",
+    "stateAbbr": "IA",
+    "stateFull": "Iowa",
+    "geoRegion": "US-IA",
+    "slug": "ankeny",
+    "lat": 41.7318,
+    "lng": -93.6001,
+    "areaDescription": "North Des Moines suburb in Polk County",
+    "neighborhoods": "Uptown Ankeny, Prairie Trail, Delaware corridor, Otter Creek area, Oralabor Road district, Georgetown",
+    "meetingHighlights": "Meetings serve a fast-growing suburban population north of Des Moines with regular local options.",
+    "transitInfo": "Road access via I-35 and Ankeny Boulevard; DART regional service connects select destinations.",
+    "population": 71000
+  },
+  "mason-city": {
+    "city": "Mason City",
+    "stateAbbr": "IA",
+    "stateFull": "Iowa",
+    "geoRegion": "US-IA",
+    "slug": "mason-city",
+    "lat": 43.1536,
+    "lng": -93.201,
+    "areaDescription": "North Iowa regional hub in Cerro Gordo County",
+    "neighborhoods": "Downtown, River City district, East Park area, West Side, North End, South Monroe corridor",
+    "meetingHighlights": "Meetings serve north Iowa communities with dependable weekly schedules in a regional service center.",
+    "transitInfo": "Mason City Transit provides local routes; US-18, I-35 nearby, and Mason City Municipal Airport support travel.",
+    "population": 27000
   }
 }

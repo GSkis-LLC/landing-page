@@ -328,5 +328,47 @@
     "meetingHighlights": "Large and diverse meeting offerings across the city including military base outreach and numerous Spanish-language meetings.",
     "transitInfo": "VIA Metropolitan transit buses serve the metro; San Antonio International Airport (SAT) for flights.",
     "population": 1532233
+  },
+  "waco": {
+    "city": "Waco",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "waco",
+    "lat": 31.5493,
+    "lng": -97.1467,
+    "areaDescription": "Waco area, Central Texas/Brazos River corridor",
+    "neighborhoods": "Downtown, Baylor area, Dean Highland, North Waco",
+    "meetingHighlights": "Central Texas regional hub with university, healthcare, and downtown activity supporting varied local meeting access.",
+    "transitInfo": "Car-oriented via I-35; Waco Regional Airport and intercity bus service connect the city.",
+    "population": 138486
+  },
+  "beaumont": {
+    "city": "Beaumont",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "beaumont",
+    "lat": 30.0802,
+    "lng": -94.1266,
+    "areaDescription": "Beaumont area, Golden Triangle",
+    "neighborhoods": "Downtown, Old Town, West End, South Park",
+    "meetingHighlights": "Golden Triangle population center suited for meetings serving the city, nearby petrochemical workforce, and surrounding communities.",
+    "transitInfo": "Primarily car-based via I-10 and US 69/96/287; Jack Brooks Regional Airport serves the Golden Triangle.",
+    "population": 115282
+  },
+  "tyler": {
+    "city": "Tyler",
+    "stateAbbr": "TX",
+    "stateFull": "Texas",
+    "geoRegion": "US-TX",
+    "slug": "tyler",
+    "lat": 32.3513,
+    "lng": -95.3011,
+    "areaDescription": "Tyler area, East Texas",
+    "neighborhoods": "Downtown, Azalea District, South Tyler, The Loop area",
+    "meetingHighlights": "East Texas medical and retail hub with a strong central-city role, supporting regional meeting attendance.",
+    "transitInfo": "Car-oriented via US 69, US 271, and Loop 323; Tyler Pounds Regional Airport serves the city.",
+    "population": 105995
   }
 }

@@ -49,7 +49,8 @@
     "meetingHighlights": "Community-centered meetings with strong military and university outreach (near Fort Benning), regular evening and weekend options.",
     "transitInfo": "METRA Transit buses cover the metro; Columbus Metropolitan Airport provides regional flights.",
     "population": 195769
-  },  "macon": {
+  },
+  "macon": {
     "city": "Macon",
     "stateAbbr": "GA",
     "stateFull": "Georgia",
@@ -137,5 +138,47 @@
     "meetingHighlights": "South Georgia recovery hub with meetings near Valdosta State University and Moody Air Force Base; welcoming community with evening discussion and Big Book study groups.",
     "transitInfo": "Valdosta-Lowndes County Transit provides local bus service; Valdosta Regional Airport (VLD); I-75 corridor near the Georgia-Florida state line.",
     "population": 56500
+  },
+  "roswell": {
+    "city": "Roswell",
+    "stateAbbr": "GA",
+    "stateFull": "Georgia",
+    "geoRegion": "US-GA",
+    "slug": "roswell",
+    "lat": 34.0232,
+    "lng": -84.3616,
+    "areaDescription": "North Fulton suburb in the Atlanta metropolitan area",
+    "neighborhoods": "Historic Roswell, East Roswell, Roswell Mill area, Holcomb Bridge corridor, Crabapple vicinity, Horseshoe Bend",
+    "meetingHighlights": "North metro meetings serve Roswell and nearby suburbs with strong weeknight participation.",
+    "transitInfo": "Travel is mostly by car via GA-400 and Holcomb Bridge Road; MARTA access is available from nearby north Fulton stations.",
+    "population": 95000
+  },
+  "sandy-springs": {
+    "city": "Sandy Springs",
+    "stateAbbr": "GA",
+    "stateFull": "Georgia",
+    "geoRegion": "US-GA",
+    "slug": "sandy-springs",
+    "lat": 33.9304,
+    "lng": -84.3733,
+    "areaDescription": "Major north-side city in the Atlanta metropolitan area",
+    "neighborhoods": "City Springs, Perimeter Center, Riverside, North Springs, Dunwoody Panhandle, Sandy Springs Circle area",
+    "meetingHighlights": "Meetings draw a large north Atlanta population with convenient after-work and weekend options.",
+    "transitInfo": "MARTA Red Line stations at Sandy Springs, North Springs, and Medical Center support transit access; GA-400 and I-285 intersect nearby.",
+    "population": 108000
+  },
+  "albany": {
+    "city": "Albany",
+    "stateAbbr": "GA",
+    "stateFull": "Georgia",
+    "geoRegion": "US-GA",
+    "slug": "albany",
+    "lat": 31.5785,
+    "lng": -84.1557,
+    "areaDescription": "Regional center in southwest Georgia on the Flint River",
+    "neighborhoods": "Downtown, Rawson Circle, Doublegate, Northwest Albany, Radium Springs area, Merry Acres",
+    "meetingHighlights": "Meetings serve southwest Georgia communities with reliable local options throughout the week.",
+    "transitInfo": "Albany Transit System provides local service; US-19, US-82, and Southwest Georgia Regional Airport support travel.",
+    "population": 67000
   }
 }

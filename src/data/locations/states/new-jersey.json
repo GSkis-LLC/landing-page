@@ -102,5 +102,47 @@
     "meetingHighlights": "Capital-city meetings with active lunchtime groups for state workers; diverse neighborhood meetings with Spanish-language options.",
     "transitInfo": "NJ Transit trains and buses serve Trenton; Trenton-Mercer Airport (TTN) and Philadelphia International Airport (PHL) nearby.",
     "population": 90871
+  },
+  "camden": {
+    "city": "Camden",
+    "stateAbbr": "NJ",
+    "stateFull": "New Jersey",
+    "geoRegion": "US-NJ",
+    "slug": "camden",
+    "lat": 39.9259,
+    "lng": -75.1196,
+    "areaDescription": "Camden area, Delaware River waterfront",
+    "neighborhoods": "Downtown, Waterfront South, East Camden, Parkside",
+    "meetingHighlights": "Dense urban center on the Delaware River suited for neighborhood-based meetings and cross-river regional access.",
+    "transitInfo": "PATCO and NJ Transit connections are nearby across the Delaware River; I-676 and the Ben Franklin Bridge anchor road access.",
+    "population": 71791
+  },
+  "atlantic-city": {
+    "city": "Atlantic City",
+    "stateAbbr": "NJ",
+    "stateFull": "New Jersey",
+    "geoRegion": "US-NJ",
+    "slug": "atlantic-city",
+    "lat": 39.3643,
+    "lng": -74.4229,
+    "areaDescription": "Atlantic City area, Jersey Shore",
+    "neighborhoods": "Ducktown, Chelsea, Bungalow Park, Marina District",
+    "meetingHighlights": "Regional shore destination with a year-round local population and hospitality workforce, supporting accessible city meetings.",
+    "transitInfo": "NJ Transit rail and bus service connect the city, with the Atlantic City Expressway and Atlantic City International Airport nearby.",
+    "population": 38497
+  },
+  "new-brunswick": {
+    "city": "New Brunswick",
+    "stateAbbr": "NJ",
+    "stateFull": "New Jersey",
+    "geoRegion": "US-NJ",
+    "slug": "new-brunswick",
+    "lat": 40.4862,
+    "lng": -74.4518,
+    "areaDescription": "New Brunswick area, Raritan Valley",
+    "neighborhoods": "Downtown, Rutgers area, Fifth Ward, Raritan Gardens",
+    "meetingHighlights": "Major university and healthcare hub that can support a mix of daytime, evening, and young-adult meeting demand.",
+    "transitInfo": "NJ Transit Northeast Corridor rail and local buses provide strong access; the city sits near the New Jersey Turnpike and Route 18.",
+    "population": 55266
   }
 }

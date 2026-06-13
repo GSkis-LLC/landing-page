@@ -118,5 +118,47 @@
     "meetingHighlights": "University-town recovery community near Idaho State University with student-friendly and evening meetings; Big Book study and discussion groups in Old Town and Chubbuck.",
     "transitInfo": "Pocatello Regional Transit provides local bus service; Pocatello Regional Airport (PIH); I-15 and I-86 interchange provides north-south and east-west highway access.",
     "population": 56000
+  },
+  "caldwell": {
+    "city": "Caldwell",
+    "stateAbbr": "ID",
+    "stateFull": "Idaho",
+    "geoRegion": "US-ID",
+    "slug": "caldwell",
+    "lat": 43.6629,
+    "lng": -116.6874,
+    "areaDescription": "Western Treasure Valley city in Canyon County",
+    "neighborhoods": "Downtown, College of Idaho area, Indian Creek district, North Caldwell, Linden, Sky Ranch area",
+    "meetingHighlights": "Meetings serve western Treasure Valley communities with dependable neighborhood and church-based options.",
+    "transitInfo": "Valley Regional Transit serves parts of Canyon County; I-84 is the main regional access route.",
+    "population": 67000
+  },
+  "rexburg": {
+    "city": "Rexburg",
+    "stateAbbr": "ID",
+    "stateFull": "Idaho",
+    "geoRegion": "US-ID",
+    "slug": "rexburg",
+    "lat": 43.826,
+    "lng": -111.7897,
+    "areaDescription": "Upper Snake River Valley college city in eastern Idaho",
+    "neighborhoods": "Downtown, BYU-Idaho area, University Boulevard corridor, Madison County Fairgrounds area, North Rexburg, South Fork district",
+    "meetingHighlights": "Meetings serve local residents and students with regular weekly formats in a compact regional hub.",
+    "transitInfo": "Mostly car-based via US-20; Idaho Falls Regional Airport is the closest major commercial airport.",
+    "population": 40000
+  },
+  "lewiston": {
+    "city": "Lewiston",
+    "stateAbbr": "ID",
+    "stateFull": "Idaho",
+    "geoRegion": "US-ID",
+    "slug": "lewiston",
+    "lat": 46.4166,
+    "lng": -117.0177,
+    "areaDescription": "Port city at the confluence of the Snake and Clearwater rivers",
+    "neighborhoods": "Downtown, Normal Hill, Orchards area, North Lewiston, Snake River Avenue corridor, Sunset district",
+    "meetingHighlights": "Meetings serve the Lewis-Clark Valley across the Idaho-Washington border with steady local participation.",
+    "transitInfo": "Lewiston Transit provides limited local service; Lewiston-Nez Perce County Airport and US-95 support access.",
+    "population": 35000
   }
 }

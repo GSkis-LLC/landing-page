@@ -86,5 +86,47 @@
     "meetingHighlights": "East Mississippi recovery community with meetings near the historic downtown railroad district; evening and weekend groups at churches and community centers; regional hub serving surrounding rural counties.",
     "transitInfo": "Meridian Transit System provides local bus service; Key Field (MEI); I-20 and I-59 interchange provides major highway access.",
     "population": 34000
+  },
+  "biloxi": {
+    "city": "Biloxi",
+    "stateAbbr": "MS",
+    "stateFull": "Mississippi",
+    "geoRegion": "US-MS",
+    "slug": "biloxi",
+    "lat": 30.396,
+    "lng": -88.8853,
+    "areaDescription": "Mississippi Gulf Coast city in Harrison County",
+    "neighborhoods": "Downtown, Back Bay, Point Cadet, West Biloxi, Woolmarket, Beach Boulevard corridor",
+    "meetingHighlights": "Meetings serve the central Gulf Coast with regular attendance from Biloxi and nearby coastal communities.",
+    "transitInfo": "Coast Transit Authority buses, I-10, and Gulfport-Biloxi International Airport support regional access.",
+    "population": 49000
+  },
+  "southaven": {
+    "city": "Southaven",
+    "stateAbbr": "MS",
+    "stateFull": "Mississippi",
+    "geoRegion": "US-MS",
+    "slug": "southaven",
+    "lat": 34.989,
+    "lng": -90.0126,
+    "areaDescription": "DeSoto County suburb in the Memphis metropolitan area",
+    "neighborhoods": "Towne Center, Snowden Grove area, Greenbrook, Southcrest, Church Road corridor, Stateline Road area",
+    "meetingHighlights": "Meetings serve the fast-growing north Mississippi suburbs with easy access from the Memphis area.",
+    "transitInfo": "Primarily car-oriented via I-55 and Goodman Road; Memphis International Airport is nearby.",
+    "population": 58000
+  },
+  "oxford": {
+    "city": "Oxford",
+    "stateAbbr": "MS",
+    "stateFull": "Mississippi",
+    "geoRegion": "US-MS",
+    "slug": "oxford",
+    "lat": 34.3665,
+    "lng": -89.5192,
+    "areaDescription": "College town in north Mississippi and seat of Lafayette County",
+    "neighborhoods": "Downtown Square, University of Mississippi area, Grand Oaks, Jackson Avenue corridor, Avent Acres, East Oxford",
+    "meetingHighlights": "Meetings serve local residents and the university community with a steady weekly schedule.",
+    "transitInfo": "Oxford-University Transit serves the city; most regional travel is by car via MS-6 and US-278.",
+    "population": 29000
   }
 }

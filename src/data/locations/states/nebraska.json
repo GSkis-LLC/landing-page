@@ -42,7 +42,7 @@
     "geoRegion": "US-NE",
     "slug": "grand-island",
     "lat": 40.9264,
-    "lng": -98.3420,
+    "lng": -98.342,
     "areaDescription": "Grand Island area, Central Nebraska",
     "neighborhoods": "Downtown Grand Island, South Locust, North Road, Westridge",
     "intergroup": {
@@ -52,5 +52,47 @@
     "meetingHighlights": "Central Nebraska recovery hub; railroad heritage community; diverse bilingual meetings serving agricultural area.",
     "transitInfo": "GI Transit bus service; Central Nebraska Regional Airport (GRI); I-80 corridor.",
     "population": 53000
+  },
+  "bellevue": {
+    "city": "Bellevue",
+    "stateAbbr": "NE",
+    "stateFull": "Nebraska",
+    "geoRegion": "US-NE",
+    "slug": "bellevue",
+    "lat": 41.1544,
+    "lng": -95.9146,
+    "areaDescription": "Bellevue area, Sarpy County/Omaha metro",
+    "neighborhoods": "Olde Towne, Twin Creek, Southroads, Bellevue University area",
+    "meetingHighlights": "Large Sarpy County city positioned to serve south Omaha metro residents with convenient weekday and evening meeting access.",
+    "transitInfo": "Connected by US 75 and I-80 to Omaha; Omaha Eppley Airfield is the nearest major airport.",
+    "population": 64176
+  },
+  "kearney": {
+    "city": "Kearney",
+    "stateAbbr": "NE",
+    "stateFull": "Nebraska",
+    "geoRegion": "US-NE",
+    "slug": "kearney",
+    "lat": 40.6995,
+    "lng": -99.0815,
+    "areaDescription": "Kearney area, Central Nebraska",
+    "neighborhoods": "Downtown, North Kearney, University Village, West Kearney",
+    "meetingHighlights": "Central Nebraska hub with a university and medical presence, making it a practical anchor for regional meetings.",
+    "transitInfo": "Primarily car-based via I-80; Kearney Regional Airport serves the city.",
+    "population": 33790
+  },
+  "norfolk": {
+    "city": "Norfolk",
+    "stateAbbr": "NE",
+    "stateFull": "Nebraska",
+    "geoRegion": "US-NE",
+    "slug": "norfolk",
+    "lat": 42.0327,
+    "lng": -97.417,
+    "areaDescription": "Norfolk area, Northeast Nebraska",
+    "neighborhoods": "Downtown, Skyview, Eldorado Hills, Midtown",
+    "meetingHighlights": "Northeast Nebraska's main trade center, well placed to serve residents from Madison County and nearby towns.",
+    "transitInfo": "Car-oriented via US 81 and US 275; regional air service is available in Norfolk with Omaha farther east.",
+    "population": 24210
   }
 }

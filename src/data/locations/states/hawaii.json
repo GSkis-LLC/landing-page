@@ -91,7 +91,7 @@
     "stateFull": "Hawaii",
     "geoRegion": "US-HI",
     "slug": "kona",
-    "lat": 19.6400,
+    "lat": 19.64,
     "lng": -155.9969,
     "areaDescription": "Kailua-Kona and West Hawaii on the Big Island",
     "neighborhoods": "Kailua Village (Ali'i Drive), Keauhou, Holualoa, Kalaoa, Waikoloa Village, Kohala Coast",
@@ -119,5 +119,47 @@
     "meetingHighlights": "Small-island recovery community with meetings spread across Kauai from Princeville to Poipu; close-knit fellowship welcoming to tourists and locals; church and community center groups.",
     "transitInfo": "Kauai Bus provides island-wide public transit; Lihue Airport (LIH) handles inter-island and mainland flights; Kaumualii Highway and Kuhio Highway connect the island's communities.",
     "population": 7000
+  },
+  "pearl-city": {
+    "city": "Pearl City",
+    "stateAbbr": "HI",
+    "stateFull": "Hawaii",
+    "geoRegion": "US-HI",
+    "slug": "pearl-city",
+    "lat": 21.3972,
+    "lng": -157.9731,
+    "areaDescription": "Leeward Oahu community overlooking Pearl Harbor",
+    "neighborhoods": "Pearl City Peninsula, Momilani, Pacific Palisades, Waiau, Crestview, Waimano Home Road area",
+    "meetingHighlights": "Meetings serve central and leeward Oahu residents with convenient neighborhood-based options.",
+    "transitInfo": "TheBus serves Pearl City extensively, and H-1 provides the main road connection into Honolulu and west Oahu.",
+    "population": 45000
+  },
+  "waipahu": {
+    "city": "Waipahu",
+    "stateAbbr": "HI",
+    "stateFull": "Hawaii",
+    "geoRegion": "US-HI",
+    "slug": "waipahu",
+    "lat": 21.3867,
+    "lng": -158.009,
+    "areaDescription": "Historic plantation town in central Oahu",
+    "neighborhoods": "Old Waipahu, Village Park, Crestview, Waikele, Royal Kunia vicinity, Farrington Highway corridor",
+    "meetingHighlights": "Meetings serve a broad central Oahu population with accessible weekday and evening schedules.",
+    "transitInfo": "TheBus and nearby Skyline stations improve transit access; H-1 and H-2 connect Waipahu to the rest of Oahu.",
+    "population": 43000
+  },
+  "kaneohe": {
+    "city": "Kaneohe",
+    "stateAbbr": "HI",
+    "stateFull": "Hawaii",
+    "geoRegion": "US-HI",
+    "slug": "kaneohe",
+    "lat": 21.4009,
+    "lng": -157.798,
+    "areaDescription": "Windward Oahu community along Kaneohe Bay",
+    "neighborhoods": "Kaneohe Town, Ahuimanu, Haiku Valley, Keapuka, Pikoiloa, Windward Mall area",
+    "meetingHighlights": "Windward-side meetings serve Kaneohe and nearby communities with regular local attendance.",
+    "transitInfo": "TheBus serves the windward corridor; H-3, Likelike Highway, and Pali Highway link Kaneohe with Honolulu.",
+    "population": 34000
   }
 }

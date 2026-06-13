@@ -104,5 +104,47 @@
     "meetingHighlights": "Coastal resort-town recovery with year-round meetings that swell during summer tourist season; welcoming to visitors exploring Acadia National Park; church and community center groups in Bar Harbor and neighboring villages.",
     "transitInfo": "Island Explorer free shuttle (seasonal, serving Acadia and MDI); Hancock County-Bar Harbor Airport (BHB); Route 3 connects to Ellsworth and I-95 via US-1A.",
     "population": 5500
+  },
+  "south-portland": {
+    "city": "South Portland",
+    "stateAbbr": "ME",
+    "stateFull": "Maine",
+    "geoRegion": "US-ME",
+    "slug": "south-portland",
+    "lat": 43.6415,
+    "lng": -70.2409,
+    "areaDescription": "Coastal city across the harbor from Portland",
+    "neighborhoods": "Mill Creek, Ferry Village, Knightville, Willard Beach, Cash Corner, Meetinghouse Hill",
+    "meetingHighlights": "Meetings serve the greater Portland area with convenient access from South Portland and Cape Elizabeth.",
+    "transitInfo": "Greater Portland Metro bus service and close proximity to Portland International Jetport support travel.",
+    "population": 27000
+  },
+  "biddeford": {
+    "city": "Biddeford",
+    "stateAbbr": "ME",
+    "stateFull": "Maine",
+    "geoRegion": "US-ME",
+    "slug": "biddeford",
+    "lat": 43.4926,
+    "lng": -70.4534,
+    "areaDescription": "Southern Maine mill city on the Saco River",
+    "neighborhoods": "Downtown, Main Street corridor, Biddeford Pool area, Five Points, UNE vicinity, South Street area",
+    "meetingHighlights": "Meetings serve Biddeford-Saco communities with regular neighborhood options and easy regional access.",
+    "transitInfo": "Biddeford-Saco-Old Orchard Beach Transit and nearby Amtrak Downeaster service improve connectivity.",
+    "population": 23000
+  },
+  "waterville": {
+    "city": "Waterville",
+    "stateAbbr": "ME",
+    "stateFull": "Maine",
+    "geoRegion": "US-ME",
+    "slug": "waterville",
+    "lat": 44.552,
+    "lng": -69.6317,
+    "areaDescription": "Kennebec Valley city on the Kennebec River",
+    "neighborhoods": "Downtown, Colby College area, North Street district, South End, Kennedy Memorial Drive corridor, Elm City area",
+    "meetingHighlights": "Meetings serve central Maine residents with consistent local options in a regional service center.",
+    "transitInfo": "Kennebec Explorer regional transit serves the area; I-95 provides the main highway connection.",
+    "population": 16000
   }
 }

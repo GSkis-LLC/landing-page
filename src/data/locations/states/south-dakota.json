@@ -83,5 +83,47 @@
     "meetingHighlights": "University-influenced meetings with student-friendly schedules and steady community participation.",
     "transitInfo": "Local transit and regional roads; Brookings Regional Airport for limited service.",
     "population": 24500
+  },
+  "watertown": {
+    "city": "Watertown",
+    "stateAbbr": "SD",
+    "stateFull": "South Dakota",
+    "geoRegion": "US-SD",
+    "slug": "watertown",
+    "lat": 44.8994,
+    "lng": -97.115,
+    "areaDescription": "Watertown area, Glacial Lakes region",
+    "neighborhoods": "Downtown, Uptown, Lake Kampeska area, Mellette",
+    "meetingHighlights": "Northeastern South Dakota hub serving the Glacial Lakes region, making it a practical anchor for city and regional meetings.",
+    "transitInfo": "Travel is mostly by car via I-29 and US 212; regional air service is available at Watertown Regional Airport.",
+    "population": 22655
+  },
+  "mitchell": {
+    "city": "Mitchell",
+    "stateAbbr": "SD",
+    "stateFull": "South Dakota",
+    "geoRegion": "US-SD",
+    "slug": "mitchell",
+    "lat": 43.7094,
+    "lng": -98.0298,
+    "areaDescription": "Mitchell area, southeastern South Dakota",
+    "neighborhoods": "Downtown, North Mitchell, Lake Mitchell area, university area",
+    "meetingHighlights": "Regional service center on I-90 suited for meetings serving local residents and nearby southeastern South Dakota towns.",
+    "transitInfo": "Primarily car-based via I-90; regional flights are available at Mitchell Municipal Airport.",
+    "population": 15660
+  },
+  "yankton": {
+    "city": "Yankton",
+    "stateAbbr": "SD",
+    "stateFull": "South Dakota",
+    "geoRegion": "US-SD",
+    "slug": "yankton",
+    "lat": 42.8711,
+    "lng": -97.3973,
+    "areaDescription": "Yankton area, Missouri River corridor",
+    "neighborhoods": "Downtown, Riverside, Westside, Meridian District",
+    "meetingHighlights": "Historic Missouri River city positioned to serve southeastern South Dakota and nearby northeast Nebraska communities.",
+    "transitInfo": "Car-oriented via US 81 and SD 50; Sioux Gateway Airport in Sioux City is the nearest major airport.",
+    "population": 14454
   }
 }

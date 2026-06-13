@@ -84,5 +84,47 @@
     "meetingHighlights": "Small-town meetings with strong community ties and student-influenced schedules during the academic year.",
     "transitInfo": "Local bus services and regional routes; driving access via NH-10 and nearby regional airports.",
     "population": 23000
+  },
+  "dover": {
+    "city": "Dover",
+    "stateAbbr": "NH",
+    "stateFull": "New Hampshire",
+    "geoRegion": "US-NH",
+    "slug": "dover",
+    "lat": 43.1979,
+    "lng": -70.8737,
+    "areaDescription": "Dover area, New Hampshire Seacoast",
+    "neighborhoods": "Downtown, Cochecho, Back River, Garrison area",
+    "meetingHighlights": "One of the Seacoast's largest communities, suited for meetings serving Dover, Durham, and nearby towns.",
+    "transitInfo": "COAST buses connect the Seacoast; Amtrak Downeaster service is nearby in Durham, with Pease and Manchester airports within reach.",
+    "population": 32741
+  },
+  "rochester": {
+    "city": "Rochester",
+    "stateAbbr": "NH",
+    "stateFull": "New Hampshire",
+    "geoRegion": "US-NH",
+    "slug": "rochester",
+    "lat": 43.3045,
+    "lng": -70.9756,
+    "areaDescription": "Rochester area, Strafford County",
+    "neighborhoods": "Downtown, Gonic, East Rochester, South Main corridor",
+    "meetingHighlights": "Strafford County population center that can anchor meetings for residents in the eastern Lakes and Seacoast edge.",
+    "transitInfo": "Primarily car-based via NH 16 and US 202; COAST buses link to Dover and Portsmouth.",
+    "population": 32492
+  },
+  "laconia": {
+    "city": "Laconia",
+    "stateAbbr": "NH",
+    "stateFull": "New Hampshire",
+    "geoRegion": "US-NH",
+    "slug": "laconia",
+    "lat": 43.5279,
+    "lng": -71.4704,
+    "areaDescription": "Laconia area, Lakes Region",
+    "neighborhoods": "Downtown, Lakeport, Weirs Beach, South Down Shores",
+    "meetingHighlights": "Lakes Region hub with year-round residents and seasonal traffic, making it a practical meeting base for central New Hampshire.",
+    "transitInfo": "Travel is mostly by car via US 3 and NH 106; Manchester-Boston Regional Airport is the nearest major airport.",
+    "population": 16871
   }
 }

@@ -142,5 +142,47 @@
     "meetingHighlights": "Active recovery meetings across the valley with strong AA fellowship and mountain-area outdoor step meetings.",
     "transitInfo": "Valley Metro regional bus service covers the city; most meetings are drive-accessible via I-581/I-81.",
     "population": 100000
+  },
+  "chesapeake": {
+    "city": "Chesapeake",
+    "stateAbbr": "VA",
+    "stateFull": "Virginia",
+    "geoRegion": "US-VA",
+    "slug": "chesapeake",
+    "lat": 36.7682,
+    "lng": -76.2875,
+    "areaDescription": "Chesapeake area, South Hampton Roads",
+    "neighborhoods": "Great Bridge, Greenbrier, Deep Creek, Western Branch",
+    "meetingHighlights": "One of Virginia's largest cities, with broad suburban coverage that supports meetings across the South Hampton Roads area.",
+    "transitInfo": "HRT buses serve parts of the city; I-64, I-664, and I-464 connect the South Hampton Roads area.",
+    "population": 249422
+  },
+  "lynchburg": {
+    "city": "Lynchburg",
+    "stateAbbr": "VA",
+    "stateFull": "Virginia",
+    "geoRegion": "US-VA",
+    "slug": "lynchburg",
+    "lat": 37.4138,
+    "lng": -79.1422,
+    "areaDescription": "Lynchburg area, central Virginia",
+    "neighborhoods": "Downtown, Rivermont, Boonsboro, Fort Hill",
+    "meetingHighlights": "Regional center with colleges and healthcare anchors, suited for daytime and evening meetings across central Virginia.",
+    "transitInfo": "GLTC buses serve the city; US 29 and US 460 provide road access, with Lynchburg Regional Airport nearby.",
+    "population": 79009
+  },
+  "charlottesville": {
+    "city": "Charlottesville",
+    "stateAbbr": "VA",
+    "stateFull": "Virginia",
+    "geoRegion": "US-VA",
+    "slug": "charlottesville",
+    "lat": 38.0293,
+    "lng": -78.4767,
+    "areaDescription": "Charlottesville area, central Virginia/Piedmont",
+    "neighborhoods": "Downtown Mall, Belmont, Fry's Spring, North Downtown",
+    "meetingHighlights": "University city with a compact core and strong community infrastructure supporting varied meeting formats.",
+    "transitInfo": "CAT buses, Amtrak, and US 29/I-64 provide strong access; Charlottesville-Albemarle Airport serves the region.",
+    "population": 46553
   }
 }

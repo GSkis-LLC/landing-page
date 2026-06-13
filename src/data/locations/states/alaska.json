@@ -60,7 +60,7 @@
     "geoRegion": "US-AK",
     "slug": "sitka",
     "lat": 57.0531,
-    "lng": -135.3300,
+    "lng": -135.33,
     "areaDescription": "Sitka borough, Southeast Alaska",
     "neighborhoods": "Downtown Sitka, Sawmill Creek, Halibut Point, Silver Bay",
     "intergroup": {
@@ -70,5 +70,47 @@
     "meetingHighlights": "Island community recovery with close-knit meetings; rich cultural heritage; strong emphasis on community support.",
     "transitInfo": "Sitka Rocky Gutierrez Airport (SIT); Alaska Marine Highway ferry connections; no road access to other cities.",
     "population": 8400
+  },
+  "wasilla": {
+    "city": "Wasilla",
+    "stateAbbr": "AK",
+    "stateFull": "Alaska",
+    "geoRegion": "US-AK",
+    "slug": "wasilla",
+    "lat": 61.5809,
+    "lng": -149.4411,
+    "areaDescription": "Mat-Su Valley city north of Anchorage",
+    "neighborhoods": "Downtown Wasilla, Lake Lucille area, Palmer-Wasilla Highway corridor, Knik-Goose Bay Road area, Wasilla Lake, Meadow Lakes vicinity",
+    "meetingHighlights": "Meetings serve the fast-growing Mat-Su region with regular discussion and speaker formats.",
+    "transitInfo": "Primarily reached by car via the Glenn and Parks highways; regional bus links connect parts of the Mat-Su Valley.",
+    "population": 10000
+  },
+  "ketchikan": {
+    "city": "Ketchikan",
+    "stateAbbr": "AK",
+    "stateFull": "Alaska",
+    "geoRegion": "US-AK",
+    "slug": "ketchikan",
+    "lat": 55.3422,
+    "lng": -131.6461,
+    "areaDescription": "Southeast Alaska port city on Revillagigedo Island",
+    "neighborhoods": "Downtown, Newtown, West End, Tongass Avenue corridor, Herring Cove area, Saxman vicinity",
+    "meetingHighlights": "Meetings support local residents and seasonal workers in a compact island community.",
+    "transitInfo": "Ketchikan International Airport is reached by ferry from town; local bus service runs along Tongass Avenue.",
+    "population": 8200
+  },
+  "kodiak": {
+    "city": "Kodiak",
+    "stateAbbr": "AK",
+    "stateFull": "Alaska",
+    "geoRegion": "US-AK",
+    "slug": "kodiak",
+    "lat": 57.79,
+    "lng": -152.4072,
+    "areaDescription": "Island community on Kodiak Island in the Gulf of Alaska",
+    "neighborhoods": "Downtown, Near Island, Bells Flats, Mill Bay, Monashka Bay area, Coast Guard base vicinity",
+    "meetingHighlights": "Meetings serve the fishing, maritime, and military community with dependable local options.",
+    "transitInfo": "Kodiak Airport provides scheduled flights; Alaska Marine Highway and local roads connect the area.",
+    "population": 5200
   }
 }

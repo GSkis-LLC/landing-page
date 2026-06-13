@@ -119,5 +119,47 @@
     "meetingHighlights": "University-linked and community meetings with active evening and recovery resources.",
     "transitInfo": "Johnson City Transit and regional bus links; Tri-Cities Regional Airport for flights.",
     "population": 68000
+  },
+  "franklin": {
+    "city": "Franklin",
+    "stateAbbr": "TN",
+    "stateFull": "Tennessee",
+    "geoRegion": "US-TN",
+    "slug": "franklin",
+    "lat": 35.9251,
+    "lng": -86.8689,
+    "areaDescription": "Franklin area, south Nashville metro",
+    "neighborhoods": "Downtown, Cool Springs, Westhaven, Fieldstone Farms",
+    "meetingHighlights": "Fast-growing south Nashville metro city with strong suburban accessibility for weekday and evening meetings.",
+    "transitInfo": "Primarily car-based via I-65 and local arterials; Nashville International Airport is the main airport.",
+    "population": 83454
+  },
+  "jackson": {
+    "city": "Jackson",
+    "stateAbbr": "TN",
+    "stateFull": "Tennessee",
+    "geoRegion": "US-TN",
+    "slug": "jackson",
+    "lat": 35.6145,
+    "lng": -88.8139,
+    "areaDescription": "Jackson area, West Tennessee",
+    "neighborhoods": "Downtown, LANA, North Jackson, Thomsen Farms",
+    "meetingHighlights": "West Tennessee regional center with healthcare and education anchors supporting city and countywide meetings.",
+    "transitInfo": "Travel is mainly by car via I-40 and US 45; McKellar-Sipes Regional Airport serves the area.",
+    "population": 68205
+  },
+  "kingsport": {
+    "city": "Kingsport",
+    "stateAbbr": "TN",
+    "stateFull": "Tennessee",
+    "geoRegion": "US-TN",
+    "slug": "kingsport",
+    "lat": 36.5484,
+    "lng": -82.5618,
+    "areaDescription": "Kingsport area, Tri-Cities",
+    "neighborhoods": "Downtown, Colonial Heights, Lynn Garden, Riverview",
+    "meetingHighlights": "Tri-Cities industrial center that can anchor meetings for northeast Tennessee and nearby Southwest Virginia residents.",
+    "transitInfo": "Car-based travel via I-26 and US 23; Tri-Cities Airport provides regional air service.",
+    "population": 55442
   }
 }

@@ -160,5 +160,47 @@
     "meetingHighlights": "Active Shoals-area recovery community with meetings in Florence, Muscle Shoals, Sheffield, and Tuscumbia; groups near University of North Alabama campus and along the Wilson Dam corridor; strong tradition of Big Book study.",
     "transitInfo": "Shoals Area Transit provides local bus service; Northwest Alabama Regional Airport (MSL) in Muscle Shoals; US-72 and the Natchez Trace Parkway provide regional access.",
     "population": 40000
+  },
+  "hoover": {
+    "city": "Hoover",
+    "stateAbbr": "AL",
+    "stateFull": "Alabama",
+    "geoRegion": "US-AL",
+    "slug": "hoover",
+    "lat": 33.4054,
+    "lng": -86.8114,
+    "areaDescription": "Birmingham suburban area in south Jefferson and north Shelby counties",
+    "neighborhoods": "Riverchase, Bluff Park, Ross Bridge, Trace Crossings, Greystone, Hoover Heights",
+    "meetingHighlights": "Metro-area meetings draw residents from Hoover and nearby suburbs, with regular discussion and step-study options.",
+    "transitInfo": "Primarily car-oriented via I-65, I-459, and US-31; Birmingham-Shuttlesworth International Airport is the nearest major airport.",
+    "population": 92000
+  },
+  "madison": {
+    "city": "Madison",
+    "stateAbbr": "AL",
+    "stateFull": "Alabama",
+    "geoRegion": "US-AL",
+    "slug": "madison",
+    "lat": 34.6993,
+    "lng": -86.7483,
+    "areaDescription": "Huntsville-area city in Madison County",
+    "neighborhoods": "Downtown Madison, Clift Farms area, Heritage Station, West Madison, County Line Road corridor, Palmer Park area",
+    "meetingHighlights": "Meetings commonly serve families and professionals across the Madison-Huntsville corridor with evening and weekend options.",
+    "transitInfo": "Road access via I-565 and Hughes Road; Huntsville International Airport is just south of the city.",
+    "population": 61000
+  },
+  "gadsden": {
+    "city": "Gadsden",
+    "stateAbbr": "AL",
+    "stateFull": "Alabama",
+    "geoRegion": "US-AL",
+    "slug": "gadsden",
+    "lat": 34.0143,
+    "lng": -86.0066,
+    "areaDescription": "Regional center on the Coosa River in northeast Alabama",
+    "neighborhoods": "Downtown, Clubview, East Gadsden, North Gadsden, Alabama City, River Road area",
+    "meetingHighlights": "Recovery meetings serve Gadsden and surrounding Etowah County communities, typically in church and community settings.",
+    "transitInfo": "Regional access via I-59 and US-431; travel is largely car-based with limited local transit service.",
+    "population": 33000
   }
 }

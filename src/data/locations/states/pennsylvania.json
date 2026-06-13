@@ -78,7 +78,7 @@
     "stateFull": "Pennsylvania",
     "geoRegion": "US-PA",
     "slug": "scranton",
-    "lat": 41.4090,
+    "lat": 41.409,
     "lng": -75.6624,
     "areaDescription": "Scranton area, Northeastern Pennsylvania",
     "neighborhoods": "Downtown Scranton, Green Ridge, Hill Section, Dunmore, South Side",
@@ -89,5 +89,47 @@
     "meetingHighlights": "Historic coal mining city recovery; strong working-class traditions; Electric City meetings throughout NEPA.",
     "transitInfo": "COLTS bus service; Wilkes-Barre/Scranton International Airport (AVP); I-81 corridor.",
     "population": 77000
+  },
+  "erie": {
+    "city": "Erie",
+    "stateAbbr": "PA",
+    "stateFull": "Pennsylvania",
+    "geoRegion": "US-PA",
+    "slug": "erie",
+    "lat": 42.1292,
+    "lng": -80.0851,
+    "areaDescription": "Erie area, Lake Erie shore",
+    "neighborhoods": "Downtown, Frontier, East Bayfront, West Bayfront",
+    "meetingHighlights": "Lakefront regional center serving Erie County and nearby towns, with practical access across the urban core.",
+    "transitInfo": "EMTA buses serve the city; I-90, I-79, and Erie International Airport provide regional access.",
+    "population": 94831
+  },
+  "reading": {
+    "city": "Reading",
+    "stateAbbr": "PA",
+    "stateFull": "Pennsylvania",
+    "geoRegion": "US-PA",
+    "slug": "reading",
+    "lat": 40.3356,
+    "lng": -75.9269,
+    "areaDescription": "Reading area, Berks County",
+    "neighborhoods": "Downtown, Centre Park, Hampden Heights, Northeast Reading",
+    "meetingHighlights": "Berks County seat and employment center that can anchor city meetings and broader regional attendance.",
+    "transitInfo": "BARTA buses serve the city; US 222 and I-176 connect Reading to the region.",
+    "population": 95112
+  },
+  "bethlehem": {
+    "city": "Bethlehem",
+    "stateAbbr": "PA",
+    "stateFull": "Pennsylvania",
+    "geoRegion": "US-PA",
+    "slug": "bethlehem",
+    "lat": 40.6259,
+    "lng": -75.3705,
+    "areaDescription": "Bethlehem area, Lehigh Valley",
+    "neighborhoods": "South Side, Historic Moravian District, West Side, Westgate",
+    "meetingHighlights": "Core Lehigh Valley city with strong neighborhood identity and convenient access for meetings across the valley.",
+    "transitInfo": "LANta buses serve the Lehigh Valley; US 22 and I-78 provide access, with Lehigh Valley International Airport nearby.",
+    "population": 75781
   }
 }

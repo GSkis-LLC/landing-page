@@ -102,5 +102,47 @@
     "meetingHighlights": "Diverse suburban meetings with Spanish-language options; active evening groups serving the western Salt Lake valley.",
     "transitInfo": "UTA bus and TRAX connections to Salt Lake City; Salt Lake City International Airport (SLC) nearby.",
     "population": 140000
+  },
+  "sandy": {
+    "city": "Sandy",
+    "stateAbbr": "UT",
+    "stateFull": "Utah",
+    "geoRegion": "US-UT",
+    "slug": "sandy",
+    "lat": 40.565,
+    "lng": -111.839,
+    "areaDescription": "Sandy area, south Salt Lake Valley",
+    "neighborhoods": "Historic Sandy, The Cairns, East Bench, Alta Canyon",
+    "meetingHighlights": "Large south valley city with good transit and suburban coverage, suited for meetings across Salt Lake County's south end.",
+    "transitInfo": "UTA TRAX light rail and buses serve Sandy; I-15 and the South Valley corridor provide road access.",
+    "population": 96904
+  },
+  "layton": {
+    "city": "Layton",
+    "stateAbbr": "UT",
+    "stateFull": "Utah",
+    "geoRegion": "US-UT",
+    "slug": "layton",
+    "lat": 41.0602,
+    "lng": -111.9711,
+    "areaDescription": "Layton area, Davis County",
+    "neighborhoods": "Historic Downtown, East Layton, Kays Creek, Fairfield",
+    "meetingHighlights": "Major Davis County city positioned to serve meetings for residents along the central Wasatch Front.",
+    "transitInfo": "UTA FrontRunner, buses, and I-15 connect Layton to the Wasatch Front; Salt Lake City International Airport is within driving range.",
+    "population": 81773
+  },
+  "logan": {
+    "city": "Logan",
+    "stateAbbr": "UT",
+    "stateFull": "Utah",
+    "geoRegion": "US-UT",
+    "slug": "logan",
+    "lat": 41.737,
+    "lng": -111.8338,
+    "areaDescription": "Logan area, Cache Valley",
+    "neighborhoods": "Downtown, USU area, Adams, Hillcrest",
+    "meetingHighlights": "Cache Valley hub with a university presence and compact core that supports community and young-adult meeting access.",
+    "transitInfo": "Cache Valley Transit District buses serve the city; US 89/91 and Logan-Cache Airport provide access.",
+    "population": 52778
   }
 }

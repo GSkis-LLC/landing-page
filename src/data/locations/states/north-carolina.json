@@ -170,5 +170,47 @@
     "meetingHighlights": "Small-town meetings with steady local participation and community-focused support.",
     "transitInfo": "Local bus services and regional road access via US-220.",
     "population": 26000
+  },
+  "winston-salem": {
+    "city": "Winston-Salem",
+    "stateAbbr": "NC",
+    "stateFull": "North Carolina",
+    "geoRegion": "US-NC",
+    "slug": "winston-salem",
+    "lat": 36.0999,
+    "lng": -80.2442,
+    "areaDescription": "Winston-Salem area, Piedmont Triad",
+    "neighborhoods": "Downtown, Ardmore, West End, Buena Vista",
+    "meetingHighlights": "Large Triad city with medical, university, and downtown activity supporting varied neighborhood-based meetings.",
+    "transitInfo": "PART and local buses serve the city; US 52 and I-40 connect the metro, with Piedmont Triad International Airport nearby.",
+    "population": 249545
+  },
+  "high-point": {
+    "city": "High Point",
+    "stateAbbr": "NC",
+    "stateFull": "North Carolina",
+    "geoRegion": "US-NC",
+    "slug": "high-point",
+    "lat": 35.9557,
+    "lng": -80.0053,
+    "areaDescription": "High Point area, Piedmont Triad",
+    "neighborhoods": "Downtown, Emerywood, Deep River, Oak Hollow",
+    "meetingHighlights": "Triad manufacturing and furniture-market center positioned to serve both local residents and nearby small communities.",
+    "transitInfo": "Local buses and PART regional service connect the Triad; I-74 and US 29/70 provide road access.",
+    "population": 114059
+  },
+  "gastonia": {
+    "city": "Gastonia",
+    "stateAbbr": "NC",
+    "stateFull": "North Carolina",
+    "geoRegion": "US-NC",
+    "slug": "gastonia",
+    "lat": 35.2621,
+    "lng": -81.1873,
+    "areaDescription": "Gastonia area, western Charlotte metro",
+    "neighborhoods": "Downtown, Loray Mill, York-Chester, South Gastonia",
+    "meetingHighlights": "Major western Charlotte metro city that can anchor meetings for Gaston County with convenient interstate access.",
+    "transitInfo": "Primarily car-based via I-85; Charlotte Douglas International Airport is the main airport for the area.",
+    "population": 80411
   }
 }

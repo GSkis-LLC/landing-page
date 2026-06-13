@@ -142,5 +142,47 @@
     "meetingHighlights": "Small but steady meetings including lunchtime groups for state employees and evening formats.",
     "transitInfo": "Intercity Transit provides local and regional bus service; most attendees drive from surrounding towns.",
     "population": 52000
+  },
+  "kent": {
+    "city": "Kent",
+    "stateAbbr": "WA",
+    "stateFull": "Washington",
+    "geoRegion": "US-WA",
+    "slug": "kent",
+    "lat": 47.3809,
+    "lng": -122.2348,
+    "areaDescription": "Kent area, south King County",
+    "neighborhoods": "Downtown, East Hill, Panther Lake, West Hill",
+    "meetingHighlights": "Large south King County city with transit links and industrial-employment areas supporting broad local access.",
+    "transitInfo": "Sounder commuter rail, local buses, and SR 167/I-5 connect Kent to the Seattle metro.",
+    "population": 136588
+  },
+  "renton": {
+    "city": "Renton",
+    "stateAbbr": "WA",
+    "stateFull": "Washington",
+    "geoRegion": "US-WA",
+    "slug": "renton",
+    "lat": 47.4829,
+    "lng": -122.2171,
+    "areaDescription": "Renton area, south Lake Washington",
+    "neighborhoods": "Downtown, Highlands, Kennydale, Benson",
+    "meetingHighlights": "Major south Lake Washington city with dense residential districts and job centers suited for regular neighborhood meetings.",
+    "transitInfo": "King County Metro buses serve the city; I-405 and SR 167 provide strong regional access.",
+    "population": 106785
+  },
+  "yakima": {
+    "city": "Yakima",
+    "stateAbbr": "WA",
+    "stateFull": "Washington",
+    "geoRegion": "US-WA",
+    "slug": "yakima",
+    "lat": 46.6021,
+    "lng": -120.5059,
+    "areaDescription": "Yakima area, Yakima Valley",
+    "neighborhoods": "Downtown, West Valley, Terrace Heights, Nob Hill",
+    "meetingHighlights": "Yakima Valley's main city, positioned to serve local residents, farm communities, and surrounding small towns.",
+    "transitInfo": "Local buses serve the urban core; I-82 and Yakima Air Terminal connect the valley.",
+    "population": 96968
   }
 }

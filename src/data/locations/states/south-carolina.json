@@ -83,5 +83,47 @@
     "meetingHighlights": "Neighborhood and downtown meetings with steady attendance and active service groups.",
     "transitInfo": "SPARTA buses provide local transit; regional highways connect to Greenville and Charlotte markets.",
     "population": 38000
+  },
+  "north-charleston": {
+    "city": "North Charleston",
+    "stateAbbr": "SC",
+    "stateFull": "South Carolina",
+    "geoRegion": "US-SC",
+    "slug": "north-charleston",
+    "lat": 32.8546,
+    "lng": -79.9748,
+    "areaDescription": "North Charleston area, Charleston metro",
+    "neighborhoods": "Park Circle, Oak Terrace Preserve, Dorchester Road corridor, Northwoods",
+    "meetingHighlights": "Large Charleston metro city with broad residential areas and airport access, suited for citywide meeting coverage.",
+    "transitInfo": "CARTA buses, I-26, and Charleston International Airport provide strong regional access.",
+    "population": 114852
+  },
+  "rock-hill": {
+    "city": "Rock Hill",
+    "stateAbbr": "SC",
+    "stateFull": "South Carolina",
+    "geoRegion": "US-SC",
+    "slug": "rock-hill",
+    "lat": 34.9249,
+    "lng": -81.0251,
+    "areaDescription": "Rock Hill area, York County/Charlotte metro south",
+    "neighborhoods": "Downtown, Winthrop area, India Hook, Riverwalk",
+    "meetingHighlights": "York County hub and major south Charlotte suburb that can anchor meetings for residents on both sides of the state line.",
+    "transitInfo": "Primarily car-based via I-77; Charlotte Douglas International Airport is the main air gateway.",
+    "population": 74372
+  },
+  "florence": {
+    "city": "Florence",
+    "stateAbbr": "SC",
+    "stateFull": "South Carolina",
+    "geoRegion": "US-SC",
+    "slug": "florence",
+    "lat": 34.1954,
+    "lng": -79.7626,
+    "areaDescription": "Florence area, Pee Dee region",
+    "neighborhoods": "Downtown, West Florence, South Florence, Quinby area",
+    "meetingHighlights": "Pee Dee commercial center well placed for meetings serving local residents and nearby rural counties.",
+    "transitInfo": "Car-oriented via I-95 and I-20; Florence Regional Airport serves the area.",
+    "population": 39899
   }
 }

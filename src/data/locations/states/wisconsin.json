@@ -105,5 +105,47 @@
     "meetingHighlights": "Community meetings with steady evening attendance and family-friendly formats.",
     "transitInfo": "Racine buses and regional connections to Milwaukee; many attendees drive from surrounding suburbs.",
     "population": 77000
+  },
+  "eau-claire": {
+    "city": "Eau Claire",
+    "stateAbbr": "WI",
+    "stateFull": "Wisconsin",
+    "geoRegion": "US-WI",
+    "slug": "eau-claire",
+    "lat": 44.8113,
+    "lng": -91.4985,
+    "areaDescription": "Eau Claire area, Chippewa Valley",
+    "neighborhoods": "Downtown, Third Ward, Putnam Heights, East Hill",
+    "meetingHighlights": "Chippewa Valley hub with a university and healthcare presence supporting city and regional meetings.",
+    "transitInfo": "Eau Claire Transit and I-94 serve the city; Chippewa Valley Regional Airport provides air service.",
+    "population": 69421
+  },
+  "waukesha": {
+    "city": "Waukesha",
+    "stateAbbr": "WI",
+    "stateFull": "Wisconsin",
+    "geoRegion": "US-WI",
+    "slug": "waukesha",
+    "lat": 43.0117,
+    "lng": -88.2315,
+    "areaDescription": "Waukesha area, western Milwaukee metro",
+    "neighborhoods": "Downtown, Cutler Park, Sunset Heights, Carroll University area",
+    "meetingHighlights": "Large western Milwaukee suburb with a strong downtown and broad suburban reach suited for regular meeting access.",
+    "transitInfo": "Waukesha Metro Transit and I-94 connect the city to Milwaukee; Milwaukee Mitchell International Airport is nearby.",
+    "population": 71158
+  },
+  "la-crosse": {
+    "city": "La Crosse",
+    "stateAbbr": "WI",
+    "stateFull": "Wisconsin",
+    "geoRegion": "US-WI",
+    "slug": "la-crosse",
+    "lat": 43.8014,
+    "lng": -91.2396,
+    "areaDescription": "La Crosse area, upper Mississippi River valley",
+    "neighborhoods": "Downtown, Grandview-Emerson, North Side, Lower Northside",
+    "meetingHighlights": "Mississippi River regional center with colleges, healthcare, and a compact core supporting diverse meeting demand.",
+    "transitInfo": "MTU buses, Amtrak nearby in La Crescent, and I-90/US 53 support access; La Crosse Regional Airport serves the area.",
+    "population": 52680
   }
 }

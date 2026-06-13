@@ -170,5 +170,47 @@
     "meetingHighlights": "Central Illinois recovery community with meetings near Lake Decatur and in downtown churches; evening discussion and speaker groups with strong local fellowship.",
     "transitInfo": "Decatur Public Transit System (DPTS) provides local bus service; Decatur Airport (DEC); I-72 and US-51 provide regional highway access.",
     "population": 70000
+  },
+  "elgin": {
+    "city": "Elgin",
+    "stateAbbr": "IL",
+    "stateFull": "Illinois",
+    "geoRegion": "US-IL",
+    "slug": "elgin",
+    "lat": 42.0354,
+    "lng": -88.2826,
+    "areaDescription": "Fox River city in the northwest Chicago suburbs",
+    "neighborhoods": "Downtown, Historic District, West Side, Bowes Creek, Lords Park area, South Elgin border area",
+    "meetingHighlights": "Meetings serve northwest suburban residents with strong access from the Fox Valley and surrounding communities.",
+    "transitInfo": "Pace buses, Metra Milwaukee District West service, and I-90 support regional access.",
+    "population": 114000
+  },
+  "waukegan": {
+    "city": "Waukegan",
+    "stateAbbr": "IL",
+    "stateFull": "Illinois",
+    "geoRegion": "US-IL",
+    "slug": "waukegan",
+    "lat": 42.3636,
+    "lng": -87.8448,
+    "areaDescription": "Lake County city on the shore of Lake Michigan",
+    "neighborhoods": "Downtown, North Shore, Bowen Park area, Belvidere corridor, Harbor district, South Waukegan",
+    "meetingHighlights": "Meetings serve the north suburban and lakefront area with steady bilingual and neighborhood participation.",
+    "transitInfo": "Pace buses, Metra Union Pacific North line, and nearby I-94 provide regional connectivity.",
+    "population": 89000
+  },
+  "bloomington": {
+    "city": "Bloomington",
+    "stateAbbr": "IL",
+    "stateFull": "Illinois",
+    "geoRegion": "US-IL",
+    "slug": "bloomington",
+    "lat": 40.4842,
+    "lng": -88.9937,
+    "areaDescription": "Central Illinois city paired with Normal in the Bloomington-Normal metro",
+    "neighborhoods": "Downtown, Eastland area, Founders' Grove, South Hill, Oakland Avenue corridor, Near East Side",
+    "meetingHighlights": "Meetings serve the Bloomington-Normal area with a stable mix of community and university-adjacent attendance.",
+    "transitInfo": "Connect Transit buses, Amtrak service in nearby Normal, and Interstates 55, 39, and 74 support access.",
+    "population": 79000
   }
 }

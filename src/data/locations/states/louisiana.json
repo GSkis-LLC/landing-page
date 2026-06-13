@@ -105,5 +105,47 @@
     "meetingHighlights": "Twin-city recovery community serving Monroe and West Monroe across the Ouachita River; meetings near ULM campus and in downtown churches; welcoming fellowship with evening discussion and Big Book study groups.",
     "transitInfo": "Monroe Transit provides local bus service; Monroe Regional Airport (MLU); I-20 corridor and US-165 provide regional access.",
     "population": 47000
+  },
+  "alexandria": {
+    "city": "Alexandria",
+    "stateAbbr": "LA",
+    "stateFull": "Louisiana",
+    "geoRegion": "US-LA",
+    "slug": "alexandria",
+    "lat": 31.3113,
+    "lng": -92.4451,
+    "areaDescription": "Central Louisiana city on the Red River",
+    "neighborhoods": "Downtown, Garden District, England Airpark area, Martin Park, MacArthur Drive corridor, West End",
+    "meetingHighlights": "Meetings serve central Louisiana with dependable local attendance and regional draw from surrounding parishes.",
+    "transitInfo": "ATRANS bus service operates locally; Alexandria International Airport and US-167/US-71 provide access.",
+    "population": 45000
+  },
+  "bossier-city": {
+    "city": "Bossier City",
+    "stateAbbr": "LA",
+    "stateFull": "Louisiana",
+    "geoRegion": "US-LA",
+    "slug": "bossier-city",
+    "lat": 32.5159,
+    "lng": -93.7321,
+    "areaDescription": "Northwest Louisiana city across the Red River from Shreveport",
+    "neighborhoods": "Downtown East Bank District, South Bossier, North Bossier, Barksdale area, Airline Drive corridor, Greenacres Place",
+    "meetingHighlights": "Meetings serve the larger Shreveport-Bossier area with accessible locations on both sides of the river.",
+    "transitInfo": "SporTran buses connect Bossier City and Shreveport; I-20, I-220, and Shreveport Regional Airport support travel.",
+    "population": 62000
+  },
+  "houma": {
+    "city": "Houma",
+    "stateAbbr": "LA",
+    "stateFull": "Louisiana",
+    "geoRegion": "US-LA",
+    "slug": "houma",
+    "lat": 29.5958,
+    "lng": -90.7195,
+    "areaDescription": "Bayou-region city in Terrebonne Parish",
+    "neighborhoods": "Downtown, Bayou Cane, Hollywood Road corridor, East Houma, Westside, Civic Center area",
+    "meetingHighlights": "Meetings serve the Houma-Thibodaux area with regular local participation in the bayou region.",
+    "transitInfo": "Good Earth Transit provides local routes; US-90 is the main highway connection to the wider region.",
+    "population": 33000
   }
 }

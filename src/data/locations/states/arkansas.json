@@ -95,7 +95,7 @@
     "stateFull": "Arkansas",
     "geoRegion": "US-AR",
     "slug": "rogers",
-    "lat": 36.3320,
+    "lat": 36.332,
     "lng": -94.1185,
     "areaDescription": "Rogers and Bentonville area in Northwest Arkansas",
     "neighborhoods": "Downtown Rogers, Pinnacle Hills, Pleasant Crossing, Blossom Way, Bentonville adjacent areas",
@@ -106,5 +106,47 @@
     "meetingHighlights": "Fast-growing Northwest Arkansas recovery community with meetings in Rogers and neighboring Bentonville; evening and lunchtime groups popular with corporate professionals; welcoming newcomer meetings.",
     "transitInfo": "Ozark Regional Transit provides bus service; Northwest Arkansas Regional Airport (XNA) is nearby; Interstate 49 and US-71 access.",
     "population": 72000
+  },
+  "conway": {
+    "city": "Conway",
+    "stateAbbr": "AR",
+    "stateFull": "Arkansas",
+    "geoRegion": "US-AR",
+    "slug": "conway",
+    "lat": 35.0887,
+    "lng": -92.4421,
+    "areaDescription": "College city northwest of Little Rock in central Arkansas",
+    "neighborhoods": "Downtown, Hendrix area, UCA district, Prince Street corridor, Salem Road area, Centennial Valley",
+    "meetingHighlights": "Meetings benefit from the city's college presence and serve Faulkner County with regular weeknight options.",
+    "transitInfo": "Conway Corporation buses provide limited local transit; I-40 is the main regional connection.",
+    "population": 69000
+  },
+  "north-little-rock": {
+    "city": "North Little Rock",
+    "stateAbbr": "AR",
+    "stateFull": "Arkansas",
+    "geoRegion": "US-AR",
+    "slug": "north-little-rock",
+    "lat": 34.7695,
+    "lng": -92.2671,
+    "areaDescription": "City across the Arkansas River from Little Rock",
+    "neighborhoods": "Argenta, Park Hill, Lakewood, Levy, Rose City, McCain corridor",
+    "meetingHighlights": "Meetings serve central Arkansas neighborhoods on the north side of the river with solid evening coverage.",
+    "transitInfo": "Rock Region Metro bus routes and the streetcar link North Little Rock with downtown Little Rock.",
+    "population": 65000
+  },
+  "bentonville": {
+    "city": "Bentonville",
+    "stateAbbr": "AR",
+    "stateFull": "Arkansas",
+    "geoRegion": "US-AR",
+    "slug": "bentonville",
+    "lat": 36.3729,
+    "lng": -94.2088,
+    "areaDescription": "Northwest Arkansas regional hub in Benton County",
+    "neighborhoods": "Downtown Square, Crystal Bridges area, Bella Vista vicinity, Walton Boulevard corridor, South Walton, Northeast Bentonville",
+    "meetingHighlights": "Meetings reflect the rapid growth of Northwest Arkansas and draw attendees from across the Bentonville-Rogers area.",
+    "transitInfo": "Ozark Regional Transit serves parts of the area; Northwest Arkansas National Airport is nearby in Highfill.",
+    "population": 61000
   }
 }

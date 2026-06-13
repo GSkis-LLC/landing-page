@@ -41,7 +41,7 @@
     "stateFull": "Maryland",
     "geoRegion": "US-MD",
     "slug": "rockville",
-    "lat": 39.0840,
+    "lat": 39.084,
     "lng": -77.1528,
     "areaDescription": "Rockville area, Montgomery County",
     "neighborhoods": "Downtown Rockville, King Farm, Town Center, West End",
@@ -78,7 +78,7 @@
     "geoRegion": "US-MD",
     "slug": "hagerstown",
     "lat": 39.6418,
-    "lng": -77.7200,
+    "lng": -77.72,
     "areaDescription": "Hagerstown and Washington County in western Maryland",
     "neighborhoods": "Downtown Hagerstown, City Park area, Halfway, Smithsburg, Funkstown, Robinwood",
     "intergroup": {
@@ -104,5 +104,47 @@
     "meetingHighlights": "Eastern Shore recovery hub serving Wicomico County and surrounding Delmarva communities; meetings near Salisbury University and downtown; welcoming fellowship with evening discussion and step-study groups.",
     "transitInfo": "Shore Transit provides local and regional bus service across the Lower Eastern Shore; Salisbury-Ocean City Wicomico Regional Airport (SBY); US-13 and US-50 provide regional access.",
     "population": 33000
+  },
+  "gaithersburg": {
+    "city": "Gaithersburg",
+    "stateAbbr": "MD",
+    "stateFull": "Maryland",
+    "geoRegion": "US-MD",
+    "slug": "gaithersburg",
+    "lat": 39.1434,
+    "lng": -77.2014,
+    "areaDescription": "Montgomery County city in the I-270 corridor",
+    "neighborhoods": "Olde Towne, Kentlands, Lakelands, Washingtonian Center, East Deer Park, Montgomery Village vicinity",
+    "meetingHighlights": "Meetings serve upper Montgomery County with strong access from surrounding suburban communities.",
+    "transitInfo": "Ride On buses, MARC Brunswick Line nearby, and I-270 support regional travel.",
+    "population": 70000
+  },
+  "bowie": {
+    "city": "Bowie",
+    "stateAbbr": "MD",
+    "stateFull": "Maryland",
+    "geoRegion": "US-MD",
+    "slug": "bowie",
+    "lat": 39.0068,
+    "lng": -76.7791,
+    "areaDescription": "Prince George's County city between Washington and Annapolis",
+    "neighborhoods": "Old Town Bowie, Belair, Pointer Ridge, Whitehall, Bowie Town Center area, Collington",
+    "meetingHighlights": "Meetings serve a broad suburban population in central Prince George's County with reliable weekly options.",
+    "transitInfo": "TheBus and Metrobus routes serve parts of Bowie; US-50, US-301, and the MARC Penn Line nearby support access.",
+    "population": 58000
+  },
+  "cumberland": {
+    "city": "Cumberland",
+    "stateAbbr": "MD",
+    "stateFull": "Maryland",
+    "geoRegion": "US-MD",
+    "slug": "cumberland",
+    "lat": 39.6529,
+    "lng": -78.7625,
+    "areaDescription": "Western Maryland city in the Appalachian region",
+    "neighborhoods": "Downtown, South End, North End, LaVale vicinity, Narrows Park area, Washington Street corridor",
+    "meetingHighlights": "Meetings serve the tri-state mountain region with dependable local attendance and regional accessibility.",
+    "transitInfo": "Allegany County Transit, Amtrak Capitol Limited, and I-68 connect Cumberland to the wider region.",
+    "population": 19000
   }
 }

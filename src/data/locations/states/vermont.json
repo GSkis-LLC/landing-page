@@ -88,5 +88,47 @@
     "meetingHighlights": "Community-based evening meetings with strong local sponsor networks.",
     "transitInfo": "Regional bus links and drive access from Montpelier and surrounding towns.",
     "population": 8500
+  },
+  "st-albans": {
+    "city": "St. Albans",
+    "stateAbbr": "VT",
+    "stateFull": "Vermont",
+    "geoRegion": "US-VT",
+    "slug": "st-albans",
+    "lat": 44.8106,
+    "lng": -73.0832,
+    "areaDescription": "St. Albans area, northwestern Vermont",
+    "neighborhoods": "Downtown, Hill Section, Lower Welden, Lake Street area",
+    "meetingHighlights": "Northwestern Vermont service center that can anchor meetings for Franklin County and nearby border communities.",
+    "transitInfo": "Travel is mostly by car via I-89 and US 7; Burlington International Airport is the nearest major airport.",
+    "population": 6877
+  },
+  "winooski": {
+    "city": "Winooski",
+    "stateAbbr": "VT",
+    "stateFull": "Vermont",
+    "geoRegion": "US-VT",
+    "slug": "winooski",
+    "lat": 44.4914,
+    "lng": -73.1857,
+    "areaDescription": "Winooski area, inner Burlington metro",
+    "neighborhoods": "Downtown, Riverfront, East Winooski, Malletts Bay Avenue corridor",
+    "meetingHighlights": "Dense inner-ring city adjacent to Burlington, well suited for walkable neighborhood meetings and metro spillover demand.",
+    "transitInfo": "GMT buses and nearby I-89 provide regional access; Burlington International Airport is just east of downtown.",
+    "population": 7997
+  },
+  "newport": {
+    "city": "Newport",
+    "stateAbbr": "VT",
+    "stateFull": "Vermont",
+    "geoRegion": "US-VT",
+    "slug": "newport",
+    "lat": 44.9364,
+    "lng": -72.2043,
+    "areaDescription": "Newport area, Northeast Kingdom",
+    "neighborhoods": "Downtown, Lake Memphremagog waterfront, East Side, Coventry Street area",
+    "meetingHighlights": "Northeast Kingdom hub positioned to serve local residents and nearby rural communities near the Canadian border.",
+    "transitInfo": "Primarily car-based via VT 105 and VT 100; the nearest commercial airports are in Burlington and Montreal.",
+    "population": 4455
   }
 }

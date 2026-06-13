@@ -100,5 +100,47 @@
     "meetingHighlights": "Shared meeting resources with Reno; active neighborhood and downtown meetings.",
     "transitInfo": "Regional buses link Sparks with Reno; quick highway access via I-80.",
     "population": 100000
+  },
+  "elko": {
+    "city": "Elko",
+    "stateAbbr": "NV",
+    "stateFull": "Nevada",
+    "geoRegion": "US-NV",
+    "slug": "elko",
+    "lat": 40.8324,
+    "lng": -115.7631,
+    "areaDescription": "Elko area, Northeastern Nevada",
+    "neighborhoods": "Downtown, Idaho Street corridor, Morrell Park area, Mountain View",
+    "meetingHighlights": "Regional center for northeastern Nevada, well positioned for meetings serving local residents and I-80 corridor travelers.",
+    "transitInfo": "Car-oriented via I-80; Elko Regional Airport handles regional flights.",
+    "population": 20564
+  },
+  "fernley": {
+    "city": "Fernley",
+    "stateAbbr": "NV",
+    "stateFull": "Nevada",
+    "geoRegion": "US-NV",
+    "slug": "fernley",
+    "lat": 39.608,
+    "lng": -119.2518,
+    "areaDescription": "Fernley area, Western Nevada/I-80 corridor",
+    "neighborhoods": "Downtown, Donner Trail corridor, Silverland Estates, Autumn Winds",
+    "meetingHighlights": "Fast-growing Lyon County city that can support meetings for western Nevada residents along the I-80 corridor.",
+    "transitInfo": "Car-based access via I-80 and US 50 Alternate; Reno-Tahoe International Airport is about an hour west.",
+    "population": 22895
+  },
+  "mesquite": {
+    "city": "Mesquite",
+    "stateAbbr": "NV",
+    "stateFull": "Nevada",
+    "geoRegion": "US-NV",
+    "slug": "mesquite",
+    "lat": 36.8055,
+    "lng": -114.0672,
+    "areaDescription": "Mesquite area, Virgin River Valley",
+    "neighborhoods": "Old Town, Falcon Ridge, Sun City Mesquite, CasaBlanca area",
+    "meetingHighlights": "Virgin River Valley service center with retirement communities and resort activity supporting steady local demand.",
+    "transitInfo": "Primarily car-oriented via I-15; Harry Reid International Airport in Las Vegas is the main air gateway.",
+    "population": 20471
   }
 }
