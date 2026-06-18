@@ -215,6 +215,24 @@ const description = `Find ${meetingCountLabel} AA meetings near ${LOCATION.city}
       gtag('js', new Date());
       gtag('config', 'AW-18232815183');
     </script>
+
+    <!-- Event snippet for App Install conversion tracking -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18232815183/aa-KCJzShcEcEM_civZD',
+          'value': 1.0,
+          'currency': 'USD',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
     <meta charset="utf-8" />
     <link rel="icon" type="image/x-icon" href="/myMeetings.ico" />
     <title>{title}</title>

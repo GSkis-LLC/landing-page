@@ -42,6 +42,24 @@ const appStoreUrl = 'https://apps.apple.com/app/id6748364894';
       gtag('js', new Date());
       gtag('config', 'AW-18232815183');
     </script>
+
+    <!-- Event snippet for App Install conversion tracking -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18232815183/aa-KCJzShcEcEM_civZD',
+          'value': 1.0,
+          'currency': 'USD',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
     <meta charset="utf-8" />
     <link rel="icon" type="image/x-icon" href="/myMeetings.ico" />
     <title>{title}</title>
@@ -180,7 +198,7 @@ const appStoreUrl = 'https://apps.apple.com/app/id6748364894';
         <div class="cta-content">
           <h2>Ready to Find Your Meeting?</h2>
           <p>Choose a state above or download the MyMeetings app for the best experience on iOS.</p>
-          <a href={appStoreUrl} class="cta-button" target="_blank" rel="noopener noreferrer">
+          <a href={appStoreUrl} class="cta-button" target="_blank" rel="noopener noreferrer" onclick="return gtag_report_conversion('{appStoreUrl}')">
             Download MyMeetings
           </a>
         </div>
